@@ -1,6 +1,29 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaMoon, FaSun, FaBars, FaTimes, FaArrowUp, FaDownload, FaCode, FaPaintBrush, FaMobileAlt, FaServer, FaReact, FaHtml5, FaCss3Alt, FaPhp, FaGitAlt, FaGithubAlt, FaPython, FaJs, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaMoon,
+  FaSun,
+  FaBars,
+  FaTimes,
+  FaArrowUp,
+  FaDownload,
+  FaCode,
+  FaPaintBrush,
+  FaMobileAlt,
+  FaServer,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaPhp,
+  FaGitAlt,
+  FaGithubAlt,
+  FaPython,
+  FaJs,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import { SiTailwindcss, SiPostgresql } from "react-icons/si";
 import { useTheme } from "@/hooks/use-theme";
 
@@ -22,9 +45,12 @@ function FontLoader() {
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap";
+    link.href =
+      "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap";
     document.head.appendChild(link);
-    return () => { document.head.removeChild(link); };
+    return () => {
+      document.head.removeChild(link);
+    };
   }, []);
   return null;
 }
@@ -63,14 +89,20 @@ function ScrollProgress() {
   }, []);
   return (
     <div className="fixed left-0 top-0 z-50 h-1 w-full bg-transparent">
-      <div className="h-full bg-gradient-primary transition-[width] duration-150" style={{ width: `${w}%` }} />
+      <div
+        className="h-full bg-gradient-primary transition-[width] duration-150"
+        style={{ width: `${w}%` }}
+      />
     </div>
   );
 }
 
 function AnimatedBg() {
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-gradient-soft">
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-gradient-soft"
+    >
       <div className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-[var(--rose)] opacity-30 blur-3xl animate-blob" />
       <div className="absolute right-0 top-1/3 h-[28rem] w-[28rem] rounded-full bg-[var(--lavender)] opacity-30 blur-3xl animate-blob [animation-delay:-6s]" />
       <div className="absolute bottom-0 left-1/3 h-[22rem] w-[22rem] rounded-full bg-[var(--rose-gold)] opacity-25 blur-3xl animate-blob [animation-delay:-12s]" />
@@ -89,24 +121,43 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <header className={`fixed top-0 z-40 w-full transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
-      <nav className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${scrolled ? "glass-strong shadow-elegant mx-4" : "bg-transparent"}`}>
+    <header
+      className={`fixed top-0 z-40 w-full transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}
+    >
+      <nav
+        className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${scrolled ? "glass-strong shadow-elegant mx-4" : "bg-transparent"}`}
+      >
         <a href="#home" className="flex items-center gap-2 font-display text-xl font-semibold">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">L</span>
-          <span className="text-gradient">Levina</span>
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
+            L
+          </span>
+          <span className="text-gradient">Levina Chifie</span>
         </a>
         <ul className="hidden items-center gap-1 md:flex">
           {NAV.map((n) => (
             <li key={n.id}>
-              <a href={`#${n.id}`} className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-primary/10 hover:text-foreground">{n.label}</a>
+              <a
+                href={`#${n.id}`}
+                className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-primary/10 hover:text-foreground"
+              >
+                {n.label}
+              </a>
             </li>
           ))}
         </ul>
         <div className="flex items-center gap-2">
-          <button onClick={toggle} aria-label="Toggle theme" className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all hover:scale-105 hover:shadow-glow">
+          <button
+            onClick={toggle}
+            aria-label="Toggle theme"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all hover:scale-105 hover:shadow-glow"
+          >
             {theme === "dark" ? <FaSun /> : <FaMoon />}
           </button>
-          <button onClick={() => setOpen((o) => !o)} aria-label="Menu" className="inline-flex h-10 w-10 items-center justify-center rounded-full glass md:hidden">
+          <button
+            onClick={() => setOpen((o) => !o)}
+            aria-label="Menu"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full glass md:hidden"
+          >
             {open ? <FaTimes /> : <FaBars />}
           </button>
         </div>
@@ -116,7 +167,13 @@ function Navbar() {
           <ul className="flex flex-col">
             {NAV.map((n) => (
               <li key={n.id}>
-                <a onClick={() => setOpen(false)} href={`#${n.id}`} className="block rounded-xl px-4 py-3 text-sm font-medium hover:bg-primary/10">{n.label}</a>
+                <a
+                  onClick={() => setOpen(false)}
+                  href={`#${n.id}`}
+                  className="block rounded-xl px-4 py-3 text-sm font-medium hover:bg-primary/10"
+                >
+                  {n.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -160,28 +217,42 @@ function Hero() {
   return (
     <section id="home" className="relative flex min-h-screen items-center pt-28">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <motion.div initial="hidden" animate="show" variants={fadeUp} className="flex flex-col items-center text-center">
-          <span className="mb-6 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wide">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
-            Available for new projects
-          </span>
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={fadeUp}
+          className="flex flex-col items-center text-center"
+        >
           <h1 className="font-display text-5xl font-semibold leading-[1.05] md:text-7xl lg:text-8xl">
-            Hi, I'm <span className="text-gradient animate-gradient bg-gradient-primary [background-clip:text] [-webkit-background-clip:text] text-transparent">Levina</span>
+            Hi, I'm{" "}
+            <span className="text-gradient animate-gradient bg-gradient-primary [background-clip:text] [-webkit-background-clip:text] text-transparent">
+              Levina Chifie
+            </span>
           </h1>
           <div className="mt-6 text-xl md:text-2xl">
             <Typing />
           </div>
           <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg">
-            A passionate Computer Science student and future Full-Stack Developer creating modern and elegant digital experiences.
+            A passionate Computer Science student and future Full-Stack Developer creating modern
+            and elegant digital experiences.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <a href="#projects" className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all hover:scale-105 hover:shadow-elegant">
+            <a
+              href="#projects"
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all hover:scale-105 hover:shadow-elegant"
+            >
               View Projects
             </a>
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-full glass-strong px-7 py-3.5 text-sm font-semibold transition-all hover:scale-105 hover:shadow-glow">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full glass-strong px-7 py-3.5 text-sm font-semibold transition-all hover:scale-105 hover:shadow-glow"
+            >
               Contact Me
             </a>
-            <a href="#" className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-7 py-3.5 text-sm font-semibold transition-all hover:bg-primary/10">
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-7 py-3.5 text-sm font-semibold transition-all hover:bg-primary/10"
+            >
               <FaDownload /> Download CV
             </a>
           </div>
@@ -191,7 +262,13 @@ function Hero() {
               { Icon: FaLinkedin, href: "https://linkedin.com/in/levinachifie" },
               { Icon: FaEnvelope, href: "mailto:levinachifie@gmail.com" },
             ].map(({ Icon, href }, k) => (
-              <a key={k} href={href} target="_blank" rel="noreferrer" className="inline-flex h-11 w-11 items-center justify-center rounded-full glass transition-all hover:scale-110 hover:bg-gradient-primary hover:text-primary-foreground hover:shadow-glow">
+              <a
+                key={k}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full glass transition-all hover:scale-110 hover:bg-gradient-primary hover:text-primary-foreground hover:shadow-glow"
+              >
                 <Icon />
               </a>
             ))}
@@ -204,8 +281,16 @@ function Hero() {
 
 function SectionHeader({ tag, title, sub }: { tag: string; title: string; sub?: string }) {
   return (
-    <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} className="mb-14 text-center">
-      <span className="inline-block rounded-full glass px-4 py-1 text-xs font-medium uppercase tracking-widest text-primary">{tag}</span>
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeUp}
+      className="mb-14 text-center"
+    >
+      <span className="inline-block rounded-full glass px-4 py-1 text-xs font-medium uppercase tracking-widest text-primary">
+        {tag}
+      </span>
       <h2 className="mt-4 font-display text-4xl font-semibold md:text-5xl">{title}</h2>
       {sub && <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">{sub}</p>}
     </motion.div>
@@ -224,20 +309,56 @@ function About() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader tag="About" title="Crafting code with creativity" />
         <div className="grid items-start gap-8 lg:grid-cols-5">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="lg:col-span-3">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="lg:col-span-3"
+          >
             <div className="glow-border rounded-3xl glass-strong p-8 shadow-elegant md:p-10">
-              <p className="font-display text-2xl">Hello, I'm Levina ✨</p>
+              <p className="font-display text-2xl">Hello, I'm Levina Chifie ✨</p>
               <div className="mt-5 space-y-4 text-muted-foreground">
-                <p>A passionate Computer Science student with a deep love for technology, creativity, and modern web development. I enjoy transforming ideas into beautiful, responsive, and interactive digital experiences that feel both elegant and functional.</p>
-                <p>I work with technologies like <span className="text-foreground font-medium">React, Tailwind CSS, PHP, HTML, CSS, Git, and GitHub</span>, while continuously learning <span className="text-foreground font-medium">Python, PostgreSQL, JavaScript</span> to strengthen my backend development journey.</p>
-                <p>I'm passionate about becoming a skilled Full-Stack Developer and building modern applications that combine clean design, smooth user experience, and powerful functionality.</p>
-                <p>Beyond coding, I love growth, creativity, learning new things, and challenging myself to become better every day.</p>
+                <p>
+                  A passionate Computer Science student with a deep love for technology, creativity,
+                  and modern web development. I enjoy transforming ideas into beautiful, responsive,
+                  and interactive digital experiences that feel both elegant and functional.
+                </p>
+                <p>
+                  I work with technologies like{" "}
+                  <span className="text-foreground font-medium">
+                    React, Tailwind CSS, PHP, HTML, CSS, Git, and GitHub
+                  </span>
+                  , while continuously learning{" "}
+                  <span className="text-foreground font-medium">
+                    Python, PostgreSQL, JavaScript
+                  </span>{" "}
+                  to strengthen my backend development journey.
+                </p>
+                <p>
+                  I'm passionate about becoming a skilled Full-Stack Developer and building modern
+                  applications that combine clean design, smooth user experience, and powerful
+                  functionality.
+                </p>
+                <p>
+                  Beyond coding, I love growth, creativity, learning new things, and challenging
+                  myself to become better every day.
+                </p>
               </div>
             </div>
           </motion.div>
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="grid grid-cols-2 gap-4 lg:col-span-2">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="grid grid-cols-2 gap-4 lg:col-span-2"
+          >
             {stats.map((s, k) => (
-              <div key={k} className="group rounded-3xl glass p-6 text-center shadow-elegant transition-all hover:-translate-y-1 hover:shadow-glow">
+              <div
+                key={k}
+                className="group rounded-3xl glass p-6 text-center shadow-elegant transition-all hover:-translate-y-1 hover:shadow-glow"
+              >
                 <div className="text-gradient font-display text-4xl font-semibold">{s.v}</div>
                 <div className="mt-2 text-sm text-muted-foreground">{s.l}</div>
               </div>
@@ -270,7 +391,11 @@ function Skills() {
   return (
     <section id="skills" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader tag="Skills" title="My toolkit" sub="A blend of tools I love and skills I'm growing into." />
+        <SectionHeader
+          tag="Skills"
+          title="My toolkit"
+          sub="A blend of tools I love and skills I'm growing into."
+        />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SKILLS.map((s, k) => {
             const Icon = s.icon;
@@ -338,7 +463,11 @@ function Projects() {
   return (
     <section id="projects" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader tag="Projects" title="Selected work" sub="A glimpse into what I've been building." />
+        <SectionHeader
+          tag="Projects"
+          title="Selected work"
+          sub="A glimpse into what I've been building."
+        />
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p, k) => (
             <motion.article
@@ -353,7 +482,11 @@ function Projects() {
                 <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:16px_16px]" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="font-display text-5xl font-bold text-white/90 drop-shadow-lg transition-transform duration-500 group-hover:scale-110">
-                    {p.title.split(" ").map((w) => w[0]).join("").slice(0, 2)}
+                    {p.title
+                      .split(" ")
+                      .map((w) => w[0])
+                      .join("")
+                      .slice(0, 2)}
                   </span>
                 </div>
               </div>
@@ -362,12 +495,27 @@ function Projects() {
                 <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {p.tech.map((t) => (
-                    <span key={t} className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
+                    <span
+                      key={t}
+                      className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                    >
+                      {t}
+                    </span>
                   ))}
                 </div>
                 <div className="mt-5 flex gap-2">
-                  <a href="#" className="flex-1 rounded-full bg-gradient-primary px-4 py-2 text-center text-xs font-semibold text-primary-foreground transition-transform hover:scale-105">Live Demo</a>
-                  <a href="#" className="flex-1 rounded-full glass px-4 py-2 text-center text-xs font-semibold transition-transform hover:scale-105">GitHub</a>
+                  <a
+                    href="#"
+                    className="flex-1 rounded-full bg-gradient-primary px-4 py-2 text-center text-xs font-semibold text-primary-foreground transition-transform hover:scale-105"
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    href="#"
+                    className="flex-1 rounded-full glass px-4 py-2 text-center text-xs font-semibold transition-transform hover:scale-105"
+                  >
+                    GitHub
+                  </a>
                 </div>
               </div>
             </motion.article>
@@ -379,10 +527,26 @@ function Projects() {
 }
 
 const SERVICES = [
-  { Icon: FaCode, title: "Frontend Development", desc: "Pixel-perfect, responsive interfaces built with React and Tailwind." },
-  { Icon: FaServer, title: "Backend Development", desc: "Clean APIs and data layers using PHP, Python and PostgreSQL." },
-  { Icon: FaMobileAlt, title: "Responsive Web Design", desc: "Fluid layouts that feel beautiful on every device." },
-  { Icon: FaPaintBrush, title: "UI/UX Design", desc: "Elegant, intuitive design with attention to every detail." },
+  {
+    Icon: FaCode,
+    title: "Frontend Development",
+    desc: "Pixel-perfect, responsive interfaces built with React and Tailwind.",
+  },
+  {
+    Icon: FaServer,
+    title: "Backend Development",
+    desc: "Clean APIs and data layers using PHP, Python and PostgreSQL.",
+  },
+  {
+    Icon: FaMobileAlt,
+    title: "Responsive Web Design",
+    desc: "Fluid layouts that feel beautiful on every device.",
+  },
+  {
+    Icon: FaPaintBrush,
+    title: "UI/UX Design",
+    desc: "Elegant, intuitive design with attention to every detail.",
+  },
 ];
 
 function Services() {
@@ -419,21 +583,49 @@ function Contact() {
   return (
     <section id="contact" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader tag="Contact" title="Let's create something beautiful" sub="Have an idea or opportunity? I'd love to hear from you." />
+        <SectionHeader
+          tag="Contact"
+          title="Let's create something beautiful"
+          sub="Have an idea or opportunity? I'd love to hear from you."
+        />
         <div className="grid gap-8 lg:grid-cols-5">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="space-y-4 lg:col-span-2">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="space-y-4 lg:col-span-2"
+          >
             {[
-              { Icon: FaEnvelope, label: "Email", val: "levinachifie@gmail.com", href: "mailto:levinachifie@gmail.com" },
+              {
+                Icon: FaEnvelope,
+                label: "Email",
+                val: "levinachifie@gmail.com",
+                href: "mailto:levinachifie@gmail.com",
+              },
               { Icon: FaGithub, label: "GitHub", val: "chifie", href: "https://github.com/chifie" },
-              { Icon: FaLinkedin, label: "LinkedIn", val: "levinachifie", href: "https://linkedin.com/in/levinachifie" },
+              {
+                Icon: FaLinkedin,
+                label: "LinkedIn",
+                val: "levinachifie",
+                href: "https://linkedin.com/in/levinachifie",
+              },
               { Icon: FaMapMarkerAlt, label: "Location", val: "Available worldwide" },
             ].map((c, k) => (
-              <a key={k} href={c.href ?? "#"} target={c.href ? "_blank" : undefined} rel="noreferrer" className="group flex items-center gap-4 rounded-2xl glass-strong p-5 shadow-elegant transition-all hover:-translate-y-1 hover:shadow-glow">
+              <a
+                key={k}
+                href={c.href ?? "#"}
+                target={c.href ? "_blank" : undefined}
+                rel="noreferrer"
+                className="group flex items-center gap-4 rounded-2xl glass-strong p-5 shadow-elegant transition-all hover:-translate-y-1 hover:shadow-glow"
+              >
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow transition-transform group-hover:rotate-6">
                   <c.Icon />
                 </span>
                 <div>
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground">{c.label}</div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                    {c.label}
+                  </div>
                   <div className="font-medium">{c.val}</div>
                 </div>
               </a>
@@ -444,7 +636,11 @@ function Contact() {
             whileInView="show"
             viewport={{ once: true }}
             variants={fadeUp}
-            onSubmit={(e) => { e.preventDefault(); setSent(true); setTimeout(() => setSent(false), 3000); }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSent(true);
+              setTimeout(() => setSent(false), 3000);
+            }}
             className="glow-border rounded-3xl glass-strong p-8 shadow-elegant lg:col-span-3"
           >
             <div className="grid gap-5 sm:grid-cols-2">
@@ -453,20 +649,46 @@ function Contact() {
                 { name: "email", label: "Email address", type: "email" },
               ].map((f) => (
                 <label key={f.name} className="relative block">
-                  <input required type={f.type} name={f.name} placeholder=" " className="peer w-full rounded-xl border border-border bg-background/50 px-4 pt-6 pb-2 text-sm outline-none transition-all focus:border-primary focus:bg-background focus:ring-2 focus:ring-primary/30" />
-                  <span className="pointer-events-none absolute left-4 top-2 text-xs text-muted-foreground transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary">{f.label}</span>
+                  <input
+                    required
+                    type={f.type}
+                    name={f.name}
+                    placeholder=" "
+                    className="peer w-full rounded-xl border border-border bg-background/50 px-4 pt-6 pb-2 text-sm outline-none transition-all focus:border-primary focus:bg-background focus:ring-2 focus:ring-primary/30"
+                  />
+                  <span className="pointer-events-none absolute left-4 top-2 text-xs text-muted-foreground transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary">
+                    {f.label}
+                  </span>
                 </label>
               ))}
             </div>
             <label className="relative mt-5 block">
-              <input required name="subject" placeholder=" " className="peer w-full rounded-xl border border-border bg-background/50 px-4 pt-6 pb-2 text-sm outline-none transition-all focus:border-primary focus:bg-background focus:ring-2 focus:ring-primary/30" />
-              <span className="pointer-events-none absolute left-4 top-2 text-xs text-muted-foreground transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary">Subject</span>
+              <input
+                required
+                name="subject"
+                placeholder=" "
+                className="peer w-full rounded-xl border border-border bg-background/50 px-4 pt-6 pb-2 text-sm outline-none transition-all focus:border-primary focus:bg-background focus:ring-2 focus:ring-primary/30"
+              />
+              <span className="pointer-events-none absolute left-4 top-2 text-xs text-muted-foreground transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary">
+                Subject
+              </span>
             </label>
             <label className="relative mt-5 block">
-              <textarea required name="message" rows={5} placeholder=" " className="peer w-full resize-none rounded-xl border border-border bg-background/50 px-4 pt-6 pb-2 text-sm outline-none transition-all focus:border-primary focus:bg-background focus:ring-2 focus:ring-primary/30" />
-              <span className="pointer-events-none absolute left-4 top-2 text-xs text-muted-foreground transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary">Your message</span>
+              <textarea
+                required
+                name="message"
+                rows={5}
+                placeholder=" "
+                className="peer w-full resize-none rounded-xl border border-border bg-background/50 px-4 pt-6 pb-2 text-sm outline-none transition-all focus:border-primary focus:bg-background focus:ring-2 focus:ring-primary/30"
+              />
+              <span className="pointer-events-none absolute left-4 top-2 text-xs text-muted-foreground transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary">
+                Your message
+              </span>
             </label>
-            <button type="submit" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all hover:scale-[1.02] hover:shadow-elegant">
+            <button
+              type="submit"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all hover:scale-[1.02] hover:shadow-elegant"
+            >
               {sent ? "✨ Message sent!" : "Send Message"}
             </button>
           </motion.form>
@@ -482,16 +704,29 @@ function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-3">
         <div>
           <a href="#home" className="flex items-center gap-2 font-display text-xl font-semibold">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">L</span>
-            <span className="text-gradient">Levina</span>
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
+              L
+            </span>
+            <span className="text-gradient">Levina Chifie</span>
           </a>
-          <p className="mt-3 text-sm text-muted-foreground">Designed with passion and creativity by Levina.</p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Designed with passion and creativity by Levina.
+          </p>
         </div>
         <div>
-          <h4 className="font-display text-sm font-semibold uppercase tracking-widest">Quick links</h4>
+          <h4 className="font-display text-sm font-semibold uppercase tracking-widest">
+            Quick links
+          </h4>
           <ul className="mt-3 grid grid-cols-2 gap-2 text-sm">
             {NAV.map((n) => (
-              <li key={n.id}><a href={`#${n.id}`} className="text-muted-foreground transition-colors hover:text-primary">{n.label}</a></li>
+              <li key={n.id}>
+                <a
+                  href={`#${n.id}`}
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  {n.label}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
@@ -503,7 +738,13 @@ function Footer() {
               { Icon: FaLinkedin, href: "https://linkedin.com/in/levinachifie" },
               { Icon: FaEnvelope, href: "mailto:levinachifie@gmail.com" },
             ].map(({ Icon, href }, k) => (
-              <a key={k} href={href} target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all hover:scale-110 hover:bg-gradient-primary hover:text-primary-foreground">
+              <a
+                key={k}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all hover:scale-110 hover:bg-gradient-primary hover:text-primary-foreground"
+              >
                 <Icon />
               </a>
             ))}
@@ -525,7 +766,13 @@ function FloatingSocial() {
         { Icon: FaLinkedin, href: "https://linkedin.com/in/levinachifie" },
         { Icon: FaEnvelope, href: "mailto:levinachifie@gmail.com" },
       ].map(({ Icon, href }, k) => (
-        <a key={k} href={href} target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all hover:scale-110 hover:bg-gradient-primary hover:text-primary-foreground hover:shadow-glow">
+        <a
+          key={k}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all hover:scale-110 hover:bg-gradient-primary hover:text-primary-foreground hover:shadow-glow"
+        >
           <Icon />
         </a>
       ))}
@@ -543,7 +790,11 @@ function BackToTop() {
   }, []);
   if (!show) return null;
   return (
-    <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Back to top" className="fixed bottom-6 right-6 z-30 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow transition-all hover:scale-110 animate-float">
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Back to top"
+      className="fixed bottom-6 right-6 z-30 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow transition-all hover:scale-110 animate-float"
+    >
       <FaArrowUp />
     </button>
   );

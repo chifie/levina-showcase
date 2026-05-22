@@ -5,10 +5,21 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Levina Chifie — Full-Stack Developer Portfolio" },
-      { name: "description", content: "Levina Chifie — Computer Science student and future Full-Stack Developer crafting modern, elegant digital experiences with React, Tailwind, PHP and more." },
-      { name: "keywords", content: "Levina Chifie, Full-Stack Developer, React, Tailwind CSS, PHP, Portfolio, Web Developer" },
+      {
+        name: "description",
+        content:
+          "Levina Chifie — Computer Science student and future Full-Stack Developer crafting modern, elegant digital experiences with React, Tailwind, PHP and more.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Levina Chifie, Full-Stack Developer, React, Tailwind CSS, PHP, Portfolio, Web Developer",
+      },
       { property: "og:title", content: "Levina Chifie — Full-Stack Developer Portfolio" },
-      { property: "og:description", content: "Modern, elegant digital experiences crafted with passion and creativity." },
+      {
+        property: "og:description",
+        content: "Modern, elegant digital experiences crafted with passion and creativity.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
