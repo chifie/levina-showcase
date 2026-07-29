@@ -7,6 +7,7 @@ import {
   FaEnvelope,
   FaArrowUp,
   FaHeart,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
