@@ -100,6 +100,29 @@ export default function GitHubSection() {
           }
         );
       }
+
+      // Contribution cells - single ScrollTrigger for performance
+      if (graphRef.current) {
+        const cells = graphRef.current.querySelectorAll("[data-cell]");
+        if (cells.length > 0) {
+          gsap.fromTo(
+            cells,
+            { opacity: 0, scale: 0 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 0.3,
+              stagger: 0.002,
+              ease: "back.out(2)",
+              scrollTrigger: {
+                trigger: graphRef.current,
+                start: "top 85%",
+                once: true,
+              },
+            }
+          );
+        }
+      }
     }, sectionRef);
 
     return () => ctx.revert();
