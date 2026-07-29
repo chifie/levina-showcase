@@ -139,7 +139,7 @@ export default function Projects() {
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glassborder border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
+            className="inline-block rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
             Projects
           </span>
           <h2
@@ -170,7 +170,7 @@ export default function Projects() {
               data-project-card
               className="group w-[420px] flex-shrink-0 lg:w-[480px]"
             >
-              <div className="relative overflow-hidden rounded-3xl glass-strong border border-orange-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2">
+              <div className="relative overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2">
                 {/* Project image area */}
                 <div
                   className={`relative h-56 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-64`}
