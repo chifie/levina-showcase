@@ -8,6 +8,7 @@ import About from "@/components/portfolio/About";
 import Skills from "@/components/portfolio/Skills";
 import Projects from "@/components/portfolio/Projects";
 import Experience from "@/components/portfolio/Experience";
+import TechStack from "@/components/portfolio/TechStack";
 import GitHubSection from "@/components/portfolio/GitHubSection";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
@@ -71,6 +72,7 @@ export default function Portfolio() {
           <Skills />
           <Projects />
           <Experience />
+          <TechStack />
           <GitHubSection />
           <Contact />
         </main>
