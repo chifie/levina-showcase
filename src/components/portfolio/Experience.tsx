@@ -17,7 +17,7 @@ const EXPERIENCES = [
       "Creating RESTful APIs and backend services with Node.js and NestJS",
       "Implementing database solutions with PostgreSQL and MySQL",
     ],
-    color: "#f97316",
+    color: "#d946ef",
   },
   {
     icon: FaGraduationCap,
@@ -127,7 +127,7 @@ function ExperienceCard({
     >
       {/* Desktop: contents alternate between left and right */}
       <div className={index % 2 === 0 ? "md:col-start-1 md:pr-8 md:text-right" : "md:col-start-2 md:pl-8"}>
-        <div className="group rounded-2xl glass-strong border border-orange-500/10 p-6 shadow-elegant transition-all duration-300 hover:shadow-glow">
+        <div className="group rounded-2xl glass-strong border border-fuchsia-500/10 p-6 shadow-elegant transition-all duration-300 hover:shadow-glow">
           <div className={`flex items-center gap-3 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
             <span
               className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
@@ -150,7 +150,7 @@ function ExperienceCard({
             <ul className={`mt-3 space-y-1.5 ${index % 2 === 0 ? "md:text-right" : ""}`}>
               {description.map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-orange-500" />
+                  <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-fuchsia-500" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -218,15 +218,14 @@ export default function Experience() {
       className="relative py-28 overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 rounded-full bg-orange-500/5 blur-[100px]" />
+      <div className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 rounded-full bg-fuchsia-500/5 blur-[100px]" />
 
       <div className="mx-auto max-w-6xl px-6">
         {/* Section header */}
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-orange-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-orange-500"
-          >
+            className="inline-block rounded-full glassborder border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
             Experience
           </span>
           <h2
@@ -250,7 +249,7 @@ export default function Experience() {
             ref={timelineLineRef}
             className="absolute left-[18px] top-0 h-full w-[2px] origin-top md:left-1/2 md:-translate-x-px"
             style={{
-              background: "linear-gradient(to bottom, rgba(249,115,22,0.5), rgba(249,115,22,0.2), transparent)",
+              background: "linear-gradient(to bottom, rgba(217,70,239,0.4), rgba(217,70,239,0.15), transparent)",
             }}
           />
 
