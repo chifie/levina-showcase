@@ -83,11 +83,19 @@ function ScrollProgress() {
 
 function CursorFollower() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const visibleRef = useRef(false);
 
   useEffect(() => {
     const cursor = cursorRef.current;
     if (!cursor) return;
+
+    // Touch device check
+    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    if (isTouch) {
+      if (cursor) cursor.style.display = "none";
+      return;
+    }
+    if (cursor) cursor.style.display = "block";
 
     let mouseX = -100;
     let mouseY = -100;
@@ -97,42 +105,33 @@ function CursorFollower() {
     const onMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      if (!visible) setVisible(true);
+      if (!visibleRef.current) {
+        visibleRef.current = true;
+        gsap.to(cursor, { opacity: 0.8, duration: 0.3 });
+      }
     };
 
     const onMouseLeave = () => {
-      setVisible(false);
+      visibleRef.current = false;
+      gsap.to(cursor, { opacity: 0, duration: 0.3 });
     };
 
-    const animate = () => {
+    const onTick = () => {
       currentX += (mouseX - currentX) * 0.1;
       currentY += (mouseY - currentY) * 0.1;
-
-      cursor.style.transform = `translate(${currentX - 12}px, ${currentY - 12}px)`;
-      requestAnimationFrame(animate);
+      gsap.set(cursor, { x: currentX - 12, y: currentY - 12 });
     };
 
-    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
     document.addEventListener("mouseleave", onMouseLeave);
-    animate();
+    gsap.ticker.add(onTick);
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseleave", onMouseLeave);
+      gsap.ticker.remove(onTick);
     };
-  }, [visible]);
-
-  // Only show on non-touch devices
-  useEffect(() => {
-    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    if (!isTouch && cursorRef.current) {
-      cursorRef.current.style.display = "block";
-    }
   }, []);
-
-  if (typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0)) {
-    return null;
-  }
 
   return (
     <div
@@ -140,8 +139,7 @@ function CursorFollower() {
       className="pointer-events-none fixed z-[100] hidden h-6 w-6 rounded-full mix-blend-difference"
       style={{
         background: "#f97316",
-        transition: "opacity 0.3s ease",
-        opacity: visible ? 0.8 : 0,
+        opacity: 0,
       }}
     />
   );
