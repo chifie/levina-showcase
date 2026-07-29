@@ -9,8 +9,10 @@ import Skills from "@/components/portfolio/Skills";
 import Projects from "@/components/portfolio/Projects";
 import Experience from "@/components/portfolio/Experience";
 import TechStack from "@/components/portfolio/TechStack";
+import BlogSection from "@/components/portfolio/BlogSection";
 import GitHubSection from "@/components/portfolio/GitHubSection";
 import Contact from "@/components/portfolio/Contact";
+import KeyboardShortcuts from "@/components/portfolio/KeyboardShortcuts";
 import Footer from "@/components/portfolio/Footer";
 
 gsap.registerPlugin(Flip);
@@ -73,10 +75,12 @@ export default function Portfolio() {
           <Projects />
           <Experience />
           <TechStack />
+          <BlogSection />
           <GitHubSection />
           <Contact />
         </main>
         <Footer />
+        <KeyboardShortcuts />
       </div>
     </>
   );
