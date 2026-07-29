@@ -32,39 +32,9 @@ const CONTRIBUTION_DATA = generateContributionData();
 
 function ContributionCell({
   level,
-  index,
 }: {
   level: number;
-  index: number;
 }) {
-  const cellRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const cell = cellRef.current;
-    if (!cell) return;
-
-    const trigger = ScrollTrigger.create({
-      trigger: cell,
-      start: "top 95%",
-      once: true,
-      onEnter: () => {
-        gsap.fromTo(
-          cell,
-          { opacity: 0, scale: 0 },
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 0.3,
-            delay: index * 0.002,
-            ease: "back.out(2)",
-          }
-        );
-      },
-    });
-
-    return () => trigger.kill();
-  }, [index]);
-
   const getColor = (lvl: number) => {
     if (lvl === 0) return "bg-muted";
     if (lvl === 1) return "bg-orange-200 dark:bg-orange-900/30";
@@ -75,7 +45,7 @@ function ContributionCell({
 
   return (
     <div
-      ref={cellRef}
+      data-cell
       className={`h-[10px] w-[10px] rounded-[2px] ${getColor(level)} transition-all duration-200 hover:scale-150 hover:shadow-sm`}
       style={{ opacity: 0 }}
     />
