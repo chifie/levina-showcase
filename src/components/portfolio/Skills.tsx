@@ -147,7 +147,7 @@ function SkillCard({
   return (
     <div
       ref={cardRef}
-      className="flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 hover:bg-orange-500/5"
+      className="flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 hover:bg-fuchsia-500/5"
       style={{ opacity: 0 }}
     >
       <span
@@ -210,16 +210,15 @@ export default function Skills() {
       className="relative py-28 overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="pointer-events-none absolute left-0 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-orange-500/5 blur-[100px]" />
-      <div className="pointer-events-none absolute right-0 bottom-1/3 h-72 w-72 translate-x-1/2 rounded-full bg-orange-400/5 blur-[100px]" />
+      <div className="pointer-events-none absolute left-0 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-fuchsia-500/5 blur-[100px]" />
+      <div className="pointer-events-none absolute right-0 bottom-1/3 h-72 w-72 translate-x-1/2 rounded-full bg-fuchsia-400/5 blur-[100px]" />
 
       <div className="mx-auto max-w-6xl px-6">
         {/* Section header */}
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-orange-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-orange-500"
-          >
+            className="inline-block rounded-full glassborder border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
             Skills
           </span>
           <h2
@@ -244,7 +243,7 @@ export default function Skills() {
           {SKILL_CATEGORIES.map((category, catIndex) => (
             <div
               key={catIndex}
-              className="rounded-3xl glass-strong border border-orange-500/10 p-6 shadow-elegant transition-all duration-300 hover:shadow-glow"
+              className="rounded-3xl glass-strong border border-fuchsia-500/10 p-6 shadow-elegant transition-all duration-300 hover:shadow-glow"
             >
               {/* Category header */}
               <div className="mb-4 flex items-center gap-3 border-b border-border/40 pb-4">
@@ -254,7 +253,7 @@ export default function Skills() {
                 <div>
                   <h3 className="font-heading text-lg font-bold">{category.title}</h3>
                   {category.learning && (
-                    <span className="text-[10px] font-medium uppercase tracking-wider text-orange-500">
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-fuchsia-500">
                       In Progress
                     </span>
                   )}
