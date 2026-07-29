@@ -72,19 +72,56 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Levina Chifie — Full-Stack Developer & Creative Technologist" },
+      {
+        name: "description",
+        content:
+          "Levina Chifie — A passionate Full-Stack Software Developer crafting modern, elegant digital experiences. Specializing in React, TypeScript, Node.js, and cloud-native applications.",
+      },
+      { name: "author", content: "Levina Chifie" },
+      {
+        name: "keywords",
+        content:
+          "Levina Chifie, Full-Stack Developer, Female Developer, React, TypeScript, Next.js, Node.js, Portfolio, Web Developer, Software Engineer, UI/UX, Tailwind CSS, GSAP",
+      },
+      { property: "og:title", content: "Levina Chifie — Full-Stack Developer & Creative Technologist" },
+      {
+        property: "og:description",
+        content:
+          "Crafting modern digital experiences with clean code and elegant design. Explore my portfolio of web applications, mobile apps, and backend systems.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:url", content: "https://levinachifie.dev" },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:site_name", content: "Levina Chifie Portfolio" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Levina Chifie — Full-Stack Developer" },
+      {
+        name: "twitter:description",
+        content: "Modern, elegant digital experiences crafted with passion and creativity.",
+      },
+      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:creator", content: "@levinachifie" },
+      { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#d946ef" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "canonical",
+        href: "https://levinachifie.dev",
       },
     ],
   }),
