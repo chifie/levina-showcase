@@ -11,8 +11,8 @@ const PROJECTS = [
     description:
       "A modern digital marketplace platform connecting buyers and sellers with seamless transactions, real-time messaging, and a beautiful user interface.",
     tech: ["React", "NestJS", "PostgreSQL", "TypeScript"],
-    gradient: "from-orange-500 via-orange-400 to-amber-400",
-    color: "#f97316",
+    gradient: "from-fuchsia-500 via-pink-500 to-rose-400",
+    color: "#d946ef",
     initials: "SM",
   },
   {
@@ -20,8 +20,8 @@ const PROJECTS = [
     description:
       "A full-featured burger ordering application with custom menu builder, cart management, order tracking, and an admin dashboard for restaurant management.",
     tech: ["React", "FastAPI", "PostgreSQL", "Tailwind"],
-    gradient: "from-amber-500 via-orange-500 to-red-500",
-    color: "#d97706",
+    gradient: "from-pink-500 via-fuchsia-500 to-purple-500",
+    color: "#ec4899",
     initials: "GB",
   },
   {
@@ -29,8 +29,8 @@ const PROJECTS = [
     description:
       "A comprehensive inventory tracking system with real-time stock updates, barcode scanning, supplier management, and detailed analytics reporting.",
     tech: ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
-    gradient: "from-blue-500 via-indigo-500 to-purple-500",
-    color: "#6366f1",
+    gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
+    color: "#8b5cf6",
     initials: "IM",
   },
   {
@@ -38,8 +38,8 @@ const PROJECTS = [
     description:
       "Award-winning personal portfolio showcasing modern web development with GSAP animations, responsive design, and premium user experience.",
     tech: ["React", "GSAP", "Tailwind CSS", "TypeScript"],
-    gradient: "from-green-400 via-emerald-500 to-teal-500",
-    color: "#10b981",
+    gradient: "from-fuchsia-400 via-pink-500 to-rose-500",
+    color: "#d946ef",
     initials: "PW",
   },
 ];
@@ -132,15 +132,14 @@ export default function Projects() {
       className="relative overflow-hidden py-28"
     >
       {/* Background decoration */}
-      <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-orange-500/5 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-fuchsia-500/5 blur-[120px]" />
 
       <div ref={containerRef} className="mx-auto max-w-6xl px-6">
         {/* Section header - always visible */}
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-orange-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-orange-500"
-          >
+            className="inline-block rounded-full glassborder border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
             Projects
           </span>
           <h2
@@ -205,7 +204,7 @@ export default function Projects() {
 
                 {/* Project info */}
                 <div className="p-6 lg:p-7">
-                  <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-orange-500">
+                  <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-fuchsia-500">
                     {project.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-3">
@@ -238,7 +237,7 @@ export default function Projects() {
                     </a>
                     <a
                       href="#"
-                      className="flex-1 rounded-full glass border border-orange-500/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
+                      className="flex-1 rounded-full glass border border-fuchsia-500/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
                     >
                       Source Code
                     </a>
@@ -257,7 +256,7 @@ export default function Projects() {
             <div
               key={i}
               data-project-card
-              className="group overflow-hidden rounded-3xl glass-strong border border-orange-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow"
+              className="group overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow"
               style={{ opacity: 0 }}
             >
               {/* Project image area */}
@@ -288,7 +287,7 @@ export default function Projects() {
                   <a href="#" className="flex-1 rounded-full bg-gradient-primary px-3 py-2 text-center text-xs font-semibold text-white">
                     Live Demo
                   </a>
-                  <a href="#" className="flex-1 rounded-full glass border border-orange-500/20 px-3 py-2 text-center text-xs font-semibold">
+                  <a href="#" className="flex-1 rounded-full glass border border-fuchsia-500/20 px-3 py-2 text-center text-xs font-semibold">
                     GitHub
                   </a>
                 </div>
