@@ -80,7 +80,7 @@ function MagneticButton({
       className={`inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer ${className} ${
         primary
           ? "bg-gradient-primary text-white shadow-glow hover:shadow-elegant"
-          : "glass-strong border border-orange-500/20 hover:border-orange-500/40 hover:shadow-glow"
+          : "glass-strong border border-fuchsia-500/20 hover:border-fuchsia-500/40 hover:shadow-glow"
       }`}
     >
       {children}
@@ -285,12 +285,12 @@ export default function Hero() {
       <div
         ref={blob1Ref}
         className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] rounded-full opacity-30 blur-[120px]"
-        style={{ background: "radial-gradient(circle, rgba(249,115,22,0.25), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(217,70,239,0.2), transparent 70%)" }}
       />
       <div
         ref={blob2Ref}
         className="pointer-events-none absolute -bottom-32 -right-32 h-[400px] w-[400px] rounded-full opacity-25 blur-[100px]"
-        style={{ background: "radial-gradient(circle, rgba(251,146,60,0.2), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(236,72,153,0.15), transparent 70%)" }}
       />
 
       {/* Grid pattern overlay */}
@@ -332,8 +332,8 @@ export default function Hero() {
           {/* Text content */}
           <div className="flex-1">
             {/* Greeting badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full glass border border-orange-500/20 px-4 py-1.5 text-xs font-medium text-orange-500">
-              <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse-soft" />
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium text-fuchsia-500">
+              <span className="h-2 w-2 rounded-full bg-fuchsia-500 animate-pulse-soft" />
               Available for opportunities
             </div>
 
@@ -406,7 +406,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="group inline-flex h-12 w-12 items-center justify-center rounded-full glass border border-orange-500/10 transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:border-transparent hover:shadow-glow"
+                  className="group inline-flex h-12 w-12 items-center justify-center rounded-full glass border border-fuchsia-500/10 transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:border-transparent hover:shadow-glow"
                 >
                   <Icon className="text-lg transition-transform duration-300 group-hover:rotate-6" />
                 </a>
@@ -418,13 +418,13 @@ export default function Hero() {
           <div className="mt-12 flex-shrink-0 lg:mt-0">
             <div className="relative">
               {/* Decorative rings */}
-              <div className="absolute -inset-4 rounded-full border border-orange-500/20 animate-spin-slow" />
-              <div className="absolute -inset-8 rounded-full border border-orange-500/10 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
+              <div className="absolute -inset-4 rounded-full border border-fuchsia-500/20 animate-spin-slow" />
+              <div className="absolute -inset-8 rounded-full border border-fuchsia-500/10 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
 
               {/* Profile image */}
               <div
                 ref={profileRef}
-                className="relative h-64 w-64 overflow-hidden rounded-full bg-gradient-to-br from-orange-400 to-orange-600 p-1 shadow-glow md:h-80 md:w-80"
+                className="relative h-64 w-64 overflow-hidden rounded-full bg-gradient-to-br from-fuchsia-400 to-fuchsia-600 p-1 shadow-glow md:h-80 md:w-80"
                 style={{ clipPath: "circle(0% at 50% 50%)" }}
               >
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
@@ -440,8 +440,8 @@ export default function Hero() {
               </div>
 
               {/* Floating badge */}
-              <div className="absolute -right-2 -bottom-2 rounded-2xl glass-strong border border-orange-500/20 px-4 py-2 shadow-elegant animate-float-slow">
-                <p className="text-xs font-medium text-orange-500">3+ Years</p>
+              <div className="absolute -right-2 -bottom-2 rounded-2xl glass-strong border border-fuchsia-500/20 px-4 py-2 shadow-elegant animate-float-slow">
+                <p className="text-xs font-medium text-fuchsia-500">3+ Years</p>
                 <p className="text-[10px] text-muted-foreground">Coding</p>
               </div>
             </div>
@@ -452,14 +452,14 @@ export default function Hero() {
         <div className="mt-16 flex justify-center">
           <a
             href="#about"
-            className="group flex flex-col items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-orange-500"
+            className="group flex flex-col items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-fuchsia-500"
             onClick={(e) => {
               e.preventDefault();
               document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
             }}
           >
             <span>Scroll Down</span>
-            <FaArrowDown className="animate-bounce text-orange-400 transition-transform group-hover:translate-y-1" />
+            <FaArrowDown className="animate-bounce text-fuchsia-400 transition-transform group-hover:translate-y-1" />
           </a>
         </div>
       </div>
