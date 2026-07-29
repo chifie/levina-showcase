@@ -26,7 +26,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         span.style.fontFamily = "Space Grotesk, sans-serif";
         span.style.fontWeight = "700";
         span.style.fontSize = "clamp(2.5rem, 6vw, 4.5rem)";
-        span.style.background = "linear-gradient(135deg, #f97316, #fb923c)";
+        span.style.background = "linear-gradient(135deg, #d946ef, #ec4899)";
         span.style.webkitBackgroundClip = "text";
         span.style.webkitTextFillColor = "transparent";
         span.style.backgroundClip = "text";
@@ -104,14 +104,14 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, #f97316 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, #d946ef 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />
 
       {/* Glow orbs */}
-      <div className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-orange-500/10 blur-[100px]" />
-      <div className="absolute right-1/4 bottom-1/3 h-48 w-48 rounded-full bg-orange-400/10 blur-[80px]" />
+      <div className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-fuchsia-500/10 blur-[100px]" />
+      <div className="absolute right-1/4 bottom-1/3 h-48 w-48 rounded-full bg-fuchsia-400/10 blur-[80px]" />
 
       {/* Logo */}
       <div ref={logoRef} className="relative z-10 flex items-center gap-1" />
@@ -121,7 +121,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         <div
           ref={barRef}
           className="h-full origin-left rounded-full"
-          style={{ background: "linear-gradient(135deg, #f97316, #fb923c)" }}
+          style={{ background: "linear-gradient(135deg, #d946ef, #ec4899)" }}
         />
       </div>
 
