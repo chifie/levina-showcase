@@ -6,7 +6,7 @@ import { FaGithub, FaCodeBranch, FaStar, FaUsers, FaCode } from "react-icons/fa"
 gsap.registerPlugin(ScrollTrigger);
 
 const GITHUB_STATS = [
-  { icon: FaCodeBranch, value: "15+", label: "Repositories", color: "#f97316" },
+  { icon: FaCodeBranch, value: "15+", label: "Repositories", color: "#d946ef" },
   { icon: FaCode, value: "500+", label: "Contributions", color: "#8B5CF6" },
   { icon: FaStar, value: "5+", label: "Stars Earned", color: "#F59E0B" },
   { icon: FaUsers, value: "10+", label: "Followers", color: "#06B6D4" },
@@ -37,10 +37,10 @@ function ContributionCell({
 }) {
   const getColor = (lvl: number) => {
     if (lvl === 0) return "bg-muted";
-    if (lvl === 1) return "bg-orange-200 dark:bg-orange-900/30";
-    if (lvl === 2) return "bg-orange-300 dark:bg-orange-700/50";
-    if (lvl === 3) return "bg-orange-400 dark:bg-orange-600/70";
-    return "bg-orange-500 dark:bg-orange-500";
+    if (lvl === 1) return "bg-fuchsia-200 dark:bg-fuchsia-900/30";
+    if (lvl === 2) return "bg-fuchsia-300 dark:bg-fuchsia-700/50";
+    if (lvl === 3) return "bg-fuchsia-400 dark:bg-fuchsia-600/70";
+    return "bg-fuchsia-500 dark:bg-fuchsia-500";
   };
 
   return (
@@ -134,15 +134,14 @@ export default function GitHubSection() {
       className="relative py-28 overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="pointer-events-none absolute left-0 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-orange-500/5 blur-[100px]" />
+      <div className="pointer-events-none absolute left-0 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-fuchsia-500/5 blur-[100px]" />
 
       <div className="mx-auto max-w-6xl px-6">
         {/* Section header */}
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-orange-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-orange-500"
-          >
+            className="inline-block rounded-full glassborder border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
             Open Source
           </span>
           <h2
@@ -168,7 +167,7 @@ export default function GitHubSection() {
             <div
               key={i}
               data-stat
-              className="group rounded-2xl glass-strong border border-orange-500/10 p-5 text-center shadow-elegant transition-all duration-300 hover:shadow-glow"
+              className="group rounded-2xl glass-strong border border-fuchsia-500/10 p-5 text-center shadow-elegant transition-all duration-300 hover:shadow-glow"
               style={{ opacity: 0 }}
             >
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
@@ -183,7 +182,7 @@ export default function GitHubSection() {
         {/* Contribution graph */}
         <div
           ref={graphRef}
-          className="rounded-3xl glass-strong border border-orange-500/10 p-6 shadow-elegant md:p-8"
+          className="rounded-3xl glass-strong border border-fuchsia-500/10 p-6 shadow-elegant md:p-8"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -199,12 +198,12 @@ export default function GitHubSection() {
                     lvl === 0
                       ? "bg-muted"
                       : lvl === 1
-                        ? "bg-orange-200 dark:bg-orange-900/30"
+                        ? "bg-fuchsia-200 dark:bg-fuchsia-900/30"
                         : lvl === 2
-                          ? "bg-orange-300 dark:bg-orange-700/50"
+                          ? "bg-fuchsia-300 dark:bg-fuchsia-700/50"
                           : lvl === 3
-                            ? "bg-orange-400 dark:bg-orange-600/70"
-                            : "bg-orange-500 dark:bg-orange-500"
+                            ? "bg-fuchsia-400 dark:bg-fuchsia-600/70"
+                            : "bg-fuchsia-500 dark:bg-fuchsia-500"
                   }`}
                 />
               ))}
@@ -234,7 +233,7 @@ export default function GitHubSection() {
               href="https://github.com/chifie"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-xs font-medium text-orange-500 transition-colors hover:text-orange-400"
+              className="flex items-center gap-1.5 text-xs font-medium text-fuchsia-500 transition-colors hover:text-fuchsia-400"
             >
               <FaGithub />
               View on GitHub
