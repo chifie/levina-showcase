@@ -18,28 +18,28 @@ const TIMELINE = [
     title: "Computer Science Student",
     subtitle: "University",
     desc: "Pursuing a degree in Computer Science, building a strong foundation in algorithms, data structures, and software engineering principles.",
-    side: "left",
+    side: "left" as const,
   },
   {
     year: "2024",
     title: "Full-Stack Development",
     subtitle: "Self-Taught Journey",
     desc: "Deep diving into modern web development with React, Next.js, TypeScript, Tailwind CSS, and backend technologies like NestJS and PostgreSQL.",
-    side: "right",
+    side: "right" as const,
   },
   {
     year: "2023",
     title: "Started Coding Journey",
     subtitle: "First Steps",
     desc: "Began learning programming with Python and PHP, building my first web applications and discovering my passion for software development.",
-    side: "left",
+    side: "left" as const,
   },
   {
     year: "2022",
     title: "First Project",
     subtitle: "Getting Started",
     desc: "Built my first complete web project and realized the power of technology to solve real-world problems. This marked the beginning of my development journey.",
-    side: "right",
+    side: "right" as const,
   },
 ];
 
