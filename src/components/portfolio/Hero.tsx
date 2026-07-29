@@ -13,6 +13,7 @@ import {
   FaArrowDown,
 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import ProfileIllustration from "@/components/portfolio/ProfileIllustration";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -421,21 +422,14 @@ export default function Hero() {
               <div className="absolute -inset-4 rounded-full border border-fuchsia-500/20 animate-spin-slow" />
               <div className="absolute -inset-8 rounded-full border border-fuchsia-500/10 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
 
-              {/* Profile image */}
+              {/* Profile illustration */}
               <div
                 ref={profileRef}
                 className="relative h-64 w-64 overflow-hidden rounded-full bg-gradient-to-br from-fuchsia-400 to-fuchsia-600 p-1 shadow-glow md:h-80 md:w-80"
                 style={{ clipPath: "circle(0% at 50% 50%)" }}
               >
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
-                  <div className="flex flex-col items-center gap-2">
-                    <span className="font-heading text-6xl font-bold text-gradient md:text-7xl">
-                      LC
-                    </span>
-                    <span className="text-xs font-medium text-muted-foreground">
-                      Full-Stack Developer
-                    </span>
-                  </div>
+                  <ProfileIllustration />
                 </div>
               </div>
 
