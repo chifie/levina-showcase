@@ -32,23 +32,29 @@ export default function Portfolio() {
   const [loading, setLoading] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // GSAP Flip transition on page load after preloader
+  // GSAP Flip transition on page load after preloader exits
   useEffect(() => {
     if (!loading && contentRef.current) {
-      // Capture the current state
-      const flipState = Flip.getState(contentRef.current.querySelectorAll("section, header, footer"));
+      const sections = contentRef.current.querySelectorAll("section, header, footer");
+      if (sections.length === 0) return;
 
-      // Set initial invisible state
-      gsap.set(contentRef.current, { autoAlpha: 1 });
+      const flipState = Flip.getState(sections);
 
-      // Animate from the captured state using Flip
-      Flip.from(flipState, {
-        duration: 0.8,
-        ease: "power3.inOut",
-        stagger: 0.04,
-        simple: true,
-        absolute: true,
-        fade: true,
+      // Initial state before Flip
+      gsap.set(sections, { autoAlpha: 0, y: 20 });
+
+      // Delay Flip to let preloader exit animation finish
+      gsap.delayedCall(0.9, () => {
+        gsap.set(contentRef.current, { autoAlpha: 1 });
+        gsap.set(sections, { autoAlpha: 1 });
+        Flip.from(flipState, {
+          duration: 0.8,
+          ease: "power3.inOut",
+          stagger: 0.04,
+          simple: true,
+          absolute: true,
+          fade: true,
+        });
       });
     }
   }, [loading]);
