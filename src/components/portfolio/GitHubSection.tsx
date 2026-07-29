@@ -220,7 +220,6 @@ export default function GitHubSection() {
                   <ContributionCell
                     key={dayIndex}
                     level={day}
-                    index={weekIndex * 7 + dayIndex}
                   />
                 ))}
               </div>
