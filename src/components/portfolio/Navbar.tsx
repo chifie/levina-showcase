@@ -96,7 +96,7 @@ export default function Navbar() {
       <nav
         className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${
           scrolled
-            ? "glass-strong shadow-elegant mx-4 border border-orange-500/10"
+            ? "glass-strong shadow-elegant mx-4 border border-fuchsia-500/10"
             : "bg-transparent"
         }`}
       >
@@ -136,8 +136,8 @@ export default function Navbar() {
                   }}
                   className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
                     activeSection === n.id
-                      ? "text-orange-500"
-                      : "text-muted-foreground hover:text-foreground hover:bg-orange-500/5"
+                      ? "text-fuchsia-500"
+                      : "text-muted-foreground hover:text-foreground hover:bg-fuchsia-500/5"
                   }`}
                 >
                   {n.label}
@@ -162,10 +162,10 @@ export default function Navbar() {
           <button
             onClick={toggle}
             aria-label="Toggle theme"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-orange-500/10"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-fuchsia-500/10"
           >
             <span className="transition-transform duration-300 hover:rotate-12">
-              {theme === "dark" ? <FaSun className="text-orange-400" /> : <FaMoon />}
+              {theme === "dark" ? <FaSun className="text-fuchsia-400" /> : <FaMoon />}
             </span>
           </button>
 
@@ -176,7 +176,7 @@ export default function Navbar() {
             className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow md:hidden"
           >
             {open ? (
-              <FaTimes className="text-orange-500" />
+              <FaTimes className="text-fuchsia-500" />
             ) : (
               <FaBars />
             )}
@@ -188,7 +188,7 @@ export default function Navbar() {
       {open && (
         <div
           ref={mobileMenuRef}
-          className="mx-4 mt-2 rounded-2xl glass-strong border border-orange-500/10 p-3 shadow-elegant md:hidden"
+          className="mx-4 mt-2 rounded-2xl glass-strong border border-fuchsia-500/10 p-3 shadow-elegant md:hidden"
         >
           <ul className="flex flex-col gap-1">
             {NAV.map((n) => (
@@ -201,8 +201,8 @@ export default function Navbar() {
                   }}
                   className={`block rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
                     activeSection === n.id
-                      ? "bg-orange-500/10 text-orange-500"
-                      : "hover:bg-orange-500/5 hover:text-foreground"
+                      ? "bg-fuchsia-500/10 text-fuchsia-500"
+                      : "hover:bg-fuchsia-500/5 hover:text-foreground"
                   }`}
                 >
                   {n.label}

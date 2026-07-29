@@ -106,7 +106,7 @@ function StatCard({
   return (
     <div
       ref={cardRef}
-      className="group relative overflow-hidden rounded-3xl glass-strong border border-orange-500/10 p-7 shadow-elegant transition-all duration-300 hover:shadow-glow"
+      className="group relative overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 p-7 shadow-elegant transition-all duration-300 hover:shadow-glow"
     >
       <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-primary opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20" />
       <div className="relative">
@@ -182,12 +182,12 @@ function TimelineItem({
     >
       {/* Desktop: alternate sides */}
       <div className={side === "right" ? "md:col-start-2" : "md:col-start-1 md:text-right"}>
-        <div className="rounded-2xl glass-strong border border-orange-500/10 p-6 shadow-elegant transition-all duration-300 hover:shadow-glow">
+        <div className="rounded-2xl glass-strong border border-fuchsia-500/10 p-6 shadow-elegant transition-all duration-300 hover:shadow-glow">
           <span className="inline-block rounded-full bg-gradient-primary px-3 py-1 text-xs font-semibold text-white shadow-glow">
             {year}
           </span>
           <h3 className="mt-3 font-heading text-xl font-bold">{title}</h3>
-          <p className="text-sm font-medium text-orange-500">{subtitle}</p>
+          <p className="text-sm font-medium text-fuchsia-500">{subtitle}</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
         </div>
       </div>
@@ -195,7 +195,7 @@ function TimelineItem({
       {/* Dot on timeline */}
       <div
         ref={dotRef}
-        className="absolute left-0 top-6 z-10 h-4 w-4 rounded-full border-2 border-orange-500 bg-background md:left-1/2 md:-translate-x-1/2"
+        className="absolute left-0 top-6 z-10 h-4 w-4 rounded-full border-2 border-fuchsia-500 bg-background md:left-1/2 md:-translate-x-1/2"
         style={{ scale: 0 }}
       />
     </div>
@@ -258,15 +258,14 @@ export default function About() {
       className="relative py-28 overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="pointer-events-none absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-orange-500/5 blur-[120px]" />
+      <div className="pointer-events-none absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-fuchsia-500/5 blur-[120px]" />
 
       <div className="mx-auto max-w-6xl px-6">
         {/* Section header */}
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-orange-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-orange-500"
-          >
+            className="inline-block rounded-full glassborder border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
             About
           </span>
           <h2
@@ -287,7 +286,7 @@ export default function About() {
         {/* About content */}
         <div
           ref={contentRef}
-          className="mx-auto mb-20 max-w-4xl rounded-3xl glass-strong border border-orange-500/10 p-8 shadow-elegant md:p-12"
+          className="mx-auto mb-20 max-w-4xl rounded-3xl glass-strong border border-fuchsia-500/10 p-8 shadow-elegant md:p-12"
         >
           <p className="font-heading text-2xl font-semibold">
             Hello, I&apos;m Levina Chifie{" "}
@@ -338,7 +337,7 @@ export default function About() {
 
           <div className="relative mx-auto max-w-4xl">
             {/* Timeline line */}
-            <div className="absolute left-[7px] top-0 h-full w-px bg-gradient-to-b from-orange-500/50 via-orange-500/30 to-transparent md:left-1/2 md:-translate-x-px" />
+            <div className="absolute left-[7px] top-0 h-full w-px bg-gradient-to-b from-fuchsia-500/50 via-fuchsia-500/30 to-transparent md:left-1/2 md:-translate-x-px" />
 
             {TIMELINE.map((item, i) => (
               <TimelineItem key={i} {...item} index={i} />
