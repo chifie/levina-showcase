@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { Flip } from "gsap/Flip";
 import Preloader from "@/components/portfolio/Preloader";
 import Navbar from "@/components/portfolio/Navbar";
 import Hero from "@/components/portfolio/Hero";
@@ -9,6 +11,8 @@ import Experience from "@/components/portfolio/Experience";
 import GitHubSection from "@/components/portfolio/GitHubSection";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
+
+gsap.registerPlugin(Flip);
 
 function FontLoader() {
   useEffect(() => {
@@ -26,12 +30,34 @@ function FontLoader() {
 
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // GSAP Flip transition on page load after preloader
+  useEffect(() => {
+    if (!loading && contentRef.current) {
+      // Capture the current state
+      const flipState = Flip.getState(contentRef.current.querySelectorAll("section, header, footer"));
+
+      // Set initial invisible state
+      gsap.set(contentRef.current, { autoAlpha: 1 });
+
+      // Animate from the captured state using Flip
+      Flip.from(flipState, {
+        duration: 0.8,
+        ease: "power3.inOut",
+        stagger: 0.04,
+        simple: true,
+        absolute: true,
+        fade: true,
+      });
+    }
+  }, [loading]);
 
   return (
     <>
       <FontLoader />
       {loading && <Preloader onComplete={() => setLoading(false)} />}
-      <div className={loading ? "invisible" : "visible"}>
+      <div ref={contentRef} className={loading ? "invisible" : "visible"}>
         <Navbar />
         <main>
           <Hero />
