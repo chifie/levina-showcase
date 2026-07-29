@@ -230,47 +230,48 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  // Mouse parallax effect
+  // Mouse parallax effect - optimized with gsap.quickTo
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
+
+    const iconEls: HTMLDivElement[] = [];
+    const iconTweenersX: ((v: number) => void)[] = [];
+    const iconTweenersY: ((v: number) => void)[] = [];
+
+    if (iconsRef.current) {
+      const icons = iconsRef.current.querySelectorAll<HTMLDivElement>("[data-icon]");
+      icons.forEach((icon) => {
+        iconEls.push(icon);
+        const depth = parseFloat(icon.dataset.depth || "1");
+        iconTweenersX.push(gsap.quickTo(icon, "x", { duration: 0.8, ease: "power2.out" }));
+        iconTweenersY.push(gsap.quickTo(icon, "y", { duration: 0.8, ease: "power2.out" }));
+      });
+    }
+
+    const blob1X = blob1Ref.current ? gsap.quickTo(blob1Ref.current, "x", { duration: 1.2, ease: "power2.out" }) : null;
+    const blob1Y = blob1Ref.current ? gsap.quickTo(blob1Ref.current, "y", { duration: 1.2, ease: "power2.out" }) : null;
+    const blob2X = blob2Ref.current ? gsap.quickTo(blob2Ref.current, "x", { duration: 1.2, ease: "power2.out" }) : null;
+    const blob2Y = blob2Ref.current ? gsap.quickTo(blob2Ref.current, "y", { duration: 1.2, ease: "power2.out" }) : null;
 
     const onMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const x = (clientX / window.innerWidth - 0.5) * 2;
       const y = (clientY / window.innerHeight - 0.5) * 2;
 
-      if (iconsRef.current) {
-        const icons = iconsRef.current.querySelectorAll<HTMLDivElement>("[data-icon]");
-        icons.forEach((icon) => {
-          gsap.to(icon, {
-            x: x * 15 * (parseFloat(icon.dataset.depth || "1")),
-            y: y * 15 * (parseFloat(icon.dataset.depth || "1")),
-            duration: 0.8,
-            ease: "power2.out",
-          });
-        });
-      }
+      iconEls.forEach((icon, i) => {
+        const depth = parseFloat(icon.dataset.depth || "1");
+        iconTweenersX[i](x * 15 * depth);
+        iconTweenersY[i](y * 15 * depth);
+      });
 
-      if (blob1Ref.current) {
-        gsap.to(blob1Ref.current, {
-          x: x * 20 + 60,
-          y: y * 20 - 40,
-          duration: 1.2,
-          ease: "power2.out",
-        });
-      }
-      if (blob2Ref.current) {
-        gsap.to(blob2Ref.current, {
-          x: x * -15 - 50,
-          y: y * -15 + 60,
-          duration: 1.2,
-          ease: "power2.out",
-        });
-      }
+      if (blob1X) blob1X(x * 20 + 60);
+      if (blob1Y) blob1Y(y * 20 - 40);
+      if (blob2X) blob2X(x * -15 - 50);
+      if (blob2Y) blob2Y(y * -15 + 60);
     };
 
-    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", onMouseMove);
   }, []);
 
