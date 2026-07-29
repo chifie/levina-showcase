@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  FaReact, FaNodeJs, FaPython, FaDocker, FaGitAlt, FaFigma, FaHtml5, FaCss3Alt, FaPhp, FaJava,
+  FaReact, FaNodeJs, FaPython, FaDocker, FaGitAlt, FaFigma, FaHtml5, FaCss3Alt, FaPhp,
 } from "react-icons/fa";
 import {
   SiTypescript, SiNextdotjs, SiTailwindcss, SiNestjs, SiExpress, SiPostgresql, SiMysql,

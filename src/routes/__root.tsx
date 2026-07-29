@@ -11,17 +11,16 @@ import {
 
 import appCss from "../styles.css?url";
 
-function NotFoundComponent() {
-  // Lazy load the animated 404 component (only when needed)
-  const NotFoundSection = React.lazy(() => import("@/components/portfolio/NotFoundSection"));
+const LazyNotFound = React.lazy(() => import("@/components/portfolio/NotFoundSection"));
 
+function NotFoundComponent() {
   return (
     <React.Suspense fallback={
       <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-fuchsia-500 border-t-transparent" />
       </div>
     }>
-      <NotFoundSection />
+      <LazyNotFound />
     </React.Suspense>
   );
 }
