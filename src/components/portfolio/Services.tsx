@@ -6,6 +6,7 @@ import {
   FaServer,
   FaMobileAlt,
   FaPaintBrush,
+  FaArrowRight,
 } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
