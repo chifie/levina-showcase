@@ -1,15 +1,15 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaCode, FaRocket, Cpu, Lightbulb } from "react-icons/fa";
+import { FaCode, FaRocket } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
   { value: 10, suffix: "+", label: "Projects Delivered", Icon: FaCode },
   { value: 8, suffix: "", label: "Technologies Mastered", Icon: FaRocket },
-  { value: 500, suffix: "+", label: "Commits on GitHub", Icon: Cpu },
-  { value: 3, suffix: "+", label: "Years of Development", Icon: Lightbulb },
+  { value: 500, suffix: "+", label: "Commits on GitHub", Icon: FaCode },
+  { value: 3, suffix: "+", label: "Years of Development", Icon: FaRocket },
 ];
 
 function StatCard({
