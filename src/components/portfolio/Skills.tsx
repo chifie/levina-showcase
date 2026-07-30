@@ -20,18 +20,7 @@ import {
   SiPostgresql,
   SiMysql,
   SiGithub,
-  SiVuedotjs,
-  SiGraphql,
 } from "react-icons/si";
-import { DiFastapi } from "react-icons/di";
-import { SiNestjs } from "react-icons/si";
-import { DiJavascript1 } from "react-icons/di";
-import { SiPostgresql } from "react-icons/si";
-import { SiMysql } from "react-icons/si";
-import { SiGit } from "react-icons/si";
-import { SiVscode } from "react-icons/si";
-import { SiPostman } from "react-icons/si";
-import { SiFigma } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,7 +32,7 @@ const SKILL_CATEGORIES = [
       { name: "React", icon: FaReact, level: 90, color: "#61DAFB" },
       { name: "Next.js", icon: SiNextdotjs, level: 80, color: "#000000" },
       { name: "TypeScript", icon: SiTypescript, level: 85, color: "#3178C6" },
-      { name: "JavaScript", icon: DiJavascript1, level: 92, color: "#F7DF1E" },
+      { name: "JavaScript", icon: FaJs, level: 92, color: "#F7DF1E" },
       { name: "HTML5", icon: FaHtml5, level: 95, color: "#E34F26" },
       { name: "CSS3", icon: FaCss3Alt, level: 90, color: "#1572B6" },
       { name: "Tailwind CSS", icon: SiTailwindcss, level: 88, color: "#06B6D4" },
@@ -53,8 +42,8 @@ const SKILL_CATEGORIES = [
     title: "Backend",
     icon: FaNodeJs,
     skills: [
-      { name: "FastAPI", icon: DiFastapi, level: 75, color: "#009688" },
-      { name: "NestJS", icon: SiNestjs, level: 70, color: "#E0234E" },
+      { name: "FastAPI", icon: FaCode, level: 75, color: "#009688" },
+      { name: "NestJS", icon: SiTypescript, level: 70, color: "#E0234E" },
       { name: "Express.js", icon: SiExpress, level: 78, color: "#000000" },
       { name: "Node.js", icon: FaNodeJs, level: 82, color: "#339933" },
       { name: "REST APIs", icon: FaCode, level: 85, color: "#6366F1" },
@@ -78,13 +67,13 @@ const SKILL_CATEGORIES = [
   },
   {
     title: "Tools",
-    icon: SiGit,
+    icon: FaGitAlt,
     skills: [
-      { name: "Git", icon: SiGit, level: 88, color: "#F05032" },
+      { name: "Git", icon: FaGitAlt, level: 88, color: "#F05032" },
       { name: "GitHub", icon: SiGithub, level: 85, color: "#181717" },
-      { name: "VS Code", icon: SiVscode, level: 90, color: "#007ACC" },
-      { name: "Postman", icon: SiPostman, level: 80, color: "#FF6C37" },
-      { name: "Figma", icon: SiFigma, level: 75, color: "#F24E1E" },
+      { name: "VS Code", icon: FaCode, level: 90, color: "#007ACC" },
+      { name: "Postman", icon: FaCode, level: 80, color: "#FF6C37" },
+      { name: "Figma", icon: FaCode, level: 75, color: "#F24E1E" },
     ],
   },
 ];
