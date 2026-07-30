@@ -13,7 +13,7 @@ import {
   FaArrowDown,
 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
-import ProfileIllustration from "@/components/portfolio/ProfileIllustration";
+import chifieImage from "@/assets/chifie.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
