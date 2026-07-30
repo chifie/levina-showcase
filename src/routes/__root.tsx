@@ -11,7 +11,6 @@ import {
 
 import appCss from "../styles.css?url";
 
-
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
@@ -64,7 +63,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Levina Chifie, Full-Stack Developer, Female Developer, React, TypeScript, Next.js, Node.js, Portfolio, Web Developer, Software Engineer, UI/UX, Tailwind CSS, GSAP",
       },
-      { property: "og:title", content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
+      {
+        property: "og:title",
+        content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer",
+      },
       {
         property: "og:description",
         content:
@@ -75,10 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: "/og-image.png" },
       { property: "og:site_name", content: "Levina Chifie Portfolio" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
+      {
+        name: "twitter:title",
+        content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer",
+      },
       {
         name: "twitter:description",
-        content: "Graduate-level Full Stack Software Developer and Mobile App Developer building modern, scalable web and mobile applications.",
+        content:
+          "Graduate-level Full Stack Software Developer and Mobile App Developer building modern, scalable web and mobile applications.",
       },
       { name: "twitter:image", content: "/og-image.png" },
       { name: "twitter:creator", content: "@levinachifie" },

@@ -15,7 +15,10 @@ export const Route = createFileRoute("/")({
         content:
           "Levina Chifie, Full Stack Software Developer, Mobile App Developer, React Developer, TypeScript, Next.js, FastAPI, NestJS, Flutter, Tailwind CSS, GSAP, Portfolio, Professional Developer, Software Engineer",
       },
-      { property: "og:title", content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
+      {
+        property: "og:title",
+        content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer",
+      },
       {
         property: "og:description",
         content:
@@ -27,7 +30,10 @@ export const Route = createFileRoute("/")({
       { property: "og:site_name", content: "Levina Chifie Portfolio" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
+      {
+        name: "twitter:title",
+        content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer",
+      },
       {
         name: "twitter:description",
         content:

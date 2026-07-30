@@ -138,7 +138,7 @@ export default function Hero() {
           subtitleRef.current,
           { opacity: 0, y: 30 },
           { opacity: 1, y: 0, duration: 0.8 },
-          "-=0.2"
+          "-=0.2",
         );
       }
 
@@ -147,7 +147,7 @@ export default function Hero() {
           descriptionRef.current,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6 },
-          "-=0.1"
+          "-=0.1",
         );
       }
 
@@ -157,7 +157,7 @@ export default function Hero() {
           btns,
           { opacity: 0, scale: 0.8, y: 20 },
           { opacity: 1, scale: 1, y: 0, duration: 0.5, stagger: 0.12 },
-          "-=0.1"
+          "-=0.1",
         );
       }
 
@@ -167,7 +167,7 @@ export default function Hero() {
           links,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.4, stagger: 0.08 },
-          "-=0.1"
+          "-=0.1",
         );
       }
 
@@ -176,7 +176,7 @@ export default function Hero() {
           profileRef.current,
           { clipPath: "circle(0% at 50% 50%)" },
           { clipPath: "circle(50% at 50% 50%)", duration: 1.2, ease: "power4.out" },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -242,10 +242,18 @@ export default function Hero() {
       });
     }
 
-    const blob1X = blob1Ref.current ? gsap.quickTo(blob1Ref.current, "x", { duration: 1.2, ease: "power2.out" }) : null;
-    const blob1Y = blob1Ref.current ? gsap.quickTo(blob1Ref.current, "y", { duration: 1.2, ease: "power2.out" }) : null;
-    const blob2X = blob2Ref.current ? gsap.quickTo(blob2Ref.current, "x", { duration: 1.2, ease: "power2.out" }) : null;
-    const blob2Y = blob2Ref.current ? gsap.quickTo(blob2Ref.current, "y", { duration: 1.2, ease: "power2.out" }) : null;
+    const blob1X = blob1Ref.current
+      ? gsap.quickTo(blob1Ref.current, "x", { duration: 1.2, ease: "power2.out" })
+      : null;
+    const blob1Y = blob1Ref.current
+      ? gsap.quickTo(blob1Ref.current, "y", { duration: 1.2, ease: "power2.out" })
+      : null;
+    const blob2X = blob2Ref.current
+      ? gsap.quickTo(blob2Ref.current, "x", { duration: 1.2, ease: "power2.out" })
+      : null;
+    const blob2Y = blob2Ref.current
+      ? gsap.quickTo(blob2Ref.current, "y", { duration: 1.2, ease: "power2.out" })
+      : null;
 
     const onMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
@@ -293,10 +301,7 @@ export default function Hero() {
         }}
       />
 
-      <div
-        ref={iconsRef}
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
+      <div ref={iconsRef} className="pointer-events-none absolute inset-0 overflow-hidden">
         {FLOATING_ICONS.map(({ Icon, color, size, delay }, i) => (
           <div
             key={i}
@@ -344,8 +349,8 @@ export default function Hero() {
               ref={descriptionRef}
               className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground lg:mx-0 md:text-lg"
             >
-              I build modern, scalable web and mobile applications with clean architecture,
-              elegant design, and robust backend systems that deliver real value.
+              I build modern, scalable web and mobile applications with clean architecture, elegant
+              design, and robust backend systems that deliver real value.
             </p>
 
             <div
@@ -384,7 +389,11 @@ export default function Hero() {
             >
               {[
                 { Icon: FaGithub, href: "https://github.com/chifie", label: "GitHub" },
-                { Icon: FaLinkedin, href: "https://linkedin.com/in/levinachifie", label: "LinkedIn" },
+                {
+                  Icon: FaLinkedin,
+                  href: "https://linkedin.com/in/levinachifie",
+                  label: "LinkedIn",
+                },
                 { Icon: FaEnvelope, href: "mailto:levinachifie@gmail.com", label: "Email" },
               ].map(({ Icon, href, label }, i) => (
                 <a
@@ -404,7 +413,10 @@ export default function Hero() {
           <div className="mt-12 flex-shrink-0 lg:mt-0">
             <div className="relative">
               <div className="absolute -inset-4 rounded-full border border-fuchsia-500/20 animate-spin-slow" />
-              <div className="absolute -inset-8 rounded-full border border-fuchsia-500/10 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
+              <div
+                className="absolute -inset-8 rounded-full border border-fuchsia-500/10 animate-spin-slow"
+                style={{ animationDirection: "reverse", animationDuration: "30s" }}
+              />
 
               <div
                 ref={profileRef}
@@ -412,7 +424,11 @@ export default function Hero() {
                 style={{ clipPath: "circle(0% at 50% 50%)" }}
               >
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
-                  <img src={chifieImage} alt="Levina" className="h-full w-full object-cover object-top" />
+                  <img
+                    src={chifieImage}
+                    alt="Levina"
+                    className="h-full w-full object-cover object-top"
+                  />
                 </div>
               </div>
 

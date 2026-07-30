@@ -46,7 +46,7 @@ function StatCard({
         gsap.fromTo(
           card,
           { opacity: 0, y: 40, scale: 0.9 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: index * 0.1, ease: "power3.out" }
+          { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: index * 0.1, ease: "power3.out" },
         );
 
         gsap.fromTo(
@@ -62,7 +62,7 @@ function StatCard({
               const current = parseInt(numberEl.textContent || "0");
               numberEl.textContent = current + suffix;
             },
-          }
+          },
         );
       },
     });
@@ -111,7 +111,7 @@ export default function About() {
               start: "top 80%",
               once: true,
             },
-          }
+          },
         );
       }
 
@@ -128,7 +128,7 @@ export default function About() {
               start: "top 75%",
               once: true,
             },
-          }
+          },
         );
       }
 
@@ -149,7 +149,7 @@ export default function About() {
               start: "top 85%",
               once: true,
             },
-          }
+          },
         );
       }
     }, sectionRef);
@@ -158,11 +158,7 @@ export default function About() {
   }, []);
 
   return (
-    <section
-      id="about"
-      ref={sectionRef}
-      className="relative py-28 overflow-hidden"
-    >
+    <section id="about" ref={sectionRef} className="relative py-28 overflow-hidden">
       <div className="pointer-events-none absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-fuchsia-500/5 blur-[120px]" />
 
       <div className="mx-auto max-w-6xl px-6">
@@ -177,14 +173,11 @@ export default function About() {
             data-anim
             className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Crafting Code with{" "}
-            <span className="text-gradient">Purpose</span>
+            Crafting Code with <span className="text-gradient">Purpose</span>
           </h2>
-          <p
-            data-anim
-            className="mx-auto mt-4 max-w-2xl text-muted-foreground"
-          >
-            Building high-quality software that solves real problems and delivers exceptional user experiences
+          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Building high-quality software that solves real problems and delivers exceptional user
+            experiences
           </p>
         </div>
 
@@ -198,27 +191,26 @@ export default function About() {
           </p>
           <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              With a strong foundation in software engineering, I specialize in building
-              modern, scalable web and mobile applications. I transform complex requirements
-              into clean, maintainable code and intuitive user interfaces that users love.
+              With a strong foundation in software engineering, I specialize in building modern,
+              scalable web and mobile applications. I transform complex requirements into clean,
+              maintainable code and intuitive user interfaces that users love.
             </p>
             <p>
-              I work across the entire stack — from designing polished front-end experiences
-              with React and Next.js, to building robust back-end APIs with FastAPI and
-              NestJS. My focus is on writing code that is not only functional but also
-              performant, secure, and easy to maintain.
+              I work across the entire stack — from designing polished front-end experiences with
+              React and Next.js, to building robust back-end APIs with FastAPI and NestJS. My focus
+              is on writing code that is not only functional but also performant, secure, and easy
+              to maintain.
             </p>
             <p>
               Mobile development is another core strength. I build cross-platform mobile
-              applications with Flutter and Dart, delivering native-quality experiences on
-              both iOS and Android from a single codebase.
+              applications with Flutter and Dart, delivering native-quality experiences on both iOS
+              and Android from a single codebase.
             </p>
             <p>
-              I am passionate about solving challenging problems, staying current with
-              emerging technologies, and continuously improving my craft. Whether it is
-              architecting a new system, optimizing an existing codebase, or delivering
-              pixel-perfect UI implementations, I approach every project with precision
-              and dedication.
+              I am passionate about solving challenging problems, staying current with emerging
+              technologies, and continuously improving my craft. Whether it is architecting a new
+              system, optimizing an existing codebase, or delivering pixel-perfect UI
+              implementations, I approach every project with precision and dedication.
             </p>
           </div>
         </div>

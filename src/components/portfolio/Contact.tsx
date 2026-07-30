@@ -1,13 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-  FaPaperPlane,
-  FaCheck,
-} from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaPaperPlane, FaCheck } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,9 +109,10 @@ function FloatingInput({
     };
 
     const onBlur = () => {
-      const hasValue = input instanceof HTMLInputElement || input instanceof HTMLTextAreaElement
-        ? input.value.length > 0
-        : false;
+      const hasValue =
+        input instanceof HTMLInputElement || input instanceof HTMLTextAreaElement
+          ? input.value.length > 0
+          : false;
       if (!hasValue) {
         gsap.to(wrapper.querySelector(".float-label"), {
           top: "1rem",
@@ -184,7 +179,7 @@ export default function Contact() {
               start: "top 80%",
               once: true,
             },
-          }
+          },
         );
       }
 
@@ -204,7 +199,7 @@ export default function Contact() {
               start: "top 85%",
               once: true,
             },
-          }
+          },
         );
       }
 
@@ -222,7 +217,7 @@ export default function Contact() {
               start: "top 85%",
               once: true,
             },
-          }
+          },
         );
       }
     }, sectionRef);
@@ -251,11 +246,7 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      ref={sectionRef}
-      className="relative py-28 overflow-hidden"
-    >
+    <section id="contact" ref={sectionRef} className="relative py-28 overflow-hidden">
       <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-fuchsia-500/5 blur-[120px]" />
       <div className="pointer-events-none absolute -right-32 bottom-1/3 h-72 w-72 rounded-full bg-fuchsia-400/5 blur-[100px]" />
 
@@ -284,22 +275,15 @@ export default function Contact() {
             data-anim
             className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Let&apos;s Create{" "}
-            <span className="text-gradient">Together</span>
+            Let&apos;s Create <span className="text-gradient">Together</span>
           </h2>
-          <p
-            data-anim
-            className="mx-auto mt-4 max-w-2xl text-muted-foreground"
-          >
+          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             Have a project idea or need a developer? Let&apos;s connect.
           </p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-5">
-          <div
-            ref={infoRef}
-            className="space-y-4 lg:col-span-2"
-          >
+          <div ref={infoRef} className="space-y-4 lg:col-span-2">
             {CONTACT_INFO.map((item, i) => {
               const { Icon, label, value, href } = item;
               const Content = (

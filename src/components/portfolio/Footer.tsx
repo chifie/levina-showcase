@@ -37,7 +37,7 @@ function BackToTop() {
       gsap.fromTo(
         btnRef.current,
         { scale: 1 },
-        { scale: 1.2, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }
+        { scale: 1.2, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" },
       );
     }
   };
@@ -163,7 +163,7 @@ export default function Footer() {
               start: "top 90%",
               once: true,
             },
-          }
+          },
         );
       }
     }, footerRef);
@@ -197,18 +197,20 @@ export default function Footer() {
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-white font-bold shadow-glow transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                   L
                 </span>
-                <span className="font-heading text-xl font-bold text-gradient">
-                  Levina Chifie
-                </span>
+                <span className="font-heading text-xl font-bold text-gradient">Levina Chifie</span>
               </a>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                A dedicated Full Stack Software Developer and Mobile App Developer
-                crafting modern digital experiences with clean code and elegant design.
+                A dedicated Full Stack Software Developer and Mobile App Developer crafting modern
+                digital experiences with clean code and elegant design.
               </p>
               <div className="mt-5 flex gap-2">
                 {[
                   { Icon: FaGithub, href: "https://github.com/chifie", label: "GitHub" },
-                  { Icon: FaLinkedin, href: "https://linkedin.com/in/levinachifie", label: "LinkedIn" },
+                  {
+                    Icon: FaLinkedin,
+                    href: "https://linkedin.com/in/levinachifie",
+                    label: "LinkedIn",
+                  },
                   { Icon: FaEnvelope, href: "mailto:levinachifie@gmail.com", label: "Email" },
                 ].map(({ Icon, href, label }, i) => (
                   <a
@@ -282,9 +284,7 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Levina Chifie. Crafted with{" "}
               <FaHeart className="inline text-fuchsia-500 mx-0.5" /> and code.
             </p>
-            <p className="text-[10px]">
-              Built with React &bull; GSAP &bull; Tailwind CSS
-            </p>
+            <p className="text-[10px]">Built with React &bull; GSAP &bull; Tailwind CSS</p>
           </div>
         </div>
       </footer>

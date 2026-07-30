@@ -86,7 +86,7 @@ export default function Projects() {
               start: "top 80%",
               once: true,
             },
-          }
+          },
         );
       }
 
@@ -129,7 +129,7 @@ export default function Projects() {
                 gsap.fromTo(
                   card,
                   { opacity: 0, y: 40 },
-                  { opacity: 1, y: 0, duration: 0.6, delay: i * 0.1, ease: "power3.out" }
+                  { opacity: 1, y: 0, duration: 0.6, delay: i * 0.1, ease: "power3.out" },
                 );
               },
             });
@@ -142,11 +142,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section
-      id="projects"
-      ref={sectionRef}
-      className="relative overflow-hidden py-28"
-    >
+    <section id="projects" ref={sectionRef} className="relative overflow-hidden py-28">
       <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-fuchsia-500/5 blur-[120px]" />
 
       <div ref={containerRef} className="mx-auto max-w-6xl px-6">
@@ -163,10 +159,7 @@ export default function Projects() {
           >
             Featured <span className="text-gradient">Work</span>
           </h2>
-          <p
-            data-anim
-            className="mx-auto mt-4 max-w-2xl text-muted-foreground"
-          >
+          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             A selection of projects I have built with passion and precision
           </p>
         </div>
@@ -176,20 +169,26 @@ export default function Projects() {
         <div
           ref={cardsWrapperRef}
           className="horizontal-scroll gap-8 px-6"
-          style={{ paddingLeft: "calc((100vw - 72rem) / 2 + 1.5rem)", paddingRight: "calc((100vw - 72rem) / 2 + 1.5rem)" }}
+          style={{
+            paddingLeft: "calc((100vw - 72rem) / 2 + 1.5rem)",
+            paddingRight: "calc((100vw - 72rem) / 2 + 1.5rem)",
+          }}
         >
           {PROJECTS.map((project, i) => (
-            <div
-              key={i}
-              data-project-card
-              className="group w-[420px] flex-shrink-0 lg:w-[480px]"
-            >
+            <div key={i} data-project-card className="group w-[420px] flex-shrink-0 lg:w-[480px]">
               <div className="relative overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2">
                 <div
                   className={`relative h-56 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-64`}
                 >
                   <div className="absolute inset-0 bg-black/10" />
-                  <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "20px 20px" }} />
+                  <div
+                    className="absolute inset-0 opacity-30"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+                      backgroundSize: "20px 20px",
+                    }}
+                  />
 
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="font-heading text-7xl font-bold text-white/90 drop-shadow-lg transition-all duration-500 group-hover:scale-110 lg:text-8xl">
@@ -284,8 +283,16 @@ export default function Projects() {
               className="group overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow"
               style={{ opacity: 0 }}
             >
-              <div className={`relative h-48 overflow-hidden bg-gradient-to-br ${project.gradient}`}>
-                <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "20px 20px" }} />
+              <div
+                className={`relative h-48 overflow-hidden bg-gradient-to-br ${project.gradient}`}
+              >
+                <div
+                  className="absolute inset-0 opacity-30"
+                  style={{
+                    backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+                    backgroundSize: "20px 20px",
+                  }}
+                />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="font-heading text-6xl font-bold text-white/90 drop-shadow-lg">
                     {project.initials}
@@ -295,13 +302,18 @@ export default function Projects() {
 
               <div className="p-5">
                 <h3 className="font-heading text-lg font-bold">{project.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{project.description}</p>
+                <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+                  {project.description}
+                </p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {project.tech.map((t) => (
                     <span
                       key={t}
                       className="rounded-full px-2.5 py-0.5 text-[10px] font-medium"
-                      style={{ background: `color-mix(in srgb, ${project.color} 12%, transparent)`, color: project.color }}
+                      style={{
+                        background: `color-mix(in srgb, ${project.color} 12%, transparent)`,
+                        color: project.color,
+                      }}
                     >
                       {t}
                     </span>
@@ -309,12 +321,22 @@ export default function Projects() {
                 </div>
                 <div className="mt-4 flex gap-2">
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noreferrer" className="flex-1 rounded-full glass border border-fuchsia-500/20 px-3 py-2 text-center text-xs font-semibold">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 rounded-full glass border border-fuchsia-500/20 px-3 py-2 text-center text-xs font-semibold"
+                    >
                       GitHub
                     </a>
                   )}
                   {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noreferrer" className="flex-1 rounded-full bg-gradient-primary px-3 py-2 text-center text-xs font-semibold text-white">
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 rounded-full bg-gradient-primary px-3 py-2 text-center text-xs font-semibold text-white"
+                    >
                       Live Demo
                     </a>
                   )}

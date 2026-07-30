@@ -1,15 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  FaJs,
-  FaReact,
-  FaHtml5,
-  FaCss3Alt,
-  FaNodeJs,
-  FaGitAlt,
-  FaCode,
-} from "react-icons/fa";
+import { FaJs, FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaCode } from "react-icons/fa";
 import {
   SiTypescript,
   SiDart,
@@ -107,10 +99,14 @@ function SkillCard({
         gsap.fromTo(
           card,
           { opacity: 0, y: 20, scale: 0.95 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.5, delay: index * 0.04, ease: "power3.out" }
+          { opacity: 1, y: 0, scale: 1, duration: 0.5, delay: index * 0.04, ease: "power3.out" },
         );
 
-        gsap.fromTo(bar, { width: "0%" }, { width: `${level}%`, duration: 1, delay: 0.3 + index * 0.04, ease: "power2.out" });
+        gsap.fromTo(
+          bar,
+          { width: "0%" },
+          { width: `${level}%`, duration: 1, delay: 0.3 + index * 0.04, ease: "power2.out" },
+        );
       },
     });
 
@@ -166,7 +162,7 @@ export default function Skills() {
               start: "top 80%",
               once: true,
             },
-          }
+          },
         );
       }
     }, sectionRef);
@@ -175,11 +171,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section
-      id="skills"
-      ref={sectionRef}
-      className="relative py-28 overflow-hidden"
-    >
+    <section id="skills" ref={sectionRef} className="relative py-28 overflow-hidden">
       <div className="pointer-events-none absolute left-0 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-fuchsia-500/5 blur-[100px]" />
       <div className="pointer-events-none absolute right-0 bottom-1/3 h-72 w-72 translate-x-1/2 rounded-full bg-fuchsia-400/5 blur-[100px]" />
 
@@ -195,15 +187,11 @@ export default function Skills() {
             data-anim
             className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Technical{" "}
-            <span className="text-gradient">Competencies</span>
+            Technical <span className="text-gradient">Competencies</span>
           </h2>
-          <p
-            data-anim
-            className="mx-auto mt-4 max-w-2xl text-muted-foreground"
-          >
-            A comprehensive set of tools and technologies I work with to deliver
-            high-quality software products
+          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            A comprehensive set of tools and technologies I work with to deliver high-quality
+            software products
           </p>
         </div>
 

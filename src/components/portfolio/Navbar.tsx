@@ -1,13 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useTheme } from "@/hooks/use-theme";
-import {
-  FaSun,
-  FaMoon,
-  FaBars,
-  FaTimes,
-  FaDownload,
-} from "react-icons/fa";
+import { FaSun, FaMoon, FaBars, FaTimes, FaDownload } from "react-icons/fa";
 
 const NAV = [
   { id: "home", label: "Home" },
@@ -54,7 +48,7 @@ export default function Navbar() {
         gsap.fromTo(
           mobileMenuRef.current,
           { opacity: 0, y: -20, scale: 0.95 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "power3.out" }
+          { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "power3.out" },
         );
       }
     }
@@ -165,11 +159,7 @@ export default function Navbar() {
             aria-label="Menu"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow md:hidden"
           >
-            {open ? (
-              <FaTimes className="text-fuchsia-500" />
-            ) : (
-              <FaBars />
-            )}
+            {open ? <FaTimes className="text-fuchsia-500" /> : <FaBars />}
           </button>
         </div>
       </nav>

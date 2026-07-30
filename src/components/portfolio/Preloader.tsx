@@ -51,7 +51,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
           stagger: 0.04,
           ease: "power2.in",
         },
-        "+=0.8"
+        "+=0.8",
       );
     }
 
@@ -60,16 +60,12 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         barRef.current,
         { scaleX: 0 },
         { scaleX: 1, duration: 1.2, ease: "power3.inOut" },
-        "-=0.4"
+        "-=0.4",
       );
     }
 
     if (textRef.current) {
-      tl.to(
-        textRef.current,
-        { opacity: 0, y: -10, duration: 0.3 },
-        "-=0.2"
-      );
+      tl.to(textRef.current, { opacity: 0, y: -10, duration: 0.3 }, "-=0.2");
     }
 
     tl.to(
@@ -79,7 +75,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         duration: 0.8,
         ease: "power4.inOut",
       },
-      "-=0.2"
+      "-=0.2",
     );
 
     return () => {
@@ -99,8 +95,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, #d946ef 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 1px 1px, #d946ef 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />

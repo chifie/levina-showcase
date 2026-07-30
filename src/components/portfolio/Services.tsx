@@ -1,13 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  FaGlobe,
-  FaServer,
-  FaMobileAlt,
-  FaPaintBrush,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaGlobe, FaServer, FaMobileAlt, FaPaintBrush, FaArrowRight } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,7 +63,7 @@ function ServiceCard({
         gsap.fromTo(
           card,
           { opacity: 0, y: 40, scale: 0.96 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: index * 0.12, ease: "power3.out" }
+          { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: index * 0.12, ease: "power3.out" },
         );
       },
     });
@@ -100,9 +94,7 @@ function ServiceCard({
           {title}
         </h3>
 
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          {description}
-        </p>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
 
         <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-fuchsia-500 opacity-0 translate-x-[-10px] transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
           Learn more
@@ -133,7 +125,7 @@ export default function Services() {
               start: "top 80%",
               once: true,
             },
-          }
+          },
         );
       }
     }, sectionRef);
@@ -142,11 +134,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section
-      id="services"
-      ref={sectionRef}
-      className="relative py-28 overflow-hidden"
-    >
+    <section id="services" ref={sectionRef} className="relative py-28 overflow-hidden">
       <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-fuchsia-500/5 blur-[120px]" />
 
       <div className="mx-auto max-w-6xl px-6">
@@ -163,12 +151,9 @@ export default function Services() {
           >
             What I <span className="text-gradient">Do</span>
           </h2>
-          <p
-            data-anim
-            className="mx-auto mt-4 max-w-2xl text-muted-foreground"
-          >
-            I deliver end-to-end software solutions across web, mobile, and backend
-            platforms with a focus on quality and user experience
+          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            I deliver end-to-end software solutions across web, mobile, and backend platforms with a
+            focus on quality and user experience
           </p>
         </div>
 
