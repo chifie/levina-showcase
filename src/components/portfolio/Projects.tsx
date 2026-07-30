@@ -7,40 +7,59 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PROJECTS = [
   {
-    title: "SokoDigital Marketplace",
+    title: "SokoDigital",
     description:
-      "A modern digital marketplace platform connecting buyers and sellers with seamless transactions, real-time messaging, and a beautiful user interface.",
-    tech: ["React", "NestJS", "PostgreSQL", "TypeScript"],
+      "A modern marketplace platform for Tanzania connecting buyers and sellers with seamless transactions, product management, and a complete seller dashboard.",
+    tech: ["React", "FastAPI", "PostgreSQL", "TypeScript"],
     gradient: "from-fuchsia-500 via-pink-500 to-rose-400",
     color: "#d946ef",
-    initials: "SM",
+    initials: "SD",
+    github: "https://github.com",
+    demo: "https://sokodigital.com",
   },
   {
-    title: "Glory Burger App",
+    title: "DalaliMkononi",
     description:
-      "A full-featured burger ordering application with custom menu builder, cart management, order tracking, and an admin dashboard for restaurant management.",
-    tech: ["React", "FastAPI", "PostgreSQL", "Tailwind"],
-    gradient: "from-pink-500 via-fuchsia-500 to-purple-500",
-    color: "#ec4899",
-    initials: "GB",
-  },
-  {
-    title: "Inventory Management System",
-    description:
-      "A comprehensive inventory tracking system with real-time stock updates, barcode scanning, supplier management, and detailed analytics reporting.",
-    tech: ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
+      "A real estate marketplace platform for property listings, agent profiles, search filters, and seamless transaction management across Tanzania.",
+    tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
     gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
     color: "#8b5cf6",
-    initials: "IM",
+    initials: "DM",
+    github: "https://github.com",
+    demo: "https://dalamaimkononi.com",
   },
   {
-    title: "Portfolio Website",
+    title: "TanzaniaKiganjani",
     description:
-      "Award-winning personal portfolio showcasing modern web development with GSAP animations, responsive design, and premium user experience.",
-    tech: ["React", "GSAP", "Tailwind CSS", "TypeScript"],
-    gradient: "from-fuchsia-400 via-pink-500 to-rose-500",
-    color: "#d946ef",
-    initials: "PW",
+      "A digital services platform connecting providers and clients for various services including consulting, delivery, and local business solutions.",
+    tech: ["React", "NestJS", "MySQL", "Tailwind CSS"],
+    gradient: "from-teal-500 via-cyan-500 to-blue-500",
+    color: "#06B6D4",
+    initials: "TK",
+    github: "https://github.com",
+    demo: "https://tanzaniakiganjani.com",
+  },
+  {
+    title: "Glory Burger Website",
+    description:
+      "A restaurant website with a modern UI, online ordering system, menu management, and an intuitive customer experience for Glory Burger.",
+    tech: ["React", "FastAPI", "PostgreSQL", "Tailwind CSS"],
+    gradient: "from-orange-500 via-red-500 to-pink-500",
+    color: "#f97316",
+    initials: "GB",
+    github: "https://github.com",
+    demo: "https://gloryburger.com",
+  },
+  {
+    title: "Glory Burger Mobile App",
+    description:
+      "A Flutter mobile application for food ordering with real-time cart management, order tracking, push notifications, and a seamless mobile dining experience.",
+    tech: ["Flutter", "Dart", "Firebase", "REST APIs"],
+    gradient: "from-amber-500 via-yellow-400 to-orange-500",
+    color: "#f59e0b",
+    initials: "GM",
+    github: "https://github.com",
+    demo: "https://gloryburger.app",
   },
 ];
 
@@ -53,7 +72,6 @@ export default function Projects() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header animation
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current.querySelectorAll("[data-anim]"),
@@ -72,7 +90,6 @@ export default function Projects() {
         );
       }
 
-      // Horizontal scroll
       const cards = cardsWrapperRef.current;
       const container = containerRef.current;
 
@@ -100,7 +117,6 @@ export default function Projects() {
         }
       }
 
-      // Individual card reveals on mobile (fallback)
       if (window.innerWidth < 768) {
         const cardEls = cardsWrapperRef.current?.querySelectorAll("[data-project-card]");
         if (cardEls) {
@@ -131,15 +147,14 @@ export default function Projects() {
       ref={sectionRef}
       className="relative overflow-hidden py-28"
     >
-      {/* Background decoration */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-fuchsia-500/5 blur-[120px]" />
 
       <div ref={containerRef} className="mx-auto max-w-6xl px-6">
-        {/* Section header - always visible */}
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
+            className="inline-block rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500"
+          >
             Projects
           </span>
           <h2
@@ -152,12 +167,11 @@ export default function Projects() {
             data-anim
             className="mx-auto mt-4 max-w-2xl text-muted-foreground"
           >
-            A selection of projects I&apos;ve built with passion and precision
+            A selection of projects I have built with passion and precision
           </p>
         </div>
       </div>
 
-      {/* Desktop: Horizontal scroll area */}
       <div className="hidden md:block">
         <div
           ref={cardsWrapperRef}
@@ -171,38 +185,44 @@ export default function Projects() {
               className="group w-[420px] flex-shrink-0 lg:w-[480px]"
             >
               <div className="relative overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2">
-                {/* Project image area */}
                 <div
                   className={`relative h-56 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-64`}
                 >
                   <div className="absolute inset-0 bg-black/10" />
                   <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "20px 20px" }} />
 
-                  {/* Project initials */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="font-heading text-7xl font-bold text-white/90 drop-shadow-lg transition-all duration-500 group-hover:scale-110 lg:text-8xl">
                       {project.initials}
                     </span>
                   </div>
 
-                  {/* Hover overlay */}
                   <div className="absolute inset-0 flex items-center justify-center gap-4 bg-black/50 opacity-0 transition-all duration-400 group-hover:opacity-100">
-                    <a
-                      href="#"
-                      className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white transition-all hover:bg-white/40 hover:scale-110"
-                    >
-                      <FaExternalLinkAlt className="text-lg" />
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white transition-all hover:bg-white/40 hover:scale-110"
-                    >
-                      <FaGithub className="text-lg" />
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white transition-all hover:bg-white/40 hover:scale-110"
+                        aria-label="GitHub"
+                      >
+                        <FaGithub className="text-lg" />
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white transition-all hover:bg-white/40 hover:scale-110"
+                        aria-label="Live Demo"
+                      >
+                        <FaExternalLinkAlt className="text-lg" />
+                      </a>
+                    )}
                   </div>
                 </div>
 
-                {/* Project info */}
                 <div className="p-6 lg:p-7">
                   <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-fuchsia-500">
                     {project.title}
@@ -211,7 +231,6 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                  {/* Tech tags */}
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.tech.map((t) => (
                       <span
@@ -227,20 +246,27 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  {/* Links */}
                   <div className="mt-5 flex gap-3">
-                    <a
-                      href="#"
-                      className="flex-1 rounded-full bg-gradient-primary px-4 py-2.5 text-center text-xs font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
-                    >
-                      Live Demo
-                    </a>
-                    <a
-                      href="#"
-                      className="flex-1 rounded-full glass border border-fuchsia-500/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
-                    >
-                      Source Code
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 rounded-full glass border border-fuchsia-500/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 rounded-full bg-gradient-primary px-4 py-2.5 text-center text-xs font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
+                      >
+                        Live Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -249,7 +275,6 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Mobile: Grid layout */}
       <div className="mx-auto max-w-6xl px-6 md:hidden">
         <div className="grid gap-6">
           {PROJECTS.map((project, i) => (
@@ -259,7 +284,6 @@ export default function Projects() {
               className="group overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow"
               style={{ opacity: 0 }}
             >
-              {/* Project image area */}
               <div className={`relative h-48 overflow-hidden bg-gradient-to-br ${project.gradient}`}>
                 <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "20px 20px" }} />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -284,12 +308,16 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="mt-4 flex gap-2">
-                  <a href="#" className="flex-1 rounded-full bg-gradient-primary px-3 py-2 text-center text-xs font-semibold text-white">
-                    Live Demo
-                  </a>
-                  <a href="#" className="flex-1 rounded-full glass border border-fuchsia-500/20 px-3 py-2 text-center text-xs font-semibold">
-                    GitHub
-                  </a>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer" className="flex-1 rounded-full glass border border-fuchsia-500/20 px-3 py-2 text-center text-xs font-semibold">
+                      GitHub
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a href={project.demo} target="_blank" rel="noreferrer" className="flex-1 rounded-full bg-gradient-primary px-3 py-2 text-center text-xs font-semibold text-white">
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
