@@ -4,18 +4,18 @@ import Portfolio from "@/components/Portfolio";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Levina Chifie — Full-Stack Developer & Creative Technologist" },
+      { title: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
       {
         name: "description",
         content:
-          "Levina Chifie — A passionate Full-Stack Software Developer crafting modern, elegant digital experiences. Specializing in React, TypeScript, Node.js, and cloud-native applications. Explore my portfolio of web apps, mobile apps, and backend systems.",
+          "Levina Chifie — Graduate-level Full Stack Software Developer and Mobile App Developer crafting modern, scalable web and mobile applications. Explore my portfolio of professional projects built with React, Next.js, FastAPI, NestJS, Flutter, and more.",
       },
       {
         name: "keywords",
         content:
-          "Levina Chifie, Full-Stack Developer, Female Developer, React Developer, TypeScript, Next.js, Node.js, NestJS, PostgreSQL, Tailwind CSS, GSAP, Portfolio, Web Developer, Software Engineer, UI/UX Designer, Creative Technologist",
+          "Levina Chifie, Full Stack Software Developer, Mobile App Developer, React Developer, TypeScript, Next.js, FastAPI, NestJS, Flutter, Tailwind CSS, GSAP, Portfolio, Professional Developer, Software Engineer",
       },
-      { property: "og:title", content: "Levina Chifie — Full-Stack Developer & Creative Technologist" },
+      { property: "og:title", content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
       {
         property: "og:description",
         content:
