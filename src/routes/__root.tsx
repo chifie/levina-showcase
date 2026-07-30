@@ -11,18 +11,6 @@ import {
 
 import appCss from "../styles.css?url";
 
-const LazyNotFound = React.lazy(() => import("@/components/portfolio/NotFoundSection"));
-
-function NotFoundComponent() {
-  return (
-    <React.Suspense fallback={
-      <div className="flex min-h-screen items-center justify-center bg-background">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-fuchsia-500 border-t-transparent" />
-      </div>
-    }>
-      <LazyNotFound />
-    </React.Suspense>
-  );
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
@@ -120,7 +108,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   }),
   shellComponent: RootShell,
   component: RootComponent,
-  notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
 
