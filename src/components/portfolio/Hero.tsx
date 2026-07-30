@@ -429,7 +429,7 @@ export default function Hero() {
                 style={{ clipPath: "circle(0% at 50% 50%)" }}
               >
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
-                  <img src={chifieImage} alt="Chifie" className="h-full w-full object-cover rounded-full" />
+                  <img src={chieImage} alt="Chifie" className="h-full w-full object-cover object-top" />
                 </div>
               </div>
 
