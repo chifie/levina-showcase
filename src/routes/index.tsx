@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Crafting modern digital experiences with clean code and elegant design. Explore my portfolio of web applications, mobile apps, and backend systems.",
+          "Graduate-level Full Stack Software Developer and Mobile App Developer building modern, scalable web and mobile applications with clean code and elegant design.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://levinachifie.dev" },
@@ -27,11 +27,11 @@ export const Route = createFileRoute("/")({
       { property: "og:site_name", content: "Levina Chifie Portfolio" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Levina Chifie — Full-Stack Developer" },
+      { name: "twitter:title", content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
       {
         name: "twitter:description",
         content:
-          "Crafting modern digital experiences with clean code and elegant design.",
+          "Graduate-level Full Stack Software Developer and Mobile App Developer building modern, scalable web and mobile applications.",
       },
       { name: "twitter:image", content: "/og-image.png" },
       { name: "twitter:creator", content: "@levinachifie" },
