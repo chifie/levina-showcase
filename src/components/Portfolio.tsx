@@ -6,13 +6,9 @@ import Navbar from "@/components/portfolio/Navbar";
 import Hero from "@/components/portfolio/Hero";
 import About from "@/components/portfolio/About";
 import Skills from "@/components/portfolio/Skills";
+import Services from "@/components/portfolio/Services";
 import Projects from "@/components/portfolio/Projects";
-import Experience from "@/components/portfolio/Experience";
-import TechStack from "@/components/portfolio/TechStack";
-import BlogSection from "@/components/portfolio/BlogSection";
-import GitHubSection from "@/components/portfolio/GitHubSection";
 import Contact from "@/components/portfolio/Contact";
-import KeyboardShortcuts from "@/components/portfolio/KeyboardShortcuts";
 import Footer from "@/components/portfolio/Footer";
 
 gsap.registerPlugin(Flip);
@@ -35,7 +31,6 @@ export default function Portfolio() {
   const [loading, setLoading] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // GSAP Flip transition on page load after preloader exits
   useEffect(() => {
     if (!loading && contentRef.current) {
       const sections = contentRef.current.querySelectorAll("section, header, footer");
@@ -43,10 +38,8 @@ export default function Portfolio() {
 
       const flipState = Flip.getState(sections);
 
-      // Initial state before Flip
       gsap.set(sections, { autoAlpha: 0, y: 20 });
 
-      // Delay Flip to let preloader exit animation finish
       gsap.delayedCall(0.9, () => {
         gsap.set(contentRef.current, { autoAlpha: 1 });
         gsap.set(sections, { autoAlpha: 1 });
@@ -72,15 +65,11 @@ export default function Portfolio() {
           <Hero />
           <About />
           <Skills />
+          <Services />
           <Projects />
-          <Experience />
-          <TechStack />
-          <BlogSection />
-          <GitHubSection />
           <Contact />
         </main>
         <Footer />
-        <KeyboardShortcuts />
       </div>
     </>
   );

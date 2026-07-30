@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -16,8 +16,8 @@ const FOOTER_LINKS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
+  { id: "services", label: "Services" },
   { id: "projects", label: "Projects" },
-  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -33,7 +33,6 @@ function BackToTop() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    // Button animation
     if (btnRef.current) {
       gsap.fromTo(
         btnRef.current,
@@ -89,7 +88,6 @@ function CursorFollower() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    // Touch device check
     const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
     if (isTouch) {
       if (cursor) cursor.style.display = "none";
@@ -183,12 +181,10 @@ export default function Footer() {
         ref={footerRef}
         className="relative border-t border-border/50 pt-16 pb-8 overflow-hidden"
       >
-        {/* Background decoration */}
         <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-fuchsia-500/5 blur-[100px]" />
 
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-10 md:grid-cols-4">
-            {/* Brand */}
             <div data-footer-anim className="md:col-span-2">
               <a
                 href="#home"
@@ -206,8 +202,8 @@ export default function Footer() {
                 </span>
               </a>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                A passionate Full-Stack Software Developer crafting modern digital experiences
-                with clean code and elegant design.
+                A dedicated Full Stack Software Developer and Mobile App Developer
+                crafting modern digital experiences with clean code and elegant design.
               </p>
               <div className="mt-5 flex gap-2">
                 {[
@@ -229,7 +225,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Quick Links */}
             <div data-footer-anim>
               <h4 className="font-heading text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground">
                 Navigation
@@ -252,7 +247,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Connect */}
             <div data-footer-anim>
               <h4 className="font-heading text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground">
                 Get In Touch
@@ -275,20 +269,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Divider */}
           <div
             data-footer-anim
             className="my-10 h-px bg-gradient-to-r from-transparent via-fuchsia-500/20 to-transparent"
           />
 
-          {/* Bottom bar */}
           <div
             data-footer-anim
             className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row"
           >
             <p>
               &copy; {new Date().getFullYear()} Levina Chifie. Crafted with{" "}
-              <FaHeart className="inline text-fuchsia-500 mx-0.5" /> and late-night coffee.
+              <FaHeart className="inline text-fuchsia-500 mx-0.5" /> and code.
             </p>
             <p className="text-[10px]">
               Built with React &bull; GSAP &bull; Tailwind CSS

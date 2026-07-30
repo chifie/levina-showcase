@@ -16,7 +16,6 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
     const logoEl = logoRef.current;
     if (logoEl) {
       logoEl.innerHTML = "";
-      // Build letters
       [...chars].forEach((char, i) => {
         const span = document.createElement("span");
         span.textContent = char;
@@ -56,7 +55,6 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       );
     }
 
-    // Progress bar
     if (barRef.current) {
       tl.fromTo(
         barRef.current,
@@ -66,7 +64,6 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       );
     }
 
-    // Loading text
     if (textRef.current) {
       tl.to(
         textRef.current,
@@ -99,7 +96,6 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         perspective: "1000px",
       }}
     >
-      {/* Background pattern */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -109,14 +105,11 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         }}
       />
 
-      {/* Glow orbs */}
       <div className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-fuchsia-500/10 blur-[100px]" />
       <div className="absolute right-1/4 bottom-1/3 h-48 w-48 rounded-full bg-fuchsia-400/10 blur-[80px]" />
 
-      {/* Logo */}
       <div ref={logoRef} className="relative z-10 flex items-center gap-1" />
 
-      {/* Progress bar */}
       <div className="relative z-10 mt-8 h-[3px] w-48 overflow-hidden rounded-full bg-white/10">
         <div
           ref={barRef}
@@ -125,7 +118,6 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         />
       </div>
 
-      {/* Loading text */}
       <div
         ref={textRef}
         className="relative z-10 mt-4 text-xs font-medium uppercase tracking-[0.3em] text-white/40"

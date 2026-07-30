@@ -13,8 +13,8 @@ const NAV = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
+  { id: "services", label: "Services" },
   { id: "projects", label: "Projects" },
-  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -27,13 +27,11 @@ export default function Navbar() {
   const indicatorRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
-  // Scroll detection
   useEffect(() => {
     const onScroll = () => {
       const scrollY = window.scrollY;
       setScrolled(scrollY > 40);
 
-      // Active section detection
       const sections = NAV.map((n) => document.getElementById(n.id)).filter(Boolean);
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -50,7 +48,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Animate mobile menu
   useEffect(() => {
     if (mobileMenuRef.current) {
       if (open) {
@@ -63,7 +60,6 @@ export default function Navbar() {
     }
   }, [open]);
 
-  // Animate indicator
   useEffect(() => {
     if (indicatorRef.current) {
       const activeLink = navRef.current?.querySelector(`[data-nav="${activeSection}"]`);
@@ -100,7 +96,6 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        {/* Logo */}
         <a
           href="#home"
           className="group relative flex items-center gap-2.5"
@@ -117,7 +112,6 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop nav */}
         <div className="relative hidden items-center md:flex">
           <div
             ref={indicatorRef}
@@ -147,18 +141,15 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* Actions */}
         <div className="flex items-center gap-2">
-          {/* Resume button */}
           <a
             href="#"
             className="group hidden items-center gap-2 rounded-full bg-gradient-primary px-4 py-2 text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:scale-105 hover:shadow-lg sm:flex"
           >
             <FaDownload className="text-xs transition-transform group-hover:-translate-y-0.5" />
-            <span>Resume</span>
+            <span>CV</span>
           </a>
 
-          {/* Theme toggle */}
           <button
             onClick={toggle}
             aria-label="Toggle theme"
@@ -169,7 +160,6 @@ export default function Navbar() {
             </span>
           </button>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setOpen((o) => !o)}
             aria-label="Menu"
@@ -184,7 +174,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       {open && (
         <div
           ref={mobileMenuRef}
@@ -215,7 +204,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 rounded-xl bg-gradient-primary px-4 py-3 text-sm font-semibold text-white"
               >
                 <FaDownload className="text-xs" />
-                Download Resume
+                Download CV
               </a>
             </li>
           </ul>
