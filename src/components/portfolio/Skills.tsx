@@ -3,13 +3,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   FaJs,
-  FaPython,
-  FaPhp,
   FaReact,
   FaHtml5,
   FaCss3Alt,
   FaNodeJs,
-  FaDocker,
   FaGitAlt,
   FaCode,
 } from "react-icons/fa";
@@ -19,37 +16,36 @@ import {
   SiNextdotjs,
   SiFlutter,
   SiTailwindcss,
-  SiNestjs,
   SiExpress,
   SiPostgresql,
   SiMysql,
   SiGithub,
-  SiGnubash,
+  SiVuedotjs,
+  SiGraphql,
 } from "react-icons/si";
+import { DiFastapi } from "react-icons/di";
+import { SiNestjs } from "react-icons/si";
+import { DiJavascript1 } from "react-icons/di";
+import { SiPostgresql } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
+import { SiGit } from "react-icons/si";
+import { SiVscode } from "react-icons/si";
+import { SiPostman } from "react-icons/si";
+import { SiFigma } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SKILL_CATEGORIES = [
   {
-    title: "Languages",
-    icon: FaCode,
-    skills: [
-      { name: "JavaScript", icon: FaJs, level: 85, color: "#F7DF1E" },
-      { name: "TypeScript", icon: SiTypescript, level: 75, color: "#3178C6" },
-      { name: "Dart", icon: SiDart, level: 40, color: "#0175C2" },
-      { name: "Python", icon: FaPython, level: 50, color: "#3776AB" },
-      { name: "PHP", icon: FaPhp, level: 80, color: "#777BB4" },
-    ],
-  },
-  {
     title: "Frontend",
     icon: FaReact,
     skills: [
-      { name: "React", icon: FaReact, level: 85, color: "#61DAFB" },
-      { name: "Next.js", icon: SiNextdotjs, level: 70, color: "#000000" },
-      { name: "Flutter", icon: SiFlutter, level: 35, color: "#02569B" },
+      { name: "React", icon: FaReact, level: 90, color: "#61DAFB" },
+      { name: "Next.js", icon: SiNextdotjs, level: 80, color: "#000000" },
+      { name: "TypeScript", icon: SiTypescript, level: 85, color: "#3178C6" },
+      { name: "JavaScript", icon: DiJavascript1, level: 92, color: "#F7DF1E" },
       { name: "HTML5", icon: FaHtml5, level: 95, color: "#E34F26" },
-      { name: "CSS3", icon: FaCss3Alt, level: 92, color: "#1572B6" },
+      { name: "CSS3", icon: FaCss3Alt, level: 90, color: "#1572B6" },
       { name: "Tailwind CSS", icon: SiTailwindcss, level: 88, color: "#06B6D4" },
     ],
   },
@@ -57,41 +53,38 @@ const SKILL_CATEGORIES = [
     title: "Backend",
     icon: FaNodeJs,
     skills: [
-      { name: "NestJS", icon: SiNestjs, level: 60, color: "#E0234E" },
-      { name: "Express.js", icon: SiExpress, level: 70, color: "#000000" },
-      { name: "Node.js", icon: FaNodeJs, level: 75, color: "#339933" },
-      { name: "REST API", icon: FaCode, level: 80, color: "#6366F1" },
-      { name: "FastAPI", icon: FaPython, level: 45, color: "#009688" },
+      { name: "FastAPI", icon: DiFastapi, level: 75, color: "#009688" },
+      { name: "NestJS", icon: SiNestjs, level: 70, color: "#E0234E" },
+      { name: "Express.js", icon: SiExpress, level: 78, color: "#000000" },
+      { name: "Node.js", icon: FaNodeJs, level: 82, color: "#339933" },
+      { name: "REST APIs", icon: FaCode, level: 85, color: "#6366F1" },
+    ],
+  },
+  {
+    title: "Mobile",
+    icon: SiFlutter,
+    skills: [
+      { name: "Flutter", icon: SiFlutter, level: 72, color: "#02569B" },
+      { name: "Dart", icon: SiDart, level: 70, color: "#0175C2" },
     ],
   },
   {
     title: "Databases",
     icon: SiPostgresql,
     skills: [
-      { name: "PostgreSQL", icon: SiPostgresql, level: 55, color: "#4169E1" },
-      { name: "MySQL", icon: SiMysql, level: 75, color: "#4479A1" },
+      { name: "PostgreSQL", icon: SiPostgresql, level: 65, color: "#4169E1" },
+      { name: "MySQL", icon: SiMysql, level: 72, color: "#4479A1" },
     ],
   },
   {
-    title: "DevOps & Tools",
-    icon: FaDocker,
+    title: "Tools",
+    icon: SiGit,
     skills: [
-      { name: "Docker", icon: FaDocker, level: 40, color: "#2496ED" },
-      { name: "Git", icon: FaGitAlt, level: 85, color: "#F05032" },
-      { name: "GitHub", icon: SiGithub, level: 82, color: "#181717" },
-      { name: "VS Code", icon: FaCode, level: 90, color: "#007ACC" },
-    ],
-  },
-  {
-    title: "Currently Learning",
-    icon: FaPython,
-    learning: true,
-    skills: [
-      { name: "PostgreSQL", icon: SiPostgresql, level: 55, color: "#4169E1" },
-      { name: "System Design", icon: SiGnubash, level: 35, color: "#6B7280" },
-      { name: "Software Architecture", icon: FaCode, level: 30, color: "#6B7280" },
-      { name: "Clean Code", icon: FaCode, level: 65, color: "#6B7280" },
-      { name: "DevOps", icon: FaDocker, level: 35, color: "#6B7280" },
+      { name: "Git", icon: SiGit, level: 88, color: "#F05032" },
+      { name: "GitHub", icon: SiGithub, level: 85, color: "#181717" },
+      { name: "VS Code", icon: SiVscode, level: 90, color: "#007ACC" },
+      { name: "Postman", icon: SiPostman, level: 80, color: "#FF6C37" },
+      { name: "Figma", icon: SiFigma, level: 75, color: "#F24E1E" },
     ],
   },
 ];
@@ -122,21 +115,12 @@ function SkillCard({
       start: "top 85%",
       once: true,
       onEnter: () => {
-        // Card entrance
         gsap.fromTo(
           card,
           { opacity: 0, y: 20, scale: 0.95 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.5,
-            delay: index * 0.04,
-            ease: "power3.out",
-          }
+          { opacity: 1, y: 0, scale: 1, duration: 0.5, delay: index * 0.04, ease: "power3.out" }
         );
 
-        // Progress bar fill
         gsap.fromTo(bar, { width: "0%" }, { width: `${level}%`, duration: 1, delay: 0.3 + index * 0.04, ease: "power2.out" });
       },
     });
@@ -151,7 +135,7 @@ function SkillCard({
       style={{ opacity: 0 }}
     >
       <span
-        className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-lg transition-transform duration-300 hover:scale-110 hover:rotate-6"
+        className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-110 hover:rotate-6"
         style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
       >
         <Icon className="text-lg" />
@@ -176,11 +160,9 @@ function SkillCard({
 export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header animation
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current.querySelectorAll("[data-anim]"),
@@ -209,58 +191,48 @@ export default function Skills() {
       ref={sectionRef}
       className="relative py-28 overflow-hidden"
     >
-      {/* Background decoration */}
       <div className="pointer-events-none absolute left-0 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-fuchsia-500/5 blur-[100px]" />
       <div className="pointer-events-none absolute right-0 bottom-1/3 h-72 w-72 translate-x-1/2 rounded-full bg-fuchsia-400/5 blur-[100px]" />
 
       <div className="mx-auto max-w-6xl px-6">
-        {/* Section header */}
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glassborder border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
+            className="inline-block rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500"
+          >
             Skills
           </span>
           <h2
             data-anim
             className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            My <span className="text-gradient">Toolkit</span>
+            Technical{" "}
+            <span className="text-gradient">Competencies</span>
           </h2>
           <p
             data-anim
             className="mx-auto mt-4 max-w-2xl text-muted-foreground"
           >
-            A curated collection of technologies I work with and skills I&apos;m growing into
+            A comprehensive set of tools and technologies I work with to deliver
+            high-quality software products
           </p>
         </div>
 
-        {/* Skills grid */}
-        <div
-          ref={gridRef}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-        >
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SKILL_CATEGORIES.map((category, catIndex) => (
             <div
               key={catIndex}
               className="rounded-3xl glass-strong border border-fuchsia-500/10 p-6 shadow-elegant transition-all duration-300 hover:shadow-glow"
             >
-              {/* Category header */}
               <div className="mb-4 flex items-center gap-3 border-b border-border/40 pb-4">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow">
                   <category.icon className="text-lg" />
                 </span>
                 <div>
                   <h3 className="font-heading text-lg font-bold">{category.title}</h3>
-                  {category.learning && (
-                    <span className="text-[10px] font-medium uppercase tracking-wider text-fuchsia-500">
-                      In Progress
-                    </span>
-                  )}
                 </div>
               </div>
 
-              {/* Skills */}
               <div className="space-y-1">
                 {category.skills.map((skill, i) => (
                   <SkillCard key={i} {...skill} index={i} />
