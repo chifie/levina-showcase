@@ -5,7 +5,6 @@ import {
   FaEnvelope,
   FaGithub,
   FaLinkedin,
-  FaMapMarkerAlt,
   FaPaperPlane,
   FaCheck,
 } from "react-icons/fa";
@@ -31,12 +30,6 @@ const CONTACT_INFO = [
     value: "linkedin.com/in/levinachifie",
     href: "https://linkedin.com/in/levinachifie",
   },
-  {
-    Icon: FaMapMarkerAlt,
-    label: "Location",
-    value: "Available Worldwide",
-    href: null,
-  },
 ];
 
 function RippleButton({
@@ -54,7 +47,6 @@ function RippleButton({
     const btn = btnRef.current;
     if (!btn) return;
 
-    // Create ripple
     const rect = btn.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -178,7 +170,6 @@ export default function Contact() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header animation
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current.querySelectorAll("[data-anim]"),
@@ -197,7 +188,6 @@ export default function Contact() {
         );
       }
 
-      // Contact info stagger
       if (infoRef.current) {
         const items = infoRef.current.querySelectorAll("[data-contact]");
         gsap.fromTo(
@@ -218,7 +208,6 @@ export default function Contact() {
         );
       }
 
-      // Form reveal
       if (formRef.current) {
         gsap.fromTo(
           formRef.current,
@@ -245,7 +234,6 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
 
-    // Simulate sending
     gsap.to(formRef.current, {
       scale: 0.98,
       duration: 0.1,
@@ -268,11 +256,9 @@ export default function Contact() {
       ref={sectionRef}
       className="relative py-28 overflow-hidden"
     >
-      {/* Background decoration */}
       <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-fuchsia-500/5 blur-[120px]" />
       <div className="pointer-events-none absolute -right-32 bottom-1/3 h-72 w-72 rounded-full bg-fuchsia-400/5 blur-[100px]" />
 
-      {/* Floating particles */}
       {[...Array(6)].map((_, i) => (
         <div
           key={i}
@@ -287,11 +273,11 @@ export default function Contact() {
       ))}
 
       <div className="mx-auto max-w-6xl px-6">
-        {/* Section header */}
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glassborder border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500">
+            className="inline-block rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500"
+          >
             Contact
           </span>
           <h2
@@ -305,13 +291,11 @@ export default function Contact() {
             data-anim
             className="mx-auto mt-4 max-w-2xl text-muted-foreground"
           >
-            Have an idea or opportunity? I&apos;d love to hear from you. Let&apos;s build
-            something amazing.
+            Have a project idea or need a developer? Let&apos;s connect.
           </p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-5">
-          {/* Contact info */}
           <div
             ref={infoRef}
             className="space-y-4 lg:col-span-2"
@@ -354,7 +338,6 @@ export default function Contact() {
             })}
           </div>
 
-          {/* Contact form */}
           <form
             ref={formRef}
             onSubmit={handleSubmit}
