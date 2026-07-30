@@ -65,11 +65,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Levina Chifie — Full-Stack Developer & Creative Technologist" },
+      { title: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
       {
         name: "description",
         content:
-          "Levina Chifie — A passionate Full-Stack Software Developer crafting modern, elegant digital experiences. Specializing in React, TypeScript, Node.js, and cloud-native applications.",
+          "Levina Chifie — Graduate-level Full Stack Software Developer and Mobile App Developer crafting modern, scalable web and mobile applications. Specializing in React, TypeScript, FastAPI, NestJS, Flutter, and PostgreSQL.",
       },
       { name: "author", content: "Levina Chifie" },
       {
@@ -77,21 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Levina Chifie, Full-Stack Developer, Female Developer, React, TypeScript, Next.js, Node.js, Portfolio, Web Developer, Software Engineer, UI/UX, Tailwind CSS, GSAP",
       },
-      { property: "og:title", content: "Levina Chifie — Full-Stack Developer & Creative Technologist" },
+      { property: "og:title", content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
       {
         property: "og:description",
         content:
-          "Crafting modern digital experiences with clean code and elegant design. Explore my portfolio of web applications, mobile apps, and backend systems.",
+          "Graduate-level Full Stack Software Developer and Mobile App Developer building modern, scalable web and mobile applications with clean code and elegant design.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://levinachifie.dev" },
       { property: "og:image", content: "/og-image.png" },
       { property: "og:site_name", content: "Levina Chifie Portfolio" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Levina Chifie — Full-Stack Developer" },
+      { name: "twitter:title", content: "Levina Chifie — Full Stack Software Developer & Mobile App Developer" },
       {
         name: "twitter:description",
-        content: "Modern, elegant digital experiences crafted with passion and creativity.",
+        content: "Graduate-level Full Stack Software Developer and Mobile App Developer building modern, scalable web and mobile applications.",
       },
       { name: "twitter:image", content: "/og-image.png" },
       { name: "twitter:creator", content: "@levinachifie" },
