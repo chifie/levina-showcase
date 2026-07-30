@@ -11,7 +11,7 @@ const PROJECTS = [
     description:
       "A modern marketplace platform for Tanzania connecting buyers and sellers with seamless transactions, product management, and a complete seller dashboard.",
     tech: ["React", "FastAPI", "PostgreSQL", "TypeScript"],
-    gradient: "from-fuchsia-500 via-pink-500 to-rose-400",
+    gradient: "from-pink-400 via-pink-500 to-rose-400",
     color: "#d946ef",
     initials: "SD",
     github: "https://github.com",
@@ -22,7 +22,7 @@ const PROJECTS = [
     description:
       "A real estate marketplace platform for property listings, agent profiles, search filters, and seamless transaction management across Tanzania.",
     tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-    gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
+    gradient: "from-violet-500 via-purple-500 to-pink-400",
     color: "#8b5cf6",
     initials: "DM",
     github: "https://github.com",
@@ -143,13 +143,13 @@ export default function Projects() {
 
   return (
     <section id="projects" ref={sectionRef} className="relative overflow-hidden py-28">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-fuchsia-500/5 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-pink-400/5 blur-[120px]" />
 
       <div ref={containerRef} className="mx-auto max-w-6xl px-6">
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500"
+            className="inline-block rounded-full glass border border-pink-400/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-pink-400"
           >
             Projects
           </span>
@@ -176,7 +176,7 @@ export default function Projects() {
         >
           {PROJECTS.map((project, i) => (
             <div key={i} data-project-card className="group w-[420px] flex-shrink-0 lg:w-[480px]">
-              <div className="relative overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2">
+              <div className="relative overflow-hidden rounded-3xl glass-strong border border-pink-400/10 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2">
                 <div
                   className={`relative h-56 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-64`}
                 >
@@ -223,7 +223,7 @@ export default function Projects() {
                 </div>
 
                 <div className="p-6 lg:p-7">
-                  <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-fuchsia-500">
+                  <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-pink-400">
                     {project.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-3">
@@ -251,7 +251,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex-1 rounded-full glass border border-fuchsia-500/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
+                        className="flex-1 rounded-full glass border border-pink-400/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
                       >
                         GitHub
                       </a>
@@ -280,7 +280,7 @@ export default function Projects() {
             <div
               key={i}
               data-project-card
-              className="group overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 shadow-elegant transition-all duration-500 hover:shadow-glow"
+              className="group overflow-hidden rounded-3xl glass-strong border border-pink-400/10 shadow-elegant transition-all duration-500 hover:shadow-glow"
               style={{ opacity: 0 }}
             >
               <div
@@ -325,7 +325,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex-1 rounded-full glass border border-fuchsia-500/20 px-3 py-2 text-center text-xs font-semibold"
+                      className="flex-1 rounded-full glass border border-pink-400/20 px-3 py-2 text-center text-xs font-semibold"
                     >
                       GitHub
                     </a>

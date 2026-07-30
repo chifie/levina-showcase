@@ -82,7 +82,7 @@ function MagneticButton({
       className={`inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer ${className} ${
         primary
           ? "bg-gradient-primary text-white shadow-glow hover:shadow-elegant"
-          : "glass-strong border border-fuchsia-500/20 hover:border-fuchsia-500/40 hover:shadow-glow"
+          : "glass-strong border border-pink-400/20 hover:border-pink-400/40 hover:shadow-glow"
       }`}
     >
       {children}
@@ -325,8 +325,8 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div className="flex flex-col items-center text-center lg:flex-row lg:text-left lg:items-center lg:gap-16">
           <div className="flex-1">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium text-fuchsia-500">
-              <span className="h-2 w-2 rounded-full bg-fuchsia-500 animate-pulse-soft" />
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full glass border border-pink-400/20 px-4 py-1.5 text-xs font-medium text-pink-400">
+              <span className="h-2 w-2 rounded-full bg-pink-400 animate-pulse-soft" />
               Available for opportunities
             </div>
 
@@ -402,7 +402,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="group inline-flex h-12 w-12 items-center justify-center rounded-full glass border border-fuchsia-500/10 transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:border-transparent hover:shadow-glow"
+                  className="group inline-flex h-12 w-12 items-center justify-center rounded-full glass border border-pink-400/10 transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:border-transparent hover:shadow-glow"
                 >
                   <Icon className="text-lg transition-transform duration-300 group-hover:rotate-6" />
                 </a>
@@ -412,15 +412,15 @@ export default function Hero() {
 
           <div className="mt-12 flex-shrink-0 lg:mt-0">
             <div className="relative">
-              <div className="absolute -inset-4 rounded-full border border-fuchsia-500/20 animate-spin-slow" />
+              <div className="absolute -inset-4 rounded-full border border-pink-400/20 animate-spin-slow" />
               <div
-                className="absolute -inset-8 rounded-full border border-fuchsia-500/10 animate-spin-slow"
+                className="absolute -inset-8 rounded-full border border-pink-400/10 animate-spin-slow"
                 style={{ animationDirection: "reverse", animationDuration: "30s" }}
               />
 
               <div
                 ref={profileRef}
-                className="relative h-64 w-64 overflow-hidden rounded-full bg-gradient-to-br from-fuchsia-400 to-fuchsia-600 p-1 shadow-glow md:h-80 md:w-80"
+                className="relative h-64 w-64 overflow-hidden rounded-full bg-gradient-to-br from-pink-300 to-pink-500 p-1 shadow-glow md:h-80 md:w-80"
                 style={{ clipPath: "circle(0% at 50% 50%)" }}
               >
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
@@ -432,8 +432,8 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute -right-2 -bottom-2 rounded-2xl glass-strong border border-fuchsia-500/20 px-4 py-2 shadow-elegant animate-float-slow">
-                <p className="text-xs font-medium text-fuchsia-500">3+ Years</p>
+              <div className="absolute -right-2 -bottom-2 rounded-2xl glass-strong border border-pink-400/20 px-4 py-2 shadow-elegant animate-float-slow">
+                <p className="text-xs font-medium text-pink-400">3+ Years</p>
                 <p className="text-[10px] text-muted-foreground">Experience</p>
               </div>
             </div>
@@ -443,14 +443,14 @@ export default function Hero() {
         <div className="mt-16 flex justify-center">
           <a
             href="#about"
-            className="group flex flex-col items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-fuchsia-500"
+            className="group flex flex-col items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-pink-400"
             onClick={(e) => {
               e.preventDefault();
               document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
             }}
           >
             <span>Scroll Down</span>
-            <FaArrowDown className="animate-bounce text-fuchsia-400 transition-transform group-hover:translate-y-1" />
+            <FaArrowDown className="animate-bounce text-pink-300 transition-transform group-hover:translate-y-1" />
           </a>
         </div>
       </div>

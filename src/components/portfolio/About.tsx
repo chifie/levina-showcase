@@ -73,7 +73,7 @@ function StatCard({
   return (
     <div
       ref={cardRef}
-      className="group relative overflow-hidden rounded-3xl glass-strong border border-fuchsia-500/10 p-7 shadow-elegant transition-all duration-300 hover:shadow-glow"
+      className="group relative overflow-hidden rounded-3xl glass-strong border border-pink-400/10 p-7 shadow-elegant transition-all duration-300 hover:shadow-glow"
     >
       <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-primary opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20" />
       <div className="relative">
@@ -159,13 +159,13 @@ export default function About() {
 
   return (
     <section id="about" ref={sectionRef} className="relative py-28 overflow-hidden">
-      <div className="pointer-events-none absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-fuchsia-500/5 blur-[120px]" />
+      <div className="pointer-events-none absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-pink-400/5 blur-[120px]" />
 
       <div className="mx-auto max-w-6xl px-6">
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-500"
+            className="inline-block rounded-full glass border border-pink-400/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-pink-400"
           >
             About
           </span>
@@ -183,7 +183,7 @@ export default function About() {
 
         <div
           ref={contentRef}
-          className="mx-auto mb-20 max-w-4xl rounded-3xl glass-strong border border-fuchsia-500/10 p-8 shadow-elegant md:p-12"
+          className="mx-auto mb-20 max-w-4xl rounded-3xl glass-strong border border-pink-400/10 p-8 shadow-elegant md:p-12"
         >
           <p className="font-heading text-2xl font-semibold">
             I&apos;m a dedicated Full Stack Software Developer

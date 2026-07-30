@@ -181,7 +181,7 @@ export default function Footer() {
         ref={footerRef}
         className="relative border-t border-border/50 pt-16 pb-8 overflow-hidden"
       >
-        <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-fuchsia-500/5 blur-[100px]" />
+        <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-400/5 blur-[100px]" />
 
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-10 md:grid-cols-4">
@@ -219,7 +219,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full glass border border-fuchsia-500/10 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:shadow-glow"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full glass border border-pink-400/10 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:shadow-glow"
                   >
                     <Icon />
                   </a>
@@ -236,7 +236,7 @@ export default function Footer() {
                   <li key={link.id}>
                     <a
                       href={`#${link.id}`}
-                      className="text-sm text-muted-foreground transition-all duration-200 hover:text-fuchsia-500 hover:translate-x-1 inline-block"
+                      className="text-sm text-muted-foreground transition-all duration-200 hover:text-pink-400 hover:translate-x-1 inline-block"
                       onClick={(e) => {
                         e.preventDefault();
                         document.getElementById(link.id)?.scrollIntoView({ behavior: "smooth" });
@@ -257,7 +257,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="mailto:levinachifie@gmail.com"
-                    className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-fuchsia-500"
+                    className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-pink-400"
                   >
                     <FaEnvelope className="text-xs" />
                     levinachifie@gmail.com
@@ -273,7 +273,7 @@ export default function Footer() {
 
           <div
             data-footer-anim
-            className="my-10 h-px bg-gradient-to-r from-transparent via-fuchsia-500/20 to-transparent"
+            className="my-10 h-px bg-gradient-to-r from-transparent via-pink-400/20 to-transparent"
           />
 
           <div
@@ -282,7 +282,7 @@ export default function Footer() {
           >
             <p>
               &copy; {new Date().getFullYear()} Levina Chifie. Crafted with{" "}
-              <FaHeart className="inline text-fuchsia-500 mx-0.5" /> and code.
+              <FaHeart className="inline text-pink-400 mx-0.5" /> and code.
             </p>
             <p className="text-[10px]">Built with React &bull; GSAP &bull; Tailwind CSS</p>
           </div>
