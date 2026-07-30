@@ -11,7 +11,6 @@ import {
 
 import appCss from "../styles.css?url";
 
-}
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
