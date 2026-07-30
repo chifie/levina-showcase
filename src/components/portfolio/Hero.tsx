@@ -11,6 +11,7 @@ import {
   FaDocker,
   FaFigma,
   FaArrowDown,
+  FaArrowRight,
 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import chifieImage from "@/assets/chifie.png";
@@ -105,7 +106,6 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      // Split text animation - word by word
       const headline = headlineRef.current;
       if (headline) {
         const words = headline.textContent?.split(" ") || [];
@@ -133,7 +133,6 @@ export default function Hero() {
         });
       }
 
-      // Subtitle fade up
       if (subtitleRef.current) {
         tl.fromTo(
           subtitleRef.current,
@@ -143,7 +142,6 @@ export default function Hero() {
         );
       }
 
-      // Description fade up
       if (descriptionRef.current) {
         tl.fromTo(
           descriptionRef.current,
@@ -153,7 +151,6 @@ export default function Hero() {
         );
       }
 
-      // Buttons scale and fade in
       if (buttonsRef.current) {
         const btns = buttonsRef.current.querySelectorAll("a");
         tl.fromTo(
@@ -164,7 +161,6 @@ export default function Hero() {
         );
       }
 
-      // Social links
       if (socialsRef.current) {
         const links = socialsRef.current.querySelectorAll("a");
         tl.fromTo(
@@ -175,7 +171,6 @@ export default function Hero() {
         );
       }
 
-      // Profile image reveal
       if (profileRef.current) {
         tl.fromTo(
           profileRef.current,
@@ -185,7 +180,6 @@ export default function Hero() {
         );
       }
 
-      // Floating icons animation - continuous
       if (iconsRef.current) {
         const icons = iconsRef.current.querySelectorAll<HTMLDivElement>("[data-icon]");
         icons.forEach((icon, i) => {
@@ -203,7 +197,6 @@ export default function Hero() {
         });
       }
 
-      // Background blobs continuous movement
       if (blob1Ref.current) {
         gsap.to(blob1Ref.current, {
           x: 60,
@@ -231,7 +224,6 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  // Mouse parallax effect - optimized with gsap.quickTo
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -282,7 +274,6 @@ export default function Hero() {
       ref={sectionRef}
       className="relative flex min-h-screen items-center overflow-hidden pt-28"
     >
-      {/* Background blobs */}
       <div
         ref={blob1Ref}
         className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] rounded-full opacity-30 blur-[120px]"
@@ -294,7 +285,6 @@ export default function Hero() {
         style={{ background: "radial-gradient(circle, rgba(236,72,153,0.15), transparent 70%)" }}
       />
 
-      {/* Grid pattern overlay */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.02]"
         style={{
@@ -303,7 +293,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Floating icons */}
       <div
         ref={iconsRef}
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -330,9 +319,7 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div className="flex flex-col items-center text-center lg:flex-row lg:text-left lg:items-center lg:gap-16">
-          {/* Text content */}
           <div className="flex-1">
-            {/* Greeting badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full glass border border-fuchsia-500/20 px-4 py-1.5 text-xs font-medium text-fuchsia-500">
               <span className="h-2 w-2 rounded-full bg-fuchsia-500 animate-pulse-soft" />
               Available for opportunities
@@ -349,22 +336,18 @@ export default function Hero() {
               ref={subtitleRef}
               className="mt-3 font-heading text-2xl font-semibold md:text-3xl lg:text-4xl"
             >
-              I Build{" "}
-              <span className="text-gradient">
-                Modern Digital
-              </span>{" "}
-              Experiences
+              Full Stack Software Developer
+              <span className="text-gradient">&amp; Mobile App Developer</span>
             </p>
 
             <p
               ref={descriptionRef}
               className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground lg:mx-0 md:text-lg"
             >
-              A passionate Full-Stack Software Developer crafting scalable web applications,
-              mobile apps, and backend systems with clean code and elegant design.
+              I build modern, scalable web and mobile applications with clean architecture,
+              elegant design, and robust backend systems that deliver real value.
             </p>
 
-            {/* Buttons */}
             <div
               ref={buttonsRef}
               className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start"
@@ -373,7 +356,11 @@ export default function Hero() {
                 View Projects
                 <span className="text-sm">→</span>
               </MagneticButton>
-              <MagneticButton href="#">
+              <MagneticButton href="#contact">
+                Contact Me
+                <FaArrowRight className="text-sm" />
+              </MagneticButton>
+              <MagneticButton href="#" primary={false}>
                 Download CV
                 <svg
                   className="ml-1 h-4 w-4"
@@ -391,7 +378,6 @@ export default function Hero() {
               </MagneticButton>
             </div>
 
-            {/* Social links */}
             <div
               ref={socialsRef}
               className="mt-10 flex items-center gap-3 justify-center lg:justify-start"
@@ -415,34 +401,29 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Profile area */}
           <div className="mt-12 flex-shrink-0 lg:mt-0">
             <div className="relative">
-              {/* Decorative rings */}
               <div className="absolute -inset-4 rounded-full border border-fuchsia-500/20 animate-spin-slow" />
               <div className="absolute -inset-8 rounded-full border border-fuchsia-500/10 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
 
-              {/* Profile illustration */}
               <div
                 ref={profileRef}
                 className="relative h-64 w-64 overflow-hidden rounded-full bg-gradient-to-br from-fuchsia-400 to-fuchsia-600 p-1 shadow-glow md:h-80 md:w-80"
                 style={{ clipPath: "circle(0% at 50% 50%)" }}
               >
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
-                  <img src={chieImage} alt="Chifie" className="h-full w-full object-cover object-top" />
+                  <img src={chifieImage} alt="Levina" className="h-full w-full object-cover object-top" />
                 </div>
               </div>
 
-              {/* Floating badge */}
               <div className="absolute -right-2 -bottom-2 rounded-2xl glass-strong border border-fuchsia-500/20 px-4 py-2 shadow-elegant animate-float-slow">
                 <p className="text-xs font-medium text-fuchsia-500">3+ Years</p>
-                <p className="text-[10px] text-muted-foreground">Coding</p>
+                <p className="text-[10px] text-muted-foreground">Experience</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="mt-16 flex justify-center">
           <a
             href="#about"
