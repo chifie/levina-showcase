@@ -87,6 +87,8 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
     <div
       ref={containerRef}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
+      role="status"
+      aria-label="Loading Levina Chifie portfolio"
       style={{
         background: "#0e1420",
         perspective: "1000px",
