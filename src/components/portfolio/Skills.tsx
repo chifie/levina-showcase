@@ -214,7 +214,7 @@ export default function Skills() {
           {SKILL_CATEGORIES.map((category, catIndex) => (
             <div
               key={catIndex}
-              className="rounded-3xl glass-strong border border-brand/10 p-6 shadow-elegant transition-all duration-300 hover:shadow-glow"
+              className="rounded-3xl glass-strong border border-brand/10 p-6 shadow-elegant transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
             >
               <div className="mb-4 flex items-center gap-3 border-b border-border/40 pb-4">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow">
