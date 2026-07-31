@@ -89,7 +89,7 @@
   --input: #2b3445;
   --ring: #9fb0c4;
 
-  --gradient-primary: linear-gradient(135deg, #a5b3c6, #8fa0b8, #f6f1e5);
+  --gradient-primary: linear-gradient(135deg, #a5b3c6, #8fa0b8, #4a5a72);
   --gradient-soft: linear-gradient(135deg, #0e1420, #161d2c, #0e1420);
   --gradient-glow: radial-gradient(circle at center, rgba(159, 176, 196, 0.12), transparent 70%);
   --shadow-glow: 0 10px 40px -10px rgba(159, 176, 196, 0.3);

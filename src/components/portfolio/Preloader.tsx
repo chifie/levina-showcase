@@ -25,7 +25,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         span.style.fontFamily = "Space Grotesk, sans-serif";
         span.style.fontWeight = "700";
         span.style.fontSize = "clamp(2.5rem, 6vw, 4.5rem)";
-        span.style.background = "linear-gradient(135deg, #d946ef, #ec4899)";
+        span.style.background = "linear-gradient(135deg, #8fa0b8, #6c7a94)";
         span.style.webkitBackgroundClip = "text";
         span.style.webkitTextFillColor = "transparent";
         span.style.backgroundClip = "text";
@@ -88,14 +88,14 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       ref={containerRef}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
       style={{
-        background: "#0f172a",
+        background: "#0e1420",
         perspective: "1000px",
       }}
     >
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, #d946ef 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 1px 1px, #8fa0b8 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -109,7 +109,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         <div
           ref={barRef}
           className="h-full origin-left rounded-full"
-          style={{ background: "linear-gradient(135deg, #d946ef, #ec4899)" }}
+          style={{ background: "linear-gradient(135deg, #8fa0b8, #6c7a94)" }}
         />
       </div>
 

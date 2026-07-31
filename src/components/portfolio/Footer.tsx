@@ -136,7 +136,7 @@ function CursorFollower() {
       ref={cursorRef}
       className="pointer-events-none fixed z-[100] hidden h-6 w-6 rounded-full mix-blend-difference"
       style={{
-        background: "#d946ef",
+        background: "#6c7a94",
         opacity: 0,
       }}
     />

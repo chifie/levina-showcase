@@ -102,7 +102,7 @@ function FloatingInput({
       gsap.to(wrapper.querySelector(".float-label"), {
         top: "0.5rem",
         fontSize: "0.75rem",
-        color: "#d946ef",
+        color: "#6c7a94",
         duration: 0.2,
         ease: "power2.out",
       });
