@@ -51,3 +51,6 @@ All notable changes to this project will be documented in this file.
 
 ### CI
 - Workflow switched to Bun for install, typecheck, and lint
+
+### Added
+- Blog category chips rendered from shared data
