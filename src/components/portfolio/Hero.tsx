@@ -181,6 +181,16 @@ export default function Hero() {
         );
       }
 
+      const heroBadges = photoFrameRef.current?.querySelectorAll("[data-hero-badge]");
+      if (heroBadges && heroBadges.length > 0) {
+        tl.fromTo(
+          heroBadges,
+          { opacity: 0, scale: 0.6, y: 20 },
+          { opacity: 1, scale: 1, y: 0, duration: 0.5, stagger: 0.12, ease: "back.out(1.7)" },
+          "-=0.2",
+        );
+      }
+
       if (profileRef.current) {
         tl.fromTo(
           profileRef.current,
@@ -457,7 +467,6 @@ export default function Hero() {
                 className="absolute left-1/2 top-1/2 h-[125%] w-[125%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/15 blur-[80px]"
                 aria-hidden="true"
               />
-
               <div
                 className="absolute -inset-5 rounded-full animate-spin-slow"
                 style={{
@@ -470,7 +479,6 @@ export default function Hero() {
                 }}
                 aria-hidden="true"
               />
-
               <div
                 className="absolute -inset-10 rounded-full border border-dashed border-brand/20 animate-spin-slow"
                 style={{ animationDirection: "reverse", animationDuration: "40s" }}
@@ -481,7 +489,6 @@ export default function Hero() {
                 <span className="absolute right-0 top-1/2 h-2 w-2 translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-dark/50" />
                 <span className="absolute left-1/2 bottom-0 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-brand/40" />
               </div>
-
               <div
                 ref={profileRef}
                 className="relative h-72 w-64 overflow-hidden rounded-full p-[3px] shadow-glow md:h-96 md:w-80"
@@ -504,14 +511,16 @@ export default function Hero() {
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-white/10" />
                 </div>
-              </div>
-
-              <div className="absolute -left-4 -top-2 flex items-center gap-1.5 rounded-full glass-strong border border-brand/20 px-3 py-1.5 shadow-elegant animate-float-slow">
+              </div>{" "}
+              <div
+                data-hero-badge
+                className="absolute -left-4 -top-2 flex items-center gap-1.5 rounded-full glass-strong border border-brand/20 px-3 py-1.5 shadow-elegant animate-float-slow"
+              >
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse-soft" />
                 <p className="text-[10px] font-semibold text-brand-dark">Open to work</p>
               </div>
-
               <div
+                data-hero-badge
                 className="absolute -right-2 -bottom-2 rounded-2xl glass-strong border border-brand/20 px-4 py-2.5 shadow-elegant animate-float-slow"
                 style={{ animationDelay: "1.5s" }}
               >
