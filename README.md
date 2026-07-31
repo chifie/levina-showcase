@@ -164,3 +164,9 @@ Headings use the elegant serif **Playfair Display** (with italic gradient accent
 - ARIA roles and labels on preloader, progress bars, and form inputs
 - `aria-current` marks the active navbar link
 - `prefers-reduced-motion` support: all GSAP animations are skipped and content is revealed statically via `src/lib/motion.ts`
+
+## ⚡ Performance
+
+- Fonts are loaded once via Google Fonts with `display=swap`
+- Hero image uses `loading="eager"` + `decoding="async"` for above-the-fold rendering
+- All animations use GSAP with GPU-friendly transforms only
