@@ -15,4 +15,3 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - React hydration warning from Math.random() during render
-- Horizontal overflow on mobile viewports
