@@ -60,3 +60,6 @@ All notable changes to this project will be documented in this file.
 
 ### Docs
 - Brand colors reference table added to README
+
+### Docs
+- How-to guide for adding blog posts
