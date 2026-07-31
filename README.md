@@ -297,3 +297,7 @@ A GitHub Actions workflow (`.github/workflows/ci.yml`) runs `npm run typecheck` 
 ## 🧾 Blog Categories
 
 Articles are tagged with categories exported from `src/lib/blog-posts.ts` (`BLOG_CATEGORIES`): Backend, Mobile, and Design.
+
+## 📈 Continuous Integration
+
+Every push to `main` triggers the CI workflow which installs dependencies with Bun and runs `typecheck` + `lint`.
