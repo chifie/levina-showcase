@@ -112,7 +112,7 @@ export default function About() {
                 style={{ animationDirection: "reverse", animationDuration: "30s" }}
                 aria-hidden="true"
               />
-              <div className="relative h-72 w-64 overflow-hidden rounded-full bg-gradient-to-br from-brand-light to-brand-dark p-1 shadow-glow md:h-96 md:w-80">
+              <div className="relative h-72 w-64 overflow-hidden rounded-full bg-gradient-to-br from-brand-light to-brand-dark p-1 shadow-glow transition-transform duration-500 hover:scale-[1.02] md:h-96 md:w-80">
                 <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
                   <img
                     src={chifieImage}
