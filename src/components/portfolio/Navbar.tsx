@@ -162,9 +162,13 @@ export default function Navbar() {
           <button
             onClick={toggle}
             aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-brand/10"
+            className="group relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-brand/10"
           >
-            <span className="transition-transform duration-300 hover:rotate-12">
+            <span
+              className="absolute inset-0 -translate-y-full bg-gradient-primary opacity-20 transition-transform duration-400 group-hover:translate-y-0"
+              aria-hidden="true"
+            />
+            <span className="relative transition-transform duration-300 group-hover:rotate-12">
               {theme === "dark" ? <FaSun className="text-brand-light" /> : <FaMoon />}
             </span>
           </button>

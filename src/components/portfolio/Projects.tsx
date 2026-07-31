@@ -167,7 +167,7 @@ export default function Projects() {
             <div
               key={i}
               data-project-card
-              className="group relative flex h-full flex-col overflow-hidden rounded-3xl glass-strong border border-brand/10 shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:shadow-glow"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl glass-strong border border-brand/10 shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:shadow-glow hover:border-brand/30"
             >
               <div
                 className={`shine-sweep relative h-44 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-48`}
