@@ -145,3 +145,7 @@ React, TypeScript, Next.js, FastAPI, NestJS, Flutter, PostgreSQL, and more. See 
 ## ⭐ Support
 
 If you find this project useful, consider giving it a ⭐ on [GitHub](https://github.com/chifie/levina-showcase).
+
+## 📜 Footer
+
+Built with ❤️ by **Levina Chifie** — React, TypeScript, TanStack Start, GSAP & Tailwind CSS.
