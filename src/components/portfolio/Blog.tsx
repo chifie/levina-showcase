@@ -83,6 +83,7 @@ function PostCard({
       </div>
 
       <div className="flex flex-1 flex-col p-6 lg:p-7">
+        <div className="mb-3 h-1 w-10 rounded-full bg-gradient-primary transition-all duration-500 group-hover:w-16" />
         <h3 className="font-heading text-xl font-bold leading-snug transition-colors group-hover:text-brand">
           {title}
         </h3>
