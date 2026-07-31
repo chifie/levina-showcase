@@ -214,10 +214,14 @@ export default function Skills() {
           {SKILL_CATEGORIES.map((category, catIndex) => (
             <div
               key={catIndex}
-              className="rounded-3xl glass-strong border border-brand/10 p-6 shadow-elegant transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
+              className="group relative overflow-hidden rounded-3xl glass-strong border border-brand/10 p-6 shadow-elegant transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
             >
+              <div
+                className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-brand/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                aria-hidden="true"
+              />
               <div className="mb-4 flex items-center gap-3 border-b border-border/40 pb-4">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <category.icon className="text-lg" />
                 </span>
                 <div>

@@ -87,6 +87,12 @@ function ServiceCard({
         className="absolute top-0 right-0 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-20"
         style={{ background: color }}
       />
+      <span
+        className="absolute right-6 top-5 font-heading text-5xl font-bold text-brand/10 transition-colors duration-500 group-hover:text-brand/20 select-none"
+        aria-hidden="true"
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
 
       <div className="relative">
         <span
