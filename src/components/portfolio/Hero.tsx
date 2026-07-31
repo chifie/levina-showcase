@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import chifieImage from "@/assets/chifie.png";
+import { prefersReducedMotion } from "@/lib/motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +46,8 @@ function MagneticButton({
   useEffect(() => {
     const btn = btnRef.current;
     if (!btn) return;
+
+    if (prefersReducedMotion()) return;
 
     const onMouseMove = (e: MouseEvent) => {
       const rect = btn.getBoundingClientRect();
@@ -104,6 +107,11 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (prefersReducedMotion()) {
+        gsap.set(profileRef.current, { clipPath: "circle(50% at 50% 50%)" });
+        return;
+      }
+
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       const headline = headlineRef.current;
@@ -228,6 +236,8 @@ export default function Hero() {
     const section = sectionRef.current;
     if (!section) return;
 
+    if (prefersReducedMotion()) return;
+
     const iconEls: HTMLDivElement[] = [];
     const iconTweenersX: ((v: number) => void)[] = [];
     const iconTweenersY: ((v: number) => void)[] = [];
@@ -342,7 +352,7 @@ export default function Hero() {
               className="mt-3 font-heading text-2xl font-semibold md:text-3xl lg:text-4xl"
             >
               Full Stack Software Developer
-              <span className="text-gradient">&amp; Mobile App Developer</span>
+              <span className="text-gradient italic">&amp; Mobile App Developer</span>
             </p>
 
             <p
@@ -429,7 +439,8 @@ export default function Hero() {
                     alt="Levina Chifie - Full Stack Software Developer"
                     className="h-full w-full object-cover"
                     loading="eager"
-                    style={{ objectPosition: "center 45%" }}
+                    decoding="async"
+                    style={{ objectPosition: "center 15%" }}
                   />
                 </div>
               </div>
