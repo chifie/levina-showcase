@@ -147,7 +147,11 @@ function SkillCard({
           <div
             ref={barRef}
             className="h-full rounded-full transition-all"
-            style={{ background: `linear-gradient(135deg, ${color}, ${color}88)`, width: "0%" }}
+            style={{
+              background: `linear-gradient(90deg, ${color}, ${color}bb, ${color})`,
+              backgroundSize: "200% 100%",
+              width: "0%",
+            }}
           />
         </div>
       </div>

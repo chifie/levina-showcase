@@ -170,7 +170,7 @@ export default function Projects() {
               className="group relative flex h-full flex-col overflow-hidden rounded-3xl glass-strong border border-brand/10 shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:shadow-glow"
             >
               <div
-                className={`relative h-44 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-48`}
+                className={`shine-sweep relative h-44 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-48`}
               >
                 <div className="absolute inset-0 bg-black/10" />
                 <div
