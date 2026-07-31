@@ -108,7 +108,7 @@ export default function Hero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (prefersReducedMotion()) {
-        gsap.set(profileRef.current, { clipPath: "circle(50% at 50% 50%)" });
+        gsap.set(profileRef.current, { clipPath: "ellipse(50% 50% at 50% 50%)" });
         return;
       }
 
@@ -182,8 +182,8 @@ export default function Hero() {
       if (profileRef.current) {
         tl.fromTo(
           profileRef.current,
-          { clipPath: "circle(0% at 50% 50%)" },
-          { clipPath: "circle(50% at 50% 50%)", duration: 1.2, ease: "power4.out" },
+          { clipPath: "ellipse(0% 0% at 50% 50%)" },
+          { clipPath: "ellipse(50% 50% at 50% 50%)", duration: 1.2, ease: "power4.out" },
           "-=0.4",
         );
       }
@@ -430,8 +430,8 @@ export default function Hero() {
 
               <div
                 ref={profileRef}
-                className="relative h-64 w-64 overflow-hidden rounded-full bg-gradient-to-br from-brand-light to-brand-dark p-1 shadow-glow md:h-80 md:w-80"
-                style={{ clipPath: "circle(0% at 50% 50%)" }}
+                className="relative h-72 w-64 overflow-hidden rounded-full bg-gradient-to-br from-brand-light to-brand-dark p-1 shadow-glow md:h-96 md:w-80"
+                style={{ clipPath: "ellipse(0% 0% at 50% 50%)" }}
               >
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
                   <img
@@ -440,7 +440,7 @@ export default function Hero() {
                     className="h-full w-full object-cover"
                     loading="eager"
                     decoding="async"
-                    style={{ objectPosition: "center 15%" }}
+                    style={{ objectPosition: "center 35%" }}
                   />
                 </div>
               </div>
