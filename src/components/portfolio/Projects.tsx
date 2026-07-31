@@ -126,6 +126,7 @@ export default function Projects() {
             duration: 0.6,
             stagger: 0.1,
             ease: "power3.out",
+            clearProps: "transform",
             scrollTrigger: {
               trigger: gridRef.current,
               start: "top 80%",
