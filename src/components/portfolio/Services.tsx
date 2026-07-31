@@ -74,7 +74,7 @@ function ServiceCard({
   return (
     <div
       ref={cardRef}
-      className="group relative overflow-hidden rounded-3xl glass-strong border border-pink-400/10 p-8 shadow-elegant transition-all duration-300 hover:shadow-glow hover:-translate-y-1"
+      className="group relative overflow-hidden rounded-3xl glass-strong border border-brand/10 p-8 shadow-elegant transition-all duration-300 hover:shadow-glow hover:-translate-y-1"
       style={{ opacity: 0 }}
     >
       <div
@@ -90,13 +90,13 @@ function ServiceCard({
           <Icon className="text-xl" />
         </span>
 
-        <h3 className="mt-5 font-heading text-xl font-bold transition-colors group-hover:text-pink-400">
+        <h3 className="mt-5 font-heading text-xl font-bold transition-colors group-hover:text-brand">
           {title}
         </h3>
 
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
 
-        <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-pink-400 opacity-0 translate-x-[-10px] transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand opacity-0 translate-x-[-10px] transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
           Learn more
           <FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
         </div>
@@ -135,13 +135,13 @@ export default function Services() {
 
   return (
     <section id="services" ref={sectionRef} className="relative py-28 overflow-hidden">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-pink-400/5 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-brand/5 blur-[120px]" />
 
       <div className="mx-auto max-w-6xl px-6">
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-pink-400/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-pink-400"
+            className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand"
           >
             Services
           </span>

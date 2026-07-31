@@ -144,7 +144,7 @@ function FloatingInput({
         type={isTextarea ? undefined : type}
         rows={rows}
         placeholder=" "
-        className={`peer w-full rounded-xl border border-border bg-background/50 outline-none transition-all duration-300 focus:border-pink-400 focus:bg-background focus:ring-2 focus:ring-pink-400/20 ${
+        className={`peer w-full rounded-xl border border-border bg-background/50 outline-none transition-all duration-300 focus:border-brand focus:bg-background focus:ring-2 focus:ring-brand/20 ${
           isTextarea ? "resize-none px-4 pt-6 pb-2" : "px-4 pt-6 pb-2"
         } text-sm`}
       />
@@ -247,13 +247,13 @@ export default function Contact() {
 
   return (
     <section id="contact" ref={sectionRef} className="relative py-28 overflow-hidden">
-      <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-pink-400/5 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-32 bottom-1/3 h-72 w-72 rounded-full bg-pink-300/5 blur-[100px]" />
+      <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-brand/5 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-32 bottom-1/3 h-72 w-72 rounded-full bg-brand-light/5 blur-[100px]" />
 
       {[...Array(6)].map((_, i) => (
         <div
           key={i}
-          className="pointer-events-none absolute h-2 w-2 rounded-full bg-pink-400/20 animate-float"
+          className="pointer-events-none absolute h-2 w-2 rounded-full bg-brand/20 animate-float"
           style={{
             left: `${15 + i * 15}%`,
             top: `${20 + (i % 3) * 30}%`,
@@ -267,7 +267,7 @@ export default function Contact() {
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-pink-400/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-pink-400"
+            className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand"
           >
             Contact
           </span>
@@ -287,7 +287,7 @@ export default function Contact() {
             {CONTACT_INFO.map((item, i) => {
               const { Icon, label, value, href } = item;
               const Content = (
-                <div className="group flex items-center gap-4 rounded-2xl glass-strong border border-pink-400/10 p-5 shadow-elegant transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5">
+                <div className="group flex items-center gap-4 rounded-2xl glass-strong border border-brand/10 p-5 shadow-elegant transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5">
                   <span className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                     <Icon className="text-lg" />
                   </span>
@@ -325,7 +325,7 @@ export default function Contact() {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="glow-border rounded-3xl glass-strong border border-pink-400/10 p-8 shadow-elegant lg:col-span-3"
+            className="glow-border rounded-3xl glass-strong border border-brand/10 p-8 shadow-elegant lg:col-span-3"
             style={{ opacity: 0 }}
           >
             <div className="grid gap-5 sm:grid-cols-2">

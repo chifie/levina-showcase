@@ -100,8 +100,8 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         }}
       />
 
-      <div className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-pink-400/10 blur-[100px]" />
-      <div className="absolute right-1/4 bottom-1/3 h-48 w-48 rounded-full bg-pink-300/10 blur-[80px]" />
+      <div className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-brand/10 blur-[100px]" />
+      <div className="absolute right-1/4 bottom-1/3 h-48 w-48 rounded-full bg-brand-light/10 blur-[80px]" />
 
       <div ref={logoRef} className="relative z-10 flex items-center gap-1" />
 

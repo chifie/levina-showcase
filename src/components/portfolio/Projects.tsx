@@ -11,8 +11,8 @@ const PROJECTS = [
     description:
       "A modern marketplace platform for Tanzania connecting buyers and sellers with seamless transactions, product management, and a complete seller dashboard.",
     tech: ["React", "FastAPI", "PostgreSQL", "TypeScript"],
-    gradient: "from-pink-400 via-pink-500 to-rose-400",
-    color: "#d946ef",
+    gradient: "from-brand-light via-brand to-brand-dark",
+    color: "#6c7a94",
     initials: "SD",
     github: "https://github.com",
     demo: "https://sokodigital.com",
@@ -22,8 +22,8 @@ const PROJECTS = [
     description:
       "A real estate marketplace platform for property listings, agent profiles, search filters, and seamless transaction management across Tanzania.",
     tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-    gradient: "from-violet-500 via-purple-500 to-pink-400",
-    color: "#8b5cf6",
+    gradient: "from-brand via-brand-dark to-brand-dark",
+    color: "#5f6b80",
     initials: "DM",
     github: "https://github.com",
     demo: "https://dalamaimkononi.com",
@@ -33,8 +33,8 @@ const PROJECTS = [
     description:
       "A digital services platform connecting providers and clients for various services including consulting, delivery, and local business solutions.",
     tech: ["React", "NestJS", "MySQL", "Tailwind CSS"],
-    gradient: "from-teal-500 via-cyan-500 to-blue-500",
-    color: "#06B6D4",
+    gradient: "from-brand-dark via-brand to-brand-light",
+    color: "#71809a",
     initials: "TK",
     github: "https://github.com",
     demo: "https://tanzaniakiganjani.com",
@@ -44,8 +44,8 @@ const PROJECTS = [
     description:
       "A restaurant website with a modern UI, online ordering system, menu management, and an intuitive customer experience for Glory Burger.",
     tech: ["React", "FastAPI", "PostgreSQL", "Tailwind CSS"],
-    gradient: "from-orange-500 via-red-500 to-pink-500",
-    color: "#f97316",
+    gradient: "from-brand via-brand-light to-brand-dark",
+    color: "#4a5a72",
     initials: "GB",
     github: "https://github.com",
     demo: "https://gloryburger.com",
@@ -55,8 +55,8 @@ const PROJECTS = [
     description:
       "A Flutter mobile application for food ordering with real-time cart management, order tracking, push notifications, and a seamless mobile dining experience.",
     tech: ["Flutter", "Dart", "Firebase", "REST APIs"],
-    gradient: "from-amber-500 via-yellow-400 to-orange-500",
-    color: "#f59e0b",
+    gradient: "from-brand-light via-brand to-brand",
+    color: "#8fa0b8",
     initials: "GM",
     github: "https://github.com",
     demo: "https://gloryburger.app",
@@ -115,13 +115,13 @@ export default function Projects() {
 
   return (
     <section id="projects" ref={sectionRef} className="relative overflow-hidden py-28">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-pink-400/5 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-brand/5 blur-[120px]" />
 
       <div className="mx-auto max-w-6xl px-6">
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
-            className="inline-block rounded-full glass border border-pink-400/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-pink-400"
+            className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand"
           >
             Projects
           </span>
@@ -141,7 +141,7 @@ export default function Projects() {
             <div
               key={i}
               data-project-card
-              className="group flex h-full flex-col overflow-hidden rounded-3xl glass-strong border border-pink-400/10 shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:shadow-glow"
+              className="group flex h-full flex-col overflow-hidden rounded-3xl glass-strong border border-brand/10 shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:shadow-glow"
             >
               <div
                 className={`relative h-44 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-48`}
@@ -186,7 +186,7 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-1 flex-col p-6 lg:p-7">
-                <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-pink-400">
+                <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-brand">
                   {project.title}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
@@ -208,13 +208,13 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-5 flex gap-3 border-t border-pink-400/10 pt-5">
+                <div className="mt-5 flex gap-3 border-t border-brand/10 pt-5">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex-1 rounded-full glass border border-pink-400/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
+                      className="flex-1 rounded-full glass border border-brand/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
                     >
                       GitHub
                     </a>
