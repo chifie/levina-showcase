@@ -169,6 +169,18 @@ export default function About() {
               I&apos;m a dedicated Full Stack Software Developer
               <span className="inline-block animate-float-fast">⚡</span>
             </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Web Development", "Mobile Development", "API Design", "UI Implementation"].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full glass border border-brand/20 px-3.5 py-1.5 text-[11px] font-medium text-brand-dark transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand/10 hover:border-brand/40"
+                  >
+                    {tag}
+                  </span>
+                ),
+              )}
+            </div>
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 With a strong foundation in software engineering, I specialize in building modern,

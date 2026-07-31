@@ -215,7 +215,12 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-1 flex-col p-6 lg:p-7">
-                <div className="mb-3 h-1 w-10 rounded-full bg-gradient-primary transition-all duration-500 group-hover:w-16" />
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="h-1 w-10 rounded-full bg-gradient-primary transition-all duration-500 group-hover:w-16" />
+                  <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-brand/40 transition-colors duration-300 group-hover:text-brand/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
                 <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-brand">
                   {project.title}
                 </h3>
