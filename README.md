@@ -257,3 +257,9 @@ Found a bug or have an idea? Open an [issue](https://github.com/chifie/levina-sh
 ## 🖼 Profile Photo
 
 The profile photo appears in both the **Hero** (portrait oval frame) and the **About** section (two-column layout). The image lives at `src/assets/chifie.png` and uses `object-position: center 35%` to keep the head and neck visible.
+
+## 🧠 Design Language
+
+- Portrait oval profile frames with animated spinning rings
+- Glass-morphism cards with brand borders and glow shadows
+- Gradient accents in brand colors (light → base → dark)
