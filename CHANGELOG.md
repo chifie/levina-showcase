@@ -23,3 +23,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - React hydration warning from Math.random() during render
 - GSAP animations now respect the user's reduced-motion preference
+
+### Accessibility
+- Reduced-motion support across all GSAP animations
+- ARIA progressbar roles on skill bars, aria-current on nav, focus rings on blog links
