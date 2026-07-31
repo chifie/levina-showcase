@@ -229,16 +229,11 @@ export default function Skills() {
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <category.icon className="text-lg" />
                 </span>
-                <div className="flex flex-1 items-center justify-between gap-2">
-                  <div>
-                    <h3 className="font-heading text-lg font-bold">{category.title}</h3>
-                    <p className="text-[11px] text-muted-foreground">
-                      {category.skills.length} technologies
-                    </p>
-                  </div>
-                  <span className="rounded-full border border-brand/15 bg-brand/5 px-2.5 py-0.5 text-[10px] font-semibold text-brand-dark">
-                    {category.skills.length}
-                  </span>
+                <div className="flex-1">
+                  <h3 className="font-heading text-lg font-bold">{category.title}</h3>
+                  <p className="text-[11px] text-muted-foreground">
+                    {category.skills.length} technologies
+                  </p>
                 </div>
               </div>
 
