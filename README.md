@@ -338,3 +338,7 @@ The Blog header shows category chips (Backend, Mobile, Design) driven by the sha
 ## 🔍 SEO & Metadata
 
 The site ships Open Graph and Twitter card meta tags with absolute URLs, a canonical link, theme-color, and apple-mobile-web-app metadata in `src/routes/index.tsx`.
+
+## 🧭 Navigation
+
+The fixed navbar tracks the active section as you scroll, highlights it with an animated indicator and `aria-current`, and includes a mobile menu. Footer links mirror the same sections.
