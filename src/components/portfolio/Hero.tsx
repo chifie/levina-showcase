@@ -422,10 +422,11 @@ export default function Hero() {
 
           <div className="mt-12 flex-shrink-0 lg:mt-0">
             <div className="relative">
-              <div className="absolute -inset-4 rounded-full border border-brand/20 animate-spin-slow" />
+              <div className="absolute -inset-4 rounded-full border border-brand/20 animate-spin-slow" aria-hidden="true" />
               <div
                 className="absolute -inset-8 rounded-full border border-brand/10 animate-spin-slow"
                 style={{ animationDirection: "reverse", animationDuration: "30s" }}
+                aria-hidden="true"
               />
 
               <div
