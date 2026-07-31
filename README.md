@@ -10,3 +10,13 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 - Dark / light theme support with brand tokens
 - Responsive design across mobile and desktop
 - Magnetic buttons, ripple effects, and custom cursor
+
+## 🛠 Tech Stack
+
+| Area | Technologies |
+| --- | --- |
+| Frontend | React 19, TypeScript, TanStack Start, Tailwind CSS v4 |
+| Animation | GSAP, ScrollTrigger |
+| Icons | React Icons |
+| Styling | Tailwind CSS, tw-animate-css |
+| Deployment | Cloudflare Workers (Wrangler) |
