@@ -126,7 +126,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         ref={textRef}
         className="relative z-10 mt-4 text-xs font-medium uppercase tracking-[0.3em] text-white/40"
       >
-        Loading Experience
+        Loading portfolio
       </div>
     </div>
   );
