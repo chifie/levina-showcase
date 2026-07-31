@@ -299,7 +299,9 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Levina Chifie. Crafted with{" "}
               <FaHeart className="inline text-brand mx-0.5" /> and code.
             </p>
-            <p className="text-[10px]">Built with React &bull; GSAP &bull; Tailwind CSS &bull; Playfair Display</p>
+            <p className="text-[10px]">
+              Built with React &bull; GSAP &bull; Tailwind CSS &bull; Playfair Display
+            </p>
           </div>
         </div>
       </footer>
