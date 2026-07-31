@@ -45,3 +45,6 @@ All notable changes to this project will be documented in this file.
 
 ### Docs
 - README sections overview, components reference, and design language
+
+### CI
+- GitHub Actions workflow for linting and typechecking
