@@ -293,3 +293,7 @@ The profile photo appears in both the **Hero** (portrait oval frame) and the **A
 ## 🤖 CI
 
 A GitHub Actions workflow (`.github/workflows/ci.yml`) runs `npm run typecheck` and `npm run lint` on every push and pull request to `main`.
+
+## 🧾 Blog Categories
+
+Articles are tagged with categories exported from `src/lib/blog-posts.ts` (`BLOG_CATEGORIES`): Backend, Mobile, and Design.
