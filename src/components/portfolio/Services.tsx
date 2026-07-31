@@ -102,7 +102,10 @@ function ServiceCard({
 
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
 
-        <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand opacity-0 translate-x-[-10px] transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+        <a
+          href="#contact"
+          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand opacity-0 translate-x-[-10px] transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+        >
           Learn more
           <FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
         </a>
