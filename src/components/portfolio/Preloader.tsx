@@ -118,7 +118,10 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         <div
           ref={barRef}
           className="h-full origin-left rounded-full"
-          style={{ background: "linear-gradient(135deg, #8fa0b8, #6c7a94)" }}
+          style={{
+            background: "linear-gradient(90deg, #6c7a94, #a5b3c6, #6c7a94)",
+            backgroundSize: "200% 100%",
+          }}
         />
       </div>
 

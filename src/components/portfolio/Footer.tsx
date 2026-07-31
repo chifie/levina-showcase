@@ -196,6 +196,10 @@ export default function Footer() {
         ref={footerRef}
         className="relative border-t border-border/50 pt-16 pb-8 overflow-hidden"
       >
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent"
+          aria-hidden="true"
+        />
         <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/5 blur-[100px]" />
 
         <div className="mx-auto max-w-6xl px-6">
@@ -299,8 +303,10 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Levina Chifie. Crafted with{" "}
               <FaHeart className="inline text-brand mx-0.5" /> and code.
             </p>
-            <p className="text-[10px]">
-              Built with React &bull; GSAP &bull; Tailwind CSS &bull; Playfair Display
+            <p className="flex flex-wrap items-center gap-x-1.5 text-[10px]">
+              Built with React <span className="text-brand/50">&bull;</span> GSAP
+              <span className="text-brand/50">&bull;</span> Tailwind CSS
+              <span className="text-brand/50">&bull;</span> Playfair Display
             </p>
           </div>
         </div>
