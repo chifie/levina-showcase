@@ -170,3 +170,12 @@ Headings use the elegant serif **Playfair Display** (with italic gradient accent
 - Fonts are loaded once via Google Fonts with `display=swap`
 - Hero image uses `loading="eager"` + `decoding="async"` for above-the-fold rendering
 - All animations use GSAP with GPU-friendly transforms only
+
+## 🧪 Testing
+
+Run the type check and linter before opening a PR:
+
+```bash
+npm run typecheck
+npm run lint
+```
