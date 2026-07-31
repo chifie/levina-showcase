@@ -55,8 +55,8 @@ const PROJECTS = [
     description:
       "A Flutter mobile application for food ordering with real-time cart management, order tracking, push notifications, and a seamless mobile dining experience.",
     tech: ["Flutter", "Dart", "Firebase", "REST APIs"],
-    gradient: "from-brand-light via-brand to-brand",
-    color: "#8fa0b8",
+    gradient: "from-slate-300 via-slate-400 to-slate-600",
+    color: "#94a3b8",
     initials: "GM",
     github: "https://github.com",
     demo: "https://gloryburger.app",
