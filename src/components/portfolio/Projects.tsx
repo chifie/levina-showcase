@@ -61,6 +61,17 @@ const PROJECTS = [
     github: "https://github.com",
     demo: "https://gloryburger.app",
   },
+  {
+    title: "Portfolio Website",
+    description:
+      "A modern, animated portfolio built with React, TypeScript, and GSAP featuring a slate-blue brand identity, smooth scroll animations, and a fully responsive layout.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "GSAP"],
+    gradient: "from-slate-700 via-slate-800 to-slate-900",
+    color: "#334155",
+    initials: "PW",
+    github: "https://github.com/chifie/levina-showcase",
+    demo: "https://levinachifie.dev",
+  },
 ];
 
 export default function Projects() {
