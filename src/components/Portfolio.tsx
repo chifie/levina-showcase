@@ -17,13 +17,26 @@ gsap.registerPlugin(Flip);
 
 function FontLoader() {
   useEffect(() => {
+    const head = document.head;
+    const preconnects = ["https://fonts.googleapis.com", "https://fonts.gstatic.com"];
+    preconnects.forEach((origin) => {
+      const pre = document.createElement("link");
+      pre.rel = "preconnect";
+      pre.href = origin;
+      pre.crossOrigin = "anonymous";
+      head.appendChild(pre);
+    });
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href =
       "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap";
-    document.head.appendChild(link);
+    head.appendChild(link);
     return () => {
-      document.head.removeChild(link);
+      preconnects.forEach((origin) => {
+        const pre = head.querySelector(`link[rel="preconnect"][href="${origin}"]`);
+        if (pre) head.removeChild(pre);
+      });
+      head.removeChild(link);
     };
   }, []);
   return null;
