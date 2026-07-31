@@ -13,6 +13,7 @@ import {
   SiMysql,
   SiGithub,
 } from "react-icons/si";
+import { prefersReducedMotion } from "@/lib/motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,6 +92,12 @@ function SkillCard({
     const bar = barRef.current;
     if (!card || !bar) return;
 
+    if (prefersReducedMotion()) {
+      gsap.set(card, { opacity: 1, y: 0, scale: 1 });
+      gsap.set(bar, { width: `${level}%` });
+      return;
+    }
+
     const trigger = ScrollTrigger.create({
       trigger: card,
       start: "top 85%",
@@ -126,11 +133,17 @@ function SkillCard({
         <Icon className="text-lg" />
       </span>
       <div className="flex-1 min-w-0">
-        <div className="flex items-center justify-between">
+        <div>
           <span className="text-sm font-medium truncate">{name}</span>
-          <span className="text-xs font-semibold text-muted-foreground ml-2">{level}%</span>
         </div>
-        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted">
+        <div
+          className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted"
+          role="progressbar"
+          aria-label={`${name} proficiency`}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={level}
+        >
           <div
             ref={barRef}
             className="h-full rounded-full transition-all"
@@ -148,6 +161,8 @@ export default function Skills() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (prefersReducedMotion()) return;
+
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current.querySelectorAll("[data-anim]"),
@@ -187,7 +202,7 @@ export default function Skills() {
             data-anim
             className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Technical <span className="text-gradient">Competencies</span>
+            Technical <span className="text-gradient italic">Competencies</span>
           </h2>
           <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             A comprehensive set of tools and technologies I work with to deliver high-quality
