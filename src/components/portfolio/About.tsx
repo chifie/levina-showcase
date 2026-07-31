@@ -105,26 +105,47 @@ export default function About() {
 
         <div className="grid items-center gap-10 lg:grid-cols-5 lg:gap-14">
           <div ref={photoRef} className="mx-auto lg:col-span-2" style={{ opacity: 0 }}>
-            <div className="relative">
+            <div className="group relative">
               <div
-                className="absolute -inset-4 rounded-full border border-brand/20 animate-spin-slow"
+                className="absolute left-1/2 top-1/2 h-[125%] w-[125%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/10 blur-[70px]"
+                aria-hidden="true"
+              />
+              <div
+                className="absolute -inset-4 rounded-full border border-dashed border-brand/20 animate-spin-slow"
+                style={{ animationDuration: "35s" }}
                 aria-hidden="true"
               />
               <div
                 className="absolute -inset-8 rounded-full border border-brand/10 animate-spin-slow"
-                style={{ animationDirection: "reverse", animationDuration: "30s" }}
+                style={{ animationDirection: "reverse", animationDuration: "25s" }}
                 aria-hidden="true"
               />
-              <div className="relative h-72 w-64 overflow-hidden rounded-full bg-gradient-to-br from-brand-light to-brand-dark p-1 shadow-glow transition-transform duration-500 hover:scale-[1.02] md:h-96 md:w-80">
-                <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
+              <div
+                className="absolute -inset-6 rounded-full animate-spin-slow"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, transparent 0deg, rgba(108,122,148,0.4) 70deg, transparent 150deg, rgba(159,176,196,0.3) 230deg, transparent 320deg)",
+                  animationDuration: "18s",
+                  mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px))",
+                  WebkitMask:
+                    "radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px))",
+                }}
+                aria-hidden="true"
+              />
+              <div
+                className="relative h-72 w-64 overflow-hidden rounded-full p-[3px] shadow-glow transition-transform duration-500 hover:scale-[1.02] md:h-96 md:w-80"
+                style={{ background: "linear-gradient(160deg, #8fa0b8, #4a5a72, #8fa0b8)" }}
+              >
+                <div className="group relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
                   <img
                     src={chifieImage}
                     alt="Levina Chifie portrait"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                     decoding="async"
                     style={{ objectPosition: "center 35%" }}
                   />
+                  <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-white/10" />
                 </div>
               </div>
             </div>
