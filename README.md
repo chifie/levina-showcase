@@ -199,3 +199,9 @@ Add an entry to the `PROJECTS` array in `src/components/portfolio/Projects.tsx` 
 **Why do some animations not play on my device?**
 
 The site respects the `prefers-reduced-motion` system setting. Enable "reduce motion" in your OS or browser settings to disable GSAP animations.
+
+## 🚑 Troubleshooting
+
+**The dev server fails to start** — ensure Node.js 20+ is installed and run `npm install` first.
+
+**Fonts look wrong in development** — hard refresh (Ctrl+Shift+R) to clear the cached font stylesheet.
