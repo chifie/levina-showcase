@@ -58,7 +58,7 @@ function PostCard({
       style={{ opacity: 0 }}
     >
       <div
-        className="relative h-40 overflow-hidden lg:h-44"
+        className="shine-sweep relative h-40 overflow-hidden lg:h-44"
         style={{ background: `linear-gradient(135deg, ${color}, ${color}88)` }}
       >
         <div
@@ -68,6 +68,12 @@ function PostCard({
             backgroundSize: "20px 20px",
           }}
         />
+        <span
+          className="absolute right-5 top-5 font-heading text-4xl font-bold text-white/15 transition-colors duration-500 group-hover:text-white/30 select-none"
+          aria-hidden="true"
+        >
+          {String(index + 1).padStart(2, "0")}
+        </span>
         <span className="absolute left-5 top-5 rounded-full bg-white/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
           {category}
         </span>
@@ -164,7 +170,7 @@ export default function Blog() {
             {BLOG_CATEGORIES.map((category) => (
               <span
                 key={category}
-                className="rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-brand-dark transition-colors hover:bg-brand/10"
+                className="rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-brand-dark transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand/10 hover:border-brand/40"
               >
                 {category}
               </span>
