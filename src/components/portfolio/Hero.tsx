@@ -428,7 +428,7 @@ export default function Hero() {
                     src={chifieImage}
                     alt="Levina"
                     className="h-full w-full object-cover"
-                    style={{ objectPosition: "center 40%" }}
+                    style={{ objectPosition: "center 45%" }}
                   />
                 </div>
               </div>
