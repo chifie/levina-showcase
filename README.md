@@ -311,3 +311,11 @@ Every push to `main` triggers the CI workflow which installs dependencies with B
 ## 🏷 Blog Category Chips
 
 The Blog header shows category chips (Backend, Mobile, Design) driven by the shared `BLOG_CATEGORIES` constant, keeping labels in sync with article data.
+
+## 📄 Documentation Files
+
+- `README.md` — overview, setup, customization, FAQ
+- `CHANGELOG.md` — versioned change log
+- `CONTRIBUTING.md` — contribution guidelines
+- `SECURITY.md` — security reporting policy
+- `LICENSE` — MIT license
