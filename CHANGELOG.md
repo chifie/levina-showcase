@@ -57,3 +57,6 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Services learn-more links smooth-scroll to the contact section
+
+### Docs
+- Brand colors reference table added to README
