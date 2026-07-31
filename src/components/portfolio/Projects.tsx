@@ -136,10 +136,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div
-          ref={gridRef}
-          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7"
-        >
+        <div ref={gridRef} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {PROJECTS.map((project, i) => (
             <div
               key={i}
@@ -153,8 +150,7 @@ export default function Projects() {
                 <div
                   className="absolute inset-0 opacity-30 transition-transform duration-700 group-hover:scale-110"
                   style={{
-                    backgroundImage:
-                      "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+                    backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
                     backgroundSize: "20px 20px",
                   }}
                 />
