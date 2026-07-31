@@ -147,7 +147,7 @@ function FloatingInput({
         placeholder=" "
         aria-label={label}
         autoComplete={name === "email" ? "email" : name === "name" ? "name" : undefined}
-        className={`peer w-full rounded-xl border border-border bg-background/50 outline-none transition-all duration-300 focus:border-brand focus:bg-background focus:ring-2 focus:ring-brand/20 ${
+        className={`peer w-full rounded-xl border border-border bg-background/50 outline-none transition-all duration-300 focus:border-brand focus:bg-background focus:ring-2 focus:ring-brand/20 focus:shadow-glow ${
           isTextarea ? "resize-none px-4 pt-6 pb-2" : "px-4 pt-6 pb-2"
         } text-sm`}
       />
@@ -374,6 +374,10 @@ export default function Contact() {
             </div>
 
             <div className="mt-6">
+              <div className="mb-3 flex items-center gap-2 text-[11px] text-muted-foreground">
+                <span className="h-1 w-1 rounded-full bg-brand/60" />I typically reply within 24
+                hours
+              </div>
               <RippleButton type="submit">
                 {submitting ? (
                   <>
