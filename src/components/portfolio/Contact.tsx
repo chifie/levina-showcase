@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaEnvelope, FaGithub, FaLinkedin, FaPaperPlane, FaCheck } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
+import { prefersReducedMotion } from "@/lib/motion";
 
 const CONTACT_INFO = [
   {
@@ -167,6 +168,19 @@ export default function Contact() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (prefersReducedMotion()) {
+        if (headerRef.current) {
+          gsap.set(headerRef.current.querySelectorAll("[data-anim]"), { opacity: 1, y: 0 });
+        }
+        if (infoRef.current) {
+          gsap.set(infoRef.current.querySelectorAll("[data-contact]"), { opacity: 1, x: 0 });
+        }
+        if (formRef.current) {
+          gsap.set(formRef.current, { opacity: 1, y: 0 });
+        }
+        return;
+      }
+
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current.querySelectorAll("[data-anim]"),
@@ -229,6 +243,17 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot: silently ignore submissions from bots that fill the hidden field
+    const form = e.target as HTMLFormElement;
+    const honeypot = form.elements.namedItem("website") as HTMLInputElement | null;
+    if (honeypot?.value) {
+      setSent(true);
+      setTimeout(() => setSent(false), 4000);
+      form.reset();
+      return;
+    }
+
     setSubmitting(true);
 
     gsap.to(formRef.current, {
@@ -241,7 +266,7 @@ export default function Contact() {
           setSubmitting(false);
           setSent(true);
           setTimeout(() => setSent(false), 4000);
-          (e.target as HTMLFormElement).reset();
+          form.reset();
         }, 500);
       },
     });
@@ -277,7 +302,7 @@ export default function Contact() {
             data-anim
             className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Let&apos;s Create <span className="text-gradient">Together</span>
+            Let&apos;s Create <span className="text-gradient italic">Together</span>
           </h2>
           <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             Have a project idea or need a developer? Let&apos;s connect.
@@ -327,7 +352,7 @@ export default function Contact() {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="glow-border rounded-3xl glass-strong border border-brand/10 p-8 shadow-elegant lg:col-span-3"
+            className="glow-border relative rounded-3xl glass-strong border border-brand/10 p-8 shadow-elegant lg:col-span-3"
             style={{ opacity: 0 }}
           >
             <div className="grid gap-5 sm:grid-cols-2">
@@ -339,6 +364,13 @@ export default function Contact() {
             </div>
             <div className="mt-5">
               <FloatingInput name="message" label="Your Message" isTextarea />
+            </div>
+
+            <div className="absolute -left-[9999px] top-auto" aria-hidden="true">
+              <label>
+                Leave this field empty
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+              </label>
             </div>
 
             <div className="mt-6">
