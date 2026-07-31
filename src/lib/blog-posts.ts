@@ -38,4 +38,4 @@ export const BLOG_POSTS: BlogPost[] = [
 ];
 
 
-export const BLOG_CATEGORIES = ["Backend", "Mobile", "Design"];
+export const BLOG_CATEGORIES = ["Backend", "Mobile", "Design"] as const;
