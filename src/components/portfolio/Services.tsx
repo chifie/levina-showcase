@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaGlobe, FaServer, FaMobileAlt, FaPaintBrush, FaArrowRight } from "react-icons/fa";
+import { prefersReducedMotion } from "@/lib/motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,6 +55,11 @@ function ServiceCard({
   useEffect(() => {
     const card = cardRef.current;
     if (!card) return;
+
+    if (prefersReducedMotion()) {
+      gsap.set(card, { opacity: 1, y: 0, scale: 1 });
+      return;
+    }
 
     const trigger = ScrollTrigger.create({
       trigger: card,
@@ -111,6 +117,8 @@ export default function Services() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (prefersReducedMotion()) return;
+
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current.querySelectorAll("[data-anim]"),
@@ -149,7 +157,7 @@ export default function Services() {
             data-anim
             className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            What I <span className="text-gradient">Do</span>
+            What I <span className="text-gradient italic">Do</span>
           </h2>
           <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             I deliver end-to-end software solutions across web, mobile, and backend platforms with a
