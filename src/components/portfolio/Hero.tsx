@@ -129,6 +129,9 @@ export default function Hero() {
         words.forEach((word, i) => {
           const span = document.createElement("span");
           span.className = "inline-block mr-[0.3em]";
+          if (word === "Levina.") {
+            span.className += " text-gradient italic";
+          }
           span.textContent = word;
           span.style.opacity = "0";
           span.style.transform = "translateY(60px) rotateX(30deg)";
