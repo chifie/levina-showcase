@@ -241,3 +241,9 @@ If this portfolio helped you, a ⭐ on [GitHub](https://github.com/chifie/levina
 - [ ] Multilingual support (EN / SW)
 - [ ] Blog search and category filters
 - [ ] Dark-mode tuning for blog cards
+
+## 🧑‍💻 Developer Notes
+
+- Keep components in `src/components/portfolio/` and data in `src/lib/`
+- Run `npm run check` before pushing to validate types and lint
+- Preserve reduced-motion support for every new GSAP animation
