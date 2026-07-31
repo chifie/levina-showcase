@@ -257,3 +257,7 @@ Actively maintained by [Levina Chifie](https://github.com/chifie).
 - Keep the site fast, accessible, and delightful on every device
 - Grow the blog with practical engineering articles
 - Ship new projects and case studies regularly
+
+## 📬 Feedback
+
+Found a bug or have an idea? Open an [issue](https://github.com/chifie/levina-showcase/issues) or reach out via the contact form on the site.
