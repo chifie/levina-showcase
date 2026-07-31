@@ -334,3 +334,7 @@ The Blog header shows category chips (Backend, Mobile, Design) driven by the sha
 1. Add an entry to `BLOG_POSTS` in `src/lib/blog-posts.ts` (title, excerpt, category, date, readTime, color).
 2. Ensure the category exists in `BLOG_CATEGORIES` so the header chip appears.
 3. The Blog section renders the card automatically — no other changes needed.
+
+## 🔍 SEO & Metadata
+
+The site ships Open Graph and Twitter card meta tags with absolute URLs, a canonical link, theme-color, and apple-mobile-web-app metadata in `src/routes/index.tsx`.
