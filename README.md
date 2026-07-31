@@ -351,3 +351,13 @@ The fixed navbar tracks the active section as you scroll, highlights it with an 
 - `robots.txt` and `sitemap.xml` in `public/`
 - Hero image uses `fetchPriority="high"` with width/height hints
 - Preconnect to Google Fonts origins for faster font loading
+
+## ✨ Elegance Polish
+
+- Hero profile photo with rotating conic-gradient frame, orbit ring with floating dots, and soft glow
+- GSAP scroll parallax + mouse tilt on the hero photo frame
+- Shine-sweep hover effect on hero buttons, project/blog covers, and footer social icons
+- Shimmer loading bar in the preloader and animated scroll indicator
+- Gradient accent bars under every section heading
+- Numbered accents on service and project cards; skill count badges
+- Ping animation on the availability dot and gradient name in the hero headline
