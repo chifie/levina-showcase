@@ -19,14 +19,14 @@ import chifieImage from "@/assets/chifie.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const FLOATING_ICONS = [
-  { Icon: FaReact, color: "#61DAFB", size: 28, delay: 0 },
-  { Icon: SiTypescript, color: "#3178C6", size: 24, delay: 1 },
-  { Icon: SiTailwindcss, color: "#06B6D4", size: 26, delay: 2 },
-  { Icon: FaNodeJs, color: "#339933", size: 22, delay: 3 },
-  { Icon: SiNextdotjs, color: "#000000", size: 24, delay: 4 },
-  { Icon: FaPython, color: "#3776AB", size: 20, delay: 0.5 },
-  { Icon: FaDocker, color: "#2496ED", size: 22, delay: 1.5 },
-  { Icon: FaFigma, color: "#F24E1E", size: 20, delay: 2.5 },
+  { Icon: FaReact, color: "#61DAFB", size: 28, delay: 0, left: 14, top: 18, depth: 1.3 },
+  { Icon: SiTypescript, color: "#3178C6", size: 24, delay: 1, left: 36, top: 12, depth: 1.1 },
+  { Icon: SiTailwindcss, color: "#06B6D4", size: 26, delay: 2, left: 58, top: 20, depth: 1.4 },
+  { Icon: FaNodeJs, color: "#339933", size: 22, delay: 3, left: 78, top: 14, depth: 1.2 },
+  { Icon: SiNextdotjs, color: "#000000", size: 24, delay: 4, left: 20, top: 55, depth: 1.5 },
+  { Icon: FaPython, color: "#3776AB", size: 20, delay: 0.5, left: 45, top: 60, depth: 1.1 },
+  { Icon: FaDocker, color: "#2496ED", size: 22, delay: 1.5, left: 66, top: 52, depth: 1.3 },
+  { Icon: FaFigma, color: "#F24E1E", size: 20, delay: 2.5, left: 86, top: 58, depth: 1.2 },
 ];
 
 function MagneticButton({
@@ -285,12 +285,12 @@ export default function Hero() {
       <div
         ref={blob1Ref}
         className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] rounded-full opacity-30 blur-[120px]"
-        style={{ background: "radial-gradient(circle, rgba(217,70,239,0.2), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(108,122,148,0.25), transparent 70%)" }}
       />
       <div
         ref={blob2Ref}
         className="pointer-events-none absolute -bottom-32 -right-32 h-[400px] w-[400px] rounded-full opacity-25 blur-[100px]"
-        style={{ background: "radial-gradient(circle, rgba(236,72,153,0.15), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(74,90,114,0.2), transparent 70%)" }}
       />
 
       <div
@@ -302,16 +302,16 @@ export default function Hero() {
       />
 
       <div ref={iconsRef} className="pointer-events-none absolute inset-0 overflow-hidden">
-        {FLOATING_ICONS.map(({ Icon, color, size, delay }, i) => (
+        {FLOATING_ICONS.map(({ Icon, color, size, delay, left, top, depth }, i) => (
           <div
             key={i}
             data-icon
             data-delay={delay}
-            data-depth={1 + Math.random() * 0.5}
+            data-depth={depth}
             className="absolute"
             style={{
-              left: `${10 + (i % 4) * 22 + Math.random() * 8}%`,
-              top: `${15 + Math.floor(i / 4) * 35 + Math.random() * 15}%`,
+              left: `${left}%`,
+              top: `${top}%`,
               color,
               opacity: 0.15,
               transition: "opacity 0.3s",
