@@ -275,3 +275,17 @@ The profile photo appears in both the **Hero** (portrait oval frame) and the **A
 | Projects | Six project cards with gradient headers |
 | Blog | Three article cards with category badges |
 | Contact | Info cards and a floating-label form |
+
+## 🧩 Components
+
+- `Portfolio.tsx` — layout composition and font loading
+- `Hero.tsx` — intro with portrait oval photo and floating icons
+- `About.tsx` — two-column photo + story layout
+- `Skills.tsx` — category cards with proficiency bars
+- `Services.tsx` — service offering cards
+- `Projects.tsx` — project showcase grid
+- `Blog.tsx` — article cards driven by `src/lib/blog-posts.ts`
+- `Contact.tsx` — info cards + form with honeypot
+- `Footer.tsx` — navigation, links, scroll progress, cursor
+- `Navbar.tsx` — fixed nav with active section indicator
+- `Preloader.tsx` — italic serif "dev chifie" flash screen
