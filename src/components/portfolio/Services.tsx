@@ -95,17 +95,25 @@ function ServiceCard({
       </span>
 
       <div className="relative">
-        <span
-          className="relative inline-flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
-          style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
-        >
+        <div className="flex items-start justify-between">
           <span
-            className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-60"
+            className="relative inline-flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
             style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
+          >
+            <span
+              className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-60"
+              style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
+              aria-hidden="true"
+            />
+            <Icon className="relative text-xl" />
+          </span>
+          <span
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand/15 text-brand transition-all duration-300 group-hover:bg-brand/10 group-hover:border-brand/40"
             aria-hidden="true"
-          />
-          <Icon className="relative text-xl" />
-        </span>
+          >
+            <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-0.5" />
+          </span>
+        </div>
 
         <h3 className="mt-5 font-heading text-xl font-bold transition-colors group-hover:text-brand">
           {title}
