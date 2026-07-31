@@ -115,7 +115,7 @@ export default function Navbar() {
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-white font-bold text-lg shadow-glow transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
             L
           </span>
-          <span className="text-gradient font-heading text-lg font-bold tracking-tight">
+          <span className="text-gradient font-heading text-lg font-bold tracking-tight transition-transform duration-300 group-hover:scale-105 inline-block">
             Levina
           </span>
         </a>
@@ -139,7 +139,7 @@ export default function Navbar() {
                   }}
                   className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
                     activeSection === n.id
-                      ? "text-brand"
+                      ? "text-brand bg-brand/5"
                       : "text-muted-foreground hover:text-foreground hover:bg-brand/5"
                   }`}
                 >
