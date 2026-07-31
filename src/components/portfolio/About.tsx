@@ -106,10 +106,11 @@ export default function About() {
         <div className="grid items-center gap-10 lg:grid-cols-5 lg:gap-14">
           <div ref={photoRef} className="mx-auto lg:col-span-2" style={{ opacity: 0 }}>
             <div className="relative">
-              <div className="absolute -inset-4 rounded-full border border-brand/20 animate-spin-slow" />
+              <div className="absolute -inset-4 rounded-full border border-brand/20 animate-spin-slow" aria-hidden="true" />
               <div
                 className="absolute -inset-8 rounded-full border border-brand/10 animate-spin-slow"
                 style={{ animationDirection: "reverse", animationDuration: "30s" }}
+                aria-hidden="true"
               />
               <div className="relative h-72 w-64 overflow-hidden rounded-full bg-gradient-to-br from-brand-light to-brand-dark p-1 shadow-glow md:h-96 md:w-80">
                 <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
