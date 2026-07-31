@@ -490,7 +490,7 @@ export default function Hero() {
                   background: "linear-gradient(160deg, #8fa0b8, #4a5a72, #8fa0b8)",
                 }}
               >
-                <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
+                <div className="group relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
                   <img
                     src={chifieImage}
                     alt="Levina Chifie - Full Stack Software Developer"
