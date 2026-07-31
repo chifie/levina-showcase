@@ -66,3 +66,6 @@ All notable changes to this project will be documented in this file.
 
 ### CI
 - Bun version set to latest for reliable workflow setup
+
+### Docs
+- SEO metadata and navigation behavior documentation
