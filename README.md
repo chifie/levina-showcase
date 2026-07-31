@@ -247,3 +247,7 @@ If this portfolio helped you, a ⭐ on [GitHub](https://github.com/chifie/levina
 - Keep components in `src/components/portfolio/` and data in `src/lib/`
 - Run `npm run check` before pushing to validate types and lint
 - Preserve reduced-motion support for every new GSAP animation
+
+## 📊 Project Status
+
+Actively maintained by [Levina Chifie](https://github.com/chifie).
