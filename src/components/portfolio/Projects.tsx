@@ -167,7 +167,7 @@ export default function Projects() {
             <div
               key={i}
               data-project-card
-              className="group flex h-full flex-col overflow-hidden rounded-3xl glass-strong border border-brand/10 shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:shadow-glow"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl glass-strong border border-brand/10 shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:shadow-glow"
             >
               <div
                 className={`relative h-44 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-48`}
@@ -180,6 +180,9 @@ export default function Projects() {
                     backgroundSize: "20px 20px",
                   }}
                 />
+                <span className="absolute left-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-black/25 text-sm font-bold text-white/90 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="font-heading text-6xl font-bold text-white/90 drop-shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 lg:text-7xl">
                     {project.initials}
@@ -212,6 +215,7 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-1 flex-col p-6 lg:p-7">
+                <div className="mb-3 h-1 w-10 rounded-full bg-gradient-primary transition-all duration-500 group-hover:w-16" />
                 <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-brand">
                   {project.title}
                 </h3>
@@ -256,6 +260,11 @@ export default function Projects() {
                     </a>
                   )}
                 </div>
+
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-24 rounded-b-3xl bg-gradient-to-t from-brand/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  aria-hidden="true"
+                />
               </div>
             </div>
           ))}
