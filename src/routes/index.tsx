@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "/og-image.png" },
       { name: "twitter:creator", content: "@levinachifie" },
       { name: "robots", content: "index, follow" },
-      { name: "theme-color", content: "#d946ef" },
+      { name: "theme-color", content: "#6c7a94" },
       { name: "application-name", content: "Levina Chifie Portfolio" },
       { name: "apple-mobile-web-app-title", content: "Levina Chifie" },
       { name: "apple-mobile-web-app-capable", content: "yes" },

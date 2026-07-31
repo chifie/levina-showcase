@@ -89,9 +89,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "/og-image.png" },
       { name: "twitter:creator", content: "@levinachifie" },
       { name: "robots", content: "index, follow" },
-      { name: "theme-color", content: "#d946ef" },
+      { name: "theme-color", content: "#6c7a94" },
     ],
     links: [
+      {
+        rel: "icon",
+        href: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+      {
+        rel: "icon",
+        href: "/favicon-32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        rel: "icon",
+        href: "/favicon-16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        rel: "apple-touch-icon",
+        href: "/favicon-64.png",
+      },
       {
         rel: "stylesheet",
         href: appCss,
