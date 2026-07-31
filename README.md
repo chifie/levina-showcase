@@ -328,3 +328,9 @@ The Blog header shows category chips (Backend, Mobile, Design) driven by the sha
 | `--brand-light` | `#8fa0b8` | `#a5b3c6` |
 | `--brand-dark` | `#4a5a72` | `#4a5a72` |
 | `--background` | `#faf3e0` | `#0e1420` |
+
+## 🗺 How to Add a Blog Post
+
+1. Add an entry to `BLOG_POSTS` in `src/lib/blog-posts.ts` (title, excerpt, category, date, readTime, color).
+2. Ensure the category exists in `BLOG_CATEGORIES` so the header chip appears.
+3. The Blog section renders the card automatically — no other changes needed.
