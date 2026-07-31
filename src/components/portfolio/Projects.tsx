@@ -33,8 +33,8 @@ const PROJECTS = [
     description:
       "A digital services platform connecting providers and clients for various services including consulting, delivery, and local business solutions.",
     tech: ["React", "NestJS", "MySQL", "Tailwind CSS"],
-    gradient: "from-brand-dark via-brand to-brand-light",
-    color: "#71809a",
+    gradient: "from-blue-500 via-slate-600 to-slate-800",
+    color: "#3b82f6",
     initials: "TK",
     github: "https://github.com",
     demo: "https://tanzaniakiganjani.com",
