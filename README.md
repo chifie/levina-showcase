@@ -97,3 +97,13 @@ This project is licensed under the [MIT License](LICENSE).
 - [ ] Add live project screenshots to cards
 - [ ] Add multilingual support
 - [ ] Add project search and filters
+
+## ⚙️ Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite dev server |
+| `npm run build` | Build for production |
+| `npm run lint` | Lint the codebase with ESLint |
+| `npm run typecheck` | Run TypeScript type checking |
+| `npm run format` | Format with Prettier |
