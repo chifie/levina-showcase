@@ -31,3 +31,7 @@ All notable changes to this project will be documented in this file.
 ### Performance
 - Fonts loaded once with display=swap; hero image uses eager loading and async decoding
 - GPU-friendly transforms for all GSAP animations
+
+### Docs
+- Expanded README with blog, typography, accessibility, performance, testing, and contributing sections
+- Updated CONTRIBUTING and SECURITY with accessibility guidance
