@@ -63,3 +63,6 @@ All notable changes to this project will be documented in this file.
 
 ### Docs
 - How-to guide for adding blog posts
+
+### CI
+- Bun version set to latest for reliable workflow setup
