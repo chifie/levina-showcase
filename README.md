@@ -63,3 +63,7 @@ npx wrangler deploy
 ```
 
 The live site is hosted at [https://levinachifie.dev](https://levinachifie.dev).
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
