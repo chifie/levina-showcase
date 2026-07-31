@@ -210,6 +210,7 @@ export default function Contact() {
             duration: 0.5,
             stagger: 0.1,
             ease: "power3.out",
+            clearProps: "transform",
             scrollTrigger: {
               trigger: infoRef.current,
               start: "top 85%",

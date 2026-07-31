@@ -47,6 +47,7 @@ export default function About() {
             opacity: 1,
             y: 0,
             duration: 0.8,
+            clearProps: "transform",
             scrollTrigger: {
               trigger: contentRef.current,
               start: "top 75%",
