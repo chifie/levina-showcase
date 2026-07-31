@@ -1,6 +1,7 @@
 # Levina Chifie — Portfolio
 
 A modern, animated portfolio website built with **React**, **TypeScript**, **TanStack Start**, **GSAP**, and **Tailwind CSS v4**. Featuring a slate-blue and cream brand identity, smooth scroll animations, and a fully responsive layout.
+- [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) for elegant serif headings
 
 ## ✨ Features
 
@@ -16,6 +17,7 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 | Area | Technologies |
 | --- | --- |
 | Frontend | React 19, TypeScript, TanStack Start, Tailwind CSS v4 |
+- [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) for elegant serif headings
 | Animation | GSAP, ScrollTrigger |
 | Icons | React Icons |
 | Styling | Tailwind CSS, tw-animate-css |
@@ -78,6 +80,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## 🙏 Acknowledgements
 
 - [TanStack Start](https://tanstack.com/start) for the full-stack React framework
+- [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) for elegant serif headings
 - [GSAP](https://gsap.com) for buttery-smooth animations
 - [Tailwind CSS](https://tailwindcss.com) for utility-first styling
 - [React Icons](https://react-icons.github.io/react-icons) for the icon set
@@ -149,6 +152,7 @@ If you find this project useful, consider giving it a ⭐ on [GitHub](https://gi
 ## 📜 Footer
 
 Built with ❤️ by **Levina Chifie** — React, TypeScript, TanStack Start, GSAP & Tailwind CSS.
+- [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) for elegant serif headings
 
 ## 📝 Blog
 
