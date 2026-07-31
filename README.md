@@ -263,3 +263,15 @@ The profile photo appears in both the **Hero** (portrait oval frame) and the **A
 - Portrait oval profile frames with animated spinning rings
 - Glass-morphism cards with brand borders and glow shadows
 - Gradient accents in brand colors (light → base → dark)
+
+## 🧭 Sections
+
+| Section | Description |
+| --- | --- |
+| Home | Hero with portrait photo, intro, CTAs, and social links |
+| About | Photo + story in a two-column layout |
+| Skills | Categorized proficiency bars (no percentages) |
+| Services | Four service cards with hover reveals |
+| Projects | Six project cards with gradient headers |
+| Blog | Three article cards with category badges |
+| Contact | Info cards and a floating-label form |
