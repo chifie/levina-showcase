@@ -81,3 +81,12 @@ This project is licensed under the [MIT License](LICENSE).
 - [GSAP](https://gsap.com) for buttery-smooth animations
 - [Tailwind CSS](https://tailwindcss.com) for utility-first styling
 - [React Icons](https://react-icons.github.io/react-icons) for the icon set
+
+## 👩‍💻 About the Author
+
+**Levina Chifie** is a full stack software developer and mobile app developer based in Tanzania, passionate about building clean, scalable applications across web and mobile.
+
+- 🌐 [Website](https://levinachifie.dev)
+- 🐙 [GitHub](https://github.com/chifie)
+- 💼 [LinkedIn](https://linkedin.com/in/levinachifie)
+- ✉️ [Email](mailto:levinachifie@gmail.com)
