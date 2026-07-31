@@ -314,7 +314,11 @@ export default function Contact() {
             {CONTACT_INFO.map((item, i) => {
               const { Icon, label, value, href } = item;
               const Content = (
-                <div className="group flex items-center gap-4 rounded-2xl glass-strong border border-brand/10 p-5 shadow-elegant transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5">
+                <div className="group relative flex items-center gap-4 overflow-hidden rounded-2xl glass-strong border border-brand/10 p-5 shadow-elegant transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5 hover:border-brand/30">
+                  <div
+                    className="pointer-events-none absolute -left-10 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-brand/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
                   <span className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                     <Icon className="text-lg" />
                   </span>

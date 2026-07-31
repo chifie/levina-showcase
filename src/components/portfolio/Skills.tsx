@@ -228,8 +228,11 @@ export default function Skills() {
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <category.icon className="text-lg" />
                 </span>
-                <div>
+                <div className="flex flex-1 items-center justify-between">
                   <h3 className="font-heading text-lg font-bold">{category.title}</h3>
+                  <span className="rounded-full border border-brand/15 bg-brand/5 px-2.5 py-0.5 text-[10px] font-semibold text-brand-dark">
+                    {category.skills.length}
+                  </span>
                 </div>
               </div>
 
