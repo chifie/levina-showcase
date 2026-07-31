@@ -242,9 +242,13 @@ export default function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full glass border border-brand/10 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:shadow-glow"
+                    className="group inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full glass border border-brand/10 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:shadow-glow"
                   >
-                    <Icon />
+                    <span
+                      className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-500 group-hover:translate-x-full"
+                      aria-hidden="true"
+                    />
+                    <Icon className="relative" />
                   </a>
                 ))}
               </div>

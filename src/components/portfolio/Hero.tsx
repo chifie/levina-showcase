@@ -545,14 +545,16 @@ export default function Hero() {
         <div className="mt-16 flex justify-center">
           <a
             href="#about"
-            className="group flex flex-col items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-brand"
+            className="group flex flex-col items-center gap-2.5 text-xs font-medium text-muted-foreground transition-colors hover:text-brand"
             onClick={(e) => {
               e.preventDefault();
               document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
             }}
           >
             <span>Scroll Down</span>
-            <FaArrowDown className="animate-bounce text-brand-light transition-transform group-hover:translate-y-1" />
+            <span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-brand/25 p-1.5 transition-colors group-hover:border-brand/50">
+              <span className="h-2 w-1 animate-scroll-dot rounded-full bg-gradient-primary" />
+            </span>
           </a>
         </div>
       </div>

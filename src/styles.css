@@ -197,6 +197,9 @@
   .animate-shimmer {
     animation: shimmer 2.2s linear infinite;
   }
+  .animate-scroll-dot {
+    animation: scroll-dot 2s ease-in-out infinite;
+  }
   .shine-sweep {
     position: relative;
     overflow: hidden;
@@ -252,6 +255,20 @@
   }
   to {
     background-position: -200% 0;
+  }
+}
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
   }
 }
 @keyframes blob {
