@@ -42,3 +42,6 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - About section now uses a two-column layout with profile photo
 - Skill category cards lift on hover
+
+### Docs
+- README sections overview, components reference, and design language
