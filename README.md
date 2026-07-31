@@ -157,3 +157,10 @@ The site includes a **Blog** section with article cards covering backend enginee
 ## ✒️ Typography
 
 Headings use the elegant serif **Playfair Display** (with italic gradient accents on key words), while body text uses **Inter** for readability. Fonts are loaded via Google Fonts in `src/components/Portfolio.tsx` and theme tokens are defined in `src/styles.css`.
+
+## ♿ Accessibility
+
+- Keyboard-friendly navigation with visible `:focus-visible` outlines
+- ARIA roles and labels on preloader, progress bars, and form inputs
+- `aria-current` marks the active navbar link
+- `prefers-reduced-motion` support: all GSAP animations are skipped and content is revealed statically via `src/lib/motion.ts`
