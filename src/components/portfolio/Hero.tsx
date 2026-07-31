@@ -444,6 +444,9 @@ export default function Hero() {
                     className="h-full w-full object-cover"
                     loading="eager"
                     decoding="async"
+                    fetchPriority="high"
+                    width={320}
+                    height={384}
                     style={{ objectPosition: "center 35%" }}
                   />
                 </div>
