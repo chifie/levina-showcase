@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaArrowRight, FaCalendarAlt, FaClock } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
-import { BLOG_POSTS } from "@/lib/blog-posts";
+import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog-posts";
 
 gsap.registerPlugin(ScrollTrigger);
 
