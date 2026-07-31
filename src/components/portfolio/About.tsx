@@ -199,12 +199,21 @@ export default function About() {
                 applications with Flutter and Dart, delivering native-quality experiences on both
                 iOS and Android from a single codebase.
               </p>
-              <p>
-                I am passionate about solving challenging problems, staying current with emerging
-                technologies, and continuously improving my craft. Whether it is architecting a new
-                system, optimizing an existing codebase, or delivering pixel-perfect UI
-                implementations, I approach every project with precision and dedication.
-              </p>
+            </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {[
+                { title: "Full Stack", detail: "Web + Mobile + API" },
+                { title: "Clean Code", detail: "Tested & Maintainable" },
+                { title: "User First", detail: "Polished Experiences" },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl glass border border-brand/10 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-glow hover:border-brand/30"
+                >
+                  <div className="font-heading text-sm font-bold text-brand">{item.title}</div>
+                  <div className="mt-1 text-[11px] text-muted-foreground">{item.detail}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
