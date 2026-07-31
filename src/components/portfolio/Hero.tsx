@@ -325,7 +325,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div className="flex flex-col items-center text-center lg:flex-row lg:text-left lg:items-center lg:gap-16">
           <div className="flex-1">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-brand">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-brand-dark">
               <span className="h-2 w-2 rounded-full bg-brand animate-pulse-soft" />
               Available for opportunities
             </div>
@@ -434,7 +434,7 @@ export default function Hero() {
               </div>
 
               <div className="absolute -right-2 -bottom-2 rounded-2xl glass-strong border border-brand/20 px-4 py-2 shadow-elegant animate-float-slow">
-                <p className="text-xs font-medium text-brand">3+ Years</p>
+                <p className="text-xs font-medium text-brand-dark">3+ Years</p>
                 <p className="text-[10px] text-muted-foreground">Experience</p>
               </div>
             </div>
