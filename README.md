@@ -74,3 +74,10 @@ This project is licensed under the [MIT License](LICENSE).
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+
+## 🙏 Acknowledgements
+
+- [TanStack Start](https://tanstack.com/start) for the full-stack React framework
+- [GSAP](https://gsap.com) for buttery-smooth animations
+- [Tailwind CSS](https://tailwindcss.com) for utility-first styling
+- [React Icons](https://react-icons.github.io/react-icons) for the icon set
