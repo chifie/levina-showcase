@@ -160,6 +160,16 @@ export default function Blog() {
           <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             Articles on software development, design, and the craft of building great products
           </p>
+          <div data-anim className="mt-6 flex flex-wrap items-center justify-center gap-2">
+            {BLOG_CATEGORIES.map((category) => (
+              <span
+                key={category}
+                className="rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-brand-dark transition-colors hover:bg-brand/10"
+              >
+                {category}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
