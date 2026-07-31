@@ -208,7 +208,7 @@ export default function Footer() {
 
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-10 md:grid-cols-4">
-            <div data-footer-anim className="md:col-span-2">
+            <div data-footer-anim className="card-elegant rounded-3xl p-6 md:col-span-2">
               <a
                 href="#home"
                 className="group inline-flex items-center gap-2.5"
