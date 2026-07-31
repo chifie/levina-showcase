@@ -12,6 +12,7 @@ import {
   FaFigma,
   FaArrowDown,
   FaArrowRight,
+  FaCode,
 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import chifieImage from "@/assets/chifie.png";
@@ -101,6 +102,7 @@ export default function Hero() {
   const buttonsRef = useRef<HTMLDivElement>(null);
   const socialsRef = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
+  const photoFrameRef = useRef<HTMLDivElement>(null);
   const iconsRef = useRef<HTMLDivElement>(null);
   const blob1Ref = useRef<HTMLDivElement>(null);
   const blob2Ref = useRef<HTMLDivElement>(null);
@@ -188,6 +190,19 @@ export default function Hero() {
         );
       }
 
+      if (photoFrameRef.current) {
+        gsap.to(photoFrameRef.current, {
+          y: -40,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+
       if (iconsRef.current) {
         const icons = iconsRef.current.querySelectorAll<HTMLDivElement>("[data-icon]");
         icons.forEach((icon, i) => {
@@ -242,6 +257,19 @@ export default function Hero() {
     const iconTweenersX: ((v: number) => void)[] = [];
     const iconTweenersY: ((v: number) => void)[] = [];
 
+    let frameTiltX: ((v: number) => void) | null = null;
+    let frameTiltY: ((v: number) => void) | null = null;
+    if (photoFrameRef.current) {
+      frameTiltX = gsap.quickTo(photoFrameRef.current, "rotationY", {
+        duration: 0.6,
+        ease: "power2.out",
+      });
+      frameTiltY = gsap.quickTo(photoFrameRef.current, "rotationX", {
+        duration: 0.6,
+        ease: "power2.out",
+      });
+    }
+
     if (iconsRef.current) {
       const icons = iconsRef.current.querySelectorAll<HTMLDivElement>("[data-icon]");
       icons.forEach((icon) => {
@@ -275,6 +303,9 @@ export default function Hero() {
         iconTweenersX[i](x * 15 * depth);
         iconTweenersY[i](y * 15 * depth);
       });
+
+      if (frameTiltX) frameTiltX(x * 6);
+      if (frameTiltY) frameTiltY(y * -6);
 
       if (blob1X) blob1X(x * 20 + 60);
       if (blob1Y) blob1Y(y * 20 - 40);
@@ -421,27 +452,49 @@ export default function Hero() {
           </div>
 
           <div className="mt-12 flex-shrink-0 lg:mt-0">
-            <div className="relative">
+            <div ref={photoFrameRef} className="relative" style={{ perspective: "1000px" }}>
               <div
-                className="absolute -inset-4 rounded-full border border-brand/20 animate-spin-slow"
-                aria-hidden="true"
-              />
-              <div
-                className="absolute -inset-8 rounded-full border border-brand/10 animate-spin-slow"
-                style={{ animationDirection: "reverse", animationDuration: "30s" }}
+                className="absolute left-1/2 top-1/2 h-[125%] w-[125%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/15 blur-[80px]"
                 aria-hidden="true"
               />
 
               <div
-                ref={profileRef}
-                className="relative h-72 w-64 overflow-hidden rounded-full bg-gradient-to-br from-brand-light to-brand-dark p-1 shadow-glow md:h-96 md:w-80"
-                style={{ clipPath: "ellipse(0% 0% at 50% 50%)" }}
+                className="absolute -inset-5 rounded-full animate-spin-slow"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, transparent 0deg, rgba(108,122,148,0.5) 55deg, transparent 140deg, rgba(159,176,196,0.4) 220deg, transparent 300deg, rgba(108,122,148,0.45) 360deg)",
+                  animationDuration: "14s",
+                  mask: "radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))",
+                  WebkitMask:
+                    "radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))",
+                }}
+                aria-hidden="true"
+              />
+
+              <div
+                className="absolute -inset-10 rounded-full border border-dashed border-brand/20 animate-spin-slow"
+                style={{ animationDirection: "reverse", animationDuration: "40s" }}
+                aria-hidden="true"
               >
-                <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
+                <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/70 shadow-glow" />
+                <span className="absolute left-0 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-light/70" />
+                <span className="absolute right-0 top-1/2 h-2 w-2 translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-dark/50" />
+                <span className="absolute left-1/2 bottom-0 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-brand/40" />
+              </div>
+
+              <div
+                ref={profileRef}
+                className="relative h-72 w-64 overflow-hidden rounded-full p-[3px] shadow-glow md:h-96 md:w-80"
+                style={{
+                  clipPath: "ellipse(0% 0% at 50% 50%)",
+                  background: "linear-gradient(160deg, #8fa0b8, #4a5a72, #8fa0b8)",
+                }}
+              >
+                <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
                   <img
                     src={chifieImage}
                     alt="Levina Chifie - Full Stack Software Developer"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="eager"
                     decoding="async"
                     fetchPriority="high"
@@ -449,12 +502,28 @@ export default function Hero() {
                     height={384}
                     style={{ objectPosition: "center 35%" }}
                   />
+                  <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-white/10" />
                 </div>
               </div>
 
-              <div className="absolute -right-2 -bottom-2 rounded-2xl glass-strong border border-brand/20 px-4 py-2 shadow-elegant animate-float-slow">
-                <p className="text-xs font-medium text-brand-dark">3+ Years</p>
-                <p className="text-[10px] text-muted-foreground">Experience</p>
+              <div className="absolute -left-4 -top-2 flex items-center gap-1.5 rounded-full glass-strong border border-brand/20 px-3 py-1.5 shadow-elegant animate-float-slow">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse-soft" />
+                <p className="text-[10px] font-semibold text-brand-dark">Open to work</p>
+              </div>
+
+              <div
+                className="absolute -right-2 -bottom-2 rounded-2xl glass-strong border border-brand/20 px-4 py-2.5 shadow-elegant animate-float-slow"
+                style={{ animationDelay: "1.5s" }}
+              >
+                <div className="flex items-center gap-2.5">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow">
+                    <FaCode className="text-xs" />
+                  </span>
+                  <div>
+                    <p className="text-xs font-semibold text-brand-dark">3+ Years</p>
+                    <p className="text-[10px] text-muted-foreground">Experience</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
