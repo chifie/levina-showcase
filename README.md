@@ -179,3 +179,13 @@ Run the type check and linter before opening a PR:
 npm run typecheck
 npm run lint
 ```
+
+## 🎨 Customization
+
+### Fonts
+
+Heading and body fonts are configured via the `--font-heading` and `--font-body` tokens in `src/styles.css`. Replace them with any Google Font of your choice and update the `FontLoader` in `src/components/Portfolio.tsx`.
+
+### Blog posts
+
+Edit `src/lib/blog-posts.ts` and add an entry to `BLOG_POSTS` with a title, excerpt, category, date, and read time.
