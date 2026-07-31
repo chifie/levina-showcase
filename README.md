@@ -107,3 +107,17 @@ This project is licensed under the [MIT License](LICENSE).
 | `npm run lint` | Lint the codebase with ESLint |
 | `npm run typecheck` | Run TypeScript type checking |
 | `npm run format` | Format with Prettier |
+
+## 🧩 Customization
+
+To change the brand colors, edit the theme tokens in `src/styles.css`:
+
+```css
+:root {
+  --brand: #6c7a94;
+  --brand-light: #8fa0b8;
+  --brand-dark: #4a5a72;
+}
+```
+
+To add or edit projects, update the `PROJECTS` array in `src/components/portfolio/Projects.tsx`.
