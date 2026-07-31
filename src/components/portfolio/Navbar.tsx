@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useTheme } from "@/hooks/use-theme";
+import { prefersReducedMotion } from "@/lib/motion";
 import { FaSun, FaMoon, FaBars, FaTimes, FaDownload } from "react-icons/fa";
 
 const NAV = [
@@ -9,6 +10,7 @@ const NAV = [
   { id: "skills", label: "Skills" },
   { id: "services", label: "Services" },
   { id: "projects", label: "Projects" },
+  { id: "blog", label: "Blog" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -44,7 +46,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (mobileMenuRef.current) {
-      if (open) {
+      if (open && !prefersReducedMotion()) {
         gsap.fromTo(
           mobileMenuRef.current,
           { opacity: 0, y: -20, scale: 0.95 },
@@ -55,7 +57,7 @@ export default function Navbar() {
   }, [open]);
 
   useEffect(() => {
-    if (indicatorRef.current) {
+    if (indicatorRef.current && !prefersReducedMotion()) {
       const activeLink = navRef.current?.querySelector(`[data-nav="${activeSection}"]`);
       if (activeLink) {
         const parent = activeLink.parentElement;
@@ -116,6 +118,7 @@ export default function Navbar() {
                 <a
                   data-nav={n.id}
                   href={`#${n.id}`}
+                  aria-current={activeSection === n.id ? "true" : undefined}
                   onClick={(e) => {
                     e.preventDefault();
                     handleClick(n.id);
