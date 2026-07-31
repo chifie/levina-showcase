@@ -307,3 +307,7 @@ Every push to `main` triggers the CI workflow which installs dependencies with B
 - [Live Site](https://levinachifie.dev)
 - [GitHub Repo](https://github.com/chifie/levina-showcase)
 - [Issues](https://github.com/chifie/levina-showcase/issues)
+
+## 🏷 Blog Category Chips
+
+The Blog header shows category chips (Backend, Mobile, Design) driven by the shared `BLOG_CATEGORIES` constant, keeping labels in sync with article data.
