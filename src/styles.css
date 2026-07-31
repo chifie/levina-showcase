@@ -185,6 +185,42 @@
     box-shadow: var(--shadow-card);
   }
 
+  .card-elegant {
+    position: relative;
+    border-radius: 1.5rem;
+    background: color-mix(in srgb, var(--card) 80%, transparent);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--primary) 15%, transparent);
+    box-shadow: var(--shadow-elegant);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+  .card-elegant:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+    border-color: color-mix(in srgb, var(--primary) 35%, transparent);
+  }
+  .card-elegant::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      circle at top right,
+      color-mix(in srgb, var(--primary) 12%, transparent),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  .card-elegant:hover::before {
+    opacity: 1;
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
