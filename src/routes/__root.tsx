@@ -74,7 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://levinachifie.dev" },
-      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image", content: "https://levinachifie.dev/og-image.png" },
       { property: "og:site_name", content: "Levina Chifie Portfolio" },
       { name: "twitter:card", content: "summary_large_image" },
       {
@@ -86,7 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Graduate-level Full Stack Software Developer and Mobile App Developer building modern, scalable web and mobile applications.",
       },
-      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:image", content: "https://levinachifie.dev/og-image.png" },
       { name: "twitter:creator", content: "@levinachifie" },
       { name: "robots", content: "index, follow" },
       { name: "theme-color", content: "#6c7a94" },
