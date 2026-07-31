@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { prefersReducedMotion } from "@/lib/motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,6 +82,20 @@ export default function Projects() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (prefersReducedMotion()) {
+        if (headerRef.current) {
+          gsap.set(headerRef.current.querySelectorAll("[data-anim]"), { opacity: 1, y: 0 });
+        }
+        if (gridRef.current) {
+          gsap.set(gridRef.current.querySelectorAll("[data-project-card]"), {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          });
+        }
+        return;
+      }
+
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current.querySelectorAll("[data-anim]"),
@@ -140,7 +155,7 @@ export default function Projects() {
             data-anim
             className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Featured <span className="text-gradient">Work</span>
+            Featured <span className="text-gradient italic">Work</span>
           </h2>
           <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             A selection of projects I have built with passion and precision
