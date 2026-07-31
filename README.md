@@ -6,7 +6,7 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 
 - Animated preloader and GSAP scroll-triggered reveals
 - Hero section with circular profile photo and floating tech icons
-- About, Skills, Services, Projects, and Contact sections
+- About, Skills, Services, Projects, Blog, and Contact sections
 - Dark / light theme support with brand tokens
 - Responsive design across mobile and desktop
 - Magnetic buttons, ripple effects, and custom cursor
