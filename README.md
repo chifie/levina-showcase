@@ -301,3 +301,9 @@ Articles are tagged with categories exported from `src/lib/blog-posts.ts` (`BLOG
 ## 📈 Continuous Integration
 
 Every push to `main` triggers the CI workflow which installs dependencies with Bun and runs `typecheck` + `lint`.
+
+## 🚀 Quick Links
+
+- [Live Site](https://levinachifie.dev)
+- [GitHub Repo](https://github.com/chifie/levina-showcase)
+- [Issues](https://github.com/chifie/levina-showcase/issues)
