@@ -251,3 +251,9 @@ If this portfolio helped you, a ⭐ on [GitHub](https://github.com/chifie/levina
 ## 📊 Project Status
 
 Actively maintained by [Levina Chifie](https://github.com/chifie).
+
+## 🎯 Goals
+
+- Keep the site fast, accessible, and delightful on every device
+- Grow the blog with practical engineering articles
+- Ship new projects and case studies regularly
