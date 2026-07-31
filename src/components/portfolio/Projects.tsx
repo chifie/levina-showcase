@@ -180,9 +180,6 @@ export default function Projects() {
                     backgroundSize: "20px 20px",
                   }}
                 />
-                <span className="absolute left-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-black/25 text-sm font-bold text-white/90 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="font-heading text-6xl font-bold text-white/90 drop-shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 lg:text-7xl">
                     {project.initials}
