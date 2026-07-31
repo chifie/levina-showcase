@@ -153,3 +153,7 @@ Built with ❤️ by **Levina Chifie** — React, TypeScript, TanStack Start, GS
 ## 📝 Blog
 
 The site includes a **Blog** section with article cards covering backend engineering, mobile development, and design. Article data lives in `src/lib/blog-posts.ts` and can be extended by adding entries to the `BLOG_POSTS` array.
+
+## ✒️ Typography
+
+Headings use the elegant serif **Playfair Display** (with italic gradient accents on key words), while body text uses **Inter** for readability. Fonts are loaded via Google Fonts in `src/components/Portfolio.tsx` and theme tokens are defined in `src/styles.css`.
