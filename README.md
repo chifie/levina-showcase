@@ -136,3 +136,8 @@ React, TypeScript, Next.js, FastAPI, NestJS, Flutter, PostgreSQL, and more. See 
 
 [![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/chifie/levina-showcase)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+## 📚 Resources
+
+- [Live Site](https://levinachifie.dev)
+- [GitHub Repository](https://github.com/chifie/levina-showcase)
