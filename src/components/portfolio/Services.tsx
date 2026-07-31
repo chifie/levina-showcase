@@ -108,7 +108,7 @@ function ServiceCard({
             <Icon className="relative text-xl" />
           </span>
           <span
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 group-hover:bg-brand/10 group-hover:border-brand/40"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 group-hover:bg-brand/10"
             style={{ color, borderColor: `color-mix(in srgb, ${color} 25%, transparent)` }}
             aria-hidden="true"
           >
