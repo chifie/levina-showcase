@@ -381,7 +381,10 @@ export default function Hero() {
         <div className="flex flex-col items-center text-center lg:flex-row lg:text-left lg:items-center lg:gap-16">
           <div className="flex-1">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-brand-dark">
-              <span className="h-2 w-2 rounded-full bg-brand animate-pulse-soft" />
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+              </span>
               Available for opportunities
             </div>
 
@@ -389,7 +392,7 @@ export default function Hero() {
               ref={headlineRef}
               className="font-heading text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl"
             >
-              Hi, I&apos;m Levina.
+              Hi, I&apos;m <span className="text-gradient italic">Levina.</span>
             </h1>
 
             <p

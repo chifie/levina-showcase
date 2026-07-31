@@ -123,11 +123,11 @@ function SkillCard({
   return (
     <div
       ref={cardRef}
-      className="flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 hover:bg-brand/5"
+      className="group flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 hover:bg-brand/5"
       style={{ opacity: 0 }}
     >
       <span
-        className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-110 hover:rotate-6"
+        className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
         style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
       >
         <Icon className="text-lg" />
