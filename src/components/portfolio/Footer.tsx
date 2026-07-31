@@ -49,12 +49,16 @@ function BackToTop() {
       ref={btnRef}
       onClick={scrollToTop}
       aria-label="Back to top"
-      className={`fixed bottom-6 right-6 z-30 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-primary text-white shadow-glow transition-all duration-300 hover:scale-110 hover:shadow-elegant ${
+      className={`fixed bottom-6 right-6 z-30 inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-gradient-primary text-white shadow-glow transition-all duration-300 hover:scale-110 hover:shadow-elegant group ${
         show ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 pointer-events-none"
       }`}
       style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
     >
-      <FaArrowUp className="text-sm" />
+      <span
+        className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        aria-hidden="true"
+      />
+      <FaArrowUp className="relative text-sm transition-transform duration-300 group-hover:-translate-y-0.5" />
     </button>
   );
 }

@@ -83,13 +83,17 @@ function MagneticButton({
     <a
       ref={btnRef}
       href={href}
-      className={`inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer ${className} ${
+      className={`group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer ${className} ${
         primary
           ? "bg-gradient-primary text-white shadow-glow hover:shadow-elegant"
           : "glass-strong border border-brand/20 hover:border-brand/40 hover:shadow-glow"
       }`}
     >
-      {children}
+      <span
+        className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-500 group-hover:translate-x-full"
+        aria-hidden="true"
+      />
+      <span className="relative">{children}</span>
     </a>
   );
 }
