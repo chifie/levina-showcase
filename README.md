@@ -90,3 +90,10 @@ This project is licensed under the [MIT License](LICENSE).
 - 🐙 [GitHub](https://github.com/chifie)
 - 💼 [LinkedIn](https://linkedin.com/in/levinachifie)
 - ✉️ [Email](mailto:levinachifie@gmail.com)
+
+## 🗺 Roadmap
+
+- [ ] Add blog section
+- [ ] Add live project screenshots to cards
+- [ ] Add multilingual support
+- [ ] Add project search and filters
