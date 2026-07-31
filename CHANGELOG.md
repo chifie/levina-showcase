@@ -27,3 +27,7 @@ All notable changes to this project will be documented in this file.
 ### Accessibility
 - Reduced-motion support across all GSAP animations
 - ARIA progressbar roles on skill bars, aria-current on nav, focus rings on blog links
+
+### Performance
+- Fonts loaded once with display=swap; hero image uses eager loading and async decoding
+- GPU-friendly transforms for all GSAP animations
