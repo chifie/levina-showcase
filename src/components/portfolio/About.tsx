@@ -153,8 +153,18 @@ export default function About() {
 
           <div
             ref={contentRef}
-            className="rounded-3xl glass-strong border border-brand/10 p-8 shadow-elegant lg:col-span-3 md:p-12"
+            className="relative overflow-hidden rounded-3xl glass-strong border border-brand/10 p-8 shadow-elegant lg:col-span-3 md:p-12"
           >
+            <div
+              className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand/10 blur-3xl"
+              aria-hidden="true"
+            />
+            <span
+              className="pointer-events-none absolute right-8 top-6 font-heading text-7xl font-bold text-brand/5 select-none"
+              aria-hidden="true"
+            >
+              &ldquo;
+            </span>
             <p className="font-heading text-2xl font-semibold">
               I&apos;m a dedicated Full Stack Software Developer
               <span className="inline-block animate-float-fast">⚡</span>
