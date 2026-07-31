@@ -38,3 +38,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Profile photo in the About section with a two-column layout and reveal animation
+
+### Changed
+- About section now uses a two-column layout with profile photo
+- Skill category cards lift on hover
