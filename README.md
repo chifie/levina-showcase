@@ -20,3 +20,21 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 | Icons | React Icons |
 | Styling | Tailwind CSS, tw-animate-css |
 | Deployment | Cloudflare Workers (Wrangler) |
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+
+# Lint the codebase
+npm run lint
+
+# Build for production
+npm run build
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
