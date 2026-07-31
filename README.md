@@ -52,3 +52,14 @@ src/
 ├── styles.css               # Theme tokens and global styles
 └── assets/                  # Images
 ```
+
+## ☁️ Deployment
+
+This project is configured to deploy to **Cloudflare Workers** via Wrangler:
+
+```bash
+npm run build
+npx wrangler deploy
+```
+
+The live site is hosted at [https://levinachifie.dev](https://levinachifie.dev).
