@@ -144,6 +144,8 @@ function FloatingInput({
         type={isTextarea ? undefined : type}
         rows={rows}
         placeholder=" "
+        aria-label={label}
+        autoComplete={name === "email" ? "email" : name === "name" ? "name" : undefined}
         className={`peer w-full rounded-xl border border-border bg-background/50 outline-none transition-all duration-300 focus:border-brand focus:bg-background focus:ring-2 focus:ring-brand/20 ${
           isTextarea ? "resize-none px-4 pt-6 pb-2" : "px-4 pt-6 pb-2"
         } text-sm`}
