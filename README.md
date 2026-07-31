@@ -219,3 +219,7 @@ The site respects the `prefers-reduced-motion` system setting. Enable "reduce mo
 | Projects | Project cards with distinct gradient headers and tech badges |
 | Blog | Article cards with category badges, dates, and read times |
 | Contact | Info cards plus a floating-label contact form with honeypot |
+
+## 🤝 Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests. Accessibility and reduced-motion support are part of the definition of done.
