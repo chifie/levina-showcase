@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
+import { prefersReducedMotion } from "@/lib/motion";
 
 const FOOTER_LINKS = [
   { id: "home", label: "Home" },
@@ -18,6 +19,7 @@ const FOOTER_LINKS = [
   { id: "skills", label: "Skills" },
   { id: "services", label: "Services" },
   { id: "projects", label: "Projects" },
+  { id: "blog", label: "Blog" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -88,6 +90,8 @@ function CursorFollower() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
+    if (prefersReducedMotion()) return;
+
     const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
     if (isTouch) {
       if (cursor) cursor.style.display = "none";
@@ -149,6 +153,16 @@ export default function Footer() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (prefersReducedMotion()) {
+        if (footerRef.current) {
+          gsap.set(footerRef.current.querySelectorAll("[data-footer-anim]"), {
+            opacity: 1,
+            y: 0,
+          });
+        }
+        return;
+      }
+
       if (footerRef.current) {
         gsap.fromTo(
           footerRef.current.querySelectorAll("[data-footer-anim]"),
