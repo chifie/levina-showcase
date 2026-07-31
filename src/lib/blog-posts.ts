@@ -36,3 +36,6 @@ export const BLOG_POSTS: BlogPost[] = [
     color: "#4a5a72",
   },
 ];
+
+
+export const BLOG_CATEGORIES = ["Backend", "Mobile", "Design"];
