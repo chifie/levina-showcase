@@ -219,7 +219,7 @@ export default function Skills() {
           {SKILL_CATEGORIES.map((category, catIndex) => (
             <div
               key={catIndex}
-              className="group relative overflow-hidden rounded-3xl glass-strong border border-brand/10 p-6 shadow-elegant transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
+              className="card-elegant group relative overflow-hidden rounded-3xl p-6"
             >
               <div
                 className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-brand/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
