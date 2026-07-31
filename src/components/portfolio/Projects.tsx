@@ -22,8 +22,8 @@ const PROJECTS = [
     description:
       "A real estate marketplace platform for property listings, agent profiles, search filters, and seamless transaction management across Tanzania.",
     tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-    gradient: "from-brand via-brand-dark to-brand-dark",
-    color: "#5f6b80",
+    gradient: "from-slate-600 via-slate-700 to-slate-900",
+    color: "#475569",
     initials: "DM",
     github: "https://github.com",
     demo: "https://dalamaimkononi.com",
