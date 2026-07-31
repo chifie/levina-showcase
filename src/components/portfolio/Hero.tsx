@@ -426,8 +426,9 @@ export default function Hero() {
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
                   <img
                     src={chifieImage}
-                    alt="Levina"
+                    alt="Levina Chifie - Full Stack Software Developer"
                     className="h-full w-full object-cover"
+                    loading="eager"
                     style={{ objectPosition: "center 45%" }}
                   />
                 </div>
