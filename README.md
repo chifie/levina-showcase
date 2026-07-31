@@ -234,3 +234,10 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 ## ☕ Support the Project
 
 If this portfolio helped you, a ⭐ on [GitHub](https://github.com/chifie/levina-showcase) means a lot!
+
+## 🔭 What's Next
+
+- [ ] Live project screenshots on cards
+- [ ] Multilingual support (EN / SW)
+- [ ] Blog search and category filters
+- [ ] Dark-mode tuning for blog cards
