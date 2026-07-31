@@ -144,7 +144,7 @@ export default function Navbar() {
 
           <button
             onClick={toggle}
-            aria-label="Toggle theme"
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-brand/10"
           >
             <span className="transition-transform duration-300 hover:rotate-12">
@@ -155,6 +155,7 @@ export default function Navbar() {
           <button
             onClick={() => setOpen((o) => !o)}
             aria-label="Menu"
+            aria-expanded={open}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow md:hidden"
           >
             {open ? <FaTimes className="text-brand" /> : <FaBars />}
