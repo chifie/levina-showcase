@@ -48,3 +48,6 @@ All notable changes to this project will be documented in this file.
 
 ### CI
 - GitHub Actions workflow for linting and typechecking
+
+### CI
+- Workflow switched to Bun for install, typecheck, and lint
