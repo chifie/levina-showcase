@@ -358,7 +358,7 @@ export default function Contact() {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="glow-border card-elegant relative rounded-3xl p-8 lg:col-span-3"
+            className="card-elegant relative rounded-3xl p-8 lg:col-span-3"
             style={{ opacity: 0 }}
           >
             <div className="grid gap-5 sm:grid-cols-2">
