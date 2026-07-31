@@ -371,7 +371,7 @@ export default function Hero() {
               left: `${left}%`,
               top: `${top}%`,
               color,
-              opacity: 0.15,
+              opacity: 0.09,
               transition: "opacity 0.3s",
             }}
           >
