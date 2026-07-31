@@ -57,6 +57,19 @@ export default function Navbar() {
   }, [open]);
 
   useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  useEffect(() => {
     if (indicatorRef.current && !prefersReducedMotion()) {
       const activeLink = navRef.current?.querySelector(`[data-nav="${activeSection}"]`);
       if (activeLink) {
@@ -157,8 +170,9 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen((o) => !o)}
-            aria-label="Menu"
+            aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-menu"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow md:hidden"
           >
             {open ? <FaTimes className="text-brand" /> : <FaBars />}
@@ -168,6 +182,7 @@ export default function Navbar() {
 
       {open && (
         <div
+          id="mobile-menu"
           ref={mobileMenuRef}
           className="mx-4 mt-2 rounded-2xl glass-strong border border-brand/10 p-3 shadow-elegant md:hidden"
         >
