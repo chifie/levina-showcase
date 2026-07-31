@@ -14,3 +14,9 @@ Thanks for your interest in contributing to this portfolio!
 ## Commit style
 
 Use conventional commit prefixes such as `feat:`, `fix:`, `style:`, `docs:`, `chore:`.
+
+## ♿ Accessibility & Motion
+
+- Preserve `prefers-reduced-motion` support when adding GSAP animations
+- Keep ARIA labels and roles on interactive and status elements
+- Test keyboard navigation and focus-visible outlines for new components
