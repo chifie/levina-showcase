@@ -45,7 +45,7 @@ Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 src/
 ├── components/
 │   ├── Portfolio.tsx        # Main layout composition
-│   ├── portfolio/           # Section components (Hero, About, Skills...)
+│   ├── portfolio/           # Section components (Hero, About, Skills, Blog...)
 │   └── ui/                  # Reusable UI primitives
 ├── routes/                  # TanStack Router routes
 ├── lib/                     # Utilities and error handling
