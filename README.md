@@ -289,3 +289,7 @@ The profile photo appears in both the **Hero** (portrait oval frame) and the **A
 - `Footer.tsx` — navigation, links, scroll progress, cursor
 - `Navbar.tsx` — fixed nav with active section indicator
 - `Preloader.tsx` — italic serif "dev chifie" flash screen
+
+## 🤖 CI
+
+A GitHub Actions workflow (`.github/workflows/ci.yml`) runs `npm run typecheck` and `npm run lint` on every push and pull request to `main`.
