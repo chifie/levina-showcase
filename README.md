@@ -149,3 +149,7 @@ If you find this project useful, consider giving it a ⭐ on [GitHub](https://gi
 ## 📜 Footer
 
 Built with ❤️ by **Levina Chifie** — React, TypeScript, TanStack Start, GSAP & Tailwind CSS.
+
+## 📝 Blog
+
+The site includes a **Blog** section with article cards covering backend engineering, mobile development, and design. Article data lives in `src/lib/blog-posts.ts` and can be extended by adding entries to the `BLOG_POSTS` array.
