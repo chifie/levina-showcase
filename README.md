@@ -131,3 +131,8 @@ Use the contact form on the site or email [levinachifie@gmail.com](mailto:levina
 **What technologies do you specialize in?**
 
 React, TypeScript, Next.js, FastAPI, NestJS, Flutter, PostgreSQL, and more. See the Skills section on the live site for the full list.
+
+## 🚦 Status
+
+[![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/chifie/levina-showcase)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
