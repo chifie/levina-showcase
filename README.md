@@ -342,3 +342,12 @@ The site ships Open Graph and Twitter card meta tags with absolute URLs, a canon
 ## 🧭 Navigation
 
 The fixed navbar tracks the active section as you scroll, highlights it with an animated indicator and `aria-current`, and includes a mobile menu. Footer links mirror the same sections.
+
+## ♿ Accessibility & 🔎 SEO
+
+- Skip-to-content link for keyboard users (`#main-content`)
+- Mobile menu is a proper `nav` region with `aria-controls`, closes on Escape, locks scroll
+- JSON-LD Person structured data for rich results
+- `robots.txt` and `sitemap.xml` in `public/`
+- Hero image uses `fetchPriority="high"` with width/height hints
+- Preconnect to Google Fonts origins for faster font loading
