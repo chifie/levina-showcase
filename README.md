@@ -90,6 +90,7 @@ This project is licensed under the [MIT License](LICENSE).
 **Levina Chifie** is a full stack software developer and mobile app developer based in Tanzania, passionate about building clean, scalable applications across web and mobile.
 
 - 🌐 [Website](https://levinachifie.dev)
+- 📝 [Blog](https://levinachifie.dev#blog)
 - 🐙 [GitHub](https://github.com/chifie)
 - 💼 [LinkedIn](https://linkedin.com/in/levinachifie)
 - ✉️ [Email](mailto:levinachifie@gmail.com)
