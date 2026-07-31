@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { prefersReducedMotion } from "@/lib/motion";
 
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -8,22 +9,28 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (prefersReducedMotion()) {
+      onComplete();
+      return;
+    }
+
     const tl = gsap.timeline({
       onComplete,
     });
 
-    const chars = "LEVINA";
+    const chars = "dev chifie";
     const logoEl = logoRef.current;
     if (logoEl) {
       logoEl.innerHTML = "";
       [...chars].forEach((char, i) => {
         const span = document.createElement("span");
-        span.textContent = char;
+        span.textContent = char === " " ? "\u00A0" : char;
         span.className = "inline-block";
         span.style.opacity = "0";
         span.style.transform = "translateY(40px) rotateX(40deg)";
-        span.style.fontFamily = "Space Grotesk, sans-serif";
-        span.style.fontWeight = "700";
+        span.style.fontFamily = "'Playfair Display', Georgia, serif";
+        span.style.fontStyle = "italic";
+        span.style.fontWeight = "600";
         span.style.fontSize = "clamp(2.5rem, 6vw, 4.5rem)";
         span.style.background = "linear-gradient(135deg, #8fa0b8, #6c7a94)";
         span.style.webkitBackgroundClip = "text";
@@ -88,7 +95,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       ref={containerRef}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
       role="status"
-      aria-label="Loading Levina Chifie portfolio"
+      aria-label="Loading dev chifie portfolio"
       style={{
         background: "#0e1420",
         perspective: "1000px",
