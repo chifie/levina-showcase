@@ -69,3 +69,9 @@ All notable changes to this project will be documented in this file.
 
 ### Docs
 - SEO metadata and navigation behavior documentation
+
+### Added
+- Elegant hero profile photo frame with rotating conic-gradient ring, orbit dots, and glow
+- GSAP scroll parallax and mouse tilt on the hero photo
+- Shine-sweep hovers, shimmer preloader bar, animated scroll indicator
+- Gradient accent bars under all section headings
