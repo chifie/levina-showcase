@@ -100,7 +100,7 @@ function ServiceCard({
           style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
         >
           <span
-            className="absolute inset-0 rounded-2xl opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-60"
+            className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-60"
             style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
             aria-hidden="true"
           />
