@@ -93,7 +93,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🗺 Roadmap
 
-- [ ] Add blog section
+- [x] Add blog section
 - [ ] Add live project screenshots to cards
 - [ ] Add multilingual support
 - [ ] Add project search and filters
