@@ -319,3 +319,12 @@ The Blog header shows category chips (Backend, Mobile, Design) driven by the sha
 - `CONTRIBUTING.md` — contribution guidelines
 - `SECURITY.md` — security reporting policy
 - `LICENSE` — MIT license
+
+## 🎨 Brand Colors
+
+| Token | Light | Dark |
+| --- | --- | --- |
+| `--brand` | `#6c7a94` | `#9fb0c4` |
+| `--brand-light` | `#8fa0b8` | `#a5b3c6` |
+| `--brand-dark` | `#4a5a72` | `#4a5a72` |
+| `--background` | `#faf3e0` | `#0e1420` |
