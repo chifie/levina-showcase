@@ -54,3 +54,6 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Blog category chips rendered from shared data
+
+### Changed
+- Services learn-more links smooth-scroll to the contact section
