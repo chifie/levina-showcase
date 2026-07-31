@@ -11,8 +11,8 @@ const PROJECTS = [
     description:
       "A modern marketplace platform for Tanzania connecting buyers and sellers with seamless transactions, product management, and a complete seller dashboard.",
     tech: ["React", "FastAPI", "PostgreSQL", "TypeScript"],
-    gradient: "from-brand-light via-brand to-brand-dark",
-    color: "#6c7a94",
+    gradient: "from-slate-400 via-slate-500 to-slate-700",
+    color: "#64748b",
     initials: "SD",
     github: "https://github.com",
     demo: "https://sokodigital.com",
