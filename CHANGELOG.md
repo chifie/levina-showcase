@@ -35,3 +35,6 @@ All notable changes to this project will be documented in this file.
 ### Docs
 - Expanded README with blog, typography, accessibility, performance, testing, and contributing sections
 - Updated CONTRIBUTING and SECURITY with accessibility guidance
+
+### Added
+- Profile photo in the About section with a two-column layout and reveal animation
