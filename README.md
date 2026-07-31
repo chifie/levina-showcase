@@ -210,3 +210,12 @@ The site respects the `prefers-reduced-motion` system setting. Enable "reduce mo
 **The dev server fails to start** — ensure Node.js 20+ is installed and run `npm install` first.
 
 **Fonts look wrong in development** — hard refresh (Ctrl+Shift+R) to clear the cached font stylesheet.
+
+## 🖼 Screenshots
+
+| Section | Description |
+| --- | --- |
+| Hero | Full-screen intro with circular profile photo and floating tech icons |
+| Projects | Project cards with distinct gradient headers and tech badges |
+| Blog | Article cards with category badges, dates, and read times |
+| Contact | Info cards plus a floating-label contact form with honeypot |
