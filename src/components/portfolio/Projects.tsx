@@ -44,8 +44,8 @@ const PROJECTS = [
     description:
       "A restaurant website with a modern UI, online ordering system, menu management, and an intuitive customer experience for Glory Burger.",
     tech: ["React", "FastAPI", "PostgreSQL", "Tailwind CSS"],
-    gradient: "from-brand via-brand-light to-brand-dark",
-    color: "#4a5a72",
+    gradient: "from-slate-500 via-slate-600 to-slate-800",
+    color: "#5b6b84",
     initials: "GB",
     github: "https://github.com",
     demo: "https://gloryburger.com",
