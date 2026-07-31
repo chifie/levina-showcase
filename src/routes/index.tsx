@@ -49,6 +49,20 @@ export const Route = createFileRoute("/")({
       { name: "apple-mobile-web-app-status-bar-style", content: "default" },
     ],
     links: [{ rel: "canonical", href: "https://levinachifie.dev" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Levina Chifie",
+          url: "https://levinachifie.dev",
+          jobTitle: "Full Stack Software Developer & Mobile App Developer",
+          email: "mailto:levinachifie@gmail.com",
+          sameAs: ["https://github.com/chifie", "https://linkedin.com/in/levinachifie"],
+        }),
+      },
+    ],
   }),
   component: Index,
 });
