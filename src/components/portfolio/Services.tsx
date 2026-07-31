@@ -80,7 +80,7 @@ function ServiceCard({
   return (
     <div
       ref={cardRef}
-      className="group relative overflow-hidden rounded-3xl glass-strong border border-brand/10 p-8 shadow-elegant transition-all duration-300 hover:shadow-glow hover:-translate-y-1"
+      className="card-elegant group relative overflow-hidden rounded-3xl p-8"
       style={{ opacity: 0 }}
     >
       <div

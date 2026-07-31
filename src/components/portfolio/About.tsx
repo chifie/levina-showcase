@@ -154,7 +154,7 @@ export default function About() {
 
           <div
             ref={contentRef}
-            className="relative overflow-hidden rounded-3xl glass-strong border border-brand/10 p-8 shadow-elegant lg:col-span-3 md:p-12"
+            className="card-elegant relative overflow-hidden rounded-3xl p-8 lg:col-span-3 md:p-12"
           >
             <div
               className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand/10 blur-3xl"
