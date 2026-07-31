@@ -189,3 +189,13 @@ Heading and body fonts are configured via the `--font-heading` and `--font-body`
 ### Blog posts
 
 Edit `src/lib/blog-posts.ts` and add an entry to `BLOG_POSTS` with a title, excerpt, category, date, and read time.
+
+## 💡 FAQ
+
+**How do I add a new project?**
+
+Add an entry to the `PROJECTS` array in `src/components/portfolio/Projects.tsx` with title, description, tech stack, gradient, and links.
+
+**Why do some animations not play on my device?**
+
+The site respects the `prefers-reduced-motion` system setting. Enable "reduce motion" in your OS or browser settings to disable GSAP animations.
