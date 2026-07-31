@@ -229,10 +229,11 @@ export default function Projects() {
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full px-3 py-1 text-[11px] font-medium"
+                      className="rounded-full border px-3 py-1 text-[11px] font-medium transition-all duration-300 hover:-translate-y-0.5"
                       style={{
                         background: `color-mix(in srgb, ${project.color} 12%, transparent)`,
                         color: project.color,
+                        borderColor: `color-mix(in srgb, ${project.color} 25%, transparent)`,
                       }}
                     >
                       {t}
