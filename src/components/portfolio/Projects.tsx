@@ -66,9 +66,7 @@ const PROJECTS = [
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardsWrapperRef = useRef<HTMLDivElement>(null);
-  const pinnedRef = useRef(false);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -90,51 +88,25 @@ export default function Projects() {
         );
       }
 
-      const cards = cardsWrapperRef.current;
-      const container = containerRef.current;
-
-      if (cards && container && !pinnedRef.current) {
-        pinnedRef.current = true;
-
-        const cardsWidth = cards.scrollWidth;
-        const viewportWidth = window.innerWidth;
-        const scrollDistance = cardsWidth - viewportWidth;
-
-        if (scrollDistance > 0) {
-          gsap.to(cards, {
-            x: -scrollDistance,
-            ease: "power2.inOut",
+      if (gridRef.current) {
+        const cards = gridRef.current.querySelectorAll("[data-project-card]");
+        gsap.fromTo(
+          cards,
+          { opacity: 0, y: 40, scale: 0.95 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "power3.out",
             scrollTrigger: {
-              trigger: container,
-              pin: true,
-              start: "top top",
-              end: () => `+=${scrollDistance + 200}`,
-              scrub: 1,
-              invalidateOnRefresh: true,
-              anticipatePin: 1,
-            },
-          });
-        }
-      }
-
-      if (window.innerWidth < 768) {
-        const cardEls = cardsWrapperRef.current?.querySelectorAll("[data-project-card]");
-        if (cardEls) {
-          cardEls.forEach((card, i) => {
-            ScrollTrigger.create({
-              trigger: card,
-              start: "top 85%",
+              trigger: gridRef.current,
+              start: "top 80%",
               once: true,
-              onEnter: () => {
-                gsap.fromTo(
-                  card,
-                  { opacity: 0, y: 40 },
-                  { opacity: 1, y: 0, duration: 0.6, delay: i * 0.1, ease: "power3.out" },
-                );
-              },
-            });
-          });
-        }
+            },
+          },
+        );
       }
     }, sectionRef);
 
@@ -145,7 +117,7 @@ export default function Projects() {
     <section id="projects" ref={sectionRef} className="relative overflow-hidden py-28">
       <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-pink-400/5 blur-[120px]" />
 
-      <div ref={containerRef} className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <div ref={headerRef} className="mb-16 text-center">
           <span
             data-anim
@@ -163,153 +135,73 @@ export default function Projects() {
             A selection of projects I have built with passion and precision
           </p>
         </div>
-      </div>
 
-      <div className="hidden md:block">
         <div
-          ref={cardsWrapperRef}
-          className="horizontal-scroll gap-8 px-6"
-          style={{
-            paddingLeft: "calc((100vw - 72rem) / 2 + 1.5rem)",
-            paddingRight: "calc((100vw - 72rem) / 2 + 1.5rem)",
-          }}
+          ref={gridRef}
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7"
         >
-          {PROJECTS.map((project, i) => (
-            <div key={i} data-project-card className="group w-[420px] flex-shrink-0 lg:w-[480px]">
-              <div className="relative overflow-hidden rounded-3xl glass-strong border border-pink-400/10 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2">
-                <div
-                  className={`relative h-56 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-64`}
-                >
-                  <div className="absolute inset-0 bg-black/10" />
-                  <div
-                    className="absolute inset-0 opacity-30"
-                    style={{
-                      backgroundImage:
-                        "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-                      backgroundSize: "20px 20px",
-                    }}
-                  />
-
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-heading text-7xl font-bold text-white/90 drop-shadow-lg transition-all duration-500 group-hover:scale-110 lg:text-8xl">
-                      {project.initials}
-                    </span>
-                  </div>
-
-                  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-black/50 opacity-0 transition-all duration-400 group-hover:opacity-100">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white transition-all hover:bg-white/40 hover:scale-110"
-                        aria-label="GitHub"
-                      >
-                        <FaGithub className="text-lg" />
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white transition-all hover:bg-white/40 hover:scale-110"
-                        aria-label="Live Demo"
-                      >
-                        <FaExternalLinkAlt className="text-lg" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                <div className="p-6 lg:p-7">
-                  <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-pink-400">
-                    {project.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-3">
-                    {project.description}
-                  </p>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full px-3 py-1 text-[11px] font-medium"
-                        style={{
-                          background: `color-mix(in srgb, ${project.color} 12%, transparent)`,
-                          color: project.color,
-                        }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-5 flex gap-3">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 rounded-full glass border border-pink-400/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
-                      >
-                        GitHub
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 rounded-full bg-gradient-primary px-4 py-2.5 text-center text-xs font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
-                      >
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-6xl px-6 md:hidden">
-        <div className="grid gap-6">
           {PROJECTS.map((project, i) => (
             <div
               key={i}
               data-project-card
-              className="group overflow-hidden rounded-3xl glass-strong border border-pink-400/10 shadow-elegant transition-all duration-500 hover:shadow-glow"
-              style={{ opacity: 0 }}
+              className="group flex h-full flex-col overflow-hidden rounded-3xl glass-strong border border-pink-400/10 shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:shadow-glow"
             >
               <div
-                className={`relative h-48 overflow-hidden bg-gradient-to-br ${project.gradient}`}
+                className={`relative h-44 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-48`}
               >
+                <div className="absolute inset-0 bg-black/10" />
                 <div
-                  className="absolute inset-0 opacity-30"
+                  className="absolute inset-0 opacity-30 transition-transform duration-700 group-hover:scale-110"
                   style={{
-                    backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+                    backgroundImage:
+                      "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
                     backgroundSize: "20px 20px",
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-heading text-6xl font-bold text-white/90 drop-shadow-lg">
+                  <span className="font-heading text-6xl font-bold text-white/90 drop-shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 lg:text-7xl">
                     {project.initials}
                   </span>
                 </div>
+                <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-4 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 transition-all duration-400 group-hover:opacity-100">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-all hover:bg-white/40 hover:scale-110"
+                      aria-label="GitHub"
+                    >
+                      <FaGithub className="text-lg" />
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-all hover:bg-white/40 hover:scale-110"
+                      aria-label="Live Demo"
+                    >
+                      <FaExternalLinkAlt className="text-lg" />
+                    </a>
+                  )}
+                </div>
               </div>
 
-              <div className="p-5">
-                <h3 className="font-heading text-lg font-bold">{project.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+              <div className="flex flex-1 flex-col p-6 lg:p-7">
+                <h3 className="font-heading text-xl font-bold transition-colors group-hover:text-pink-400">
+                  {project.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
                   {project.description}
                 </p>
-                <div className="mt-3 flex flex-wrap gap-1.5">
+
+                <div className="mt-4 flex flex-wrap gap-2">
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full px-2.5 py-0.5 text-[10px] font-medium"
+                      className="rounded-full px-3 py-1 text-[11px] font-medium"
                       style={{
                         background: `color-mix(in srgb, ${project.color} 12%, transparent)`,
                         color: project.color,
@@ -319,13 +211,14 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="mt-4 flex gap-2">
+
+                <div className="mt-5 flex gap-3 border-t border-pink-400/10 pt-5">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex-1 rounded-full glass border border-pink-400/20 px-3 py-2 text-center text-xs font-semibold"
+                      className="flex-1 rounded-full glass border border-pink-400/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
                     >
                       GitHub
                     </a>
@@ -335,7 +228,7 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex-1 rounded-full bg-gradient-primary px-3 py-2 text-center text-xs font-semibold text-white"
+                      className="flex-1 rounded-full bg-gradient-primary px-4 py-2.5 text-center text-xs font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
                     >
                       Live Demo
                     </a>
