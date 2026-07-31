@@ -20,6 +20,7 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 - [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) for elegant serif headings
 | Animation | GSAP, ScrollTrigger |
 | Icons | React Icons |
+| Fonts | Playfair Display, Inter |
 | Styling | Tailwind CSS, tw-animate-css |
 | Deployment | Cloudflare Workers (Wrangler) |
 
@@ -76,6 +77,8 @@ This project is licensed under the [MIT License](LICENSE).
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=white)
+![Playfair Display](https://img.shields.io/badge/Font-Playfair_Display-8fa0b8?style=flat-square)
 
 ## 🙏 Acknowledgements
 
