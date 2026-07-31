@@ -71,7 +71,7 @@ function ScrollProgress() {
   }, []);
 
   return (
-    <div className="fixed left-0 top-0 z-[60] h-[3px] w-full bg-transparent">
+    <div className="fixed left-0 top-0 z-[60] h-[3px] w-full bg-transparent" aria-hidden="true">
       <div
         className="h-full bg-gradient-primary transition-[width] duration-200 ease-out"
         style={{ width: `${progress}%` }}
@@ -139,6 +139,7 @@ function CursorFollower() {
         background: "#6c7a94",
         opacity: 0,
       }}
+      aria-hidden="true"
     />
   );
 }
