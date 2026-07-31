@@ -157,6 +157,7 @@ export default function Blog() {
           >
             Blog
           </span>
+          <div data-anim className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-primary" />
           <h2
             data-anim
             className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
