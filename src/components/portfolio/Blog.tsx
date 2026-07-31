@@ -99,7 +99,7 @@ function PostCard({
           <a
             href="#blog"
             onClick={(e) => e.preventDefault()}
-            className="flex-1 rounded-full glass border border-brand/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
+            className="flex-1 rounded-full glass border border-brand/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow hover:bg-brand/10 focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             Read More
           </a>
