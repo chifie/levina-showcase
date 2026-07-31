@@ -181,11 +181,9 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div
+        <nav
           id="mobile-menu"
           ref={mobileMenuRef}
-          role="dialog"
-          aria-modal="true"
           aria-label="Site navigation"
           className="mx-4 mt-2 rounded-2xl glass-strong border border-brand/10 p-3 shadow-elegant md:hidden"
         >
@@ -218,7 +216,7 @@ export default function Navbar() {
               </a>
             </li>
           </ul>
-        </div>
+        </nav>
       )}
     </header>
   );
