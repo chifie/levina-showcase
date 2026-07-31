@@ -121,3 +121,13 @@ To change the brand colors, edit the theme tokens in `src/styles.css`:
 ```
 
 To add or edit projects, update the `PROJECTS` array in `src/components/portfolio/Projects.tsx`.
+
+## 💡 FAQ
+
+**How can I contact you for work?**
+
+Use the contact form on the site or email [levinachifie@gmail.com](mailto:levinachifie@gmail.com).
+
+**What technologies do you specialize in?**
+
+React, TypeScript, Next.js, FastAPI, NestJS, Flutter, PostgreSQL, and more. See the Skills section on the live site for the full list.
