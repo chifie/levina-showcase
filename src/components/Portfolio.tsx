@@ -17,23 +17,14 @@ gsap.registerPlugin(Flip);
 
 function FontLoader() {
   useEffect(() => {
-    const head = document.head;
-    const preconnectRefs: HTMLLinkElement[] = [];
-    ["https://fonts.googleapis.com", "https://fonts.gstatic.com"].forEach((origin) => {
-      const pre = document.createElement("link");
-      pre.rel = "preconnect";
-      pre.href = origin;
-      if (origin.includes("gstatic")) pre.crossOrigin = "anonymous";
-      head.appendChild(pre);
-      preconnectRefs.push(pre);
-    });
+    // Font preconnects are already declared in the root layout head; only the
+    // stylesheet is injected here to avoid duplicating the preconnect links.
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href =
       "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap";
-    head.appendChild(link);
+    document.head.appendChild(link);
     return () => {
-      preconnectRefs.forEach((pre) => pre.remove());
       link.remove();
     };
   }, []);
