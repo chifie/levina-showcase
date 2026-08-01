@@ -145,6 +145,8 @@ export default function About() {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                     decoding="async"
+                    width={320}
+                    height={384}
                     style={{ objectPosition: "center 35%" }}
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-white/10" />
