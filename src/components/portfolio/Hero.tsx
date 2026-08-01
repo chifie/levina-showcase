@@ -342,16 +342,19 @@ export default function Hero() {
     >
       <div
         ref={blob1Ref}
+        aria-hidden="true"
         className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] rounded-full opacity-30 blur-[120px]"
         style={{ background: "radial-gradient(circle, rgba(108,122,148,0.25), transparent 70%)" }}
       />
       <div
         ref={blob2Ref}
+        aria-hidden="true"
         className="pointer-events-none absolute -bottom-32 -right-32 h-[400px] w-[400px] rounded-full opacity-25 blur-[100px]"
         style={{ background: "radial-gradient(circle, rgba(74,90,114,0.2), transparent 70%)" }}
       />
 
       <div
+        aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage: "radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)",
@@ -359,7 +362,11 @@ export default function Hero() {
         }}
       />
 
-      <div ref={iconsRef} className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div
+        ref={iconsRef}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
         {FLOATING_ICONS.map(({ Icon, color, size, delay, left, top, depth }, i) => (
           <div
             key={i}
