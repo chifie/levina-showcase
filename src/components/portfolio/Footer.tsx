@@ -27,7 +27,7 @@ function BackToTop() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
     if (btnRef.current) {
       gsap.fromTo(
         btnRef.current,
@@ -198,7 +198,10 @@ export default function Footer() {
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent"
           aria-hidden="true"
         />
-        <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/5 blur-[100px]" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/5 blur-[100px]"
+        />
 
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-10 md:grid-cols-4">
