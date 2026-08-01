@@ -82,7 +82,10 @@ export default function About() {
 
   return (
     <section id="about" ref={sectionRef} className="relative py-28 overflow-hidden">
-      <div className="pointer-events-none absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-brand/5 blur-[120px]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-brand/5 blur-[120px]"
+      />
 
       <div className="mx-auto max-w-6xl px-6">
         <div ref={headerRef} className="mb-16 text-center">

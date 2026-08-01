@@ -191,8 +191,14 @@ export default function Skills() {
 
   return (
     <section id="skills" ref={sectionRef} className="relative py-28 overflow-hidden">
-      <div className="pointer-events-none absolute left-0 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-brand/5 blur-[100px]" />
-      <div className="pointer-events-none absolute right-0 bottom-1/3 h-72 w-72 translate-x-1/2 rounded-full bg-brand-light/5 blur-[100px]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-brand/5 blur-[100px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 bottom-1/3 h-72 w-72 translate-x-1/2 rounded-full bg-brand-light/5 blur-[100px]"
+      />
 
       <div className="mx-auto max-w-6xl px-6">
         <div ref={headerRef} className="mb-16 text-center">

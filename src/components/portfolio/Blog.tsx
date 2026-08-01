@@ -156,7 +156,10 @@ export default function Blog() {
 
   return (
     <section id="blog" ref={sectionRef} className="relative overflow-hidden py-28">
-      <div className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 translate-x-1/2 rounded-full bg-brand/5 blur-[120px]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 translate-x-1/2 rounded-full bg-brand/5 blur-[120px]"
+      />
 
       <div className="mx-auto max-w-6xl px-6">
         <div ref={headerRef} className="mb-16 text-center">
