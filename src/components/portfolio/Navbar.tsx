@@ -100,6 +100,7 @@ export default function Navbar() {
       }`}
     >
       <nav
+        aria-label="Primary navigation"
         className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${
           scrolled ? "glass-strong shadow-elegant mx-4 border border-brand/10" : "bg-transparent"
         }`}
