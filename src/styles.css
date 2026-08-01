@@ -125,6 +125,10 @@
   h6 {
     font-family: var(--font-heading);
     letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
   }
   .font-heading-italic {
     font-style: italic;
