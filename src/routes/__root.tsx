@@ -132,6 +132,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://levinachifie.dev",
       },
     ],
+    scripts: [
+      {
+        // Apply the saved theme before hydration to avoid a flash of the wrong theme.
+        children: `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;if(d)document.documentElement.classList.add("dark")}catch(e){}})();`,
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
