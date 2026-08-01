@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaGlobe, FaServer, FaMobileAlt, FaPaintBrush, FaArrowRight } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
+import { scrollToSection } from "@/lib/scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -134,7 +135,7 @@ function ServiceCard({
           href="#contact"
           onClick={(e) => {
             e.preventDefault();
-            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+            scrollToSection("contact");
           }}
           className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand opacity-0 translate-x-[-10px] transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
         >

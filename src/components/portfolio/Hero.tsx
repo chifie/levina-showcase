@@ -16,6 +16,7 @@ import {
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import chifieImage from "@/assets/chifie.png";
 import { prefersReducedMotion } from "@/lib/motion";
+import { scrollToSection } from "@/lib/scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -560,7 +561,7 @@ export default function Hero() {
             className="group flex flex-col items-center gap-2.5 text-xs font-medium text-muted-foreground transition-colors hover:text-brand"
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+              scrollToSection("about");
             }}
           >
             <span>Scroll Down</span>
