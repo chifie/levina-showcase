@@ -384,6 +384,13 @@ export default function Contact() {
                 <span className="h-1 w-1 rounded-full bg-brand/60" />I typically reply within 24
                 hours
               </div>
+              <p className="sr-only" role="status" aria-live="polite">
+                {submitting
+                  ? "Sending your message"
+                  : sent
+                    ? "Your message was sent successfully"
+                    : ""}
+              </p>
               <RippleButton type="submit">
                 {submitting ? (
                   <>
