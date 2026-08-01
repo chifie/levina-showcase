@@ -27,7 +27,7 @@ const PROJECTS = [
     color: "#475569",
     initials: "DM",
     github: "https://github.com",
-    demo: "https://dalalimkononi.com",
+    demo: "https://dalamaimkononi.com",
   },
   {
     title: "TanzaniaKiganjani",
