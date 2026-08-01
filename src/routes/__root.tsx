@@ -76,6 +76,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:url", content: "https://levinachifie.dev" },
       { property: "og:image", content: "https://levinachifie.dev/og-image.png" },
       { property: "og:site_name", content: "Levina Chifie Portfolio" },
+      { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
