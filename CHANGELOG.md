@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Removed
+- Lovable project marker directory (`.lovable/`)
+- `@lovable.dev/vite-tanstack-config` dependency and Lovable-specific Vite config
+
+### Changed
+- Vite config rewritten with standard plugins (TanStack Start, React, Tailwind, tsconfig paths, Cloudflare)
+- README deduplicated: removed repeated Playfair Display bullets and merged duplicate sections
+
+### Fixed
+- DalaliMkononi project demo URL typo
+
+### Accessibility
+- `aria-hidden` on decorative hero blobs and floating icons
+- `aria-label` on the primary navigation landmark
+- Polite live region announcing contact form submission status
+
+### Performance
+- Width and height hints on the About portrait image
+- Removed duplicate Google Fonts preconnects from the client FontLoader
+
+### SEO
+- `lastmod` date added to `sitemap.xml`
+- `og:locale` meta added to the root layout
+
 ### Added
 - Branded OG image and favicons in the slate-blue and cream palette
 - Sixth project card to balance the projects grid
