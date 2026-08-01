@@ -100,10 +100,13 @@ function FloatingInput({
     const input = wrapper.querySelector("input, textarea") as HTMLElement;
 
     const onFocus = () => {
+      const brandColor =
+        getComputedStyle(document.documentElement).getPropertyValue("--brand").trim() ||
+        "#6c7a94";
       gsap.to(wrapper.querySelector(".float-label"), {
         top: "0.5rem",
         fontSize: "0.75rem",
-        color: "#6c7a94",
+        color: brandColor,
         duration: 0.2,
         ease: "power2.out",
       });
@@ -275,8 +278,14 @@ export default function Contact() {
 
   return (
     <section id="contact" ref={sectionRef} className="relative py-28 overflow-hidden">
-      <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-brand/5 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-32 bottom-1/3 h-72 w-72 rounded-full bg-brand-light/5 blur-[100px]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-brand/5 blur-[120px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 bottom-1/3 h-72 w-72 rounded-full bg-brand-light/5 blur-[100px]"
+      />
 
       {[...Array(6)].map((_, i) => (
         <div
