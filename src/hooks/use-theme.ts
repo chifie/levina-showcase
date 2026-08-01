@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
 
-function getInitialTheme(): "light" | "dark" {
-  if (typeof window === "undefined") return "light";
-  const stored = window.localStorage.getItem("theme") as "light" | "dark" | null;
-  if (stored === "light" || stored === "dark") return stored;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
 export function useTheme() {
-  const [theme, setTheme] = useState<"light" | "dark">(getInitialTheme);
+  // Initialized to a constant so server and client first render match (no
+  // hydration mismatch). The inline script in the root head applies the saved
+  // theme class before paint, and this effect syncs state after mount.
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-  }, [theme]);
+    const stored = window.localStorage.getItem("theme") as "light" | "dark" | null;
+    const initial =
+      stored === "light" || stored === "dark"
+        ? stored
+        : window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+    setTheme(initial);
+    document.documentElement.classList.toggle("dark", initial === "dark");
+  }, []);
 
   const toggle = () => {
     setTheme((t) => {
