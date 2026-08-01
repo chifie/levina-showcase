@@ -62,7 +62,8 @@ function ScrollProgress() {
   useEffect(() => {
     const onScroll = () => {
       const h = document.documentElement;
-      const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max > 0 ? (h.scrollTop / max) * 100 : 0;
       setProgress(p);
     };
     onScroll(); // reflect the current scroll position on mount (e.g. after refresh)
