@@ -10,7 +10,6 @@ import {
   FaPython,
   FaDocker,
   FaFigma,
-  FaArrowDown,
   FaArrowRight,
   FaCode,
 } from "react-icons/fa";
