@@ -1,7 +1,6 @@
 # Levina Chifie — Portfolio
 
 A modern, animated portfolio website built with **React**, **TypeScript**, **TanStack Start**, **GSAP**, and **Tailwind CSS v4**. Featuring a slate-blue and cream brand identity, smooth scroll animations, and a fully responsive layout.
-- [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) for elegant serif headings
 
 ## ✨ Features
 
@@ -17,7 +16,6 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 | Area | Technologies |
 | --- | --- |
 | Frontend | React 19, TypeScript, TanStack Start, Tailwind CSS v4 |
-- [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) for elegant serif headings
 | Animation | GSAP, ScrollTrigger |
 | Icons | React Icons |
 | Fonts | Playfair Display, Inter |
@@ -129,6 +127,14 @@ To change the brand colors, edit the theme tokens in `src/styles.css`:
 
 To add or edit projects, update the `PROJECTS` array in `src/components/portfolio/Projects.tsx`.
 
+### Fonts
+
+Heading and body fonts are configured via the `--font-heading` and `--font-body` tokens in `src/styles.css`. Replace them with any Google Font of your choice and update the `FontLoader` in `src/components/Portfolio.tsx`.
+
+### Blog posts
+
+Edit `src/lib/blog-posts.ts` and add an entry to `BLOG_POSTS` with a title, excerpt, category, date, and read time.
+
 ## 💡 FAQ
 
 **How can I contact you for work?**
@@ -138,6 +144,14 @@ Use the contact form on the site or email [levinachifie@gmail.com](mailto:levina
 **What technologies do you specialize in?**
 
 React, TypeScript, Next.js, FastAPI, NestJS, Flutter, PostgreSQL, and more. See the Skills section on the live site for the full list.
+
+**How do I add a new project?**
+
+Add an entry to the `PROJECTS` array in `src/components/portfolio/Projects.tsx` with title, description, tech stack, gradient, and links.
+
+**Why do some animations not play on my device?**
+
+The site respects the `prefers-reduced-motion` system setting. Enable "reduce motion" in your OS or browser settings to disable GSAP animations.
 
 ## 🚦 Status
 
@@ -156,7 +170,6 @@ If you find this project useful, consider giving it a ⭐ on [GitHub](https://gi
 ## 📜 Footer
 
 Built with ❤️ by **Levina Chifie** — React, TypeScript, TanStack Start, GSAP & Tailwind CSS.
-- [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) for elegant serif headings
 
 ## 📝 Blog
 
@@ -187,26 +200,6 @@ Run the type check and linter before opening a PR:
 npm run typecheck
 npm run lint
 ```
-
-## 🎨 Customization
-
-### Fonts
-
-Heading and body fonts are configured via the `--font-heading` and `--font-body` tokens in `src/styles.css`. Replace them with any Google Font of your choice and update the `FontLoader` in `src/components/Portfolio.tsx`.
-
-### Blog posts
-
-Edit `src/lib/blog-posts.ts` and add an entry to `BLOG_POSTS` with a title, excerpt, category, date, and read time.
-
-## 💡 FAQ
-
-**How do I add a new project?**
-
-Add an entry to the `PROJECTS` array in `src/components/portfolio/Projects.tsx` with title, description, tech stack, gradient, and links.
-
-**Why do some animations not play on my device?**
-
-The site respects the `prefers-reduced-motion` system setting. Enable "reduce motion" in your OS or browser settings to disable GSAP animations.
 
 ## 🚑 Troubleshooting
 
