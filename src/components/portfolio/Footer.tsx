@@ -29,6 +29,7 @@ function BackToTop() {
 
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 600);
+    onScroll(); // reflect the current scroll position on mount (e.g. after refresh)
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -72,6 +73,7 @@ function ScrollProgress() {
       const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
       setProgress(p);
     };
+    onScroll(); // reflect the current scroll position on mount (e.g. after refresh)
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

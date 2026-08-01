@@ -40,6 +40,7 @@ export default function Navbar() {
         }
       }
     };
+    onScroll(); // highlight the section visible on initial load
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
