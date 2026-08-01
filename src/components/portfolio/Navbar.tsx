@@ -2,17 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useTheme } from "@/hooks/use-theme";
 import { prefersReducedMotion } from "@/lib/motion";
+import { scrollToSection } from "@/lib/scroll";
+import { NAV_LINKS } from "@/lib/nav-links";
 import { FaSun, FaMoon, FaBars, FaTimes, FaDownload } from "react-icons/fa";
-
-const NAV = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "services", label: "Services" },
-  { id: "projects", label: "Projects" },
-  { id: "blog", label: "Blog" },
-  { id: "contact", label: "Contact" },
-];
 
 export default function Navbar() {
   const { theme, toggle } = useTheme();
@@ -28,7 +20,7 @@ export default function Navbar() {
       const scrollY = window.scrollY;
       setScrolled(scrollY > 40);
 
-      const sections = NAV.map((n) => document.getElementById(n.id)).filter(Boolean);
+      const sections = NAV_LINKS.map((n) => document.getElementById(n.id)).filter(Boolean);
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section) {
@@ -90,7 +82,7 @@ export default function Navbar() {
 
   const handleClick = (id: string) => {
     setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToSection(id);
   };
 
   return (
@@ -129,7 +121,7 @@ export default function Navbar() {
             style={{ width: 0, x: 0 }}
           />
           <ul className="flex items-center gap-1">
-            {NAV.map((n) => (
+            {NAV_LINKS.map((n) => (
               <li key={n.id}>
                 <a
                   data-nav={n.id}
@@ -195,7 +187,7 @@ export default function Navbar() {
           className="mx-4 mt-2 rounded-2xl glass-strong border border-brand/10 p-3 shadow-elegant md:hidden"
         >
           <ul className="flex flex-col gap-1">
-            {NAV.map((n) => (
+            {NAV_LINKS.map((n) => (
               <li key={n.id}>
                 <a
                   href={`#${n.id}`}

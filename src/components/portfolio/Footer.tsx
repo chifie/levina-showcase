@@ -12,16 +12,8 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 import { prefersReducedMotion } from "@/lib/motion";
-
-const FOOTER_LINKS = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "services", label: "Services" },
-  { id: "projects", label: "Projects" },
-  { id: "blog", label: "Blog" },
-  { id: "contact", label: "Contact" },
-];
+import { scrollToSection } from "@/lib/scroll";
+import { NAV_LINKS } from "@/lib/nav-links";
 
 function BackToTop() {
   const [show, setShow] = useState(false);
@@ -216,7 +208,7 @@ export default function Footer() {
                 className="group inline-flex items-center gap-2.5"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+                  scrollToSection("home");
                 }}
               >
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-white font-bold shadow-glow transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
@@ -261,14 +253,14 @@ export default function Footer() {
                 Navigation
               </h4>
               <ul className="mt-4 space-y-2.5">
-                {FOOTER_LINKS.map((link) => (
+                {NAV_LINKS.map((link) => (
                   <li key={link.id}>
                     <a
                       href={`#${link.id}`}
                       className="text-sm text-muted-foreground transition-all duration-200 hover:text-brand hover:translate-x-1 inline-block"
                       onClick={(e) => {
                         e.preventDefault();
-                        document.getElementById(link.id)?.scrollIntoView({ behavior: "smooth" });
+                        scrollToSection(link.id);
                       }}
                     >
                       {link.label}
