@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Changed
+- Skills section now leads with a Languages category (JavaScript, TypeScript, Python, PHP); JavaScript and TypeScript were removed from the Frontend group, and Docker replaced Figma in Tools
+- Skill data moved into a typed `SKILL_CATEGORIES` module in `src/lib/skills.ts` with a dedicated extracted `SkillCard` component
 - Rebranded to a strict two-color palette: Yale Blue (`#0d3b66`) and Lemon Chiffon (`#faf0ca`)
 - Extended with warm "sunshine" accents: maize (`#f4d35e`), orange (`#ee964b`), terracotta (`#f95738`)
 - CTA buttons, nav indicator, scroll progress, service/project/blog accents use a warm gradient with navy ink text (`text-warm-ink`) for contrast in both themes
