@@ -16,25 +16,34 @@ export default function Navbar() {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let rafId = 0;
     const onScroll = () => {
-      const scrollY = window.scrollY;
-      setScrolled(scrollY > 40);
+      // Coalesce scroll events to one update per animation frame.
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = 0;
+        const scrollY = window.scrollY;
+        setScrolled(scrollY > 40);
 
-      const sections = NAV_LINKS.map((n) => document.getElementById(n.id)).filter(Boolean);
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section) {
-          const top = section.offsetTop - 150;
-          if (scrollY >= top) {
-            setActiveSection(section.id);
-            break;
+        const sections = NAV_LINKS.map((n) => document.getElementById(n.id)).filter(Boolean);
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = sections[i];
+          if (section) {
+            const top = section.offsetTop - 150;
+            if (scrollY >= top) {
+              setActiveSection(section.id);
+              break;
+            }
           }
         }
-      }
+      });
     };
     onScroll(); // highlight the section visible on initial load
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   useEffect(() => {
@@ -65,7 +74,9 @@ export default function Navbar() {
       const menu = mobileMenuRef.current;
       if (!menu) return;
       const focusables = Array.from(
-        menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+        menu.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
       );
       if (focusables.length === 0) return;
       const first = focusables[0];
@@ -84,9 +95,7 @@ export default function Navbar() {
     document.body.style.overflow = "hidden";
 
     // Move focus into the menu so keyboard users land on the first link.
-    mobileMenuRef.current
-      ?.querySelector<HTMLElement>("a[href], button:not([disabled])")
-      ?.focus();
+    mobileMenuRef.current?.querySelector<HTMLElement>("a[href], button:not([disabled])")?.focus();
 
     return () => {
       document.removeEventListener("keydown", onKeyDown);

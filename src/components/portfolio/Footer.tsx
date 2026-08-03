@@ -14,10 +14,21 @@ function BackToTop() {
   const btnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 600);
+    let rafId = 0;
+    const onScroll = () => {
+      // Coalesce scroll events to one update per animation frame.
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = 0;
+        setShow(window.scrollY > 600);
+      });
+    };
     onScroll(); // reflect the current scroll position on mount (e.g. after refresh)
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const scrollToTop = () => {
