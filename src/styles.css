@@ -30,9 +30,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-brand: #6c7a94;
-  --color-brand-light: #8fa0b8;
-  --color-brand-dark: #4a5a72;
+  --color-brand: var(--brand);
+  --color-brand-light: var(--brand-light);
+  --color-brand-dark: var(--brand-dark);
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Inter", sans-serif;
 }
@@ -147,7 +147,7 @@
 
 @layer utilities {
   .text-gradient {
-    background: var(--gradient-primary);
+    background: var(--gradient-text);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
