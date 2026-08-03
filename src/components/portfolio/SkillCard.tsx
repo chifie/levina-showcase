@@ -4,8 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { prefersReducedMotion } from "@/lib/motion";
 import type { Skill } from "@/lib/skills";
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface SkillCardProps extends Skill {
   index: number;
 }
