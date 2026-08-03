@@ -81,13 +81,13 @@ export default function Skills() {
           subtitle="A comprehensive set of tools and technologies I work with to deliver high-quality software products"
         />
 
-        <p className="mb-10 flex justify-center">
+        <div className="mb-10 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-gradient-warm" aria-hidden="true" />
             {SKILL_CATEGORIES.reduce((sum, category) => sum + category.skills.length, 0)}{" "}
             technologies across {SKILL_CATEGORIES.length} categories
           </span>
-        </p>
+        </div>
 
         <div ref={gridRef} className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SKILL_CATEGORIES.map((category, catIndex) => (
