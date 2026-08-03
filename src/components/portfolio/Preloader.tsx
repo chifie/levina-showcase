@@ -32,7 +32,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         span.style.fontStyle = "italic";
         span.style.fontWeight = "600";
         span.style.fontSize = "clamp(2.5rem, 6vw, 4.5rem)";
-        span.style.background = "linear-gradient(135deg, #faf0ca, #3e5f8e)";
+        span.style.background = "linear-gradient(135deg, #faf0ca, #9db0c8)";
         span.style.webkitBackgroundClip = "text";
         span.style.webkitTextFillColor = "transparent";
         span.style.backgroundClip = "text";
@@ -95,7 +95,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       ref={containerRef}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
       role="status"
-      aria-label="Loading dev chifie portfolio"
+      aria-label="Loading Levina Chifie portfolio"
       style={{
         background: "#0a1d33",
         perspective: "1000px",
