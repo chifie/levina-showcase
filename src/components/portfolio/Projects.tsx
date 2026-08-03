@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
 import SectionHeader from "@/components/portfolio/SectionHeader";
+import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,12 +82,11 @@ export default function Projects() {
   const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
+  useSectionHeaderReveal(headerRef);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (prefersReducedMotion()) {
-        if (headerRef.current) {
-          gsap.set(headerRef.current.querySelectorAll("[data-anim]"), { opacity: 1, y: 0 });
-        }
         if (gridRef.current) {
           gsap.set(gridRef.current.querySelectorAll("[data-project-card]"), {
             opacity: 1,
@@ -95,24 +95,6 @@ export default function Projects() {
           });
         }
         return;
-      }
-
-      if (headerRef.current) {
-        gsap.fromTo(
-          headerRef.current.querySelectorAll("[data-anim]"),
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            scrollTrigger: {
-              trigger: headerRef.current,
-              start: "top 80%",
-              once: true,
-            },
-          },
-        );
       }
 
       if (gridRef.current) {

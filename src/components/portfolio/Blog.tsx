@@ -5,6 +5,7 @@ import { FaArrowRight, FaCalendarAlt, FaClock } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog-posts";
 import SectionHeader from "@/components/portfolio/SectionHeader";
+import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,31 +130,7 @@ export default function Blog() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (prefersReducedMotion()) return;
-
-      if (headerRef.current) {
-        gsap.fromTo(
-          headerRef.current.querySelectorAll("[data-anim]"),
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            scrollTrigger: {
-              trigger: headerRef.current,
-              start: "top 80%",
-              once: true,
-            },
-          },
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  useSectionHeaderReveal(headerRef);
 
   return (
     <section id="blog" ref={sectionRef} className="relative overflow-hidden py-28">

@@ -5,6 +5,7 @@ import { FaGlobe, FaServer, FaMobileAlt, FaPaintBrush, FaArrowRight } from "reac
 import { prefersReducedMotion } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scroll";
 import SectionHeader from "@/components/portfolio/SectionHeader";
+import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -152,31 +153,7 @@ export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (prefersReducedMotion()) return;
-
-      if (headerRef.current) {
-        gsap.fromTo(
-          headerRef.current.querySelectorAll("[data-anim]"),
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            scrollTrigger: {
-              trigger: headerRef.current,
-              start: "top 80%",
-              once: true,
-            },
-          },
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  useSectionHeaderReveal(headerRef);
 
   return (
     <section id="services" ref={sectionRef} className="relative py-28 overflow-hidden">

@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { prefersReducedMotion } from "@/lib/motion";
 import chifieImage from "@/assets/chifie.png";
 import SectionHeader from "@/components/portfolio/SectionHeader";
+import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,8 @@ export default function About() {
   const contentRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
 
+  useSectionHeaderReveal(headerRef);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (prefersReducedMotion()) {
@@ -20,24 +23,6 @@ export default function About() {
           gsap.set(photoRef.current, { opacity: 1, x: 0, scale: 1 });
         }
         return;
-      }
-
-      if (headerRef.current) {
-        gsap.fromTo(
-          headerRef.current.querySelectorAll("[data-anim]"),
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            scrollTrigger: {
-              trigger: headerRef.current,
-              start: "top 80%",
-              once: true,
-            },
-          },
-        );
       }
 
       if (contentRef.current) {

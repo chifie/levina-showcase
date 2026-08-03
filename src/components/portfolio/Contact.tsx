@@ -6,6 +6,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaPaperPlane, FaCheck } from "react-i
 gsap.registerPlugin(ScrollTrigger);
 import { prefersReducedMotion } from "@/lib/motion";
 import SectionHeader from "@/components/portfolio/SectionHeader";
+import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
 
 const CONTACT_INFO = [
   {
@@ -169,12 +170,11 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
+  useSectionHeaderReveal(headerRef);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (prefersReducedMotion()) {
-        if (headerRef.current) {
-          gsap.set(headerRef.current.querySelectorAll("[data-anim]"), { opacity: 1, y: 0 });
-        }
         if (infoRef.current) {
           gsap.set(infoRef.current.querySelectorAll("[data-contact]"), { opacity: 1, x: 0 });
         }
@@ -182,24 +182,6 @@ export default function Contact() {
           gsap.set(formRef.current, { opacity: 1, y: 0 });
         }
         return;
-      }
-
-      if (headerRef.current) {
-        gsap.fromTo(
-          headerRef.current.querySelectorAll("[data-anim]"),
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            scrollTrigger: {
-              trigger: headerRef.current,
-              start: "top 80%",
-              once: true,
-            },
-          },
-        );
       }
 
       if (infoRef.current) {
