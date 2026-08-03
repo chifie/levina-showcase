@@ -119,7 +119,7 @@ export default function About() {
                 className="absolute -inset-5 rounded-full animate-spin-slow"
                 style={{
                   background:
-                    "conic-gradient(from 0deg, transparent 0deg, rgba(108,122,148,0.5) 55deg, transparent 140deg, rgba(159,176,196,0.4) 220deg, transparent 300deg, rgba(108,122,148,0.45) 360deg)",
+                    "conic-gradient(from 0deg, transparent 0deg, rgba(13,59,102,0.5) 55deg, transparent 140deg, rgba(74,108,158,0.4) 220deg, transparent 300deg, rgba(13,59,102,0.45) 360deg)",
                   animationDuration: "14s",
                   mask: "radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))",
                   WebkitMask:
@@ -139,7 +139,7 @@ export default function About() {
               </div>
               <div
                 className="relative h-72 w-64 overflow-hidden rounded-full p-[3px] shadow-glow transition-transform duration-500 hover:scale-[1.02] md:h-96 md:w-80"
-                style={{ background: "linear-gradient(160deg, #8fa0b8, #4a5a72, #8fa0b8)" }}
+                style={{ background: "linear-gradient(160deg, #3e5f8e, #0d3b66, #3e5f8e)" }}
               >
                 <div className="group relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
                   <img
