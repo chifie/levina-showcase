@@ -71,6 +71,7 @@ export default function SkillCard({ name, icon: Icon, level, color, index }: Ski
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={level}
+          aria-valuetext={`${level} percent`}
         >
           <div
             ref={barRef}
