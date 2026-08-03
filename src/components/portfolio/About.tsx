@@ -68,7 +68,12 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-28 overflow-hidden">
+    <section
+      id="about"
+      ref={sectionRef}
+      aria-labelledby="about-title"
+      className="relative py-28 overflow-hidden"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-brand/5 blur-[120px]"
@@ -77,6 +82,7 @@ export default function About() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           ref={headerRef}
+          titleId="about-title"
           eyebrow="About"
           title={
             <>

@@ -133,7 +133,12 @@ export default function Blog() {
   useSectionHeaderReveal(headerRef);
 
   return (
-    <section id="blog" ref={sectionRef} className="relative overflow-hidden py-28">
+    <section
+      id="blog"
+      ref={sectionRef}
+      aria-labelledby="blog-title"
+      className="relative overflow-hidden py-28"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 translate-x-1/2 rounded-full bg-brand/5 blur-[120px]"
@@ -142,6 +147,7 @@ export default function Blog() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           ref={headerRef}
+          titleId="blog-title"
           eyebrow="Blog"
           title={
             <>

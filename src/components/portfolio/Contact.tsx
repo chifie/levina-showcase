@@ -259,7 +259,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="relative py-28 overflow-hidden">
+    <section id="contact" ref={sectionRef} aria-labelledby="contact-title" className="relative py-28 overflow-hidden">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-brand/5 blur-[120px]"
@@ -285,6 +285,7 @@ export default function Contact() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           ref={headerRef}
+          titleId="contact-title"
           eyebrow="Contact"
           title={
             <>

@@ -168,7 +168,12 @@ export default function Skills() {
   useSectionHeaderReveal(headerRef);
 
   return (
-    <section id="skills" ref={sectionRef} className="relative py-28 overflow-hidden">
+    <section
+      id="skills"
+      ref={sectionRef}
+      aria-labelledby="skills-title"
+      className="relative py-28 overflow-hidden"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-0 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-brand/5 blur-[100px]"
@@ -181,6 +186,7 @@ export default function Skills() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           ref={headerRef}
+          titleId="skills-title"
           eyebrow="Skills"
           title={
             <>

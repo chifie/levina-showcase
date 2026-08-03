@@ -156,7 +156,12 @@ export default function Services() {
   useSectionHeaderReveal(headerRef);
 
   return (
-    <section id="services" ref={sectionRef} className="relative py-28 overflow-hidden">
+    <section
+      id="services"
+      ref={sectionRef}
+      aria-labelledby="services-title"
+      className="relative py-28 overflow-hidden"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-brand/5 blur-[120px]"
@@ -165,6 +170,7 @@ export default function Services() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           ref={headerRef}
+          titleId="services-title"
           eyebrow="Services"
           title={
             <>
