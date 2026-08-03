@@ -131,6 +131,8 @@ To change the brand colors, edit the theme tokens in `src/styles.css`:
 
 To add or edit projects, update the `PROJECTS` array in `src/components/portfolio/Projects.tsx`.
 
+To add or edit skills, update the typed `SKILL_CATEGORIES` array in `src/lib/skills.ts`.
+
 ### Fonts
 
 Heading and body fonts are configured via the `--font-heading` and `--font-body` tokens in `src/styles.css`. Replace them with any Google Font of your choice and update the `FontLoader` in `src/components/Portfolio.tsx`.
@@ -147,7 +149,7 @@ Use the contact form on the site or email [levinachifie@gmail.com](mailto:levina
 
 **What technologies do you specialize in?**
 
-React, TypeScript, Next.js, FastAPI, NestJS, Flutter, PostgreSQL, and more. See the Skills section on the live site for the full list.
+Languages: JavaScript, TypeScript, Python, and PHP — plus React, Next.js, FastAPI, NestJS, Flutter, PostgreSQL, Docker, and more. See the Skills section on the live site for the full list.
 
 **How do I add a new project?**
 
@@ -272,7 +274,7 @@ The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`*
 | --- | --- |
 | Home | Hero with portrait photo, intro, CTAs, and social links |
 | About | Photo + story in a two-column layout |
-| Skills | Categorized proficiency bars (no percentages) |
+| Skills | Languages-first category cards with proficiency bars |
 | Services | Four service cards with hover reveals |
 | Projects | Six project cards with gradient headers |
 | Blog | Three article cards with category badges |
@@ -283,7 +285,9 @@ The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`*
 - `Portfolio.tsx` — layout composition and font loading
 - `Hero.tsx` — intro with portrait oval photo and floating icons
 - `About.tsx` — two-column photo + story layout
-- `Skills.tsx` — category cards with proficiency bars
+- `Skills.tsx` — Languages-first category cards with proficiency bars
+- `SkillCard.tsx` — single proficiency row with animated bar
+- `src/lib/skills.ts` — typed skill categories (Languages, Frontend, Backend, Mobile, Databases, Tools)
 - `Services.tsx` — service offering cards
 - `Projects.tsx` — project showcase grid
 - `Blog.tsx` — article cards driven by `src/lib/blog-posts.ts`
