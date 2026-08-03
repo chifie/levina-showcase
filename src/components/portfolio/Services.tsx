@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaGlobe, FaServer, FaMobileAlt, FaPaintBrush, FaArrowRight } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scroll";
+import SectionHeader from "@/components/portfolio/SectionHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -185,25 +186,16 @@ export default function Services() {
       />
 
       <div className="mx-auto max-w-6xl px-6">
-        <div ref={headerRef} className="mb-16 text-center">
-          <span
-            data-anim
-            className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand-dark"
-          >
-            Services
-          </span>
-          <div data-anim className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-primary" />
-          <h2
-            data-anim
-            className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
-          >
-            What I <span className="text-gradient italic">Do</span>
-          </h2>
-          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            I deliver end-to-end software solutions across web, mobile, and backend platforms with a
-            focus on quality and user experience
-          </p>
-        </div>
+        <SectionHeader
+          ref={headerRef}
+          eyebrow="Services"
+          title={
+            <>
+              What I <span className="text-gradient italic">Do</span>
+            </>
+          }
+          subtitle="I deliver end-to-end software solutions across web, mobile, and backend platforms with a focus on quality and user experience"
+        />
 
         <div className="grid gap-6 lg:grid-cols-2">
           {SERVICES.map((service, i) => (

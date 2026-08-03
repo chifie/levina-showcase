@@ -14,6 +14,7 @@ import {
   SiGithub,
 } from "react-icons/si";
 import { prefersReducedMotion } from "@/lib/motion";
+import SectionHeader from "@/components/portfolio/SectionHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -201,25 +202,16 @@ export default function Skills() {
       />
 
       <div className="mx-auto max-w-6xl px-6">
-        <div ref={headerRef} className="mb-16 text-center">
-          <span
-            data-anim
-            className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand-dark"
-          >
-            Skills
-          </span>
-          <div data-anim className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-primary" />
-          <h2
-            data-anim
-            className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
-          >
-            Technical <span className="text-gradient italic">Competencies</span>
-          </h2>
-          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            A comprehensive set of tools and technologies I work with to deliver high-quality
-            software products
-          </p>
-        </div>
+        <SectionHeader
+          ref={headerRef}
+          eyebrow="Skills"
+          title={
+            <>
+              Technical <span className="text-gradient italic">Competencies</span>
+            </>
+          }
+          subtitle="A comprehensive set of tools and technologies I work with to deliver high-quality software products"
+        />
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SKILL_CATEGORIES.map((category, catIndex) => (

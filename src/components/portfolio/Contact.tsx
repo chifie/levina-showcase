@@ -5,6 +5,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaPaperPlane, FaCheck } from "react-i
 
 gsap.registerPlugin(ScrollTrigger);
 import { prefersReducedMotion } from "@/lib/motion";
+import SectionHeader from "@/components/portfolio/SectionHeader";
 
 const CONTACT_INFO = [
   {
@@ -300,24 +301,16 @@ export default function Contact() {
       ))}
 
       <div className="mx-auto max-w-6xl px-6">
-        <div ref={headerRef} className="mb-16 text-center">
-          <span
-            data-anim
-            className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand-dark"
-          >
-            Contact
-          </span>
-          <div data-anim className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-primary" />
-          <h2
-            data-anim
-            className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
-          >
-            Let&apos;s Create <span className="text-gradient italic">Together</span>
-          </h2>
-          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Have a project idea or need a developer? Let&apos;s connect.
-          </p>
-        </div>
+        <SectionHeader
+          ref={headerRef}
+          eyebrow="Contact"
+          title={
+            <>
+              Let&apos;s Create <span className="text-gradient italic">Together</span>
+            </>
+          }
+          subtitle="Have a project idea or need a developer? Let's connect."
+        />
 
         <div className="grid gap-8 lg:grid-cols-5">
           <div ref={infoRef} className="space-y-4 lg:col-span-2">

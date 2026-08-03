@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { prefersReducedMotion } from "@/lib/motion";
 import chifieImage from "@/assets/chifie.png";
+import SectionHeader from "@/components/portfolio/SectionHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,25 +89,16 @@ export default function About() {
       />
 
       <div className="mx-auto max-w-6xl px-6">
-        <div ref={headerRef} className="mb-16 text-center">
-          <span
-            data-anim
-            className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand-dark"
-          >
-            About
-          </span>
-          <div data-anim className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-primary" />
-          <h2
-            data-anim
-            className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
-          >
-            Crafting Code with <span className="text-gradient italic">Purpose</span>
-          </h2>
-          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Building high-quality software that solves real problems and delivers exceptional user
-            experiences
-          </p>
-        </div>
+        <SectionHeader
+          ref={headerRef}
+          eyebrow="About"
+          title={
+            <>
+              Crafting Code with <span className="text-gradient italic">Purpose</span>
+            </>
+          }
+          subtitle="Building high-quality software that solves real problems and delivers exceptional user experiences"
+        />
 
         <div className="grid items-center gap-10 lg:grid-cols-5 lg:gap-14">
           <div ref={photoRef} className="mx-auto lg:col-span-2" style={{ opacity: 0 }}>

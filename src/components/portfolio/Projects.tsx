@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
+import SectionHeader from "@/components/portfolio/SectionHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -148,24 +149,16 @@ export default function Projects() {
       />
 
       <div className="mx-auto max-w-6xl px-6">
-        <div ref={headerRef} className="mb-16 text-center">
-          <span
-            data-anim
-            className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand-dark"
-          >
-            Projects
-          </span>
-          <div data-anim className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-primary" />
-          <h2
-            data-anim
-            className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
-          >
-            Featured <span className="text-gradient italic">Work</span>
-          </h2>
-          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            A selection of projects I have built with passion and precision
-          </p>
-        </div>
+        <SectionHeader
+          ref={headerRef}
+          eyebrow="Projects"
+          title={
+            <>
+              Featured <span className="text-gradient italic">Work</span>
+            </>
+          }
+          subtitle="A selection of projects I have built with passion and precision"
+        />
 
         <div ref={gridRef} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {PROJECTS.map((project, i) => (

@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaArrowRight, FaCalendarAlt, FaClock } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog-posts";
+import SectionHeader from "@/components/portfolio/SectionHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -162,23 +163,16 @@ export default function Blog() {
       />
 
       <div className="mx-auto max-w-6xl px-6">
-        <div ref={headerRef} className="mb-16 text-center">
-          <span
-            data-anim
-            className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand-dark"
-          >
-            Blog
-          </span>
-          <div data-anim className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-primary" />
-          <h2
-            data-anim
-            className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
-          >
-            Thoughts &amp; <span className="text-gradient italic">Insights</span>
-          </h2>
-          <p data-anim className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Articles on software development, design, and the craft of building great products
-          </p>
+        <SectionHeader
+          ref={headerRef}
+          eyebrow="Blog"
+          title={
+            <>
+              Thoughts &amp; <span className="text-gradient italic">Insights</span>
+            </>
+          }
+          subtitle="Articles on software development, design, and the craft of building great products"
+        >
           <div data-anim className="mt-6 flex flex-wrap items-center justify-center gap-2">
             {BLOG_CATEGORIES.map((category) => (
               <span
@@ -189,7 +183,7 @@ export default function Blog() {
               </span>
             ))}
           </div>
-        </div>
+        </SectionHeader>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {BLOG_POSTS.map((post, i) => (
