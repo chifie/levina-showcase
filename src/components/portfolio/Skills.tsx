@@ -1,14 +1,56 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { prefersReducedMotion } from "@/lib/motion";
 import { SKILL_CATEGORIES } from "@/lib/skills";
 import SectionHeader from "@/components/portfolio/SectionHeader";
 import SkillCard from "@/components/portfolio/SkillCard";
 import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   useSectionHeaderReveal(headerRef);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (prefersReducedMotion()) {
+        if (gridRef.current) {
+          gsap.set(gridRef.current.querySelectorAll("[data-category-card]"), {
+            opacity: 1,
+            y: 0,
+          });
+        }
+        return;
+      }
+
+      if (gridRef.current) {
+        gsap.fromTo(
+          gridRef.current.querySelectorAll("[data-category-card]"),
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.12,
+            ease: "power3.out",
+            clearProps: "transform",
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: "top 80%",
+              once: true,
+            },
+          },
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
@@ -39,12 +81,14 @@ export default function Skills() {
           subtitle="A comprehensive set of tools and technologies I work with to deliver high-quality software products"
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div ref={gridRef} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SKILL_CATEGORIES.map((category, catIndex) => (
             <div
               key={catIndex}
+              data-category-card
               aria-labelledby={`skills-category-${catIndex}-title`}
               className="card-elegant group relative overflow-hidden rounded-3xl p-6"
+              style={{ opacity: 0 }}
             >
               <div
                 className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-brand/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
