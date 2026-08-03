@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { memo, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { prefersReducedMotion } from "@/lib/motion";
@@ -10,7 +10,7 @@ interface SkillCardProps extends Skill {
   index: number;
 }
 
-export default function SkillCard({ name, icon: Icon, level, color, index }: SkillCardProps) {
+function SkillCard({ name, icon: Icon, level, color, index }: SkillCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
@@ -87,3 +87,5 @@ export default function SkillCard({ name, icon: Icon, level, color, index }: Ski
     </div>
   );
 }
+
+export default memo(SkillCard);
