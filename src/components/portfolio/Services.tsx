@@ -13,28 +13,28 @@ const SERVICES = [
     title: "Web Application Development",
     description:
       "Building modern, responsive web applications with React, Next.js, and TypeScript. From landing pages to complex full-featured platforms, I deliver clean code and exceptional user experiences.",
-    color: "#6c7a94",
+    color: "#0d3b66",
   },
   {
     icon: FaServer,
     title: "Backend API Development",
     description:
       "Designing and implementing robust RESTful APIs and backend services with FastAPI, NestJS, and Node.js. Built for scalability, security, and performance.",
-    color: "#5f6b80",
+    color: "#2c4a6e",
   },
   {
     icon: FaMobileAlt,
     title: "Mobile Application Development",
     description:
       "Creating cross-platform mobile applications with Flutter and Dart. Native-quality performance and pixel-perfect UI across iOS and Android from a single codebase.",
-    color: "#71809a",
+    color: "#3e5f8e",
   },
   {
     icon: FaPaintBrush,
     title: "UI Implementation",
     description:
       "Translating designs into pixel-perfect, responsive interfaces using Tailwind CSS, modern CSS techniques, and component-driven architecture for consistent, maintainable results.",
-    color: "#4a5a72",
+    color: "#082a4c",
   },
 ];
 
