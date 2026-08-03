@@ -43,6 +43,7 @@ export default function Skills() {
           {SKILL_CATEGORIES.map((category, catIndex) => (
             <div
               key={catIndex}
+              aria-labelledby={`skills-category-${catIndex}-title`}
               className="card-elegant group relative overflow-hidden rounded-3xl p-6"
             >
               <div
@@ -54,7 +55,12 @@ export default function Skills() {
                   <category.icon className="text-lg" />
                 </span>
                 <div className="flex-1">
-                  <h3 className="font-heading text-lg font-bold">{category.title}</h3>
+                  <h3
+                    id={`skills-category-${catIndex}-title`}
+                    className="font-heading text-lg font-bold"
+                  >
+                    {category.title}
+                  </h3>
                   <p className="text-[11px] text-muted-foreground">
                     {category.skills.length} technologies
                   </p>
