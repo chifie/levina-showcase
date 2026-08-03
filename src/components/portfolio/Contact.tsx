@@ -44,6 +44,11 @@ function RippleButton({
     const btn = btnRef.current;
     if (!btn) return;
 
+    if (prefersReducedMotion()) {
+      onClick?.();
+      return;
+    }
+
     const rect = btn.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
