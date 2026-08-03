@@ -15,7 +15,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Backend",
     date: "July 2026",
     readTime: "6 min read",
-    color: "#6c7a94",
+    color: "#0d3b66",
   },
   {
     title: "Why Flutter is My Go-To for Cross-Platform Apps",
@@ -24,7 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Mobile",
     date: "June 2026",
     readTime: "4 min read",
-    color: "#8fa0b8",
+    color: "#3e5f8e",
   },
   {
     title: "Designing Interfaces Users Actually Enjoy",
@@ -33,7 +33,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Design",
     date: "May 2026",
     readTime: "5 min read",
-    color: "#4a5a72",
+    color: "#082a4c",
   },
 ];
 
