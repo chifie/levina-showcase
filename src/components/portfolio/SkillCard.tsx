@@ -75,7 +75,7 @@ function SkillCard({ name, icon: Icon, level, color, index }: SkillCardProps) {
         >
           <div
             ref={barRef}
-            className="h-full rounded-full transition-all"
+            className="h-full rounded-full animate-shimmer transition-all"
             style={{
               background: `linear-gradient(90deg, ${color}, ${color}bb, ${color})`,
               backgroundSize: "200% 100%",
