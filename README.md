@@ -1,6 +1,6 @@
 # Levina Chifie — Portfolio
 
-A modern, animated portfolio website built with **React**, **TypeScript**, **TanStack Start**, **GSAP**, and **Tailwind CSS v4**. Featuring a slate-blue and cream brand identity, smooth scroll animations, and a fully responsive layout.
+A modern, animated portfolio website built with **React**, **TypeScript**, **TanStack Start**, **GSAP**, and **Tailwind CSS v4**. Featuring a navy blue (Yale Blue) and cream (Lemon Chiffon) brand identity, smooth scroll animations, and a fully responsive layout.
 
 ## ✨ Features
 
@@ -76,7 +76,7 @@ This project is licensed under the [MIT License](LICENSE).
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=white)
-![Playfair Display](https://img.shields.io/badge/Font-Playfair_Display-8fa0b8?style=flat-square)
+![Playfair Display](https://img.shields.io/badge/Font-Playfair_Display-3e5f8e?style=flat-square)
 
 ## 🙏 Acknowledgements
 
@@ -119,9 +119,10 @@ To change the brand colors, edit the theme tokens in `src/styles.css`:
 
 ```css
 :root {
-  --brand: #6c7a94;
-  --brand-light: #8fa0b8;
-  --brand-dark: #4a5a72;
+  --brand: #0d3b66;
+  --brand-light: #3e5f8e;
+  --brand-dark: #082a4c;
+  --background: #faf0ca;
 }
 ```
 
@@ -256,6 +257,11 @@ The profile photo appears in both the **Hero** (portrait oval frame) and the **A
 - Portrait oval profile frames with animated spinning rings
 - Glass-morphism cards with brand borders and glow shadows
 - Gradient accents in brand colors (light → base → dark)
+- Navy blue and cream (Yale Blue + Lemon Chiffon) two-color palette
+
+## 🎨 Palette Source
+
+The brand palette follows the strict two-color combo **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`** ("Easy Color Combinations for Content Creators" via Pinterest).
 
 ## 🧭 Sections
 
@@ -317,10 +323,10 @@ The Blog header shows category chips (Backend, Mobile, Design) driven by the sha
 
 | Token | Light | Dark |
 | --- | --- | --- |
-| `--brand` | `#6c7a94` | `#9fb0c4` |
-| `--brand-light` | `#8fa0b8` | `#a5b3c6` |
-| `--brand-dark` | `#4a5a72` | `#4a5a72` |
-| `--background` | `#faf3e0` | `#0e1420` |
+| `--brand` | `#0d3b66` (Yale Blue) | `#c6d6ea` |
+| `--brand-light` | `#3e5f8e` | `#9db0c8` |
+| `--brand-dark` | `#082a4c` | `#faf0ca` |
+| `--background` | `#faf0ca` (Lemon Chiffon) | `#0a1d33` |
 
 ## 🗺 How to Add a Blog Post
 
