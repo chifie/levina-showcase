@@ -50,7 +50,7 @@ function SkillCard({ name, icon: Icon, level, color, index }: SkillCardProps) {
   return (
     <div
       ref={cardRef}
-      className="group flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 hover:bg-brand/5"
+      className="group flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 hover:bg-brand/5 hover:shadow-warm"
       style={{ opacity: 0 }}
     >
       <span
