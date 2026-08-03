@@ -54,6 +54,7 @@ export default function SkillCard({ name, icon: Icon, level, color, index }: Ski
       style={{ opacity: 0 }}
     >
       <span
+        aria-hidden="true"
         className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
         style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
       >
