@@ -10,6 +10,7 @@ import {
   FaGitAlt,
   FaCode,
   FaPython,
+  FaDocker,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -86,7 +87,7 @@ const SKILL_CATEGORIES = [
       { name: "GitHub", icon: SiGithub, level: 85, color: "#181717" },
       { name: "VS Code", icon: FaCode, level: 90, color: "#007ACC" },
       { name: "Postman", icon: FaCode, level: 80, color: "#FF6C37" },
-      { name: "Figma", icon: FaCode, level: 75, color: "#F24E1E" },
+      { name: "Docker", icon: FaDocker, level: 78, color: "#2496ED" },
     ],
   },
 ];
