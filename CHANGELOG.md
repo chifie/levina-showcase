@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- Rebranded to a strict two-color palette: Yale Blue (`#0d3b66`) and Lemon Chiffon (`#faf0ca`)
+- Theme brand tokens (`--brand`, `--brand-light`, `--brand-dark`) are now theme-aware CSS variables
+- Text gradients use a dedicated `--gradient-text` token so navy headings stay legible in dark mode
+- Recolored hero, about, services, projects, blog, preloader, footer, and error pages to the navy palette
+
+### Added
+- Shared `SectionHeader`, `OrbitRing`, and `useSectionHeaderReveal` helpers deduplicate repeated section markup and animation
+- Shared `SOCIAL_LINKS` constant used by the hero and footer
+
+### Accessibility
+- `aria-labelledby` on section landmarks
+- Mobile menu focus trap with focus restoration on close
+- `aria-current` on mobile menu links; reduced-motion guard on the ripple button
+- Preloader screen reader label now uses the real name
+
+### Fixed
+- Floating contact labels now handle browser autofill
+- Portfolio project copy describes the new navy palette
+
+### Performance
+- Removed redundant client-side font loader
+- rAF-throttled scroll handlers and scroll-progress recompute on resize
+
+### Docs
+- README brand tokens, customization, and design language updated for the new palette
+
 ### Removed
 - Lovable project marker directory (`.lovable/`)
 - `@lovable.dev/vite-tanstack-config` dependency and Lovable-specific Vite config
