@@ -50,12 +50,12 @@ function SkillCard({ name, icon: Icon, level, color, index }: SkillCardProps) {
   return (
     <div
       ref={cardRef}
-      className="group flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 hover:bg-brand/5 hover:shadow-warm"
+      className="group flex items-center gap-3 rounded-xl px-4 py-3 transition-[transform,box-shadow,background-color] duration-300 hover:bg-brand/5 hover:shadow-warm"
       style={{ opacity: 0 }}
     >
       <span
         aria-hidden="true"
-        className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
+        className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-white shadow-lg transition-transform duration-300 will-change-transform group-hover:scale-110 group-hover:rotate-6"
         style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
       >
         <Icon className="text-lg" />
