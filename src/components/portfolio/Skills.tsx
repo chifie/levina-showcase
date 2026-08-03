@@ -1,7 +1,16 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaJs, FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaCode } from "react-icons/fa";
+import {
+  FaJs,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaNodeJs,
+  FaGitAlt,
+  FaCode,
+  FaPython,
+} from "react-icons/fa";
 import {
   SiTypescript,
   SiDart,
@@ -12,6 +21,7 @@ import {
   SiPostgresql,
   SiMysql,
   SiGithub,
+  SiPhp,
 } from "react-icons/si";
 import { prefersReducedMotion } from "@/lib/motion";
 import SectionHeader from "@/components/portfolio/SectionHeader";
@@ -20,6 +30,16 @@ import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
 gsap.registerPlugin(ScrollTrigger);
 
 const SKILL_CATEGORIES = [
+  {
+    title: "Languages",
+    icon: FaCode,
+    skills: [
+      { name: "JavaScript", icon: FaJs, level: 92, color: "#F7DF1E" },
+      { name: "TypeScript", icon: SiTypescript, level: 85, color: "#3178C6" },
+      { name: "Python", icon: FaPython, level: 78, color: "#3776AB" },
+      { name: "PHP", icon: SiPhp, level: 72, color: "#777BB4" },
+    ],
+  },
   {
     title: "Frontend",
     icon: FaReact,
