@@ -17,7 +17,7 @@ const SectionHeader = forwardRef<HTMLDivElement, SectionHeaderProps>(
       >
         {eyebrow}
       </span>
-      <div data-anim className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-primary" />
+      <div data-anim className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-warm" />
       <h2
         id={titleId}
         data-anim

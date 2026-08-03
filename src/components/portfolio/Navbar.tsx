@@ -147,7 +147,7 @@ export default function Navbar() {
             handleClick("home");
           }}
         >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-white font-bold text-lg shadow-glow transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-warm text-warm-ink font-bold text-lg shadow-warm transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
             L
           </span>
           <span className="text-gradient font-heading text-lg font-bold tracking-tight transition-transform duration-300 group-hover:scale-105 inline-block">
@@ -158,7 +158,7 @@ export default function Navbar() {
         <div className="relative hidden items-center md:flex">
           <div
             ref={indicatorRef}
-            className="absolute bottom-0 h-[3px] rounded-full bg-gradient-primary"
+            className="absolute bottom-0 h-[3px] rounded-full bg-gradient-warm"
             style={{ width: 0, x: 0 }}
           />
           <ul className="flex items-center gap-1">
@@ -188,7 +188,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <a
             href="#"
-            className="group hidden items-center gap-2 rounded-full bg-gradient-primary px-4 py-2 text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:scale-105 hover:shadow-lg sm:flex"
+            className="group hidden items-center gap-2 rounded-full bg-gradient-warm px-4 py-2 text-sm font-semibold text-warm-ink shadow-warm transition-all duration-300 hover:scale-105 hover:shadow-lg sm:flex"
           >
             <FaDownload className="text-xs transition-transform group-hover:-translate-y-0.5" />
             <span>CV</span>
@@ -250,7 +250,7 @@ export default function Navbar() {
             <li className="mt-2 pt-2 border-t border-border/50">
               <a
                 href="#"
-                className="flex items-center gap-2 rounded-xl bg-gradient-primary px-4 py-3 text-sm font-semibold text-white"
+                className="flex items-center gap-2 rounded-xl bg-gradient-warm px-4 py-3 text-sm font-semibold text-warm-ink"
               >
                 <FaDownload className="text-xs" />
                 Download CV

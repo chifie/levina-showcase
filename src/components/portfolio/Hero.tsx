@@ -84,7 +84,7 @@ function MagneticButton({
       href={href}
       className={`group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer ${className} ${
         primary
-          ? "bg-gradient-primary text-white shadow-glow hover:shadow-elegant"
+          ? "bg-gradient-warm text-warm-ink shadow-warm hover:shadow-elegant"
           : "glass-strong border border-brand/20 hover:border-brand/40 hover:shadow-glow"
       }`}
     >
@@ -391,8 +391,8 @@ export default function Hero() {
           <div className="flex-1">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-brand-dark">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sunset opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-sunset" />
               </span>
               Available for opportunities
             </div>
@@ -461,7 +461,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="group inline-flex h-12 w-12 items-center justify-center rounded-full glass border border-brand/10 transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:border-transparent hover:shadow-glow"
+                  className="group inline-flex h-12 w-12 items-center justify-center rounded-full glass border border-brand/10 transition-all duration-300 hover:scale-110 hover:bg-gradient-warm hover:text-warm-ink hover:border-transparent hover:shadow-warm"
                 >
                   <Icon className="text-lg transition-transform duration-300 group-hover:rotate-6" />
                 </a>
@@ -512,7 +512,7 @@ export default function Hero() {
                 style={{ animationDelay: "1.5s" }}
               >
                 <div className="flex items-center gap-2.5">
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-warm text-warm-ink shadow-warm">
                     <FaCode className="text-xs" />
                   </span>
                   <div>
@@ -536,7 +536,7 @@ export default function Hero() {
           >
             <span>Scroll Down</span>
             <span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-brand/25 p-1.5 transition-colors group-hover:border-brand/50">
-              <span className="h-2 w-1 animate-scroll-dot rounded-full bg-gradient-primary" />
+              <span className="h-2 w-1 animate-scroll-dot rounded-full bg-gradient-warm" />
             </span>
           </a>
         </div>

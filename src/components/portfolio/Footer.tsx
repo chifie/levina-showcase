@@ -47,7 +47,7 @@ function BackToTop() {
       ref={btnRef}
       onClick={scrollToTop}
       aria-label="Back to top"
-      className={`fixed bottom-6 right-6 z-30 inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-gradient-primary text-white shadow-glow transition-all duration-300 hover:scale-110 hover:shadow-elegant group ${
+      className={`fixed bottom-6 right-6 z-30 inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-gradient-warm text-warm-ink shadow-warm transition-all duration-300 hover:scale-110 hover:shadow-elegant group ${
         show ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 pointer-events-none"
       }`}
       style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
@@ -94,7 +94,7 @@ function ScrollProgress() {
   return (
     <div className="fixed left-0 top-0 z-[60] h-[3px] w-full bg-transparent" aria-hidden="true">
       <div
-        className="h-full bg-gradient-primary transition-[width] duration-200 ease-out"
+        className="h-full bg-gradient-warm transition-[width] duration-200 ease-out"
         style={{ width: `${progress}%` }}
       />
     </div>
@@ -235,7 +235,7 @@ export default function Footer() {
                   scrollToSection("home");
                 }}
               >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-white font-bold shadow-glow transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-warm text-warm-ink font-bold shadow-warm transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                   L
                 </span>
                 <span className="font-heading text-xl font-bold text-gradient">Levina Chifie</span>
@@ -252,7 +252,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    className="group relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full glass border border-brand/10 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-gradient-primary hover:text-white hover:shadow-glow"
+                    className="group relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full glass border border-brand/10 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-gradient-warm hover:text-warm-ink hover:shadow-warm"
                   >
                     <span
                       className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-500 group-hover:translate-x-full"
@@ -319,7 +319,7 @@ export default function Footer() {
           >
             <p>
               &copy; {new Date().getFullYear()} Levina Chifie. Crafted with{" "}
-              <FaHeart className="inline text-brand mx-0.5" /> and code.
+              <FaHeart className="inline text-terra mx-0.5" /> and code.
             </p>
             <p className="flex flex-wrap items-center gap-x-1.5 text-[10px]">
               Built with React <span className="text-brand/50">&bull;</span> GSAP

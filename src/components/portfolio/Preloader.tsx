@@ -125,7 +125,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
           ref={barRef}
           className="h-full origin-left rounded-full animate-shimmer"
           style={{
-            background: "linear-gradient(90deg, #3e5f8e, #9db0c8, #3e5f8e)",
+            background: "linear-gradient(90deg, #f4d35e, #f95738, #f4d35e)",
             backgroundSize: "200% 100%",
           }}
         />
