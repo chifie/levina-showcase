@@ -344,13 +344,13 @@ export default function Hero() {
         ref={blob1Ref}
         aria-hidden="true"
         className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] rounded-full opacity-30 blur-[120px]"
-        style={{ background: "radial-gradient(circle, rgba(108,122,148,0.25), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(13,59,102,0.25), transparent 70%)" }}
       />
       <div
         ref={blob2Ref}
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-32 -right-32 h-[400px] w-[400px] rounded-full opacity-25 blur-[100px]"
-        style={{ background: "radial-gradient(circle, rgba(74,90,114,0.2), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(8,42,76,0.2), transparent 70%)" }}
       />
 
       <div
@@ -488,7 +488,7 @@ export default function Hero() {
                 className="absolute -inset-5 rounded-full animate-spin-slow"
                 style={{
                   background:
-                    "conic-gradient(from 0deg, transparent 0deg, rgba(108,122,148,0.5) 55deg, transparent 140deg, rgba(159,176,196,0.4) 220deg, transparent 300deg, rgba(108,122,148,0.45) 360deg)",
+                    "conic-gradient(from 0deg, transparent 0deg, rgba(13,59,102,0.5) 55deg, transparent 140deg, rgba(74,108,158,0.4) 220deg, transparent 300deg, rgba(13,59,102,0.45) 360deg)",
                   animationDuration: "14s",
                   mask: "radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))",
                   WebkitMask:
@@ -511,7 +511,7 @@ export default function Hero() {
                 className="relative h-72 w-64 overflow-hidden rounded-full p-[3px] shadow-glow md:h-96 md:w-80"
                 style={{
                   clipPath: "ellipse(0% 0% at 50% 50%)",
-                  background: "linear-gradient(160deg, #8fa0b8, #4a5a72, #8fa0b8)",
+                  background: "linear-gradient(160deg, #3e5f8e, #0d3b66, #3e5f8e)",
                 }}
               >
                 <div className="group relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
