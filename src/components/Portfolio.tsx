@@ -15,22 +15,6 @@ import Footer from "@/components/portfolio/Footer";
 
 gsap.registerPlugin(Flip);
 
-function FontLoader() {
-  useEffect(() => {
-    // Font preconnects are already declared in the root layout head; only the
-    // stylesheet is injected here to avoid duplicating the preconnect links.
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap";
-    document.head.appendChild(link);
-    return () => {
-      link.remove();
-    };
-  }, []);
-  return null;
-}
-
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -67,7 +51,6 @@ export default function Portfolio() {
 
   return (
     <>
-      <FontLoader />
       {loading && <Preloader onComplete={() => setLoading(false)} />}
       {!loading && (
         <a
