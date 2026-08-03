@@ -95,7 +95,7 @@ export default function Skills() {
                 aria-hidden="true"
               />
               <div className="mb-4 flex items-center gap-3 border-b border-border/40 pb-4">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-warm text-warm-ink shadow-warm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <category.icon className="text-lg" />
                 </span>
                 <div className="flex-1">
