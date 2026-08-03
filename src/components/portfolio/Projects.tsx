@@ -67,7 +67,7 @@ const PROJECTS = [
   {
     title: "Portfolio Website",
     description:
-      "A modern, animated portfolio built with React, TypeScript, and GSAP featuring a slate-blue brand identity, smooth scroll animations, and a fully responsive layout.",
+      "A modern, animated portfolio built with React, TypeScript, and GSAP featuring a navy blue and cream brand identity, smooth scroll animations, and a fully responsive layout.",
     tech: ["React", "TypeScript", "Tailwind CSS", "GSAP"],
     gradient: "from-[#0d3b66] via-[#082a4c] to-[#051a2e]",
     color: "#082a4c",
@@ -124,7 +124,12 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} aria-labelledby="projects-title" className="relative overflow-hidden py-28">
+    <section
+      id="projects"
+      ref={sectionRef}
+      aria-labelledby="projects-title"
+      className="relative overflow-hidden py-28"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-brand/5 blur-[120px]"
