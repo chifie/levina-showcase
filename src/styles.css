@@ -33,6 +33,10 @@
   --color-brand: var(--brand);
   --color-brand-light: var(--brand-light);
   --color-brand-dark: var(--brand-dark);
+  --color-maize: var(--maize);
+  --color-sunset: var(--sunset);
+  --color-terra: var(--terra);
+  --color-warm-ink: #0d3b66;
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Inter", sans-serif;
 }
@@ -63,11 +67,17 @@
   --brand-light: #3e5f8e;
   --brand-dark: #082a4c;
 
+  --maize: #f4d35e;
+  --sunset: #ee964b;
+  --terra: #f95738;
+
   --gradient-primary: linear-gradient(135deg, #4a6c9e, #0d3b66, #082a4c);
+  --gradient-warm: linear-gradient(135deg, #f4d35e, #ee964b, #f95738);
   --gradient-text: linear-gradient(135deg, #4a6c9e, #0d3b66, #082a4c);
   --gradient-soft: linear-gradient(135deg, #faf0ca, #f2ecd4, #e9edf6);
   --gradient-glow: radial-gradient(circle at center, rgba(13, 59, 102, 0.15), transparent 70%);
   --shadow-glow: 0 10px 40px -10px rgba(13, 59, 102, 0.3);
+  --shadow-warm: 0 10px 40px -10px rgba(249, 87, 56, 0.35);
   --shadow-elegant: 0 20px 60px -20px rgba(13, 59, 102, 0.14);
   --shadow-card: 0 4px 20px rgba(13, 59, 102, 0.08);
 }
@@ -97,11 +107,17 @@
   --brand-light: #9db0c8;
   --brand-dark: #faf0ca;
 
+  --maize: #f7d96f;
+  --sunset: #f0a45c;
+  --terra: #ff6b4a;
+
   --gradient-primary: linear-gradient(135deg, #4a6c9e, #0d3b66, #082a4c);
+  --gradient-warm: linear-gradient(135deg, #f7d96f, #f0a45c, #ff6b4a);
   --gradient-text: linear-gradient(135deg, #faf0ca, #9db0c8, #4a6c9e);
   --gradient-soft: linear-gradient(135deg, #0a1d33, #0f2440, #0a1d33);
   --gradient-glow: radial-gradient(circle at center, rgba(158, 176, 200, 0.15), transparent 70%);
   --shadow-glow: 0 10px 40px -10px rgba(158, 176, 200, 0.3);
+  --shadow-warm: 0 10px 40px -10px rgba(255, 107, 74, 0.4);
   --shadow-elegant: 0 20px 60px -20px rgba(0, 0, 0, 0.5);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
@@ -155,6 +171,9 @@
   .bg-gradient-primary {
     background: var(--gradient-primary);
   }
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
   .bg-gradient-soft {
     background: var(--gradient-soft);
   }
@@ -194,6 +213,9 @@
   }
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
   }
   .shadow-card {
     box-shadow: var(--shadow-card);
