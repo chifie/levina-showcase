@@ -81,13 +81,13 @@ export default function Skills() {
           subtitle="A comprehensive set of tools and technologies I work with to deliver high-quality software products"
         />
 
-        <div ref={gridRef} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div ref={gridRef} className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SKILL_CATEGORIES.map((category, catIndex) => (
             <div
               key={catIndex}
               data-category-card
               aria-labelledby={`skills-category-${catIndex}-title`}
-              className="card-elegant group relative overflow-hidden rounded-3xl p-6"
+              className="card-elegant group relative flex h-full flex-col overflow-hidden rounded-3xl p-6"
               style={{ opacity: 0 }}
             >
               <div
