@@ -90,8 +90,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://levinachifie.dev/og-image.png" },
       { name: "twitter:creator", content: "@levinachifie" },
       { name: "robots", content: "index, follow" },
-      { name: "theme-color", content: "#6c7a94", media: "(prefers-color-scheme: light)" },
-      { name: "theme-color", content: "#0e1420", media: "(prefers-color-scheme: dark)" },
+      { name: "theme-color", content: "#faf0ca", media: "(prefers-color-scheme: light)" },
+      { name: "theme-color", content: "#0a1d33", media: "(prefers-color-scheme: dark)" },
     ],
     links: [
       {
