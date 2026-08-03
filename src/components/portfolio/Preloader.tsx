@@ -32,7 +32,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         span.style.fontStyle = "italic";
         span.style.fontWeight = "600";
         span.style.fontSize = "clamp(2.5rem, 6vw, 4.5rem)";
-        span.style.background = "linear-gradient(135deg, #8fa0b8, #6c7a94)";
+        span.style.background = "linear-gradient(135deg, #faf0ca, #3e5f8e)";
         span.style.webkitBackgroundClip = "text";
         span.style.webkitTextFillColor = "transparent";
         span.style.backgroundClip = "text";
@@ -97,14 +97,14 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       role="status"
       aria-label="Loading dev chifie portfolio"
       style={{
-        background: "#0e1420",
+        background: "#0a1d33",
         perspective: "1000px",
       }}
     >
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, #8fa0b8 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 1px 1px, #9db0c8 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -125,7 +125,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
           ref={barRef}
           className="h-full origin-left rounded-full animate-shimmer"
           style={{
-            background: "linear-gradient(90deg, #6c7a94, #a5b3c6, #6c7a94)",
+            background: "linear-gradient(90deg, #3e5f8e, #9db0c8, #3e5f8e)",
             backgroundSize: "200% 100%",
           }}
         />
