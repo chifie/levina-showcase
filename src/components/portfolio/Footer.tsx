@@ -1,19 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaArrowUp,
-  FaHeart,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaArrowUp, FaHeart, FaMapMarkerAlt } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 import { prefersReducedMotion } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scroll";
 import { NAV_LINKS } from "@/lib/nav-links";
+import { SOCIAL_LINKS } from "@/lib/social-links";
 
 function BackToTop() {
   const [show, setShow] = useState(false);
@@ -225,15 +219,7 @@ export default function Footer() {
                 digital experiences with clean code and elegant design.
               </p>
               <div className="mt-5 flex gap-2">
-                {[
-                  { Icon: FaGithub, href: "https://github.com/chifie", label: "GitHub" },
-                  {
-                    Icon: FaLinkedin,
-                    href: "https://linkedin.com/in/levinachifie",
-                    label: "LinkedIn",
-                  },
-                  { Icon: FaEnvelope, href: "mailto:levinachifie@gmail.com", label: "Email" },
-                ].map(({ Icon, href, label }, i) => (
+                {SOCIAL_LINKS.map(({ Icon, href, label }, i) => (
                   <a
                     key={i}
                     href={href}

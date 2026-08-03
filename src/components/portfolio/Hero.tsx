@@ -2,9 +2,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
   FaReact,
   FaNodeJs,
   FaPython,
@@ -18,6 +15,7 @@ import chifieImage from "@/assets/chifie.png";
 import { prefersReducedMotion } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scroll";
 import OrbitRing from "@/components/portfolio/OrbitRing";
+import { SOCIAL_LINKS } from "@/lib/social-links";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -456,15 +454,7 @@ export default function Hero() {
               ref={socialsRef}
               className="mt-10 flex items-center gap-3 justify-center lg:justify-start"
             >
-              {[
-                { Icon: FaGithub, href: "https://github.com/chifie", label: "GitHub" },
-                {
-                  Icon: FaLinkedin,
-                  href: "https://linkedin.com/in/levinachifie",
-                  label: "LinkedIn",
-                },
-                { Icon: FaEnvelope, href: "mailto:levinachifie@gmail.com", label: "Email" },
-              ].map(({ Icon, href, label }, i) => (
+              {SOCIAL_LINKS.map(({ Icon, href, label }, i) => (
                 <a
                   key={i}
                   href={href}
