@@ -9,6 +9,7 @@ import {
   FaCode,
   FaPython,
   FaDocker,
+  FaJava,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -77,6 +78,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       { name: "Flutter", icon: SiFlutter, level: 72, color: "#02569B" },
       { name: "Dart", icon: SiDart, level: 70, color: "#0175C2" },
+      { name: "Java", icon: FaJava, level: 68, color: "#F89820" },
     ],
   },
   {
