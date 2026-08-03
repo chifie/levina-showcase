@@ -87,6 +87,26 @@ function RippleButton({
   );
 }
 
+function setLabelFloated(wrapper: HTMLElement, floated: boolean) {
+  const label = wrapper.querySelector<HTMLElement>(".float-label");
+  if (!label) return;
+  const brandColor =
+    getComputedStyle(document.documentElement).getPropertyValue("--ring").trim() || "#0d3b66";
+  gsap.to(label, {
+    top: floated ? "0.5rem" : "1rem",
+    fontSize: floated ? "0.75rem" : "0.875rem",
+    color: floated ? brandColor : "var(--muted-foreground)",
+    duration: 0.2,
+    ease: "power2.out",
+  });
+}
+
+function hasInputValue(input: Element) {
+  return input instanceof HTMLInputElement || input instanceof HTMLTextAreaElement
+    ? input.value.length > 0
+    : false;
+}
+
 function FloatingInput({
   name,
   label,
@@ -104,41 +124,23 @@ function FloatingInput({
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    const input = wrapper.querySelector("input, textarea") as HTMLElement;
+    const input = wrapper.querySelector("input, textarea");
+    if (!input) return;
 
-    const onFocus = () => {
-      const brandColor =
-        getComputedStyle(document.documentElement).getPropertyValue("--ring").trim() || "#0d3b66";
-      gsap.to(wrapper.querySelector(".float-label"), {
-        top: "0.5rem",
-        fontSize: "0.75rem",
-        color: brandColor,
-        duration: 0.2,
-        ease: "power2.out",
-      });
-    };
-
-    const onBlur = () => {
-      const hasValue =
-        input instanceof HTMLInputElement || input instanceof HTMLTextAreaElement
-          ? input.value.length > 0
-          : false;
-      if (!hasValue) {
-        gsap.to(wrapper.querySelector(".float-label"), {
-          top: "1rem",
-          fontSize: "0.875rem",
-          color: "var(--muted-foreground)",
-          duration: 0.2,
-          ease: "power2.out",
-        });
-      }
-    };
+    const onFocus = () => setLabelFloated(wrapper, true);
+    const onInput = () => setLabelFloated(wrapper, hasInputValue(input));
+    const onBlur = () => setLabelFloated(wrapper, hasInputValue(input));
 
     input.addEventListener("focus", onFocus);
+    input.addEventListener("input", onInput);
     input.addEventListener("blur", onBlur);
+
+    // Float the label immediately when the browser autofills or pre-fills a value.
+    if (hasInputValue(input)) setLabelFloated(wrapper, true);
 
     return () => {
       input.removeEventListener("focus", onFocus);
+      input.removeEventListener("input", onInput);
       input.removeEventListener("blur", onBlur);
     };
   }, []);
@@ -264,7 +266,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" ref={sectionRef} aria-labelledby="contact-title" className="relative py-28 overflow-hidden">
+    <section
+      id="contact"
+      ref={sectionRef}
+      aria-labelledby="contact-title"
+      className="relative py-28 overflow-hidden"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-brand/5 blur-[120px]"
