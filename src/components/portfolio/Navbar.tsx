@@ -223,6 +223,7 @@ export default function Navbar() {
               <li key={n.id}>
                 <a
                   href={`#${n.id}`}
+                  aria-current={activeSection === n.id ? "true" : undefined}
                   onClick={(e) => {
                     e.preventDefault();
                     handleClick(n.id);
