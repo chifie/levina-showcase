@@ -39,32 +39,37 @@
 
 :root {
   --radius: 1rem;
-  --background: #faf3e0;
-  --foreground: #101828;
-  --card: #ffffff;
-  --card-foreground: #101828;
-  --popover: #ffffff;
-  --popover-foreground: #101828;
-  --primary: #6c7a94;
-  --primary-foreground: #ffffff;
-  --secondary: #eef0f4;
-  --secondary-foreground: #5f6b80;
-  --muted: #f1f3f6;
-  --muted-foreground: #5f6b80;
-  --accent: #e2e8f0;
-  --accent-foreground: #101828;
-  --destructive: #ef4444;
+  --background: #faf0ca;
+  --foreground: #0d3b66;
+  --card: #fffdf4;
+  --card-foreground: #0d3b66;
+  --popover: #fffdf4;
+  --popover-foreground: #0d3b66;
+  --primary: #0d3b66;
+  --primary-foreground: #faf0ca;
+  --secondary: #e8ecf6;
+  --secondary-foreground: #2c4a6e;
+  --muted: #f3efd9;
+  --muted-foreground: #4e5f78;
+  --accent: #efe9d2;
+  --accent-foreground: #0d3b66;
+  --destructive: #d64545;
   --destructive-foreground: #ffffff;
-  --border: #dbe2ec;
-  --input: #dbe2ec;
-  --ring: #6c7a94;
+  --border: #ddd4b2;
+  --input: #ddd4b2;
+  --ring: #0d3b66;
 
-  --gradient-primary: linear-gradient(135deg, #8fa0b8, #6c7a94, #2a3448);
-  --gradient-soft: linear-gradient(135deg, #f4f0e4, #eef0f4, #e2e8f0);
-  --gradient-glow: radial-gradient(circle at center, rgba(108, 122, 148, 0.15), transparent 70%);
-  --shadow-glow: 0 10px 40px -10px rgba(108, 122, 148, 0.3);
-  --shadow-elegant: 0 20px 60px -20px rgba(16, 24, 40, 0.12);
-  --shadow-card: 0 4px 20px rgba(108, 122, 148, 0.08);
+  --brand: #0d3b66;
+  --brand-light: #3e5f8e;
+  --brand-dark: #082a4c;
+
+  --gradient-primary: linear-gradient(135deg, #4a6c9e, #0d3b66, #082a4c);
+  --gradient-text: linear-gradient(135deg, #4a6c9e, #0d3b66, #082a4c);
+  --gradient-soft: linear-gradient(135deg, #faf0ca, #f2ecd4, #e9edf6);
+  --gradient-glow: radial-gradient(circle at center, rgba(13, 59, 102, 0.15), transparent 70%);
+  --shadow-glow: 0 10px 40px -10px rgba(13, 59, 102, 0.3);
+  --shadow-elegant: 0 20px 60px -20px rgba(13, 59, 102, 0.14);
+  --shadow-card: 0 4px 20px rgba(13, 59, 102, 0.08);
 }
 
 .dark {
