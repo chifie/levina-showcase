@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaArrowUp, FaHeart, FaMapMarkerAlt } from "react-icons/fa";
+import { FaArrowUp, FaEnvelope, FaHeart, FaMapMarkerAlt } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 import { prefersReducedMotion } from "@/lib/motion";
@@ -65,15 +65,30 @@ function ScrollProgress() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => {
+    let rafId = 0;
+    const update = () => {
       const h = document.documentElement;
       const max = h.scrollHeight - h.clientHeight;
       const p = max > 0 ? (h.scrollTop / max) * 100 : 0;
       setProgress(p);
     };
-    onScroll(); // reflect the current scroll position on mount (e.g. after refresh)
+    const onScroll = () => {
+      // Coalesce scroll events to one update per animation frame.
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = 0;
+        update();
+      });
+    };
+    // Recompute when the viewport or document height changes.
+    window.addEventListener("resize", update);
+    update(); // reflect the current scroll position on mount (e.g. after refresh)
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", update);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
