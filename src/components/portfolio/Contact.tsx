@@ -101,7 +101,7 @@ function FloatingInput({
 
     const onFocus = () => {
       const brandColor =
-        getComputedStyle(document.documentElement).getPropertyValue("--ring").trim() || "#6c7a94";
+        getComputedStyle(document.documentElement).getPropertyValue("--ring").trim() || "#0d3b66";
       gsap.to(wrapper.querySelector(".float-label"), {
         top: "0.5rem",
         fontSize: "0.75rem",
