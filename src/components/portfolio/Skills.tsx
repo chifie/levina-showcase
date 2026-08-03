@@ -46,8 +46,6 @@ const SKILL_CATEGORIES = [
     skills: [
       { name: "React", icon: FaReact, level: 90, color: "#61DAFB" },
       { name: "Next.js", icon: SiNextdotjs, level: 80, color: "#000000" },
-      { name: "TypeScript", icon: SiTypescript, level: 85, color: "#3178C6" },
-      { name: "JavaScript", icon: FaJs, level: 92, color: "#F7DF1E" },
       { name: "HTML5", icon: FaHtml5, level: 95, color: "#E34F26" },
       { name: "CSS3", icon: FaCss3Alt, level: 90, color: "#1572B6" },
       { name: "Tailwind CSS", icon: SiTailwindcss, level: 88, color: "#06B6D4" },
