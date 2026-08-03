@@ -1,6 +1,6 @@
 # Levina Chifie — Portfolio
 
-A modern, animated portfolio website built with **React**, **TypeScript**, **TanStack Start**, **GSAP**, and **Tailwind CSS v4**. Featuring a navy blue (Yale Blue) and cream (Lemon Chiffon) brand identity, smooth scroll animations, and a fully responsive layout.
+A modern, animated portfolio website built with **React**, **TypeScript**, **TanStack Start**, **GSAP**, and **Tailwind CSS v4**. Featuring a navy blue (Yale Blue) and cream (Lemon Chiffon) brand identity with warm "sunshine" accents (maize, orange, terracotta), smooth scroll animations, and a fully responsive layout.
 
 ## ✨ Features
 
@@ -123,6 +123,9 @@ To change the brand colors, edit the theme tokens in `src/styles.css`:
   --brand-light: #3e5f8e;
   --brand-dark: #082a4c;
   --background: #faf0ca;
+  --maize: #f4d35e;
+  --sunset: #ee964b;
+  --terra: #f95738;
 }
 ```
 
@@ -261,7 +264,7 @@ The profile photo appears in both the **Hero** (portrait oval frame) and the **A
 
 ## 🎨 Palette Source
 
-The brand palette follows the strict two-color combo **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`** ("Easy Color Combinations for Content Creators" via Pinterest).
+The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`** ("Easy Color Combinations for Content Creators" via Pinterest), extended with the warm "sunshine" accents **maize `#f4d35e`**, **orange `#ee964b`**, and **terracotta `#f95738`** for CTA buttons and highlights. Warm gradients use navy ink text (`--warm-ink`) so contrast stays strong in both light and dark mode.
 
 ## 🧭 Sections
 
@@ -327,6 +330,9 @@ The Blog header shows category chips (Backend, Mobile, Design) driven by the sha
 | `--brand-light` | `#3e5f8e` | `#9db0c8` |
 | `--brand-dark` | `#082a4c` | `#faf0ca` |
 | `--background` | `#faf0ca` (Lemon Chiffon) | `#0a1d33` |
+| `--maize` | `#f4d35e` | `#f7d96f` |
+| `--sunset` | `#ee964b` | `#f0a45c` |
+| `--terra` | `#f95738` | `#ff6b4a` |
 
 ## 🗺 How to Add a Blog Post
 

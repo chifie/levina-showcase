@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Rebranded to a strict two-color palette: Yale Blue (`#0d3b66`) and Lemon Chiffon (`#faf0ca`)
+- Extended with warm "sunshine" accents: maize (`#f4d35e`), orange (`#ee964b`), terracotta (`#f95738`)
+- CTA buttons, nav indicator, scroll progress, service/project/blog accents use a warm gradient with navy ink text (`text-warm-ink`) for contrast in both themes
 - Theme brand tokens (`--brand`, `--brand-light`, `--brand-dark`) are now theme-aware CSS variables
 - Text gradients use a dedicated `--gradient-text` token so navy headings stay legible in dark mode
 - Recolored hero, about, services, projects, blog, preloader, footer, and error pages to the navy palette
