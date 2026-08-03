@@ -80,7 +80,7 @@ function RippleButton({
       ref={btnRef}
       type={type}
       onClick={handleClick}
-      className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-primary px-8 py-3.5 text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:scale-[1.02] hover:shadow-elegant"
+      className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-warm px-8 py-3.5 text-sm font-semibold text-warm-ink shadow-warm transition-all duration-300 hover:scale-[1.02] hover:shadow-elegant"
     >
       {children}
     </button>
@@ -317,7 +317,7 @@ export default function Contact() {
                     className="pointer-events-none absolute -left-10 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-brand/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
                     aria-hidden="true"
                   />
-                  <span className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-primary text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <span className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-warm text-warm-ink shadow-warm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                     <Icon className="text-lg" />
                   </span>
                   <div>

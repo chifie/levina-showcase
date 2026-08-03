@@ -79,21 +79,21 @@ function PostCard({
           }}
         />
         <span
-          className="absolute right-5 top-5 font-heading text-4xl font-bold text-white/15 transition-colors duration-500 group-hover:text-white/30 select-none"
+          className="absolute right-5 top-5 font-heading text-4xl font-bold text-warm-ink/15 transition-colors duration-500 group-hover:text-warm-ink/30 select-none"
           aria-hidden="true"
         >
           {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="absolute left-5 top-5 rounded-full bg-white/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
+        <span className="absolute left-5 top-5 rounded-full bg-warm-ink/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-warm-ink backdrop-blur-sm">
           {category}
         </span>
-        <span className="absolute inset-0 flex items-center justify-center font-heading text-6xl font-bold italic text-white/90 drop-shadow-lg transition-all duration-500 group-hover:scale-110 lg:text-7xl">
+        <span className="absolute inset-0 flex items-center justify-center font-heading text-6xl font-bold italic text-warm-ink/90 drop-shadow-lg transition-all duration-500 group-hover:scale-110 lg:text-7xl">
           “
         </span>
       </div>
 
       <div className="flex flex-1 flex-col p-6 lg:p-7">
-        <div className="mb-3 h-1 w-10 rounded-full bg-gradient-primary transition-all duration-500 group-hover:w-16" />
+        <div className="mb-3 h-1 w-10 rounded-full bg-gradient-warm transition-all duration-500 group-hover:w-16" />
         <h3 className="font-heading text-xl font-bold leading-snug transition-colors group-hover:text-brand">
           {title}
         </h3>
@@ -178,7 +178,7 @@ export default function Blog() {
           <a
             href="#blog"
             onClick={(e) => e.preventDefault()}
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-8 py-3.5 text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:scale-105 hover:shadow-elegant"
+            className="group inline-flex items-center gap-2 rounded-full bg-gradient-warm px-8 py-3.5 text-sm font-semibold text-warm-ink shadow-warm transition-all duration-300 hover:scale-105 hover:shadow-elegant"
           >
             View All Articles
             <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />

@@ -15,28 +15,28 @@ const SERVICES = [
     title: "Web Application Development",
     description:
       "Building modern, responsive web applications with React, Next.js, and TypeScript. From landing pages to complex full-featured platforms, I deliver clean code and exceptional user experiences.",
-    color: "#0d3b66",
+    color: "#f95738",
   },
   {
     icon: FaServer,
     title: "Backend API Development",
     description:
       "Designing and implementing robust RESTful APIs and backend services with FastAPI, NestJS, and Node.js. Built for scalability, security, and performance.",
-    color: "#2c4a6e",
+    color: "#ee964b",
   },
   {
     icon: FaMobileAlt,
     title: "Mobile Application Development",
     description:
       "Creating cross-platform mobile applications with Flutter and Dart. Native-quality performance and pixel-perfect UI across iOS and Android from a single codebase.",
-    color: "#3e5f8e",
+    color: "#f4d35e",
   },
   {
     icon: FaPaintBrush,
     title: "UI Implementation",
     description:
       "Translating designs into pixel-perfect, responsive interfaces using Tailwind CSS, modern CSS techniques, and component-driven architecture for consistent, maintainable results.",
-    color: "#082a4c",
+    color: "#0d3b66",
   },
 ];
 
@@ -97,20 +97,16 @@ function ServiceCard({
       <div
         className="absolute top-0 right-0 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-20"
         style={{ background: color }}
-      />
+      />{" "}
       <span
-        className="absolute right-6 top-5 font-heading text-5xl font-bold text-brand/10 transition-colors duration-500 group-hover:text-brand/20 select-none"
+        className="absolute right-6 top-5 font-heading text-5xl font-bold text-warm-ink/10 transition-colors duration-500 group-hover:text-warm-ink/20 select-none"
         aria-hidden="true"
       >
         {String(index + 1).padStart(2, "0")}
       </span>
-
       <div className="relative">
         <div className="flex items-start justify-between">
-          <span
-            className="relative inline-flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
-            style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}
-          >
+          <span className="relative inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-warm text-warm-ink shadow-warm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
             <span
               className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-60"
               style={{ background: `linear-gradient(135deg, ${color}, ${color}dd)` }}

@@ -14,8 +14,9 @@ const PROJECTS = [
     description:
       "A modern marketplace platform for Tanzania connecting buyers and sellers with seamless transactions, product management, and a complete seller dashboard.",
     tech: ["React", "FastAPI", "PostgreSQL", "TypeScript"],
-    gradient: "from-[#3e5f8e] via-[#0d3b66] to-[#082a4c]",
-    color: "#0d3b66",
+    gradient: "from-[#f4d35e] via-[#ee964b] to-[#f95738]",
+    color: "#f95738",
+    ink: "dark",
     initials: "SD",
     github: "https://github.com",
     demo: "https://sokodigital.com",
@@ -25,8 +26,9 @@ const PROJECTS = [
     description:
       "A real estate marketplace platform for property listings, agent profiles, search filters, and seamless transaction management across Tanzania.",
     tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-    gradient: "from-[#2c4a6e] via-[#0d3b66] to-[#051a2e]",
-    color: "#082a4c",
+    gradient: "from-[#ee964b] via-[#f4d35e] to-[#f95738]",
+    color: "#ee964b",
+    ink: "dark",
     initials: "DM",
     github: "https://github.com",
     demo: "https://dalamaimkononi.com",
@@ -36,8 +38,9 @@ const PROJECTS = [
     description:
       "A digital services platform connecting providers and clients for various services including consulting, delivery, and local business solutions.",
     tech: ["React", "NestJS", "MySQL", "Tailwind CSS"],
-    gradient: "from-[#4a6c9e] via-[#0d3b66] to-[#082a4c]",
-    color: "#3e5f8e",
+    gradient: "from-[#f95738] via-[#0d3b66] to-[#082a4c]",
+    color: "#f95738",
+    ink: "light",
     initials: "TK",
     github: "https://github.com",
     demo: "https://tanzaniakiganjani.com",
@@ -47,8 +50,9 @@ const PROJECTS = [
     description:
       "A restaurant website with a modern UI, online ordering system, menu management, and an intuitive customer experience for Glory Burger.",
     tech: ["React", "FastAPI", "PostgreSQL", "Tailwind CSS"],
-    gradient: "from-[#3e5f8e] via-[#2c4a6e] to-[#0d3b66]",
-    color: "#2c4a6e",
+    gradient: "from-[#f4d35e] via-[#ee964b] to-[#0d3b66]",
+    color: "#ee964b",
+    ink: "dark",
     initials: "GB",
     github: "https://github.com",
     demo: "https://gloryburger.com",
@@ -58,8 +62,9 @@ const PROJECTS = [
     description:
       "A Flutter mobile application for food ordering with real-time cart management, order tracking, push notifications, and a seamless mobile dining experience.",
     tech: ["Flutter", "Dart", "Firebase", "REST APIs"],
-    gradient: "from-[#6b8db8] via-[#3e5f8e] to-[#0d3b66]",
-    color: "#6b8db8",
+    gradient: "from-[#0d3b66] via-[#ee964b] to-[#f4d35e]",
+    color: "#f4d35e",
+    ink: "dark",
     initials: "GM",
     github: "https://github.com",
     demo: "https://gloryburger.app",
@@ -69,8 +74,9 @@ const PROJECTS = [
     description:
       "A modern, animated portfolio built with React, TypeScript, and GSAP featuring a navy blue and cream brand identity, smooth scroll animations, and a fully responsive layout.",
     tech: ["React", "TypeScript", "Tailwind CSS", "GSAP"],
-    gradient: "from-[#0d3b66] via-[#082a4c] to-[#051a2e]",
-    color: "#082a4c",
+    gradient: "from-[#0d3b66] via-[#2c4a6e] to-[#082a4c]",
+    color: "#0d3b66",
+    ink: "light",
     initials: "PW",
     github: "https://github.com/chifie/levina-showcase",
     demo: "https://levinachifie.dev",
@@ -167,7 +173,11 @@ export default function Projects() {
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-heading text-6xl font-bold text-white/90 drop-shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 lg:text-7xl">
+                  <span
+                    className={`font-heading text-6xl font-bold drop-shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 lg:text-7xl ${
+                      project.ink === "dark" ? "text-warm-ink" : "text-white"
+                    }`}
+                  >
                     {project.initials}
                   </span>
                 </div>
@@ -199,7 +209,7 @@ export default function Projects() {
 
               <div className="flex flex-1 flex-col p-6 lg:p-7">
                 <div className="mb-4 flex items-center justify-between">
-                  <div className="h-1 w-10 rounded-full bg-gradient-primary transition-all duration-500 group-hover:w-16" />
+                  <div className="h-1 w-10 rounded-full bg-gradient-warm transition-all duration-500 group-hover:w-16" />
                   <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-brand/40 transition-colors duration-300 group-hover:text-brand/70">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -218,7 +228,7 @@ export default function Projects() {
                       className="rounded-full border px-3 py-1 text-[11px] font-medium transition-all duration-300 hover:-translate-y-0.5"
                       style={{
                         background: `color-mix(in srgb, ${project.color} 12%, transparent)`,
-                        color: project.color,
+                        color: `light-dark(color-mix(in srgb, ${project.color} 40%, #0d3b66), var(--brand))`,
                         borderColor: `color-mix(in srgb, ${project.color} 25%, transparent)`,
                       }}
                     >
@@ -246,7 +256,7 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex-1 rounded-full bg-gradient-primary px-4 py-2.5 text-center text-xs font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-glow"
+                      className="flex-1 rounded-full bg-gradient-warm px-4 py-2.5 text-center text-xs font-semibold text-warm-ink transition-all duration-300 hover:scale-[1.03] hover:shadow-warm"
                     >
                       <span className="inline-flex items-center justify-center gap-1.5">
                         <FaExternalLinkAlt className="text-sm" />
