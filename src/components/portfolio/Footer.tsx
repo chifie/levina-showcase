@@ -323,8 +323,8 @@ export default function Footer() {
             </p>
             <p className="flex flex-wrap items-center gap-x-1.5 text-[10px]">
               Built with React <span className="text-brand/50">&bull;</span> GSAP
-              <span className="text-brand/50">&bull;</span> Tailwind CSS
-              <span className="text-brand/50">&bull;</span> Playfair Display
+              <span className="text-brand/50">&bull;</span> Tailwind CSs
+              <span className="text-brand/50">&bull;</span> Playfair Displays
             </p>
           </div>
         </div>
