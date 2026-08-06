@@ -153,7 +153,7 @@ export default function About() {
             </div>
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                With a strong foundation in software engineering, I specialize in building modern,
+                With a good foundation in software engineering, I specialize in building modern,
                 scalable web and mobile applications. I transform complex requirements into clean,
                 maintainable code and intuitive user interfaces that users love.
               </p>
