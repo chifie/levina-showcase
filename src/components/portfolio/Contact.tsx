@@ -12,7 +12,7 @@ const CONTACT_INFO = [
   {
     Icon: FaEnvelope,
     label: "Email",
-    value: "levinachifie@gmail.com",
+    value: "levinachifie016@gmail.com",
     href: "mailto:levinachifie@gmail.com",
   },
   {
