@@ -13,7 +13,7 @@ const CONTACT_INFO = [
     Icon: FaEnvelope,
     label: "Email",
     value: "levinachifie016@gmail.com",
-    href: "mailto:levinachifie@gmail.com",
+    href: "mailto:levinachifie016@gmail.com",
   },
   {
     Icon: FaGithub,
