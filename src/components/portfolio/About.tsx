@@ -166,7 +166,8 @@ export default function About() {
               <p>
                 Mobile development is another core strength. I build cross-platform mobile
                 applications with Flutter and Dart, delivering native-quality experiences on both
-                iOS and Android from a single codebase. Also i build the androuid application using java programming.
+                iOS and Android from a single codebase. I also build native Android applications
+                using Java.
               </p>
             </div>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
