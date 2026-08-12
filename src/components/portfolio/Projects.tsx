@@ -80,6 +80,13 @@ export default function Projects() {
           subtitle="A selection of projects I have built with passion and precision"
         />
 
+        <div className="mb-10 flex justify-center">
+          <span className="inline-flex items-center gap-2 rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-muted-foreground">
+            <span className="h-1.5 w-1.5 rounded-full bg-gradient-warm" aria-hidden="true" />
+            {PROJECTS.length} featured projects
+          </span>
+        </div>
+
         <div ref={gridRef} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {PROJECTS.map((project, i) => (
             <div
