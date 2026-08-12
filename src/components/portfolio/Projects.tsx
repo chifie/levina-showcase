@@ -18,8 +18,8 @@ const PROJECTS = [
     color: "#f95738",
     ink: "dark",
     initials: "SD",
-    github: "https://github.com",
-    demo: "https://sokodigital.com",
+    github: "https://github.com/chifie/SokoDigital_frontend",
+    demo: "https://soko-digital-frontend.vercel.app",
   },
   {
     title: "DalaliMkononi",
