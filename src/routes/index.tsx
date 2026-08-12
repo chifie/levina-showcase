@@ -29,7 +29,10 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "https://levinachifie.dev/og-image.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Levina Chifie — Full Stack Software Developer portfolio" },
+      {
+        property: "og:image:alt",
+        content: "Levina Chifie — Full Stack Software Developer portfolio",
+      },
       { property: "og:site_name", content: "Levina Chifie Portfolio" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
