@@ -129,7 +129,7 @@ To change the brand colors, edit the theme tokens in `src/styles.css`:
 }
 ```
 
-To add or edit projects, update the `PROJECTS` array in `src/components/portfolio/Projects.tsx`.
+To add or edit projects, update the typed `PROJECTS` array in `src/lib/projects.ts`.
 
 To add or edit skills, update the typed `SKILL_CATEGORIES` array in `src/lib/skills.ts`.
 
@@ -153,7 +153,7 @@ Languages: JavaScript, TypeScript, Python, and PHP — plus React, Next.js, Fast
 
 **How do I add a new project?**
 
-Add an entry to the `PROJECTS` array in `src/components/portfolio/Projects.tsx` with title, description, tech stack, gradient, and links.
+Add an entry to the typed `PROJECTS` array in `src/lib/projects.ts` with title, description, tech stack, gradient, and links.
 
 **Why do some animations not play on my device?**
 
@@ -288,8 +288,9 @@ The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`*
 - `Skills.tsx` — Languages-first category cards with proficiency bars
 - `SkillCard.tsx` — single proficiency row with animated bar
 - `src/lib/skills.ts` — typed skill categories (Languages, Frontend, Backend, Mobile, Databases, Tools)
+- `src/lib/projects.ts` — typed project entries (title, description, tech, links)
 - `Services.tsx` — service offering cards
-- `Projects.tsx` — project showcase grid
+- `Projects.tsx` — project showcase grid driven by `src/lib/projects.ts`
 - `Blog.tsx` — article cards driven by `src/lib/blog-posts.ts`
 - `Contact.tsx` — info cards + form with honeypot
 - `Footer.tsx` — navigation, links, scroll progress, cursor
