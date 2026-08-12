@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- SokoDigital live demo and frontend repository links on the project card
+- Project count pill above the projects grid
+- `og:image` dimensions/alt and `twitter:site` meta tags
+
+### Changed
+- Project data moved into a typed `PROJECTS` module in `src/lib/projects.ts`
+
+### Fixed
+- About copy typo (Android applications built with Java)
+- Footer tech-stack labels (`Tailwind CSs` → `Tailwind CSS`, `Playfair Displays` → `Playfair Display`)
+
+### Accessibility
+- Descriptive `aria-label`s and visible focus rings on project card links
+
+### SEO
+- Refreshed `sitemap.xml` `lastmod` date
+
 ### Changed
 - Skills section now leads with a Languages category (JavaScript, TypeScript, Python, PHP); JavaScript and TypeScript were removed from the Frontend group, and Docker replaced Figma in Tools
 - Skill data moved into a typed `SKILL_CATEGORIES` module in `src/lib/skills.ts` with a dedicated extracted `SkillCard` component
