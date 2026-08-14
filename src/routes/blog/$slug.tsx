@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { FaArrowLeft, FaCalendarAlt, FaClock } from "react-icons/fa";
 import { BLOG_POSTS } from "@/lib/blog-posts";
+import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -55,6 +56,7 @@ export const Route = createFileRoute("/blog/$slug")({
 
 function BlogPostPage() {
   const { post } = Route.useLoaderData();
+  const { t } = useI18n();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -73,7 +75,7 @@ function BlogPostPage() {
             className="inline-flex items-center gap-2 rounded-full glass border border-brand/20 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:border-brand/40 hover:text-brand"
           >
             <FaArrowLeft className="text-xs" />
-            All articles
+            {t("blog.allArticles")}
           </Link>
         </div>
       </header>
@@ -120,7 +122,7 @@ function BlogPostPage() {
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-warm px-8 py-3.5 text-sm font-semibold text-warm-ink shadow-warm transition-all duration-300 hover:scale-105 hover:shadow-elegant"
           >
             <FaArrowLeft className="text-xs transition-transform duration-300 group-hover:-translate-x-1" />
-            Back to homepage
+            {t("blog.backToHome")}
           </Link>
         </div>
       </main>

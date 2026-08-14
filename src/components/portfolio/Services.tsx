@@ -6,53 +6,56 @@ import { prefersReducedMotion } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scroll";
 import SectionHeader from "@/components/portfolio/SectionHeader";
 import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SERVICES = [
+const SERVICES: {
+  icon: React.ComponentType<{ className?: string }>;
+  titleKey: TranslationKey;
+  descKey: TranslationKey;
+  color: string;
+}[] = [
   {
     icon: FaGlobe,
-    title: "Web Application Development",
-    description:
-      "Building modern, responsive web applications with React, Next.js, and TypeScript. From landing pages to complex full-featured platforms, I deliver clean code and exceptional user experiences.",
+    titleKey: "services.web.title",
+    descKey: "services.web.desc",
     color: "#f95738",
   },
   {
     icon: FaServer,
-    title: "Backend API Development",
-    description:
-      "Designing and implementing robust RESTful APIs and backend services with FastAPI, NestJS, and Node.js. Built for scalability, security, and performance.",
+    titleKey: "services.backend.title",
+    descKey: "services.backend.desc",
     color: "#ee964b",
   },
   {
     icon: FaMobileAlt,
-    title: "Mobile Application Development",
-    description:
-      "Creating cross-platform mobile applications with Flutter and Dart. Native-quality performance and pixel-perfect UI across iOS and Android from a single codebase.",
+    titleKey: "services.mobile.title",
+    descKey: "services.mobile.desc",
     color: "#f4d35e",
   },
   {
     icon: FaPaintBrush,
-    title: "UI Implementation",
-    description:
-      "Translating designs into pixel-perfect, responsive interfaces using Tailwind CSS, modern CSS techniques, and component-driven architecture for consistent, maintainable results.",
+    titleKey: "services.ui.title",
+    descKey: "services.ui.desc",
     color: "#0d3b66",
   },
 ];
 
 function ServiceCard({
   icon: Icon,
-  title,
-  description,
+  titleKey,
+  descKey,
   color,
   index,
 }: {
   icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  description: string;
+  titleKey: TranslationKey;
+  descKey: TranslationKey;
   color: string;
   index: number;
 }) {
+  const { t } = useI18n();
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -124,10 +127,10 @@ function ServiceCard({
         </div>
 
         <h3 className="mt-5 font-heading text-xl font-bold transition-colors group-hover:text-brand">
-          {title}
+          {t(titleKey)}
         </h3>
 
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t(descKey)}</p>
 
         <a
           href="#contact"
@@ -137,7 +140,7 @@ function ServiceCard({
           }}
           className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand opacity-0 translate-x-[-10px] transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
         >
-          Learn more
+          {t("services.learnMore")}
           <FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
         </a>
       </div>
@@ -146,6 +149,7 @@ function ServiceCard({
 }
 
 export default function Services() {
+  const { t } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -167,13 +171,14 @@ export default function Services() {
         <SectionHeader
           ref={headerRef}
           titleId="services-title"
-          eyebrow="Services"
+          eyebrow={t("services.eyebrow")}
           title={
             <>
-              What I <span className="text-gradient italic">Do</span>
+              {t("services.titleA")}{" "}
+              <span className="text-gradient italic">{t("services.titleB")}</span>
             </>
           }
-          subtitle="I deliver end-to-end software solutions across web, mobile, and backend platforms with a focus on quality and user experience"
+          subtitle={t("services.subtitle")}
         />
 
         <div className="grid gap-6 lg:grid-cols-2">

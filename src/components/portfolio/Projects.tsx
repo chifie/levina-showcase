@@ -8,10 +8,12 @@ import SectionHeader from "@/components/portfolio/SectionHeader";
 import ProjectCardHeader from "@/components/portfolio/ProjectCardHeader";
 import ProjectLightbox from "@/components/portfolio/ProjectLightbox";
 import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
+import { useI18n } from "@/lib/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
+  const { t } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -74,19 +76,20 @@ export default function Projects() {
         <SectionHeader
           ref={headerRef}
           titleId="projects-title"
-          eyebrow="Projects"
+          eyebrow={t("projects.eyebrow")}
           title={
             <>
-              Featured <span className="text-gradient italic">Work</span>
+              {t("projects.titleA")}{" "}
+              <span className="text-gradient italic">{t("projects.titleB")}</span>
             </>
           }
-          subtitle="A selection of projects I have built with passion and precision"
+          subtitle={t("projects.subtitle")}
         />
 
         <div className="mb-10 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-gradient-warm" aria-hidden="true" />
-            {PROJECTS.length} featured projects
+            {t("projects.count", { count: PROJECTS.length })}
           </span>
         </div>
 
@@ -138,12 +141,12 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label={`View ${project.title} source code on GitHub`}
+                      aria-label={t("projects.githubAria", { title: project.title })}
                       className="flex-1 rounded-full glass border border-brand/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow focus-visible:outline-2 focus-visible:outline-offset-2"
                     >
                       <span className="inline-flex items-center justify-center gap-1.5">
                         <FaGithub className="text-sm" />
-                        GitHub
+                        {t("projects.github")}
                       </span>
                     </a>
                   )}
@@ -152,12 +155,12 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label={`View ${project.title} live demo`}
+                      aria-label={t("projects.demoAria", { title: project.title })}
                       className="flex-1 rounded-full bg-gradient-warm px-4 py-2.5 text-center text-xs font-semibold text-warm-ink transition-all duration-300 hover:scale-[1.03] hover:shadow-warm focus-visible:outline-2 focus-visible:outline-offset-2"
                     >
                       <span className="inline-flex items-center justify-center gap-1.5">
                         <FaExternalLinkAlt className="text-sm" />
-                        Live Demo
+                        {t("projects.liveDemo")}
                       </span>
                     </a>
                   )}

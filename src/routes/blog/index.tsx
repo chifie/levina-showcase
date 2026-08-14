@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { FaArrowRight, FaCalendarAlt, FaClock } from "react-icons/fa";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog-posts";
+import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -27,6 +28,8 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogIndexPage() {
+  const { t } = useI18n();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border/50">
@@ -44,7 +47,7 @@ function BlogIndexPage() {
             hash="contact"
             className="rounded-full glass border border-brand/20 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:border-brand/40 hover:text-brand"
           >
-            Contact
+            {t("blog.contact")}
           </Link>
         </div>
       </header>
@@ -52,14 +55,12 @@ function BlogIndexPage() {
       <main className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-12 text-center">
           <span className="inline-block rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand-dark">
-            Blog
+            {t("blog.eyebrow")}
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight md:text-5xl">
-            Thoughts &amp; <span className="text-gradient italic">Insights</span>
+            {t("blog.titleA")} <span className="text-gradient italic">{t("blog.titleB")}</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Articles on software development, design, and the craft of building great products.
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">{t("blog.subtitle")}</p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
             {BLOG_CATEGORIES.map((category) => (
               <span
@@ -113,7 +114,7 @@ function BlogIndexPage() {
                 </div>
 
                 <span className="mt-5 inline-flex items-center gap-2 border-t border-brand/10 pt-5 text-xs font-semibold text-brand">
-                  Read article
+                  {t("blog.readArticle")}
                   <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </div>

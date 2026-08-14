@@ -6,10 +6,21 @@ import { SKILL_CATEGORIES } from "@/lib/skills";
 import SectionHeader from "@/components/portfolio/SectionHeader";
 import SkillCard from "@/components/portfolio/SkillCard";
 import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const CATEGORY_KEYS: Record<string, TranslationKey> = {
+  Languages: "skills.cat.languages",
+  Frontend: "skills.cat.frontend",
+  Backend: "skills.cat.backend",
+  Mobile: "skills.cat.mobile",
+  Databases: "skills.cat.databases",
+  Tools: "skills.cat.tools",
+};
+
 export default function Skills() {
+  const { t } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -72,20 +83,23 @@ export default function Skills() {
         <SectionHeader
           ref={headerRef}
           titleId="skills-title"
-          eyebrow="Skills"
+          eyebrow={t("skills.eyebrow")}
           title={
             <>
-              Technical <span className="text-gradient italic">Competencies</span>
+              {t("skills.titleA")}{" "}
+              <span className="text-gradient italic">{t("skills.titleB")}</span>
             </>
           }
-          subtitle="A comprehensive set of tools and technologies I work with to deliver high-quality software products"
+          subtitle={t("skills.subtitle")}
         />
 
         <div className="mb-10 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full glass border border-brand/20 px-4 py-1.5 text-xs font-medium text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-gradient-warm" aria-hidden="true" />
-            {SKILL_CATEGORIES.reduce((sum, category) => sum + category.skills.length, 0)}{" "}
-            technologies across {SKILL_CATEGORIES.length} categories
+            {t("skills.count", {
+              count: SKILL_CATEGORIES.reduce((sum, category) => sum + category.skills.length, 0),
+              categories: SKILL_CATEGORIES.length,
+            })}
           </span>
         </div>
 
@@ -111,10 +125,10 @@ export default function Skills() {
                     id={`skills-category-${catIndex}-title`}
                     className="font-heading text-lg font-bold"
                   >
-                    {category.title}
+                    {t(CATEGORY_KEYS[category.title])}
                   </h3>
                   <p className="text-[11px] text-muted-foreground">
-                    {category.skills.length} technologies
+                    {category.skills.length} {t("skills.technologies")}
                   </p>
                 </div>
               </div>

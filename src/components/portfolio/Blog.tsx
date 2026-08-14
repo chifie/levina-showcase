@@ -7,6 +7,7 @@ import { prefersReducedMotion } from "@/lib/motion";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog-posts";
 import SectionHeader from "@/components/portfolio/SectionHeader";
 import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
+import { useI18n } from "@/lib/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,6 +31,7 @@ function PostCard({
   index: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     const card = cardRef.current;
@@ -125,7 +127,7 @@ function PostCard({
             params={{ slug }}
             className="flex-1 rounded-full glass border border-brand/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow hover:bg-brand/10 focus-visible:outline-2 focus-visible:outline-offset-2"
           >
-            Read More
+            {t("blog.readMore")}
           </Link>
         </div>
       </div>
@@ -134,6 +136,7 @@ function PostCard({
 }
 
 export default function Blog() {
+  const { t } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -155,13 +158,13 @@ export default function Blog() {
         <SectionHeader
           ref={headerRef}
           titleId="blog-title"
-          eyebrow="Blog"
+          eyebrow={t("blog.eyebrow")}
           title={
             <>
-              Thoughts &amp; <span className="text-gradient italic">Insights</span>
+              {t("blog.titleA")} <span className="text-gradient italic">{t("blog.titleB")}</span>
             </>
           }
-          subtitle="Articles on software development, design, and the craft of building great products"
+          subtitle={t("blog.subtitle")}
         >
           <div data-anim className="mt-6 flex flex-wrap items-center justify-center gap-2">
             {BLOG_CATEGORIES.map((category) => (

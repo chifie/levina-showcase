@@ -8,8 +8,10 @@ import { prefersReducedMotion } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scroll";
 import { NAV_LINKS } from "@/lib/nav-links";
 import { SOCIAL_LINKS } from "@/lib/social-links";
+import { useI18n, NAV_LABEL_KEYS } from "@/lib/i18n";
 
 function BackToTop() {
+  const { t } = useI18n();
   const [show, setShow] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
 
@@ -46,7 +48,7 @@ function BackToTop() {
     <button
       ref={btnRef}
       onClick={scrollToTop}
-      aria-label="Back to top"
+      aria-label={t("common.backToTop")}
       className={`fixed bottom-6 right-6 z-30 inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-gradient-warm text-warm-ink shadow-warm transition-all duration-300 hover:scale-110 hover:shadow-elegant group ${
         show ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 pointer-events-none"
       }`}
@@ -168,6 +170,7 @@ function CursorFollower() {
 }
 
 export default function Footer() {
+  const { t } = useI18n();
   const footerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -241,8 +244,7 @@ export default function Footer() {
                 <span className="font-heading text-xl font-bold text-gradient">Levina Chifie</span>
               </a>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                A dedicated Full Stack Software Developer and Mobile App Developer crafting modern
-                digital experiences with clean code and elegant design.
+                {t("footer.bio")}
               </p>
               <div className="mt-5 flex gap-2">
                 {SOCIAL_LINKS.map(({ Icon, href, label }, i) => (
@@ -266,7 +268,7 @@ export default function Footer() {
 
             <div data-footer-anim>
               <h4 className="font-heading text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground">
-                Navigation
+                {t("footer.navigation")}
               </h4>
               <ul className="mt-4 space-y-2.5">
                 {NAV_LINKS.map((link) => (
@@ -279,7 +281,7 @@ export default function Footer() {
                         scrollToSection(link.id);
                       }}
                     >
-                      {link.label}
+                      {t(NAV_LABEL_KEYS[link.id])}
                     </a>
                   </li>
                 ))}
@@ -288,7 +290,7 @@ export default function Footer() {
 
             <div data-footer-anim>
               <h4 className="font-heading text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground">
-                Get In Touch
+                {t("footer.getInTouch")}
               </h4>
               <ul className="mt-4 space-y-3">
                 <li>
@@ -302,7 +304,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-2 text-sm text-muted-foreground">
                   <FaMapMarkerAlt className="text-xs" />
-                  Available Worldwide
+                  {t("footer.availableWorldwide")}
                 </li>
               </ul>
             </div>
@@ -318,8 +320,8 @@ export default function Footer() {
             className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row"
           >
             <p>
-              &copy; {new Date().getFullYear()} Levina Chifie. Crafted with{" "}
-              <FaHeart className="inline text-terra mx-0.5" /> and code.
+              {t("footer.copyright", { year: new Date().getFullYear() })}{" "}
+              <FaHeart className="inline text-terra mx-0.5" /> {t("footer.copyrightEnd")}
             </p>
             <p className="flex flex-wrap items-center gap-x-1.5 text-[10px]">
               Built with React <span className="text-brand/50">&bull;</span> GSAP

@@ -7,23 +7,29 @@ gsap.registerPlugin(ScrollTrigger);
 import { prefersReducedMotion } from "@/lib/motion";
 import SectionHeader from "@/components/portfolio/SectionHeader";
 import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 
-const CONTACT_INFO = [
+const CONTACT_INFO: {
+  Icon: React.ComponentType<{ className?: string }>;
+  labelKey: TranslationKey;
+  value: string;
+  href?: string;
+}[] = [
   {
     Icon: FaEnvelope,
-    label: "Email",
+    labelKey: "contact.emailLabel",
     value: "levinachifie016@gmail.com",
     href: "mailto:levinachifie016@gmail.com",
   },
   {
     Icon: FaGithub,
-    label: "GitHub",
+    labelKey: "contact.githubLabel",
     value: "github.com/chifie",
     href: "https://github.com/chifie",
   },
   {
     Icon: FaLinkedin,
-    label: "LinkedIn",
+    labelKey: "contact.linkedinLabel",
     value: "linkedin.com/in/levinachifie",
     href: "https://linkedin.com/in/levinachifie",
   },
@@ -170,6 +176,7 @@ function FloatingInput({
 }
 
 export default function Contact() {
+  const { t } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const infoRef = useRef<HTMLDivElement>(null);
@@ -309,19 +316,20 @@ export default function Contact() {
         <SectionHeader
           ref={headerRef}
           titleId="contact-title"
-          eyebrow="Contact"
+          eyebrow={t("contact.eyebrow")}
           title={
             <>
-              Let&apos;s Create <span className="text-gradient italic">Together</span>
+              {t("contact.titleA")}{" "}
+              <span className="text-gradient italic">{t("contact.titleB")}</span>
             </>
           }
-          subtitle="Have a project idea or need a developer? Let's connect."
+          subtitle={t("contact.subtitle")}
         />
 
         <div className="grid gap-8 lg:grid-cols-5">
           <div ref={infoRef} className="space-y-4 lg:col-span-2">
             {CONTACT_INFO.map((item, i) => {
-              const { Icon, label, value, href } = item;
+              const { Icon, labelKey, value, href } = item;
               const Content = (
                 <div className="card-elegant group relative flex items-center gap-4 overflow-hidden rounded-2xl p-5 hover:border-brand/30">
                   <div
@@ -333,7 +341,7 @@ export default function Contact() {
                   </span>
                   <div>
                     <div className="text-[10px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
-                      {label}
+                      {t(labelKey)}
                     </div>
                     <div className="text-sm font-medium">{value}</div>
                   </div>
@@ -369,34 +377,30 @@ export default function Contact() {
             style={{ opacity: 0 }}
           >
             <div className="grid gap-5 sm:grid-cols-2">
-              <FloatingInput name="name" label="Your Name" type="text" />
-              <FloatingInput name="email" label="Email Address" type="email" />
+              <FloatingInput name="name" label={t("contact.yourName")} type="text" />
+              <FloatingInput name="email" label={t("contact.emailAddress")} type="email" />
             </div>
             <div className="mt-5">
-              <FloatingInput name="subject" label="Subject" type="text" />
+              <FloatingInput name="subject" label={t("contact.subject")} type="text" />
             </div>
             <div className="mt-5">
-              <FloatingInput name="message" label="Your Message" isTextarea />
+              <FloatingInput name="message" label={t("contact.yourMessage")} isTextarea />
             </div>
 
             <div className="absolute -left-[9999px] top-auto" aria-hidden="true">
               <label>
-                Leave this field empty
+                {t("contact.leaveEmpty")}
                 <input type="text" name="website" tabIndex={-1} autoComplete="off" />
               </label>
             </div>
 
             <div className="mt-6">
               <div className="mb-3 flex items-center gap-2 text-[11px] text-muted-foreground">
-                <span className="h-1 w-1 rounded-full bg-brand/60" />I typically reply within 24
-                hours
+                <span className="h-1 w-1 rounded-full bg-brand/60" />
+                {t("contact.replyWithin")}
               </div>
               <p className="sr-only" role="status" aria-live="polite">
-                {submitting
-                  ? "Sending your message"
-                  : sent
-                    ? "Your message was sent successfully"
-                    : ""}
+                {submitting ? t("contact.sending") : sent ? t("contact.sent") : ""}
               </p>
               <RippleButton type="submit">
                 {submitting ? (
@@ -416,17 +420,17 @@ export default function Contact() {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                       />
                     </svg>
-                    Sending...
+                    {t("contact.sendingBtn")}
                   </>
                 ) : sent ? (
                   <>
                     <FaCheck className="text-lg" />
-                    Message Sent!
+                    {t("contact.sentBtn")}
                   </>
                 ) : (
                   <>
                     <FaPaperPlane className="text-sm transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                    Send Message
+                    {t("contact.sendMessage")}
                   </>
                 )}
               </RippleButton>
