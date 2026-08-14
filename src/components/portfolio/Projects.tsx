@@ -104,7 +104,8 @@ export default function Projects() {
                     alt={`${project.title} screenshot`}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                    draggable={false}
+                    className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110 select-none"
                   />
                 ) : (
                   <>
@@ -126,6 +127,23 @@ export default function Projects() {
                       </span>
                     </div>
                   </>
+                )}
+                {project.mobileScreenshot && (
+                  <div
+                    className="absolute right-4 bottom-4 w-[72px] overflow-hidden rounded-[1.05rem] border-2 border-white/70 shadow-lg transition-all duration-500 group-hover:-translate-y-1.5 group-hover:scale-105 group-hover:border-white sm:w-[84px]"
+                    aria-hidden="true"
+                  >
+                    <span className="absolute left-1/2 top-1.5 z-10 h-1 w-5 -translate-x-1/2 rounded-full bg-white/70" />
+                    <img
+                      src={project.mobileScreenshot}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      draggable={false}
+                      className="block w-full select-none object-cover object-top"
+                      style={{ aspectRatio: "9 / 18" }}
+                    />
+                  </div>
                 )}
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-4 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 transition-all duration-400 group-hover:opacity-100">
                   {project.github && (
