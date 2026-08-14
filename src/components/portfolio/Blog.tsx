@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaArrowRight, FaCalendarAlt, FaClock } from "react-icons/fa";
+import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog-posts";
 import SectionHeader from "@/components/portfolio/SectionHeader";
@@ -111,16 +111,6 @@ function PostCard({
             {readTime}
           </span>
         </div>
-
-        <div className="mt-5 flex gap-3 border-t border-brand/10 pt-5">
-          <a
-            href="#blog"
-            onClick={(e) => e.preventDefault()}
-            className="flex-1 rounded-full glass border border-brand/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow hover:bg-brand/10 focus-visible:outline-2 focus-visible:outline-offset-2"
-          >
-            Read More
-          </a>
-        </div>
       </div>
     </div>
   );
@@ -172,17 +162,6 @@ export default function Blog() {
           {BLOG_POSTS.map((post, i) => (
             <PostCard key={i} {...post} index={i} />
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <a
-            href="#blog"
-            onClick={(e) => e.preventDefault()}
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-warm px-8 py-3.5 text-sm font-semibold text-warm-ink shadow-warm transition-all duration-300 hover:scale-105 hover:shadow-elegant"
-          >
-            View All Articles
-            <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
         </div>
       </div>
     </section>
