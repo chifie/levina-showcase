@@ -22,6 +22,12 @@ All notable changes to this project will be documented in this file.
 ### SEO
 - Refreshed `sitemap.xml` `lastmod` date
 
+### Fixed
+- Contact email unified to `levinachifie016@gmail.com` across the footer, SEO metadata, security policy, and README
+- `mailto:` links no longer open in a new tab
+- GitHub source buttons hidden for projects without a public repository
+- Non-functional blog "Read More" and "View All Articles" buttons removed
+
 ### Changed
 - Skills section now leads with a Languages category (JavaScript, TypeScript, Python, PHP); JavaScript and TypeScript were removed from the Frontend group, and Docker replaced Figma in Tools
 - Skill data moved into a typed `SKILL_CATEGORIES` module in `src/lib/skills.ts` with a dedicated extracted `SkillCard` component
