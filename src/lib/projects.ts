@@ -33,6 +33,7 @@ export const PROJECTS: Project[] = [
     color: "#ee964b",
     ink: "dark",
     initials: "DM",
+    github: "https://github.com/chifie/DalaliMkononi",
     demo: "https://dalamaimkononi.com",
   },
   {
@@ -44,6 +45,7 @@ export const PROJECTS: Project[] = [
     color: "#f95738",
     ink: "light",
     initials: "TK",
+    github: "https://github.com/chifie/kiganjani-drive-hub",
     demo: "https://tanzaniakiganjani.com",
   },
   {
@@ -55,6 +57,7 @@ export const PROJECTS: Project[] = [
     color: "#ee964b",
     ink: "dark",
     initials: "GB",
+    github: "https://github.com/chifie/GLORY_BURGER",
     demo: "https://gloryburger.com",
   },
   {
@@ -66,6 +69,7 @@ export const PROJECTS: Project[] = [
     color: "#f4d35e",
     ink: "dark",
     initials: "GM",
+    github: "https://github.com/chifie/GLORY_BURGER_APP",
     demo: "https://gloryburger.app",
   },
   {
