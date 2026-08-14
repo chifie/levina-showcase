@@ -330,13 +330,13 @@ export default function Contact() {
               );
 
               if (href) {
+                const isExternal = href.startsWith("http");
                 return (
                   <a
                     key={i}
                     data-contact
                     href={href}
-                    target="_blank"
-                    rel="noreferrer"
+                    {...(isExternal ? { target: "_blank", rel: "noreferrer" } : {})}
                     style={{ opacity: 0 }}
                   >
                     {Content}
