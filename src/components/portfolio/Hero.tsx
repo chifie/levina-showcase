@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -103,7 +103,7 @@ function MagneticButton({
 }
 
 export default function Hero() {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -124,36 +124,6 @@ export default function Hero() {
       }
 
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-      const headline = headlineRef.current;
-      if (headline) {
-        const words = headline.textContent?.split(" ") || [];
-        headline.innerHTML = "";
-        headline.style.display = "inline-block";
-
-        words.forEach((word, i) => {
-          const span = document.createElement("span");
-          span.className = "inline-block mr-[0.3em]";
-          if (word === "Levina.") {
-            span.className += " text-gradient italic";
-          }
-          span.textContent = word;
-          span.style.opacity = "0";
-          span.style.transform = "translateY(60px) rotateX(30deg)";
-          span.style.perspective = "800px";
-          headline.appendChild(span);
-        });
-
-        const spans = headline.querySelectorAll("span");
-        tl.to(spans, {
-          opacity: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 0.8,
-          stagger: 0.08,
-          ease: "back.out(1.7)",
-        });
-      }
 
       if (subtitleRef.current) {
         tl.fromTo(
@@ -268,6 +238,44 @@ export default function Hero() {
 
     return () => ctx.revert();
   }, []);
+
+  // The headline is split into per-word spans for the reveal animation. It
+  // must rebuild whenever the language changes, and it must run before paint
+  // (useLayoutEffect) so React's reconciliation of the mutated DOM never
+  // shows stale text — the spans start invisible and animate in.
+  useLayoutEffect(() => {
+    const headline = headlineRef.current;
+    if (!headline) return;
+
+    if (prefersReducedMotion()) return;
+
+    const words = `${t("hero.greeting")} Levina.`.split(" ");
+    headline.innerHTML = "";
+    headline.style.display = "inline-block";
+
+    words.forEach((word) => {
+      const span = document.createElement("span");
+      span.className = "inline-block mr-[0.3em]";
+      if (word === "Levina.") {
+        span.className += " text-gradient italic";
+      }
+      span.textContent = word;
+      span.style.opacity = "0";
+      span.style.transform = "translateY(60px) rotateX(30deg)";
+      span.style.perspective = "800px";
+      headline.appendChild(span);
+    });
+
+    const spans = headline.querySelectorAll("span");
+    gsap.to(spans, {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      duration: 0.7,
+      stagger: 0.06,
+      ease: "back.out(1.7)",
+    });
+  }, [language, t]);
 
   useEffect(() => {
     const section = sectionRef.current;

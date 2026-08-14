@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components -- context module: provider + hook + dictionaries */
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { NAV_LINKS } from "@/lib/nav-links";
 
 export type Language = "en" | "sw";
@@ -379,15 +379,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }, [language]);
 
-  const t: I18nContextValue["t"] = (key, params) => {
-    let text: string = translations[language][key] ?? translations.en[key];
-    if (params) {
-      for (const [name, value] of Object.entries(params)) {
-        text = text.replaceAll(`{${name}}`, String(value));
+  const t = useMemo<I18nContextValue["t"]>(
+    () => (key, params) => {
+      let text: string = translations[language][key] ?? translations.en[key];
+      if (params) {
+        for (const [name, value] of Object.entries(params)) {
+          text = text.replaceAll(`{${name}}`, String(value));
+        }
       }
-    }
-    return text;
-  };
+      return text;
+    },
+    [language],
+  );
 
   return (
     <I18nContext.Provider value={{ language, setLanguage, t }}>{children}</I18nContext.Provider>
