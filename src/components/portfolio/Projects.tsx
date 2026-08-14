@@ -98,22 +98,35 @@ export default function Projects() {
                 className={`shine-sweep relative h-44 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-48`}
               >
                 <div className="absolute inset-0 bg-black/10" />
-                <div
-                  className="absolute inset-0 opacity-30 transition-transform duration-700 group-hover:scale-110"
-                  style={{
-                    backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-                    backgroundSize: "20px 20px",
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span
-                    className={`font-heading text-6xl font-bold drop-shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 lg:text-7xl ${
-                      project.ink === "dark" ? "text-warm-ink" : "text-white"
-                    }`}
-                  >
-                    {project.initials}
-                  </span>
-                </div>
+                {project.screenshot ? (
+                  <img
+                    src={project.screenshot}
+                    alt={`${project.title} screenshot`}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                  />
+                ) : (
+                  <>
+                    <div
+                      className="absolute inset-0 opacity-30 transition-transform duration-700 group-hover:scale-110"
+                      style={{
+                        backgroundImage:
+                          "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+                        backgroundSize: "20px 20px",
+                      }}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span
+                        className={`font-heading text-6xl font-bold drop-shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 lg:text-7xl ${
+                          project.ink === "dark" ? "text-warm-ink" : "text-white"
+                        }`}
+                      >
+                        {project.initials}
+                      </span>
+                    </div>
+                  </>
+                )}
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-4 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 transition-all duration-400 group-hover:opacity-100">
                   {project.github && (
                     <a

@@ -9,6 +9,8 @@ export interface Project {
   /** Public repository URL; omit when the repo is private or does not exist yet. */
   github?: string;
   demo: string;
+  /** Static screenshot shown on the card header; omit to fall back to initials. */
+  screenshot?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -23,6 +25,7 @@ export const PROJECTS: Project[] = [
     initials: "SD",
     github: "https://github.com/chifie/SokoDigital_frontend",
     demo: "https://soko-digital-frontend.vercel.app",
+    screenshot: "/screenshots/soko-digital.webp",
   },
   {
     title: "DalaliMkononi",
@@ -59,6 +62,7 @@ export const PROJECTS: Project[] = [
     initials: "GB",
     github: "https://github.com/chifie/GLORY_BURGER",
     demo: "https://gloryburger.com",
+    screenshot: "/screenshots/glory-burger.webp",
   },
   {
     title: "Glory Burger Mobile App",
@@ -83,5 +87,6 @@ export const PROJECTS: Project[] = [
     initials: "PW",
     github: "https://github.com/chifie/levina-showcase",
     demo: "https://levinachifie.dev",
+    screenshot: "/screenshots/portfolio-website.webp",
   },
 ];
