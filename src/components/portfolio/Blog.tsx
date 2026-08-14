@@ -83,6 +83,11 @@ function PostCard({
             backgroundSize: "20px 20px",
           }}
         />
+        {/* Tone the bright gradient down in dark mode so it harmonizes with the navy theme. */}
+        <div
+          className="absolute inset-0 bg-black/0 transition-colors duration-500 dark:bg-black/20"
+          aria-hidden="true"
+        />
         <span
           className="absolute right-5 top-5 font-heading text-4xl font-bold text-warm-ink/15 transition-colors duration-500 group-hover:text-warm-ink/30 select-none"
           aria-hidden="true"

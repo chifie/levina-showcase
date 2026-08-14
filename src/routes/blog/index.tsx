@@ -85,6 +85,10 @@ function BlogIndexPage() {
                 className="relative h-40 overflow-hidden lg:h-44"
                 style={{ background: `linear-gradient(135deg, ${post.color}, ${post.color}88)` }}
               >
+                <div
+                  className="absolute inset-0 bg-black/0 transition-colors duration-500 dark:bg-black/20"
+                  aria-hidden="true"
+                />
                 <span className="absolute left-5 top-5 rounded-full bg-warm-ink/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-warm-ink backdrop-blur-sm">
                   {post.category}
                 </span>
