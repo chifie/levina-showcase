@@ -11,7 +11,7 @@ import {
   FaCode,
 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
-import chifieImage from "@/assets/chifie.png";
+import chifieImage from "@/assets/chifie.webp";
 import { prefersReducedMotion } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scroll";
 import OrbitRing from "@/components/portfolio/OrbitRing";

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { prefersReducedMotion } from "@/lib/motion";
-import chifieImage from "@/assets/chifie.png";
+import chifieImage from "@/assets/chifie.webp";
 import SectionHeader from "@/components/portfolio/SectionHeader";
 import OrbitRing from "@/components/portfolio/OrbitRing";
 import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
