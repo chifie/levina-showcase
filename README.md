@@ -19,7 +19,7 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 | Animation  | GSAP, ScrollTrigger                                   |
 | Icons      | React Icons                                           |
 | Fonts      | Playfair Display, Inter                               |
-| Styling    | Tailwind CSS, tw-animate-css                          |
+| Styling    | Tailwind CSS                                          |
 | Deployment | Cloudflare Workers (Wrangler)                         |
 
 ## 🚀 Getting Started
@@ -225,7 +225,7 @@ npm run lint
 
 ### Project card screenshots
 
-Live project cards show a WebP screenshot of the deployed site (with a phone-viewport preview in a device frame for responsive projects) instead of a bare gradient header. Clicking a screenshot (or its expand button) opens a fullscreen lightbox with a link to the live site. Screenshots live in `public/screenshots/` and are captured with headless Chrome via the scripts in `scripts/`:
+Live project cards show a WebP screenshot of the deployed site instead of a bare gradient header — with phone- and tablet-viewport previews in device frames for responsive projects, and an automatic fallback to the gradient + initials if a screenshot ever fails to load. Clicking a screenshot (or its expand button) opens a fullscreen lightbox with a link to the live site; close it with Esc, the ✕ button, or a downward swipe (focus is trapped inside for keyboard users). Screenshots live in `public/screenshots/` and are captured with headless Chrome via the scripts in `scripts/`:
 
 ```bash
 npm run screenshots                  # recapture the external live sites
@@ -241,6 +241,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## 🔭 What's Next
 
 - [x] Live project screenshots on cards
+- [ ] Deploy the Glory Burger mobile app to a public backend so its card can show a live preview
 - [ ] Multilingual support (EN / SW)
 - [ ] Blog search and category filters
 - [ ] Dark-mode tuning for blog cards
@@ -304,7 +305,7 @@ The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`*
 - `Services.tsx` — service offering cards
 - `Projects.tsx` — project showcase grid driven by `src/lib/projects.ts`
 - `ProjectCardHeader.tsx` — gradient header with screenshot/initials fallback, phone preview, and hover actions
-- `ProjectLightbox.tsx` — fullscreen, keyboard-accessible screenshot preview dialog
+- `ProjectLightbox.tsx` — fullscreen screenshot preview with Esc/swipe-to-close, focus trap, and iOS scroll lock
 - `Blog.tsx` — article cards driven by `src/lib/blog-posts.ts`
 - `src/routes/blog/index.tsx` + `src/routes/blog/$slug.tsx` — blog listing and article pages
 - `Contact.tsx` — info cards + form with honeypot
