@@ -8,25 +8,48 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) throw notFound();
     return { post };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      {
-        title: loaderData ? `${loaderData.post.title} — Levina Chifie` : "Article — Levina Chifie",
-      },
-      {
-        name: "description",
-        content: loaderData?.post.excerpt ?? "An article by Levina Chifie on software development.",
-      },
-    ],
-    links: [
-      {
-        rel: "canonical",
-        href: loaderData
-          ? `https://levinachifie.dev/blog/${loaderData.post.slug}`
-          : "https://levinachifie.dev/blog",
-      },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const title = loaderData
+      ? `${loaderData.post.title} — Levina Chifie`
+      : "Article — Levina Chifie";
+    const description =
+      loaderData?.post.excerpt ?? "An article by Levina Chifie on software development.";
+    const url = loaderData
+      ? `https://levinachifie.dev/blog/${loaderData.post.slug}`
+      : "https://levinachifie.dev/blog";
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:type", content: "article" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: url },
+        { property: "og:image", content: "https://levinachifie.dev/og-image.png" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: loaderData
+            ? JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Article",
+                headline: loaderData.post.title,
+                description: loaderData.post.excerpt,
+                datePublished: loaderData.post.date,
+                author: {
+                  "@type": "Person",
+                  name: "Levina Chifie",
+                  url: "https://levinachifie.dev",
+                },
+              })
+            : "",
+        },
+      ],
+    };
+  },
   component: BlogPostPage,
 });
 

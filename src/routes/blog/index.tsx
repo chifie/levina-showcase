@@ -11,6 +11,15 @@ export const Route = createFileRoute("/blog/")({
         content:
           "Articles by Levina Chifie on software development, mobile engineering with Flutter, REST API design with FastAPI, and interface design.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: "Articles — Levina Chifie" },
+      {
+        property: "og:description",
+        content:
+          "Articles by Levina Chifie on software development, mobile engineering, REST API design, and interface design.",
+      },
+      { property: "og:url", content: "https://levinachifie.dev/blog" },
+      { property: "og:image", content: "https://levinachifie.dev/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://levinachifie.dev/blog" }],
   }),
