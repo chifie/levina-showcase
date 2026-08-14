@@ -67,6 +67,7 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/chifie/GLORY_BURGER",
     demo: "https://gloryburger.com",
     screenshot: "/screenshots/glory-burger.webp",
+    mobileScreenshot: "/screenshots/glory-burger-mobile.webp",
   },
   {
     title: "Glory Burger Mobile App",
