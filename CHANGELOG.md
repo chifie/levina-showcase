@@ -3,7 +3,20 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]### Added
+- TanzaniaKiganjani deployed to GitHub Pages and now has desktop + phone screenshots, a live demo link, and its real GitHub repo on the card
+- Fullscreen screenshot lightbox on project cards (click a screenshot or the expand button; Escape/focus/aria-modal supported)
+- `npm run screenshots` script; capture script gained `OUT_DIR` support and captures this portfolio from its production Cloudflare worker build
+- Portfolio screenshots recaptured from the production build
+- Open Graph tags on `/blog` and JSON-LD `Article` schema on article pages
 
+### Fixed
+- TanzaniaKiganjani card description corrected to match the live product (vehicle transport platform)
+
+### Changed
+- Project card header extracted into `ProjectCardHeader`; lightbox lives in `ProjectLightbox`
+- Removed the unused shadcn `ui/` components and the `use-mobile` hook (lint is now warning-free)
+
+### Added
 - DalaliMkononi screenshot from its live Vercel deployment
 - Mobile-viewport screenshots shown as device-framed previews on the DalaliMkononi, Glory Burger, and Portfolio cards
 - `scripts/capture-screenshots.sh` + CDP helpers to re-capture all card screenshots
