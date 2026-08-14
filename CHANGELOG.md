@@ -3,7 +3,20 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]### Added
+
+- DalaliMkononi screenshot from its live Vercel deployment
+- Mobile-viewport screenshots shown as device-framed previews on the DalaliMkononi, Glory Burger, and Portfolio cards
+- `scripts/capture-screenshots.sh` + CDP helpers to re-capture all card screenshots
 - Live screenshots on project cards (SokoDigital, Glory Burger, and this portfolio) with an initials fallback for projects without a live demo
+
+### Fixed
+
+- DalaliMkononi demo link pointed at a domain that no longer exists; now links to the live Vercel deployment
+
+### SEO
+
+- Per-page titles, descriptions, and canonicals on the `/blog` and `/blog/:slug` routes
+- Refreshed `sitemap.xml` `lastmod` date
 - Blog listing (`/blog`) and article (`/blog/:slug`) pages with full article content
 - Downloadable CV (`public/levina-chifie-cv.pdf`) wired to the Hero and Navbar CV buttons
 
