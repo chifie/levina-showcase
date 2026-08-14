@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
+    "screenshots": "bash scripts/capture-screenshots.sh",
     "check": "npm run typecheck && npm run lint"
   },
   "dependencies": {
