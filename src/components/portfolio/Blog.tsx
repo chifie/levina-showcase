@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "@tanstack/react-router";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog-posts";
@@ -16,6 +17,7 @@ function PostCard({
   date,
   readTime,
   color,
+  slug,
   index,
 }: {
   title: string;
@@ -24,6 +26,7 @@ function PostCard({
   date: string;
   readTime: string;
   color: string;
+  slug: string;
   index: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -94,9 +97,13 @@ function PostCard({
 
       <div className="flex flex-1 flex-col p-6 lg:p-7">
         <div className="mb-3 h-1 w-10 rounded-full bg-gradient-warm transition-all duration-500 group-hover:w-16" />
-        <h3 className="font-heading text-xl font-bold leading-snug transition-colors group-hover:text-brand">
+        <Link
+          to="/blog/$slug"
+          params={{ slug }}
+          className="font-heading text-xl font-bold leading-snug transition-colors group-hover:text-brand"
+        >
           {title}
-        </h3>
+        </Link>
         <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
           {excerpt}
         </p>
@@ -110,6 +117,16 @@ function PostCard({
             <FaClock className="text-brand" />
             {readTime}
           </span>
+        </div>
+
+        <div className="mt-5 flex gap-3 border-t border-brand/10 pt-5">
+          <Link
+            to="/blog/$slug"
+            params={{ slug }}
+            className="flex-1 rounded-full glass border border-brand/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow hover:bg-brand/10 focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            Read More
+          </Link>
         </div>
       </div>
     </div>
