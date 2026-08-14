@@ -247,6 +247,16 @@ export default function Contact() {
       return;
     }
 
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const subject = String(data.get("subject") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    const mailtoUrl = `mailto:levinachifie016@gmail.com?subject=${encodeURIComponent(
+      subject || `Portfolio contact from ${name || "a visitor"}`,
+    )}&body=${encodeURIComponent(`${message}\n\n— ${name} (${email})`.trim())}`;
+
     setSubmitting(true);
 
     gsap.to(formRef.current, {
@@ -256,6 +266,7 @@ export default function Contact() {
       repeat: 1,
       onComplete: () => {
         setTimeout(() => {
+          window.location.href = mailtoUrl;
           setSubmitting(false);
           setSent(true);
           setTimeout(() => setSent(false), 4000);
