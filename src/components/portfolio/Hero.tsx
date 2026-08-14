@@ -35,11 +35,13 @@ function MagneticButton({
   href,
   primary,
   className = "",
+  newTab = false,
 }: {
   children: React.ReactNode;
   href: string;
   primary?: boolean;
   className?: string;
+  newTab?: boolean;
 }) {
   const btnRef = useRef<HTMLAnchorElement>(null);
 
@@ -82,6 +84,8 @@ function MagneticButton({
     <a
       ref={btnRef}
       href={href}
+      target={newTab ? "_blank" : undefined}
+      rel={newTab ? "noreferrer" : undefined}
       className={`group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer ${className} ${
         primary
           ? "bg-gradient-warm text-warm-ink shadow-warm hover:shadow-elegant"
@@ -432,7 +436,7 @@ export default function Hero() {
                 Contact Me
                 <FaArrowRight className="text-sm" />
               </MagneticButton>
-              <MagneticButton href="#" primary={false}>
+              <MagneticButton href="/levina-chifie-cv.pdf" newTab>
                 Download CV
                 <svg
                   className="ml-1 h-4 w-4"

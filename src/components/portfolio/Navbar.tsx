@@ -187,7 +187,9 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href="#"
+            href="/levina-chifie-cv.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="group hidden items-center gap-2 rounded-full bg-gradient-warm px-4 py-2 text-sm font-semibold text-warm-ink shadow-warm transition-all duration-300 hover:scale-105 hover:shadow-lg sm:flex"
           >
             <FaDownload className="text-xs transition-transform group-hover:-translate-y-0.5" />
@@ -249,7 +251,9 @@ export default function Navbar() {
             ))}
             <li className="mt-2 pt-2 border-t border-border/50">
               <a
-                href="#"
+                href="/levina-chifie-cv.pdf"
+                target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 rounded-xl bg-gradient-warm px-4 py-3 text-sm font-semibold text-warm-ink"
               >
                 <FaDownload className="text-xs" />

@@ -1,0 +1,61 @@
+%!PS
+% One-page CV for Levina Chifie.
+% Regenerate the PDF with:  gs -sDEVICE=pdfwrite -o public/levina-chifie-cv.pdf scripts/cv.ps
+% This is a starter CV — replace with the real letter when available.
+
+/L  { /Helvetica findfont exch scalefont setfont } def
+/B  { /Helvetica-Bold findfont exch scalefont setfont } def
+/O  { /Helvetica-Oblique findfont exch scalefont setfont } def
+
+/NAVY  { 0.05 0.23 0.40 setrgbcolor } def
+/BLACK { 0 0 0 setrgbcolor } def
+/GRAY  { 0.45 0.45 0.45 setrgbcolor } def
+
+/Line    { 54 exch moveto } def
+/Rule    { dup 54 exch moveto 558 exch lineto 0.8 setgray stroke } def
+
+% ---- Header ----
+54 712 moveto 22 B NAVY (LEVINA CHIFIE) show
+54 688 moveto 12 L BLACK (Full Stack Software Developer & Mobile App Developer) show
+54 672 moveto 9.5 L GRAY (levinachifie016@gmail.com  |  github.com/chifie  |  linkedin.com/in/levinachifie) show
+54 660 moveto 9.5 L GRAY (Dar es Salaam, Tanzania  |  Available Worldwide) show
+644 Rule
+
+% ---- Professional Summary ----
+54 620 moveto 11.5 B NAVY (PROFESSIONAL SUMMARY) show
+54 606 moveto 9.5 L BLACK (Full Stack Software Developer and Mobile App Developer based in Tanzania, passionate) show
+54 593 moveto 9.5 L BLACK (about building clean, scalable applications across web and mobile. Combines a strong) show
+54 580 moveto 9.5 L BLACK (software engineering foundation with a designer's eye, transforming complex) show
+54 567 moveto 9.5 L BLACK (requirements into clean, maintainable code and intuitive user interfaces.) show
+
+% ---- Core Skills ----
+54 545 moveto 11.5 B NAVY (CORE SKILLS) show
+54 531 moveto 9.5 L BLACK (Languages:   JavaScript, TypeScript, Python, PHP) show
+54 518 moveto 9.5 L BLACK (Frontend:    React, Next.js, HTML5, CSS3, Tailwind CSS, GSAP) show
+54 505 moveto 9.5 L BLACK (Backend:     FastAPI, NestJS, Express.js, Node.js, REST API design) show
+54 492 moveto 9.5 L BLACK (Mobile:      Flutter, Dart, Java (Android)) show
+54 479 moveto 9.5 L BLACK (Databases:   PostgreSQL, MySQL) show
+54 466 moveto 9.5 L BLACK (Tools:       Git, GitHub, Docker, VS Code, Postman) show
+
+% ---- Experience ----
+54 444 moveto 11.5 B NAVY (EXPERIENCE) show
+54 430 moveto 9.5 L BLACK (Full Stack Software Developer  |  3+ Years  |  Tanzania) show
+54 416 moveto 9.5 L BLACK (- Build end-to-end web applications with React, Next.js, and TypeScript.) show
+54 402 moveto 9.5 L BLACK (- Design and implement robust REST APIs with FastAPI, NestJS, and Node.js.) show
+54 388 moveto 9.5 L BLACK (- Develop cross-platform mobile apps with Flutter for iOS and Android from one codebase.) show
+54 374 moveto 9.5 L BLACK (- Ship responsive, accessible interfaces with Tailwind CSS and modern CSS techniques.) show
+
+% ---- Selected Projects ----
+54 352 moveto 11.5 B NAVY (SELECTED PROJECTS) show
+54 338 moveto 9.5 L BLACK (SokoDigital       -  Marketplace platform for Tanzania (React, FastAPI, PostgreSQL)) show
+54 325 moveto 9.5 L BLACK (DalaliMkononi     -  Real estate marketplace (Next.js, Node.js, PostgreSQL)) show
+54 312 moveto 9.5 L BLACK (TanzaniaKiganjani -  Digital services platform (React, NestJS, MySQL)) show
+54 299 moveto 9.5 L BLACK (Glory Burger      -  Restaurant website and Flutter food-ordering app) show
+
+% ---- Contact ----
+54 277 moveto 11.5 B NAVY (CONTACT) show
+54 263 moveto 9.5 L BLACK (Email:   levinachifie016@gmail.com) show
+54 250 moveto 9.5 L BLACK (GitHub:  github.com/chifie     LinkedIn: linkedin.com/in/levinachifie) show
+54 237 moveto 9.5 L BLACK (Open to full-time, freelance, and remote opportunities.) show
+
+showpage
