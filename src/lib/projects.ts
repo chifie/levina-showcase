@@ -46,14 +46,16 @@ export const PROJECTS: Project[] = [
   {
     title: "TanzaniaKiganjani",
     description:
-      "A digital services platform connecting providers and clients for various services including consulting, delivery, and local business solutions.",
-    tech: ["React", "NestJS", "MySQL", "Tailwind CSS"],
+      "A vehicle transport and logistics platform connecting customers with reliable transport services across Tanzania.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     gradient: "from-[#f95738] via-[#0d3b66] to-[#082a4c]",
     color: "#f95738",
     ink: "light",
     initials: "TK",
     github: "https://github.com/chifie/kiganjani-drive-hub",
-    demo: "https://tanzaniakiganjani.com",
+    demo: "https://chifie.github.io/kiganjani-drive-hub/",
+    screenshot: "/screenshots/tanzania-kiganjani.webp",
+    mobileScreenshot: "/screenshots/tanzania-kiganjani-mobile.webp",
   },
   {
     title: "Glory Burger Website",
