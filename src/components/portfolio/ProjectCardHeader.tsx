@@ -62,6 +62,23 @@ export default function ProjectCardHeader({
           />
         </div>
       )}
+      {project.tabletScreenshot && (
+        <div
+          className="absolute bottom-4 left-4 w-16 overflow-hidden rounded-lg border-2 border-white/70 shadow-lg transition-all duration-500 group-hover:-translate-y-1.5 group-hover:scale-105 group-hover:border-white sm:w-20"
+          aria-hidden="true"
+        >
+          <span className="absolute left-1/2 top-1 z-10 h-1 w-4 -translate-x-1/2 rounded-full bg-white/60" />
+          <img
+            src={project.tabletScreenshot}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+            className="block w-full select-none object-cover object-top"
+            style={{ aspectRatio: "3 / 4" }}
+          />
+        </div>
+      )}
       <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-4 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 transition-all duration-400 group-hover:opacity-100">
         {onExpand && project.screenshot && (
           <button

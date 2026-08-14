@@ -8,11 +8,14 @@ export interface Project {
   initials: string;
   /** Public repository URL; omit when the repo is private or does not exist yet. */
   github?: string;
-  demo: string;
+  /** Live demo URL; omit when the project is not deployed. */
+  demo?: string;
   /** Static screenshot shown on the card header; omit to fall back to initials. */
   screenshot?: string;
   /** Phone-viewport screenshot rendered in a device frame on the card header. */
   mobileScreenshot?: string;
+  /** Tablet-viewport screenshot rendered in a tablet frame on the card header. */
+  tabletScreenshot?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -56,6 +59,7 @@ export const PROJECTS: Project[] = [
     demo: "https://chifie.github.io/kiganjani-drive-hub/",
     screenshot: "/screenshots/tanzania-kiganjani.webp",
     mobileScreenshot: "/screenshots/tanzania-kiganjani-mobile.webp",
+    tabletScreenshot: "/screenshots/tanzania-kiganjani-tablet.webp",
   },
   {
     title: "Glory Burger Website",
