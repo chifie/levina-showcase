@@ -225,14 +225,14 @@ npm run lint
 
 ### Project card screenshots
 
-Live project cards show a WebP screenshot of the deployed site (with a phone-viewport preview in a device frame for responsive projects) instead of a bare gradient header. Screenshots live in `public/screenshots/` and are captured with headless Chrome via the scripts in `scripts/`:
+Live project cards show a WebP screenshot of the deployed site (with a phone-viewport preview in a device frame for responsive projects) instead of a bare gradient header. Clicking a screenshot (or its expand button) opens a fullscreen lightbox with a link to the live site. Screenshots live in `public/screenshots/` and are captured with headless Chrome via the scripts in `scripts/`:
 
 ```bash
-./scripts/capture-screenshots.sh          # recapture the external live sites
-./scripts/capture-screenshots.sh --local  # also recapture this portfolio from the dev server
+npm run screenshots                  # recapture the external live sites
+npm run screenshots -- --local       # also recapture this portfolio from its production build
 ```
 
-Requires Chrome/Chromium, Node 22+, and ImageMagick. Update the URLs in `scripts/capture-screenshots.sh` whenever a project is redeployed, then add the resulting file name to the project's `screenshot` / `mobileScreenshot` field in `src/lib/projects.ts`.
+Requires Chrome/Chromium, Node 22+, and ImageMagick. External captures hit each project's live deployment; `--local` builds the site and serves it through the Cloudflare worker (`wrangler dev`) so the portfolio card shows real production output. Set `OUT_DIR` to redirect captures (e.g. for dry runs). Update the URLs in `scripts/capture-screenshots.sh` whenever a project is redeployed, then add the resulting file name to the project's `screenshot` / `mobileScreenshot` field in `src/lib/projects.ts`.
 
 ## 🤝 Contributing
 
@@ -303,6 +303,8 @@ The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`*
 - `src/lib/projects.ts` — typed project entries (title, description, tech, links)
 - `Services.tsx` — service offering cards
 - `Projects.tsx` — project showcase grid driven by `src/lib/projects.ts`
+- `ProjectCardHeader.tsx` — gradient header with screenshot/initials fallback, phone preview, and hover actions
+- `ProjectLightbox.tsx` — fullscreen, keyboard-accessible screenshot preview dialog
 - `Blog.tsx` — article cards driven by `src/lib/blog-posts.ts`
 - `src/routes/blog/index.tsx` + `src/routes/blog/$slug.tsx` — blog listing and article pages
 - `Contact.tsx` — info cards + form with honeypot
