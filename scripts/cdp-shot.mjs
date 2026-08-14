@@ -35,6 +35,14 @@ await new Promise((resolve, reject) => {
   ws.onerror = reject;
 });
 
+// Force desktop metrics so a previous phone-viewport capture on the same
+// Chrome target can't leak its emulation into this screenshot.
+await send("Emulation.setDeviceMetricsOverride", {
+  width: 1280,
+  height: 900,
+  deviceScaleFactor: 1,
+  mobile: false,
+});
 // Emulate light color scheme before the page's theme script runs.
 await send("Emulation.setEmulatedMedia", {
   media: "",
