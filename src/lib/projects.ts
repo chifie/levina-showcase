@@ -92,5 +92,6 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/chifie/levina-showcase",
     demo: "https://levinachifie.dev",
     screenshot: "/screenshots/portfolio-website.webp",
+    mobileScreenshot: "/screenshots/portfolio-mobile.webp",
   },
 ];
