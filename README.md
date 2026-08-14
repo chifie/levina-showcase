@@ -223,6 +223,17 @@ npm run lint
 | Blog     | Article cards with category badges, dates, and read times             |
 | Contact  | Info cards plus a floating-label contact form with honeypot           |
 
+### Project card screenshots
+
+Live project cards show a WebP screenshot of the deployed site (with a phone-viewport preview in a device frame for responsive projects) instead of a bare gradient header. Screenshots live in `public/screenshots/` and are captured with headless Chrome via the scripts in `scripts/`:
+
+```bash
+./scripts/capture-screenshots.sh          # recapture the external live sites
+./scripts/capture-screenshots.sh --local  # also recapture this portfolio from the dev server
+```
+
+Requires Chrome/Chromium, Node 22+, and ImageMagick. Update the URLs in `scripts/capture-screenshots.sh` whenever a project is redeployed, then add the resulting file name to the project's `screenshot` / `mobileScreenshot` field in `src/lib/projects.ts`.
+
 ## 🤝 Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests. Accessibility and reduced-motion support are part of the definition of done.
