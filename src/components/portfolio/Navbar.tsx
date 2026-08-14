@@ -159,7 +159,7 @@ export default function Navbar() {
           <div
             ref={indicatorRef}
             className="absolute bottom-0 h-[3px] rounded-full bg-gradient-warm"
-            style={{ width: 0, x: 0 }}
+            style={{ width: 0 }}
           />
           <ul className="flex items-center gap-1">
             {NAV_LINKS.map((n) => (
