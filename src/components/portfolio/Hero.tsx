@@ -16,6 +16,7 @@ import { prefersReducedMotion } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scroll";
 import OrbitRing from "@/components/portfolio/OrbitRing";
 import { SOCIAL_LINKS } from "@/lib/social-links";
+import { useI18n } from "@/lib/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -102,6 +103,7 @@ function MagneticButton({
 }
 
 export default function Hero() {
+  const { t } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -398,30 +400,29 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sunset opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sunset" />
               </span>
-              Available for opportunities
+              {t("hero.available")}
             </div>
 
             <h1
               ref={headlineRef}
               className="font-heading text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl"
             >
-              Hi, I&apos;m <span className="text-gradient italic">Levina.</span>
+              {t("hero.greeting")} <span className="text-gradient italic">Levina.</span>
             </h1>
 
             <p
               ref={subtitleRef}
               className="mt-3 font-heading text-2xl font-semibold md:text-3xl lg:text-4xl"
             >
-              Full Stack Software Developer
-              <span className="text-gradient italic">&amp; Mobile App Developer</span>
+              {t("hero.role")}
+              <span className="text-gradient italic">{t("hero.roleAnd")}</span>
             </p>
 
             <p
               ref={descriptionRef}
               className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground lg:mx-0 md:text-lg"
             >
-              I build modern, scalable web and mobile applications with clean architecture, elegant
-              design, and robust backend systems that deliver real value.
+              {t("hero.description")}
             </p>
 
             <div
@@ -429,15 +430,15 @@ export default function Hero() {
               className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start"
             >
               <MagneticButton href="#projects" primary>
-                View Projects
+                {t("hero.viewProjects")}
                 <span className="text-sm">→</span>
               </MagneticButton>
               <MagneticButton href="#contact">
-                Contact Me
+                {t("hero.contactMe")}
                 <FaArrowRight className="text-sm" />
               </MagneticButton>
               <MagneticButton href="/levina-chifie-cv.pdf" newTab>
-                Download CV
+                {t("common.downloadCV")}
                 <svg
                   className="ml-1 h-4 w-4"
                   fill="none"
@@ -491,7 +492,7 @@ export default function Hero() {
                 <div className="group relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
                   <img
                     src={chifieImage}
-                    alt="Levina Chifie - Full Stack Software Developer"
+                    alt={t("hero.alt")}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="eager"
                     decoding="async"
@@ -508,7 +509,7 @@ export default function Hero() {
                 className="absolute -left-4 -top-2 flex items-center gap-1.5 rounded-full glass-strong border border-brand/20 px-3 py-1.5 shadow-elegant animate-float-slow"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse-soft" />
-                <p className="text-[10px] font-semibold text-brand-dark">Open to work</p>
+                <p className="text-[10px] font-semibold text-brand-dark">{t("hero.openToWork")}</p>
               </div>
               <div
                 data-hero-badge
@@ -520,8 +521,10 @@ export default function Hero() {
                     <FaCode className="text-xs" />
                   </span>
                   <div>
-                    <p className="text-xs font-semibold text-brand-dark">3+ Years</p>
-                    <p className="text-[10px] text-muted-foreground">Experience</p>
+                    <p className="text-xs font-semibold text-brand-dark">
+                      {t("hero.experienceYears")}
+                    </p>
+                    <p className="text-[10px] text-muted-foreground">{t("hero.experience")}</p>
                   </div>
                 </div>
               </div>
@@ -538,7 +541,7 @@ export default function Hero() {
               scrollToSection("about");
             }}
           >
-            <span>Scroll Down</span>
+            <span>{t("hero.scrollDown")}</span>
             <span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-brand/25 p-1.5 transition-colors group-hover:border-brand/50">
               <span className="h-2 w-1 animate-scroll-dot rounded-full bg-gradient-warm" />
             </span>

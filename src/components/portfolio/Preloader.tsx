@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { prefersReducedMotion } from "@/lib/motion";
+import { useI18n } from "@/lib/i18n";
 
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
+  const { t } = useI18n();
   const containerRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
@@ -95,7 +97,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       ref={containerRef}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
       role="status"
-      aria-label="Loading Levina Chifie portfolio"
+      aria-label={t("preloader.label")}
       style={{
         background: "#0a1d33",
         perspective: "1000px",
@@ -135,7 +137,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         ref={textRef}
         className="relative z-10 mt-4 text-xs font-medium uppercase tracking-[0.3em] text-white/40"
       >
-        Loading portfolio
+        {t("preloader.loading")}
       </div>
     </div>
   );

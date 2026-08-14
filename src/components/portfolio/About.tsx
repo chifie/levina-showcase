@@ -6,10 +6,12 @@ import chifieImage from "@/assets/chifie.webp";
 import SectionHeader from "@/components/portfolio/SectionHeader";
 import OrbitRing from "@/components/portfolio/OrbitRing";
 import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
+import { useI18n } from "@/lib/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
+  const { t } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -83,13 +85,13 @@ export default function About() {
         <SectionHeader
           ref={headerRef}
           titleId="about-title"
-          eyebrow="About"
+          eyebrow={t("about.eyebrow")}
           title={
             <>
-              Crafting Code with <span className="text-gradient italic">Purpose</span>
+              {t("about.titleA")} <span className="text-gradient italic">{t("about.titleB")}</span>
             </>
           }
-          subtitle="Building high-quality software that solves real problems and delivers exceptional user experiences"
+          subtitle={t("about.subtitle")}
         />
 
         <div className="grid items-center gap-10 lg:grid-cols-5 lg:gap-14">
@@ -107,7 +109,7 @@ export default function About() {
                 <div className="group relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background">
                   <img
                     src={chifieImage}
-                    alt="Levina Chifie portrait"
+                    alt={t("about.alt")}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                     decoding="async"
@@ -136,52 +138,42 @@ export default function About() {
               &ldquo;
             </span>
             <p className="font-heading text-2xl font-semibold">
-              I&apos;m a dedicated Full Stack Software Developer
+              {t("about.intro")}
               <span className="inline-block animate-float-fast">⚡</span>
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Web Development", "Mobile Development", "API Design", "UI Implementation"].map(
-                (tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full glass border border-brand/20 px-3.5 py-1.5 text-[11px] font-medium text-brand-dark transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand/10 hover:border-brand/40"
-                  >
-                    {tag}
-                  </span>
-                ),
-              )}
+              {(
+                ["about.tag.web", "about.tag.mobile", "about.tag.api", "about.tag.ui"] as const
+              ).map((key) => (
+                <span
+                  key={key}
+                  className="rounded-full glass border border-brand/20 px-3.5 py-1.5 text-[11px] font-medium text-brand-dark transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand/10 hover:border-brand/40"
+                >
+                  {t(key)}
+                </span>
+              ))}
             </div>
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                With a good foundation in software engineering, I specialize in building modern,
-                scalable web and mobile applications. I transform complex requirements into clean,
-                maintainable code and intuitive user interfaces that users love.
-              </p>
-              <p>
-                I work across the entire stack — from designing polished front-end experiences with
-                React and Next.js, to building robust back-end APIs with FastAPI and NestJS. My
-                focus is on writing code that is not only functional but also performant, secure,
-                and easy to maintain.
-              </p>
-              <p>
-                Mobile development is another core strength. I build cross-platform mobile
-                applications with Flutter and Dart, delivering native-quality experiences on both
-                iOS and Android from a single codebase. I also build native Android applications
-                using Java.
-              </p>
+              <p>{t("about.p1")}</p>
+              <p>{t("about.p2")}</p>
+              <p>{t("about.p3")}</p>
             </div>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {[
-                { title: "Full Stack", detail: "Web + Mobile + API" },
-                { title: "Clean Code", detail: "Tested & Maintainable" },
-                { title: "User First", detail: "Polished Experiences" },
-              ].map((item) => (
+              {(
+                [
+                  { titleKey: "about.stat.fullstack", detailKey: "about.stat.fullstackDetail" },
+                  { titleKey: "about.stat.clean", detailKey: "about.stat.cleanDetail" },
+                  { titleKey: "about.stat.user", detailKey: "about.stat.userDetail" },
+                ] as const
+              ).map((item) => (
                 <div
-                  key={item.title}
+                  key={item.titleKey}
                   className="rounded-2xl glass border border-brand/10 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-glow hover:border-brand/30"
                 >
-                  <div className="font-heading text-sm font-bold text-brand">{item.title}</div>
-                  <div className="mt-1 text-[11px] text-muted-foreground">{item.detail}</div>
+                  <div className="font-heading text-sm font-bold text-brand">
+                    {t(item.titleKey)}
+                  </div>
+                  <div className="mt-1 text-[11px] text-muted-foreground">{t(item.detailKey)}</div>
                 </div>
               ))}
             </div>

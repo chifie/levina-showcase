@@ -4,10 +4,12 @@ import { useTheme } from "@/hooks/use-theme";
 import { prefersReducedMotion } from "@/lib/motion";
 import { scrollToSection } from "@/lib/scroll";
 import { NAV_LINKS } from "@/lib/nav-links";
-import { FaSun, FaMoon, FaBars, FaTimes, FaDownload } from "react-icons/fa";
+import { useI18n, NAV_LABEL_KEYS } from "@/lib/i18n";
+import { FaSun, FaMoon, FaBars, FaTimes, FaDownload, FaGlobe } from "react-icons/fa";
 
 export default function Navbar() {
   const { theme, toggle } = useTheme();
+  const { t, language, setLanguage } = useI18n();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -134,7 +136,7 @@ export default function Navbar() {
       }`}
     >
       <nav
-        aria-label="Primary navigation"
+        aria-label={t("common.primaryNav")}
         className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${
           scrolled ? "glass-strong shadow-elegant mx-4 border border-brand/10" : "bg-transparent"
         }`}
@@ -178,7 +180,7 @@ export default function Navbar() {
                       : "text-muted-foreground hover:text-foreground hover:bg-brand/5"
                   }`}
                 >
-                  {n.label}
+                  {t(NAV_LABEL_KEYS[n.id])}
                 </a>
               </li>
             ))}
@@ -193,12 +195,24 @@ export default function Navbar() {
             className="group hidden items-center gap-2 rounded-full bg-gradient-warm px-4 py-2 text-sm font-semibold text-warm-ink shadow-warm transition-all duration-300 hover:scale-105 hover:shadow-lg sm:flex"
           >
             <FaDownload className="text-xs transition-transform group-hover:-translate-y-0.5" />
-            <span>CV</span>
+            <span>{t("common.cv")}</span>
           </a>
 
           <button
+            onClick={() => setLanguage(language === "en" ? "sw" : "en")}
+            aria-label={
+              language === "en" ? t("common.switchToSwahili") : t("common.switchToEnglish")
+            }
+            title={language === "en" ? t("common.switchToSwahili") : t("common.switchToEnglish")}
+            className="inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full glass text-xs font-bold transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-brand/10"
+          >
+            <FaGlobe className="text-[10px] text-muted-foreground" aria-hidden="true" />
+            {language === "en" ? "SW" : "EN"}
+          </button>
+
+          <button
             onClick={toggle}
-            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={theme === "dark" ? t("common.switchToLight") : t("common.switchToDark")}
             className="group relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-brand/10"
           >
             <span
@@ -212,7 +226,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen((o) => !o)}
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t("common.closeMenu") : t("common.openMenu")}
             aria-expanded={open}
             aria-controls="mobile-menu"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full glass transition-all duration-300 hover:scale-105 hover:shadow-glow md:hidden"
@@ -226,7 +240,7 @@ export default function Navbar() {
         <nav
           id="mobile-menu"
           ref={mobileMenuRef}
-          aria-label="Site navigation"
+          aria-label={t("common.siteNav")}
           className="mx-4 mt-2 rounded-2xl glass-strong border border-brand/10 p-3 shadow-elegant md:hidden"
         >
           <ul className="flex flex-col gap-1">
@@ -245,7 +259,7 @@ export default function Navbar() {
                       : "hover:bg-brand/5 hover:text-foreground"
                   }`}
                 >
-                  {n.label}
+                  {t(NAV_LABEL_KEYS[n.id])}
                 </a>
               </li>
             ))}
@@ -257,7 +271,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 rounded-xl bg-gradient-warm px-4 py-3 text-sm font-semibold text-warm-ink"
               >
                 <FaDownload className="text-xs" />
-                Download CV
+                {t("common.downloadCV")}
               </a>
             </li>
           </ul>
