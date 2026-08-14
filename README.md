@@ -13,14 +13,14 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 
 ## 🛠 Tech Stack
 
-| Area | Technologies |
-| --- | --- |
-| Frontend | React 19, TypeScript, TanStack Start, Tailwind CSS v4 |
-| Animation | GSAP, ScrollTrigger |
-| Icons | React Icons |
-| Fonts | Playfair Display, Inter |
-| Styling | Tailwind CSS, tw-animate-css |
-| Deployment | Cloudflare Workers (Wrangler) |
+| Area       | Technologies                                          |
+| ---------- | ----------------------------------------------------- |
+| Frontend   | React 19, TypeScript, TanStack Start, Tailwind CSS v4 |
+| Animation  | GSAP, ScrollTrigger                                   |
+| Icons      | React Icons                                           |
+| Fonts      | Playfair Display, Inter                               |
+| Styling    | Tailwind CSS, tw-animate-css                          |
+| Deployment | Cloudflare Workers (Wrangler)                         |
 
 ## 🚀 Getting Started
 
@@ -99,19 +99,20 @@ This project is licensed under the [MIT License](LICENSE).
 ## 🗺 Roadmap
 
 - [x] Add blog section
+- [x] Add blog detail pages (`/blog` and `/blog/:slug`)
 - [ ] Add live project screenshots to cards
 - [ ] Add multilingual support
 - [ ] Add project search and filters
 
 ## ⚙️ Scripts
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the Vite dev server |
-| `npm run build` | Build for production |
-| `npm run lint` | Lint the codebase with ESLint |
-| `npm run typecheck` | Run TypeScript type checking |
-| `npm run format` | Format with Prettier |
+| Command             | Description                   |
+| ------------------- | ----------------------------- |
+| `npm run dev`       | Start the Vite dev server     |
+| `npm run build`     | Build for production          |
+| `npm run lint`      | Lint the codebase with ESLint |
+| `npm run typecheck` | Run TypeScript type checking  |
+| `npm run format`    | Format with Prettier          |
 
 ## 🧩 Customization
 
@@ -139,7 +140,7 @@ Heading and body fonts are configured via the `--font-heading` and `--font-body`
 
 ### Blog posts
 
-Edit `src/lib/blog-posts.ts` and add an entry to `BLOG_POSTS` with a title, excerpt, category, date, and read time.
+Edit `src/lib/blog-posts.ts` and add an entry to `BLOG_POSTS` with a title, excerpt, category, date, read time, a unique `slug`, and `content` paragraphs. The blog cards and `/blog/:slug` article pages render automatically — no other changes needed.
 
 ## 💡 FAQ
 
@@ -215,12 +216,12 @@ npm run lint
 
 ## 🖼 Screenshots
 
-| Section | Description |
-| --- | --- |
-| Hero | Full-screen intro with circular profile photo and floating tech icons |
-| Projects | Project cards with distinct gradient headers and tech badges |
-| Blog | Article cards with category badges, dates, and read times |
-| Contact | Info cards plus a floating-label contact form with honeypot |
+| Section  | Description                                                           |
+| -------- | --------------------------------------------------------------------- |
+| Hero     | Full-screen intro with circular profile photo and floating tech icons |
+| Projects | Project cards with distinct gradient headers and tech badges          |
+| Blog     | Article cards with category badges, dates, and read times             |
+| Contact  | Info cards plus a floating-label contact form with honeypot           |
 
 ## 🤝 Contributing
 
@@ -255,7 +256,7 @@ Found a bug or have an idea? Open an [issue](https://github.com/chifie/levina-sh
 
 ## 🖼 Profile Photo
 
-The profile photo appears in both the **Hero** (portrait oval frame) and the **About** section (two-column layout). The image lives at `src/assets/chifie.png` and uses `object-position: center 35%` to keep the head and neck visible.
+The profile photo appears in both the **Hero** (portrait oval frame) and the **About** section (two-column layout). The image lives at `src/assets/chifie.webp` (an optimized WebP) and uses `object-position: center 35%` to keep the head and neck visible.
 
 ## 🧠 Design Language
 
@@ -270,15 +271,15 @@ The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`*
 
 ## 🧭 Sections
 
-| Section | Description |
-| --- | --- |
-| Home | Hero with portrait photo, intro, CTAs, and social links |
-| About | Photo + story in a two-column layout |
-| Skills | Languages-first category cards with proficiency bars |
-| Services | Four service cards with hover reveals |
-| Projects | Six project cards with gradient headers |
-| Blog | Three article cards with category badges |
-| Contact | Info cards and a floating-label form |
+| Section  | Description                                             |
+| -------- | ------------------------------------------------------- |
+| Home     | Hero with portrait photo, intro, CTAs, and social links |
+| About    | Photo + story in a two-column layout                    |
+| Skills   | Languages-first category cards with proficiency bars    |
+| Services | Four service cards with hover reveals                   |
+| Projects | Six project cards with gradient headers                 |
+| Blog     | Three article cards with category badges                |
+| Contact  | Info cards and a floating-label form                    |
 
 ## 🧩 Components
 
@@ -292,6 +293,7 @@ The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`*
 - `Services.tsx` — service offering cards
 - `Projects.tsx` — project showcase grid driven by `src/lib/projects.ts`
 - `Blog.tsx` — article cards driven by `src/lib/blog-posts.ts`
+- `src/routes/blog/index.tsx` + `src/routes/blog/$slug.tsx` — blog listing and article pages
 - `Contact.tsx` — info cards + form with honeypot
 - `Footer.tsx` — navigation, links, scroll progress, cursor
 - `Navbar.tsx` — fixed nav with active section indicator
@@ -329,15 +331,15 @@ The Blog header shows category chips (Backend, Mobile, Design) driven by the sha
 
 ## 🎨 Brand Colors
 
-| Token | Light | Dark |
-| --- | --- | --- |
-| `--brand` | `#0d3b66` (Yale Blue) | `#c6d6ea` |
-| `--brand-light` | `#3e5f8e` | `#9db0c8` |
-| `--brand-dark` | `#082a4c` | `#faf0ca` |
-| `--background` | `#faf0ca` (Lemon Chiffon) | `#0a1d33` |
-| `--maize` | `#f4d35e` | `#f7d96f` |
-| `--sunset` | `#ee964b` | `#f0a45c` |
-| `--terra` | `#f95738` | `#ff6b4a` |
+| Token           | Light                     | Dark      |
+| --------------- | ------------------------- | --------- |
+| `--brand`       | `#0d3b66` (Yale Blue)     | `#c6d6ea` |
+| `--brand-light` | `#3e5f8e`                 | `#9db0c8` |
+| `--brand-dark`  | `#082a4c`                 | `#faf0ca` |
+| `--background`  | `#faf0ca` (Lemon Chiffon) | `#0a1d33` |
+| `--maize`       | `#f4d35e`                 | `#f7d96f` |
+| `--sunset`      | `#ee964b`                 | `#f0a45c` |
+| `--terra`       | `#f95738`                 | `#ff6b4a` |
 
 ## 🗺 How to Add a Blog Post
 
