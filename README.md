@@ -8,6 +8,8 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 - Hero section with circular profile photo and floating tech icons
 - About, Skills, Services, Projects, Blog, and Contact sections
 - Dark / light theme support with brand tokens
+- **English / Swahili language toggle** (navbar globe, persisted)
+- **Project search + technology filters** with a live results count
 - Responsive design across mobile and desktop
 - Magnetic buttons, ripple effects, and custom cursor
 
@@ -101,8 +103,8 @@ This project is licensed under the [MIT License](LICENSE).
 - [x] Add blog section
 - [x] Add blog detail pages (`/blog` and `/blog/:slug`)
 - [x] Add live project screenshots to cards
-- [ ] Add multilingual support
-- [ ] Add project search and filters
+- [x] Add multilingual support (EN / SW)
+- [x] Add project search and filters
 
 ## ⚙️ Scripts
 
@@ -131,6 +133,10 @@ To change the brand colors, edit the theme tokens in `src/styles.css`:
 ```
 
 To add or edit projects, update the typed `PROJECTS` array in `src/lib/projects.ts`.
+
+### Language (EN / SW)
+
+The site ships English and Swahili dictionaries in `src/lib/i18n.tsx` — every UI string is a typed translation key, and a globe toggle in the navbar switches languages (persisted in `localStorage`, falls back to the browser language). To add a string, add the key to **both** dictionaries (TypeScript enforces parity); to add a language, extend the `translations` object with a new key.
 
 To add or edit skills, update the typed `SKILL_CATEGORIES` array in `src/lib/skills.ts`.
 
@@ -241,10 +247,10 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## 🔭 What's Next
 
 - [x] Live project screenshots on cards
-- [ ] Deploy the Glory Burger mobile app to a public backend so its card can show a live preview
-- [ ] Multilingual support (EN / SW)
+- [x] Multilingual support (EN / SW)
+- [x] Dark-mode tuning for blog cards
+- [ ] Deploy the Glory Burger mobile app to a public backend so its card can show a live preview (deploy `GloryBurger_App_Backend` via its `render.yaml`, then point the app at it with `--dart-define=API_BASE_URL`)
 - [ ] Blog search and category filters
-- [ ] Dark-mode tuning for blog cards
 
 ## 🧑‍💻 Developer Notes
 
@@ -303,7 +309,8 @@ The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`*
 - `src/lib/skills.ts` — typed skill categories (Languages, Frontend, Backend, Mobile, Databases, Tools)
 - `src/lib/projects.ts` — typed project entries (title, description, tech, links)
 - `Services.tsx` — service offering cards
-- `Projects.tsx` — project showcase grid driven by `src/lib/projects.ts`
+- `Projects.tsx` — project showcase grid with live search + tech filters, driven by `src/lib/projects.ts`
+- `src/lib/i18n.tsx` — EN/SW dictionaries, `LanguageProvider`, and the `useI18n` hook
 - `ProjectCardHeader.tsx` — gradient header with screenshot/initials fallback, phone preview, and hover actions
 - `ProjectLightbox.tsx` — fullscreen screenshot preview with Esc/swipe-to-close, focus trap, and iOS scroll lock
 - `Blog.tsx` — article cards driven by `src/lib/blog-posts.ts`
@@ -363,7 +370,7 @@ The Blog header shows category chips (Backend, Mobile, Design) driven by the sha
 
 ## 🔍 SEO & Metadata
 
-The site ships Open Graph and Twitter card meta tags with absolute URLs, a canonical link, theme-color, and apple-mobile-web-app metadata in `src/routes/index.tsx`.
+The site ships Open Graph and Twitter card meta tags with absolute URLs, a canonical link, theme-color, and apple-mobile-web-app metadata in `src/routes/index.tsx`. The `<html lang>` attribute follows the selected language.
 
 ## 🧭 Navigation
 
