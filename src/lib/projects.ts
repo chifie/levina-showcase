@@ -85,7 +85,6 @@ export const PROJECTS: Project[] = [
     ink: "dark",
     initials: "GM",
     github: "https://github.com/chifie/GLORY_BURGER_APP",
-    demo: "https://gloryburger.app",
   },
   {
     title: "Portfolio Website",
