@@ -1,7 +1,13 @@
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExpand, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import type { Project } from "@/lib/projects";
 
-export default function ProjectCardHeader({ project }: { project: Project }) {
+export default function ProjectCardHeader({
+  project,
+  onExpand,
+}: {
+  project: Project;
+  onExpand?: () => void;
+}) {
   return (
     <div
       className={`shine-sweep relative h-44 overflow-hidden bg-gradient-to-br ${project.gradient} lg:h-48`}
@@ -14,7 +20,10 @@ export default function ProjectCardHeader({ project }: { project: Project }) {
           loading="lazy"
           decoding="async"
           draggable={false}
-          className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110 select-none"
+          onClick={onExpand}
+          className={`absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110 select-none ${
+            onExpand ? "cursor-zoom-in" : ""
+          }`}
         />
       ) : (
         <>
@@ -54,6 +63,16 @@ export default function ProjectCardHeader({ project }: { project: Project }) {
         </div>
       )}
       <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-4 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 transition-all duration-400 group-hover:opacity-100">
+        {onExpand && project.screenshot && (
+          <button
+            type="button"
+            onClick={onExpand}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-all hover:bg-white/40 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            aria-label={`Open ${project.title} screenshot preview`}
+          >
+            <FaExpand className="text-lg" />
+          </button>
+        )}
         {project.github && (
           <a
             href={project.github}

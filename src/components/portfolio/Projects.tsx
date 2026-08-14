@@ -1,11 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
-import { PROJECTS } from "@/lib/projects";
+import { PROJECTS, type Project } from "@/lib/projects";
 import SectionHeader from "@/components/portfolio/SectionHeader";
 import ProjectCardHeader from "@/components/portfolio/ProjectCardHeader";
+import ProjectLightbox from "@/components/portfolio/ProjectLightbox";
 import { useSectionHeaderReveal } from "@/hooks/use-section-header-reveal";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +15,7 @@ export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [lightbox, setLightbox] = useState<Project | null>(null);
 
   useSectionHeaderReveal(headerRef);
 
@@ -95,7 +97,10 @@ export default function Projects() {
               data-project-card
               className="card-elegant group relative flex h-full flex-col overflow-hidden rounded-3xl hover:border-brand/30"
             >
-              <ProjectCardHeader project={project} />
+              <ProjectCardHeader
+                project={project}
+                onExpand={project.screenshot ? () => setLightbox(project) : undefined}
+              />
 
               <div className="flex flex-1 flex-col p-6 lg:p-7">
                 <div className="mb-4 flex items-center justify-between">
@@ -167,6 +172,8 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      {lightbox && <ProjectLightbox project={lightbox} onClose={() => setLightbox(null)} />}
     </section>
   );
 }
