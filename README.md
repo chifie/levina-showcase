@@ -100,7 +100,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 - [x] Add blog section
 - [x] Add blog detail pages (`/blog` and `/blog/:slug`)
-- [ ] Add live project screenshots to cards
+- [x] Add live project screenshots to cards
 - [ ] Add multilingual support
 - [ ] Add project search and filters
 
@@ -154,7 +154,7 @@ Languages: JavaScript, TypeScript, Python, and PHP — plus React, Next.js, Fast
 
 **How do I add a new project?**
 
-Add an entry to the typed `PROJECTS` array in `src/lib/projects.ts` with title, description, tech stack, gradient, and links.
+Add an entry to the typed `PROJECTS` array in `src/lib/projects.ts` with title, description, tech stack, gradient, and links. Optionally add a `screenshot` path (an image under `public/screenshots/`) to show a live preview on the card; without one, the card falls back to the gradient header with initials.
 
 **Why do some animations not play on my device?**
 
@@ -229,7 +229,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## 🔭 What's Next
 
-- [ ] Live project screenshots on cards
+- [x] Live project screenshots on cards
 - [ ] Multilingual support (EN / SW)
 - [ ] Blog search and category filters
 - [ ] Dark-mode tuning for blog cards

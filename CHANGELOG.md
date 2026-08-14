@@ -2,10 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
-
-### Added
-
+## [Unreleased]### Added
+- Live screenshots on project cards (SokoDigital, Glory Burger, and this portfolio) with an initials fallback for projects without a live demo
 - Blog listing (`/blog`) and article (`/blog/:slug`) pages with full article content
 - Downloadable CV (`public/levina-chifie-cv.pdf`) wired to the Hero and Navbar CV buttons
 
