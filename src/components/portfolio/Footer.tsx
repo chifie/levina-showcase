@@ -293,11 +293,11 @@ export default function Footer() {
               <ul className="mt-4 space-y-3">
                 <li>
                   <a
-                    href="mailto:levinachifie@gmail.com"
+                    href="mailto:levinachifie016@gmail.com"
                     className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-brand"
                   >
                     <FaEnvelope className="text-xs" />
-                    levinachifie@gmail.com
+                    levinachifie016@gmail.com
                   </a>
                 </li>
                 <li className="flex items-center gap-2 text-sm text-muted-foreground">

@@ -65,7 +65,7 @@ export const Route = createFileRoute("/")({
           name: "Levina Chifie",
           url: "https://levinachifie.dev",
           jobTitle: "Full Stack Software Developer & Mobile App Developer",
-          email: "mailto:levinachifie@gmail.com",
+          email: "mailto:levinachifie016@gmail.com",
           sameAs: ["https://github.com/chifie", "https://linkedin.com/in/levinachifie"],
         }),
       },

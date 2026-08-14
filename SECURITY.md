@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in this project, please report it by emailing [levinachifie@gmail.com](mailto:levinachifie@gmail.com).
+If you discover a security vulnerability in this project, please report it by emailing [levinachifie016@gmail.com](mailto:levinachifie016@gmail.com).
 
 Please do not open a public issue for security vulnerabilities.
 

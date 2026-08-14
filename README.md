@@ -94,7 +94,7 @@ This project is licensed under the [MIT License](LICENSE).
 - 📝 [Blog](https://levinachifie.dev#blog)
 - 🐙 [GitHub](https://github.com/chifie)
 - 💼 [LinkedIn](https://linkedin.com/in/levinachifie)
-- ✉️ [Email](mailto:levinachifie@gmail.com)
+- ✉️ [Email](mailto:levinachifie016@gmail.com)
 
 ## 🗺 Roadmap
 
@@ -145,7 +145,7 @@ Edit `src/lib/blog-posts.ts` and add an entry to `BLOG_POSTS` with a title, exce
 
 **How can I contact you for work?**
 
-Use the contact form on the site or email [levinachifie@gmail.com](mailto:levinachifie@gmail.com).
+Use the contact form on the site or email [levinachifie016@gmail.com](mailto:levinachifie016@gmail.com).
 
 **What technologies do you specialize in?**
 
