@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- English / Swahili language toggle in the navbar: typed EN/SW dictionaries in `src/lib/i18n.tsx`, hydration-safe init (localStorage + browser language), `lang` attribute follows, and every section, blog page, and the contact form now render translated copy
+- Project search box and technology filter chips with a live results count and an empty-state "clear filters" action
+
+### Changed
+
+- Blog card headers toned down in dark mode (subtle dark overlay) so the warm gradients harmonize with the navy theme
+- Glory Burger mobile app: `API_BASE_URL` is now configurable via `--dart-define` (no code edits needed); the backend repo gained a one-click Render blueprint (`render.yaml`) with a `DB_SYNCHRONIZE` opt-in so a fresh production database gets its schema and seed on first boot
+
+### Added
+
 - TanzaniaKiganjani tablet-viewport screenshot with a tablet device-frame preview on the card
 - Card headers fall back to the gradient + initials automatically when a screenshot fails to load
 - Lightbox swipe-to-close gesture with live drag feedback, a Tab focus trap, and iOS scroll lock (position: fixed + overscroll containment)
