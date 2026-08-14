@@ -6,7 +6,8 @@ export interface Project {
   color: string;
   ink: "dark" | "light";
   initials: string;
-  github: string;
+  /** Public repository URL; omit when the repo is private or does not exist yet. */
+  github?: string;
   demo: string;
 }
 
@@ -32,7 +33,6 @@ export const PROJECTS: Project[] = [
     color: "#ee964b",
     ink: "dark",
     initials: "DM",
-    github: "https://github.com",
     demo: "https://dalamaimkononi.com",
   },
   {
@@ -44,7 +44,6 @@ export const PROJECTS: Project[] = [
     color: "#f95738",
     ink: "light",
     initials: "TK",
-    github: "https://github.com",
     demo: "https://tanzaniakiganjani.com",
   },
   {
@@ -56,7 +55,6 @@ export const PROJECTS: Project[] = [
     color: "#ee964b",
     ink: "dark",
     initials: "GB",
-    github: "https://github.com",
     demo: "https://gloryburger.com",
   },
   {
@@ -68,7 +66,6 @@ export const PROJECTS: Project[] = [
     color: "#f4d35e",
     ink: "dark",
     initials: "GM",
-    github: "https://github.com",
     demo: "https://gloryburger.app",
   },
   {
