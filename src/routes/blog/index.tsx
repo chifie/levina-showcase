@@ -3,6 +3,17 @@ import { FaArrowRight, FaCalendarAlt, FaClock } from "react-icons/fa";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog-posts";
 
 export const Route = createFileRoute("/blog/")({
+  head: () => ({
+    meta: [
+      { title: "Articles — Levina Chifie" },
+      {
+        name: "description",
+        content:
+          "Articles by Levina Chifie on software development, mobile engineering with Flutter, REST API design with FastAPI, and interface design.",
+      },
+    ],
+    links: [{ rel: "canonical", href: "https://levinachifie.dev/blog" }],
+  }),
   component: BlogIndexPage,
 });
 

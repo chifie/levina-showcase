@@ -8,6 +8,25 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) throw notFound();
     return { post };
   },
+  head: ({ loaderData }) => ({
+    meta: [
+      {
+        title: loaderData ? `${loaderData.post.title} — Levina Chifie` : "Article — Levina Chifie",
+      },
+      {
+        name: "description",
+        content: loaderData?.post.excerpt ?? "An article by Levina Chifie on software development.",
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: loaderData
+          ? `https://levinachifie.dev/blog/${loaderData.post.slug}`
+          : "https://levinachifie.dev/blog",
+      },
+    ],
+  }),
   component: BlogPostPage,
 });
 
