@@ -11,6 +11,8 @@ export interface Project {
   demo: string;
   /** Static screenshot shown on the card header; omit to fall back to initials. */
   screenshot?: string;
+  /** Phone-viewport screenshot rendered in a device frame on the card header. */
+  mobileScreenshot?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -37,7 +39,9 @@ export const PROJECTS: Project[] = [
     ink: "dark",
     initials: "DM",
     github: "https://github.com/chifie/DalaliMkononi",
-    demo: "https://dalamaimkononi.com",
+    demo: "https://dalali-mkononi.vercel.app",
+    screenshot: "/screenshots/dalali-mkononi.webp",
+    mobileScreenshot: "/screenshots/dalali-mkononi-mobile.webp",
   },
   {
     title: "TanzaniaKiganjani",
