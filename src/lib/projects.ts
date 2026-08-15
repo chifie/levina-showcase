@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
     ink: "light",
     initials: "TK",
     github: "https://github.com/chifie/kiganjani-drive-hub",
-    demo: "https://chifie.github.io/kiganjani-drive-hub/",
+    demo: "https://kiganjani-drive-hub-o31d.vercel.app/",
     screenshot: "/screenshots/tanzania-kiganjani.webp",
     mobileScreenshot: "/screenshots/tanzania-kiganjani-mobile.webp",
     tabletScreenshot: "/screenshots/tanzania-kiganjani-tablet.webp",
