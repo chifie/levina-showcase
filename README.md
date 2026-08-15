@@ -160,7 +160,7 @@ Languages: JavaScript, TypeScript, Python, and PHP — plus React, Next.js, Fast
 
 **How do I add a new project?**
 
-Add an entry to the typed `PROJECTS` array in `src/lib/projects.ts` with title, description, tech stack, gradient, and links. Set `github` for the source repo, `demo` for the live site, and `admin` for a public admin dashboard (rendered as an extra button on the card). Optionally add a `screenshot` path (an image under `public/screenshots/`) to show a live preview on the card; without one, the card falls back to the gradient header with initials.
+Add an entry to the typed `PROJECTS` array in `src/lib/projects.ts` with title, description, tech stack, gradient, and links. Set `github` for the source repo, `githubBackend` for a separate backend repo, `demo` for the live site, and `admin` for a public admin dashboard (each rendered as an extra button on the card). Optionally add a `screenshot` path (an image under `public/screenshots/`) to show a live preview on the card; without one, the card falls back to the gradient header with initials.
 
 **Why do some animations not play on my device?**
 
