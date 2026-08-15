@@ -9,6 +9,13 @@ All notable changes to this project will be documented in this file.
 - Oddit Tech Solutions website project card: HTML/CSS/JavaScript frontend with a PHP + MySQL backend, linking to the live site, the admin dashboard (`green-heart.infinityfreeapp.com/backend/dashboard.php`), and the GitHub repo
 - `admin` project field: cards with a public admin panel now render an extra "Admin Panel" button (EN/SW labels and aria-labels) next to GitHub and Live Demo, including in the card header hover actions
 - `tablet` capture mode in `scripts/capture-screenshots.sh` via a new `scripts/cdp-shot-tablet.mjs` helper (820x1180 portrait viewport, cropped to 3:4) for portrait tablet previews
+- `githubBackend` project field: cards with a separate backend repo now render a "Backend Repo" button (EN/SW); SokoDigital links its FastAPI backend repo
+- Professional one-page CV: new ATS-friendly HTML template (`scripts/cv/levina-chifie-cv.html`) rendered to `public/levina-chifie-cv.pdf` via `npm run cv` (`scripts/render-cv.mjs`, headless Chrome print-to-PDF, single A4 page with extractable text). Presents Levina as an Undergraduate Software Developer (BSc Computer Science, St. Joseph University in Tanzania / SJUIT, expected graduation September 2026) with the EXXONIM COMPANY LIMITED internship (April–June 2026), technical skills, and projects
+
+### Changed
+
+- Portfolio Website card screenshots recaptured from the production build so the card shows all seven projects
+- Legacy `scripts/cv.ps` marked as superseded by the HTML CV template
 
 ### Fixed
 
