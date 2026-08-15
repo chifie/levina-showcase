@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaExpand, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExpand, FaExternalLinkAlt, FaGithub, FaTachometerAlt } from "react-icons/fa";
 import type { Project } from "@/lib/projects";
 
 export default function ProjectCardHeader({
@@ -114,6 +114,17 @@ export default function ProjectCardHeader({
             aria-label={`View ${project.title} live demo`}
           >
             <FaExternalLinkAlt className="text-lg" />
+          </a>
+        )}
+        {project.admin && (
+          <a
+            href={project.admin}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-all hover:bg-white/40 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            aria-label={`Open ${project.title} admin dashboard`}
+          >
+            <FaTachometerAlt className="text-lg" />
           </a>
         )}
       </div>
