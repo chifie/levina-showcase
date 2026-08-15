@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- Oddit Tech Solutions website project card: HTML/CSS/JavaScript frontend with a PHP + MySQL backend, linking to the live site, the admin dashboard (`green-heart.infinityfreeapp.com/backend/dashboard.php`), and the GitHub repo
+- `admin` project field: cards with a public admin panel now render an extra "Admin Panel" button (EN/SW labels and aria-labels) next to GitHub and Live Demo, including in the card header hover actions
+
+### Fixed
+
+- TanzaniaKiganjani live demo now points at its Vercel deployment (`kiganjani-drive-hub-o31d.vercel.app`) instead of GitHub Pages; the screenshot capture script URL was updated to match
+- DalaliMkononi tech badges corrected to React/TanStack Start + Tailwind v4 + Express + PostgreSQL (was incorrectly listed as Next.js)
+- TanzaniaKiganjani tech badges now include shadcn/ui, matching the repo's component library
+
+### Added
+
 - English / Swahili language toggle in the navbar: typed EN/SW dictionaries in `src/lib/i18n.tsx`, hydration-safe init (localStorage + browser language), `lang` attribute follows, and every section, blog page, and the contact form now render translated copy
 - Project search box and technology filter chips with a live results count and an empty-state "clear filters" action
 
