@@ -11,8 +11,12 @@ All notable changes to this project will be documented in this file.
 - `tablet` capture mode in `scripts/capture-screenshots.sh` via a new `scripts/cdp-shot-tablet.mjs` helper (820x1180 portrait viewport, cropped to 3:4) for portrait tablet previews
 - `githubBackend` project field: cards with a separate backend repo now render a "Backend Repo" button (EN/SW); SokoDigital links its FastAPI backend repo
 - Professional one-page CV: new ATS-friendly HTML template (`scripts/cv/levina-chifie-cv.html`) rendered to `public/levina-chifie-cv.pdf` via `npm run cv` (`scripts/render-cv.mjs`, headless Chrome print-to-PDF, single A4 page with extractable text). Presents Levina as an Undergraduate Software Developer (BSc Computer Science, St. Joseph University in Tanzania / SJUIT, expected graduation September 2026) with the EXXONIM COMPANY LIMITED internship (April–June 2026), technical skills, and projects
+- Deploy workflow (`.github/workflows/deploy.yml`): pushes to `main` build with Bun and deploy to Cloudflare Workers from `dist/server`; skips gracefully until `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` secrets are configured
 
 ### Changed
+
+- EXXONIM internship section now lists real responsibilities: React + Tailwind CSS frontend work, Flutter mobile features, and Git/GitHub version control
+- CV template includes a commented-out Certifications section for adding certificates once earned
 
 - Portfolio Website card screenshots recaptured from the production build so the card shows all seven projects
 - Legacy `scripts/cv.ps` marked as superseded by the HTML CV template
