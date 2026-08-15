@@ -10,6 +10,8 @@ export interface Project {
   github?: string;
   /** Live demo URL; omit when the project is not deployed. */
   demo?: string;
+  /** Admin dashboard URL; omit when the project has no public admin panel. */
+  admin?: string;
   /** Static screenshot shown on the card header; omit to fall back to initials. */
   screenshot?: string;
   /** Phone-viewport screenshot rendered in a device frame on the card header. */
