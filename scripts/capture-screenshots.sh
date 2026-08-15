@@ -48,8 +48,8 @@ capture dalali-mkononi "https://dalali-mkononi.vercel.app"
 capture dalali-mkononi-mobile "https://dalali-mkononi.vercel.app" mobile
 capture glory-burger "https://gloryburger.com"
 capture glory-burger-mobile "https://gloryburger.com" mobile
-capture tanzania-kiganjani "https://chifie.github.io/kiganjani-drive-hub/"
-capture tanzania-kiganjani-mobile "https://chifie.github.io/kiganjani-drive-hub/" mobile
+capture tanzania-kiganjani "https://kiganjani-drive-hub-o31d.vercel.app/"
+capture tanzania-kiganjani-mobile "https://kiganjani-drive-hub-o31d.vercel.app/" mobile
 
 if [ "$LOCAL" = "--local" ]; then
   echo "building and serving this portfolio's production bundle on port $DEV_PORT..."
