@@ -30,11 +30,14 @@ google-chrome --headless=new --no-sandbox --disable-gpu \
   --window-size=1280,900 about:blank > /dev/null 2>&1 &
 sleep 3
 
-capture() { # capture <name> <url> [mobile] [wait-ms]
-  local name="$1" url="$2" mobile="${3:-}" wait="${4:-15000}"
-  if [ "$mobile" = "mobile" ]; then
+capture() { # capture <name> <url> [mobile|tablet] [wait-ms]
+  local name="$1" url="$2" mode="${3:-}" wait="${4:-15000}"
+  if [ "$mode" = "mobile" ]; then
     node scripts/cdp-shot-mobile.mjs "http://127.0.0.1:$CDP_PORT" "$url" "/tmp/$name.png" "$wait"
     magick "/tmp/$name.png" -crop 780x1580+0+0 +repage -resize 390x790 -quality 82 "$OUT_DIR/$name.webp"
+  elif [ "$mode" = "tablet" ]; then
+    node scripts/cdp-shot-tablet.mjs "http://127.0.0.1:$CDP_PORT" "$url" "/tmp/$name.png" "$wait"
+    magick "/tmp/$name.png" -crop 820x1093+0+0 +repage -resize 300x400 -quality 82 "$OUT_DIR/$name.webp"
   else
     node scripts/cdp-shot.mjs "http://127.0.0.1:$CDP_PORT" "$url" "/tmp/$name.png" "$wait"
     magick "/tmp/$name.png" -crop 1280x720+0+0 +repage -resize 800x450 -quality 82 "$OUT_DIR/$name.webp"
@@ -50,6 +53,7 @@ capture glory-burger "https://gloryburger.com"
 capture glory-burger-mobile "https://gloryburger.com" mobile
 capture tanzania-kiganjani "https://kiganjani-drive-hub-o31d.vercel.app/"
 capture tanzania-kiganjani-mobile "https://kiganjani-drive-hub-o31d.vercel.app/" mobile
+capture tanzania-kiganjani-tablet "https://kiganjani-drive-hub-o31d.vercel.app/" tablet
 
 if [ "$LOCAL" = "--local" ]; then
   echo "building and serving this portfolio's production bundle on port $DEV_PORT..."
