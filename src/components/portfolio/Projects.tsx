@@ -211,6 +211,20 @@ export default function Projects() {
                       </span>
                     </a>
                   )}
+                  {project.githubBackend && (
+                    <a
+                      href={project.githubBackend}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={t("projects.githubBackendAria", { title: project.title })}
+                      className="flex-1 rounded-full glass border border-brand/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow focus-visible:outline-2 focus-visible:outline-offset-2"
+                    >
+                      <span className="inline-flex items-center justify-center gap-1.5">
+                        <FaGithub className="text-sm" />
+                        {t("projects.backendRepo")}
+                      </span>
+                    </a>
+                  )}
                   {project.demo && (
                     <a
                       href={project.demo}

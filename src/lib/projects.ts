@@ -8,6 +8,8 @@ export interface Project {
   initials: string;
   /** Public repository URL; omit when the repo is private or does not exist yet. */
   github?: string;
+  /** Secondary public repository URL (e.g. the backend repo); omit when not needed. */
+  githubBackend?: string;
   /** Live demo URL; omit when the project is not deployed. */
   demo?: string;
   /** Admin dashboard URL; omit when the project has no public admin panel. */
