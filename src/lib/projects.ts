@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
     title: "TanzaniaKiganjani",
     description:
       "A vehicle transport and logistics platform connecting customers with reliable transport services across Tanzania.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],
     gradient: "from-[#f95738] via-[#0d3b66] to-[#082a4c]",
     color: "#f95738",
     ink: "light",
