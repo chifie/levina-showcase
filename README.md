@@ -238,7 +238,7 @@ npm run screenshots                  # recapture the external live sites
 npm run screenshots -- --local       # also recapture this portfolio from its production build
 ```
 
-Requires Chrome/Chromium, Node 22+, and ImageMagick. External captures hit each project's live deployment; `--local` builds the site and serves it through the Cloudflare worker (`wrangler dev`) so the portfolio card shows real production output. Set `OUT_DIR` to redirect captures (e.g. for dry runs). Update the URLs in `scripts/capture-screenshots.sh` whenever a project is redeployed, then add the resulting file name to the project's `screenshot` / `mobileScreenshot` field in `src/lib/projects.ts`.
+Requires Chrome/Chromium, Node 22+, and ImageMagick. Desktop, phone, and tablet captures each use dedicated viewport emulation (`scripts/cdp-shot.mjs`, `cdp-shot-mobile.mjs`, `cdp-shot-tablet.mjs`). External captures hit each project's live deployment; `--local` builds the site and serves it through the Cloudflare worker (`wrangler dev`) so the portfolio card shows real production output. Set `OUT_DIR` to redirect captures (e.g. for dry runs). Update the URLs in `scripts/capture-screenshots.sh` whenever a project is redeployed, then add the resulting file name to the project's `screenshot` / `mobileScreenshot` field in `src/lib/projects.ts`.
 
 ## 🤝 Contributing
 
