@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaExternalLinkAlt, FaGithub, FaSearch } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaSearch, FaTachometerAlt } from "react-icons/fa";
 import { prefersReducedMotion } from "@/lib/motion";
 import { PROJECTS, type Project } from "@/lib/projects";
 import SectionHeader from "@/components/portfolio/SectionHeader";
@@ -222,6 +222,20 @@ export default function Projects() {
                       <span className="inline-flex items-center justify-center gap-1.5">
                         <FaExternalLinkAlt className="text-sm" />
                         {t("projects.liveDemo")}
+                      </span>
+                    </a>
+                  )}
+                  {project.admin && (
+                    <a
+                      href={project.admin}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={t("projects.adminAria", { title: project.title })}
+                      className="flex-1 rounded-full glass border border-brand/20 px-4 py-2.5 text-center text-xs font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-glow focus-visible:outline-2 focus-visible:outline-offset-2"
+                    >
+                      <span className="inline-flex items-center justify-center gap-1.5">
+                        <FaTachometerAlt className="text-sm" />
+                        {t("projects.admin")}
                       </span>
                     </a>
                   )}

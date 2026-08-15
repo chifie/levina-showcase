@@ -125,8 +125,10 @@ const translations = {
     "projects.clearFilters": "Clear filters",
     "projects.github": "GitHub",
     "projects.liveDemo": "Live Demo",
+    "projects.admin": "Admin Panel",
     "projects.githubAria": "View {title} source code on GitHub",
     "projects.demoAria": "View {title} live demo",
+    "projects.adminAria": "Open {title} admin dashboard",
 
     // Blog
     "blog.eyebrow": "Blog",
@@ -285,8 +287,10 @@ const translations = {
     "projects.clearFilters": "Futa vichujio",
     "projects.github": "GitHub",
     "projects.liveDemo": "Demo ya Moja kwa Moja",
+    "projects.admin": "Menyu ya Usimamizi",
     "projects.githubAria": "Angalia msimbo chanzo wa {title} kwenye GitHub",
     "projects.demoAria": "Angalia demo ya moja kwa moja ya {title}",
+    "projects.adminAria": "Fungua dashibodi ya usimamizi ya {title}",
 
     // Blog
     "blog.eyebrow": "Blogu",
