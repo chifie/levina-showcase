@@ -160,7 +160,7 @@ Languages: JavaScript, TypeScript, Python, and PHP — plus React, Next.js, Fast
 
 **How do I add a new project?**
 
-Add an entry to the typed `PROJECTS` array in `src/lib/projects.ts` with title, description, tech stack, gradient, and links. Optionally add a `screenshot` path (an image under `public/screenshots/`) to show a live preview on the card; without one, the card falls back to the gradient header with initials.
+Add an entry to the typed `PROJECTS` array in `src/lib/projects.ts` with title, description, tech stack, gradient, and links. Set `github` for the source repo, `demo` for the live site, and `admin` for a public admin dashboard (rendered as an extra button on the card). Optionally add a `screenshot` path (an image under `public/screenshots/`) to show a live preview on the card; without one, the card falls back to the gradient header with initials.
 
 **Why do some animations not play on my device?**
 
@@ -225,7 +225,7 @@ npm run lint
 | Section  | Description                                                           |
 | -------- | --------------------------------------------------------------------- |
 | Hero     | Full-screen intro with circular profile photo and floating tech icons |
-| Projects | Project cards with distinct gradient headers and tech badges          |
+| Projects | Project cards with distinct gradient headers, tech badges, and live/admin links |
 | Blog     | Article cards with category badges, dates, and read times             |
 | Contact  | Info cards plus a floating-label contact form with honeypot           |
 
@@ -295,7 +295,7 @@ The brand palette follows **Yale Blue `#0d3b66`** and **Lemon Chiffon `#faf0ca`*
 | About    | Photo + story in a two-column layout                    |
 | Skills   | Languages-first category cards with proficiency bars    |
 | Services | Four service cards with hover reveals                   |
-| Projects | Six project cards with gradient headers                 |
+| Projects | Seven project cards with gradient headers               |
 | Blog     | Three article cards with category badges                |
 | Contact  | Info cards and a floating-label form                    |
 
