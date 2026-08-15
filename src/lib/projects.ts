@@ -33,6 +33,7 @@ export const PROJECTS: Project[] = [
     ink: "dark",
     initials: "SD",
     github: "https://github.com/chifie/SokoDigital_frontend",
+    githubBackend: "https://github.com/chifie/SokoDigital_Backend",
     demo: "https://soko-digital-frontend.vercel.app",
     screenshot: "/screenshots/soko-digital.webp",
   },
