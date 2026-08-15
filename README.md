@@ -62,10 +62,32 @@ This project is configured to deploy to **Cloudflare Workers** via Wrangler:
 
 ```bash
 npm run build
-npx wrangler deploy
+npx wrangler deploy   # run from dist/server, where the build emits the worker
 ```
 
 The live site is hosted at [https://levinachifie.dev](https://levinachifie.dev).
+
+Pushes to `main` also trigger the **Deploy** workflow (`.github/workflows/deploy.yml`),
+which builds with Bun and deploys automatically. Add these repository secrets to
+enable it — until then the deploy step skips itself with a warning:
+
+| Secret | Value |
+| ------ | ----- |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare API token with **Workers Scripts: Edit** and **Account Settings: Read** |
+| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID |
+
+## 📄 CV
+
+The downloadable CV (`public/levina-chifie-cv.pdf`) is rendered from the ATS-friendly
+HTML template `scripts/cv/levina-chifie-cv.html`:
+
+```bash
+npm run cv
+```
+
+Edit the template, then re-run `npm run cv` to regenerate the single-page A4 PDF.
+The template includes a commented-out Certifications section for adding certificates
+once earned.
 
 ## 📄 License
 
