@@ -8,9 +8,12 @@ All notable changes to this project will be documented in this file.
 
 - Oddit Tech Solutions website project card: HTML/CSS/JavaScript frontend with a PHP + MySQL backend, linking to the live site, the admin dashboard (`green-heart.infinityfreeapp.com/backend/dashboard.php`), and the GitHub repo
 - `admin` project field: cards with a public admin panel now render an extra "Admin Panel" button (EN/SW labels and aria-labels) next to GitHub and Live Demo, including in the card header hover actions
+- `tablet` capture mode in `scripts/capture-screenshots.sh` via a new `scripts/cdp-shot-tablet.mjs` helper (820x1180 portrait viewport, cropped to 3:4) for portrait tablet previews
 
 ### Fixed
 
+- TanzaniaKiganjani desktop, phone, and tablet screenshots recaptured from the Vercel deployment so card previews match the live site
+- CV (`scripts/cv.ps`) project stacks corrected to match the portfolio (TanzaniaKiganjani → React/TypeScript/Vite, DalaliMkononi → React/Express/PostgreSQL)
 - TanzaniaKiganjani live demo now points at its Vercel deployment (`kiganjani-drive-hub-o31d.vercel.app`) instead of GitHub Pages; the screenshot capture script URL was updated to match
 - DalaliMkononi tech badges corrected to React/TanStack Start + Tailwind v4 + Express + PostgreSQL (was incorrectly listed as Next.js)
 - TanzaniaKiganjani tech badges now include shadcn/ui, matching the repo's component library
