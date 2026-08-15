@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
     title: "DalaliMkononi",
     description:
       "A real estate marketplace platform for property listings, agent profiles, search filters, and seamless transaction management across Tanzania.",
-    tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Express", "PostgreSQL"],
     gradient: "from-[#ee964b] via-[#f4d35e] to-[#f95738]",
     color: "#ee964b",
     ink: "dark",
