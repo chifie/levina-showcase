@@ -89,6 +89,19 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/chifie/GLORY_BURGER_APP",
   },
   {
+    title: "Oddit Tech Website",
+    description:
+      "A dynamic official website for Oddity Tech Solutions Ltd with category-based news and service pages, a PHP + MySQL backend, and an admin dashboard for managing posts, categories, and users.",
+    tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    gradient: "from-[#10b981] via-[#059669] to-[#064e3b]",
+    color: "#10b981",
+    ink: "light",
+    initials: "OT",
+    github: "https://github.com/Edsonlukiza/Oddit_project01",
+    demo: "https://green-heart.infinityfreeapp.com/",
+    admin: "https://green-heart.infinityfreeapp.com/backend/dashboard.php",
+  },
+  {
     title: "Portfolio Website",
     description:
       "A modern, animated portfolio built with React, TypeScript, and GSAP featuring a navy blue and cream brand identity, smooth scroll animations, and a fully responsive layout.",
