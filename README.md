@@ -22,7 +22,7 @@ A modern, animated portfolio website built with **React**, **TypeScript**, **Tan
 | Icons      | React Icons                                           |
 | Fonts      | Playfair Display, Inter                               |
 | Styling    | Tailwind CSS                                          |
-| Deployment | Cloudflare Workers (Wrangler)                         |
+| Deployment | Vercel (Nitro)                                        |
 
 ## 🚀 Getting Started
 
@@ -58,23 +58,24 @@ src/
 
 ## ☁️ Deployment
 
-This project is configured to deploy to **Cloudflare Workers** via Wrangler:
+This project deploys to **Vercel** via Nitro:
 
 ```bash
 npm run build
-npx wrangler deploy   # run from dist/server, where the build emits the worker
+vercel --prod          # deploy to production via the Vercel CLI
 ```
 
 The live site is hosted at [https://levinachifie.dev](https://levinachifie.dev).
 
 Pushes to `main` also trigger the **Deploy** workflow (`.github/workflows/deploy.yml`),
-which builds with Bun and deploys automatically. Add these repository secrets to
+which builds and deploys automatically. Add these repository secrets to
 enable it — until then the deploy step skips itself with a warning:
 
 | Secret | Value |
 | ------ | ----- |
-| `CLOUDFLARE_API_TOKEN` | Cloudflare API token with **Workers Scripts: Edit** and **Account Settings: Read** |
-| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID |
+| `VERCEL_TOKEN` | Vercel API token (Settings → Tokens) |
+| `VERCEL_ORG_ID` | Your Vercel org ID (from `.vercel/project.json`) |
+| `VERCEL_PROJECT_ID` | Your Vercel project ID (from `.vercel/project.json`) |
 
 ## 📄 CV
 
@@ -260,7 +261,7 @@ npm run screenshots                  # recapture the external live sites
 npm run screenshots -- --local       # also recapture this portfolio from its production build
 ```
 
-Requires Chrome/Chromium, Node 22+, and ImageMagick. Desktop, phone, and tablet captures each use dedicated viewport emulation (`scripts/cdp-shot.mjs`, `cdp-shot-mobile.mjs`, `cdp-shot-tablet.mjs`). External captures hit each project's live deployment; `--local` builds the site and serves it through the Cloudflare worker (`wrangler dev`) so the portfolio card shows real production output. Set `OUT_DIR` to redirect captures (e.g. for dry runs). Update the URLs in `scripts/capture-screenshots.sh` whenever a project is redeployed, then add the resulting file name to the project's `screenshot` / `mobileScreenshot` field in `src/lib/projects.ts`.
+Requires Chrome/Chromium, Node 22+, and ImageMagick. Desktop, phone, and tablet captures each use dedicated viewport emulation (`scripts/cdp-shot.mjs`, `cdp-shot-mobile.mjs`, `cdp-shot-tablet.mjs`). External captures hit each project's live deployment; `--local` builds the site and serves it through the local preview (`vite preview`) so the portfolio card shows real production output. Set `OUT_DIR` to redirect captures (e.g. for dry runs). Update the URLs in `scripts/capture-screenshots.sh` whenever a project is redeployed, then add the resulting file name to the project's `screenshot` / `mobileScreenshot` field in `src/lib/projects.ts`.
 
 ## 🤝 Contributing
 
