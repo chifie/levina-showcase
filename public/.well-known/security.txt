@@ -1,0 +1,3 @@
+Contact: mailto:levinachifie016@gmail.com
+Preferred-Languages: en
+Policy: https://github.com/chifie/levina-showcase/blob/main/SECURITY.md
